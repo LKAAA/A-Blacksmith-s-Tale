@@ -1,0 +1,1 @@
+An [[S-Rank]] Fighter. 50 years ago he led the armies of the human kingdom against [[Dakad the Goblin Herald]] and [[The Great Goblin Army]]. 

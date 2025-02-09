@@ -1,0 +1,267 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4509724f8bf84da7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Home.md",
+                "mode": "preview",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Home"
+            }
+          },
+          {
+            "id": "e97183567e3364da",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Game Notes/Game Notes.canvas",
+                "viewState": {
+                  "x": 145,
+                  "y": 457.0000035476685,
+                  "zoom": 0
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Game Notes"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ac10b4355203479f",
+    "type": "split",
+    "children": [
+      {
+        "id": "85e1747db6e283f4",
+        "type": "tabs",
+        "dimension": 79.51690821256038,
+        "children": [
+          {
+            "id": "acee13df1b5299fc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e7114b91046bdbce",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "7948af84e6d39249",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      },
+      {
+        "id": "c52dba3e16a35aa9",
+        "type": "tabs",
+        "dimension": 20.483091787439612,
+        "children": [
+          {
+            "id": "dedb1c04d143531d",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent Files"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1c0f7146d06e54f2",
+    "type": "split",
+    "children": [
+      {
+        "id": "2113de3cd814238c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "65042e31f40db9c9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Homepage.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Homepage"
+            }
+          },
+          {
+            "id": "1ae487a213ec6d8a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "bc81124c2ee062e4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8dbc33d230c2becb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "World Notes/World/Races/Dracari.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Dracari"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "graph:Open graph view": false,
+      "random-note:Open random note": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "command-palette:Open command palette": false,
+      "switcher:Open quick switcher": false,
+      "templates:Insert template": false,
+      "homepage:Open homepage": false,
+      "templater-obsidian:Templater": false,
+      "tldraw:Create new tldrawing": false
+    }
+  },
+  "active": "e97183567e3364da",
+  "lastOpenFiles": [
+    "TeenyTinyPixls-o2zo.ttf",
+    "Game Notes/Game Notes.canvas",
+    "Game Notes/Systems/Systems.md",
+    "Game Notes/Systems",
+    "Home.md",
+    "Game Notes/Game Notes.md",
+    "Game Notes/Game-Moodboard.canvas",
+    "Game Notes/UI-Moodboard.canvas",
+    "Game Notes/World Building The Game.canvas",
+    "TO-DO.md",
+    "World Notes/World/Classes/Fighter.md",
+    "World Notes/Major Regions/The Northern Reaches/The Northern Reaches.md",
+    "World Notes/TempMap.md",
+    "World Notes/Major Regions/The Northern Reaches",
+    "World Notes/Major Regions/The Forests of Nard/Overview of Yenthas.md",
+    "World Notes/Major Regions/The Forests of Nard/The Forests of Nard.md",
+    "World Notes/Major Regions/The Forests of Nard/Nard the Mapmaker.md",
+    "World Notes/Major Regions/The Forgotten Lands/The Goblin Caves.md",
+    "World Notes/World/Characters/Thorin Ragnorok.md",
+    "World Notes/Overview of the World.md",
+    "World Notes/Major Regions/Nil Daral, Dwarven City/Overview of Nil Daral.md",
+    "World Notes/Major Regions/Nil Daral, Dwarven City/Othir Lightbreaker the 3rd.md",
+    "World Notes/World/Locations/Aldorin.md",
+    "World Notes/World/Locations/Koran.md",
+    "World Notes/World/Locations/Illenal.md",
+    "World Notes/World/Locations/Urodh.md",
+    "World Notes/Major Regions/Human Empire/Overview of the Empire.md",
+    "World Notes/Major Regions/The Forgotten Lands/The Great Goblin Army.md",
+    "World Notes/Major Regions/The Forgotten Lands/Dakad the Goblin Herald.md",
+    "World Notes/World/Characters/Ilindrial Magus.md",
+    "World Notes/Major Regions/The Forgotten Lands/The Barren Lands.md",
+    "World Notes/World/Classes/Paladin.md",
+    "Other/Images/Pasted image 20250206231255.png",
+    "Other/Images/Pasted image 20250206160514.png",
+    "Other/Images/Pasted image 20250206160508.png",
+    "Other/Images/Pasted image 20250206160430.png",
+    "Other/Images/Pasted image 20250206160423.png",
+    "Other/Images/Pasted image 20250206160415.png",
+    "Other/Images/Pasted image 20250206160409.png",
+    "Other/Images/Pasted image 20250206160354.png",
+    "Other/Images/Pasted image 20250206160346.png",
+    "Other/Images/Pasted image 20250206160317.png",
+    "World Notes/Major Regions/The Forests of Nard",
+    "World Notes/Major Regions/The Forgotten Lands",
+    "World Notes/Major Regions/Nil Daral, Dwarven City",
+    "World Notes/Major Regions/Human Empire",
+    "World Notes/Major Regions/Humanoid Kingdom",
+    "World Notes/Major Regions",
+    "Other/Reference Boards/Untitled.canvas",
+    "World Notes/World/Resources",
+    "World Notes/Random/Dracari/Dracari-Wing-Anatomy.tif"
+  ]
+}

@@ -1,0 +1,5 @@
+Dracari are majestic and formidable beings, bearing the likeness of humans at first glance, but resemble dragons in the patches of scales that adorn their body, the horns that top their head, and the long scaly tail that juts from them. Small patches of scales decorate their skin in a myriad of colors and patterns. Atop their heads are two long horns that can vary in size, shape, and color. They are beings of immense strength and magic, revered as guardians of the natural world. Dracari are deeply connected to the elements, often serving as stewards of the land and protectors of ancient secrets.
+
+The Dracari are dragons that can take on a human form. They are very rare, with only a few being alive in each region. Most think that they are simply myth, a legend of old, but the ancient among the living still remember them from the wars of the past.
+
+The intricate anatomy of the Dracari's most unique feature, their wing's is perhaps most prominently explored by the [[Elves|Elvish]] researcher [[Genro Linnaeus]]. --- TODO EXPLAIN HOW HE NAMED THE BONES

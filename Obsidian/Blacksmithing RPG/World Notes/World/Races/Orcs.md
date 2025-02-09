@@ -1,0 +1,2 @@
+Orcs are formidable and fearsome beings, revered for their strength and ferocity in battle. They have muscular, imposing builds, with broad shoulders, thick limbs, and prominent tusks that jut from their lower jaws. Orcs are born warriors, honing their combat skills from a young age and forming powerful clans and warbands. Despite their reputation as savage warriors, orcs possess a strong sense of honor and loyalty to their kin. They value strength and courage above all else, striving to prove themselves in battle and earn their place among their peers.
+

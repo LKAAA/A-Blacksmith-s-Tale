@@ -1,0 +1,1 @@
+Koran is a large walled city ruled by the noble family -------. It is a province
