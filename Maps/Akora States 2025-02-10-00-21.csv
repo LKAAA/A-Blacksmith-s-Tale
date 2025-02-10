@@ -1,0 +1,8 @@
+Id,State,Full Name,Form,Color,Capital,Culture,Type,Expansionism,Cells,Burgs,Area mi2,Total Population,Rural Population,Urban Population
+1,Central Kingdom,The Central Kingdom,Kingdom,#66c2a5,Suiyeungsai,Guantzu,Lake,1.3,4160,293,4777695,24697053,22090994,2606059
+6,Westios,The Holy Westios Empire,Empire,#ffd92f,Biganverne,Nortumbic,Generic,1.1,2450,137,2763981,11087222,9853318,1233904
+5,Northern Reaches,The Northern Reaches,,#54d5d8,---,Nortumbic,Generic,2.7,2306,181,2682675,17016720,15317605,1699115
+2,The Barrens,The Forgotten Lands,,#fc8d62,---,Eldar,Generic,1.3,2100,153,2466360,14063444,12611311,1452133
+4,Yenthas,The Forest of Nard,Chancellery,#e78ac3,Yenthas,Eldar,Generic,3.2,909,73,987363,6294027,5659734,634293
+3,Nil Daral,Nil Daral, the Great Dwarven City,Kingdom,#8da0cb,Nil Daral,Eldar,Generic,2.6,681,68,769338,5892661,5442836,449825
+0,Neutrals,,,,,,,,0,0,0,0,0,0

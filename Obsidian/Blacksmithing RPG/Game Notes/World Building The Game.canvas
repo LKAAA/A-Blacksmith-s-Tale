@@ -14,7 +14,7 @@
 		{"id":"aa1539b78b066b62","type":"text","text":"#### Culture and Society\n#### --- The \"Human\" Element ---","x":1370,"y":-780,"width":280,"height":200,"color":"6"},
 		{"id":"7305d0a0eace2bdd","type":"text","text":"Politics","x":2000,"y":-400,"width":250,"height":60,"color":"6"},
 		{"id":"66e5112e527e7992","type":"text","text":"Religion","x":1650,"y":-400,"width":250,"height":60,"color":"6"},
-		{"id":"67f76ec74d2f1e38","x":2180,"y":-180,"width":400,"height":400,"type":"file","file":"World Notes/Major Regions/The Central Kingdom/Government of the Kingdom.md"},
+		{"id":"67f76ec74d2f1e38","x":2180,"y":-180,"width":400,"height":400,"type":"file","file":"World Notes/World/Major Regions/The Central Kingdom/Government of the Kingdom.md"},
 		{"id":"531af43b39c0ba0a","x":1510,"y":-240,"width":250,"height":60,"type":"text","text":"There is a church that holds power"}
 	],
 	"edges":[

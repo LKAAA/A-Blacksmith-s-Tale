@@ -2,6 +2,9 @@ The Westios Empire
 Alternate Names:
 Empire of the Setting Sun
 The Holy Sun's Empire
+Size: 2.7 million mi2
+Population: ~11 million
+Major Religion: [[Overview of the Pantheon of Westios|The Pantheon of Westios]]
 
 Centralized rule through the [[God Empress of the Setting Sun|empress]], with several smaller provinces ruled by lords who answer directly to the empress.
 
