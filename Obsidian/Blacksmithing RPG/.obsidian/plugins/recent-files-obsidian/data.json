@@ -1,20 +1,68 @@
 {
   "recentFiles": [
     {
-      "basename": "The True God",
-      "path": "World Notes/World/Religion/The Central Kingdom Religion/The True God.md"
+      "basename": "Home",
+      "path": "Home.md"
     },
     {
-      "basename": "Overview of the Pantheon of Westios",
-      "path": "World Notes/World/Religion/Westios Pantheon/Overview of the Pantheon of Westios.md"
+      "basename": "Game-Moodboard",
+      "path": "Game Notes/Game-Moodboard.canvas"
+    },
+    {
+      "basename": "Overview of the World",
+      "path": "World Notes/Overview of the World.md"
+    },
+    {
+      "basename": "Magi-tech",
+      "path": "World Notes/World/Magic/Magi-tech.md"
+    },
+    {
+      "basename": "Maps",
+      "path": "World Notes/Maps.md"
+    },
+    {
+      "basename": "Akora 2025-02-10-00-32 (3)",
+      "path": "World Notes/World/Maps/Akora 2025-02-10-00-32 (3).png"
+    },
+    {
+      "basename": "Overview of the Central Kingdom",
+      "path": "World Notes/World/Major Regions/The Central Kingdom/Overview of the Central Kingdom.md"
+    },
+    {
+      "basename": "The Northern Reaches",
+      "path": "World Notes/World/Major Regions/The Northern Reaches/The Northern Reaches.md"
+    },
+    {
+      "basename": "Overview of the Forgotten Lands",
+      "path": "World Notes/World/Major Regions/The Forgotten Lands/Overview of the Forgotten Lands.md"
+    },
+    {
+      "basename": "The Eastern Forest",
+      "path": "World Notes/World/Major Regions/The Forests of Nard/The Eastern Forest.md"
+    },
+    {
+      "basename": "Overview of Nil Daral",
+      "path": "World Notes/World/Major Regions/Nil Daral, Dwarven City/Overview of Nil Daral.md"
     },
     {
       "basename": "Overview of Westios",
-      "path": "World Notes/Major Regions/The Westios Empire/Overview of Westios.md"
+      "path": "World Notes/World/Major Regions/The Westios Empire/Overview of Westios.md"
     },
     {
-      "basename": "Home",
-      "path": "Home.md"
+      "basename": "Akora 2025-02-10-00-32",
+      "path": "World Notes/World/Maps/Akora 2025-02-10-00-32.png"
+    },
+    {
+      "basename": "Akora 2025-02-10-00-31 (1)",
+      "path": "World Notes/World/Maps/Akora 2025-02-10-00-31 (1).png"
+    },
+    {
+      "basename": "The True God",
+      "path": "World Notes/World/Religions/The Central Kingdom Religion/The True God.md"
+    },
+    {
+      "basename": "Overview of the Pantheon of Westios",
+      "path": "World Notes/World/Religions/Westios Pantheon/Overview of the Pantheon of Westios.md"
     },
     {
       "basename": "Elves",
@@ -22,27 +70,19 @@
     },
     {
       "basename": "God Empress of the Setting Sun",
-      "path": "World Notes/Major Regions/The Westios Empire/God Empress of the Setting Sun.md"
-    },
-    {
-      "basename": "Overview of the World",
-      "path": "World Notes/Overview of the World.md"
-    },
-    {
-      "basename": "Overview of the Forgotten Lands",
-      "path": "World Notes/Major Regions/The Forgotten Lands/Overview of the Forgotten Lands.md"
+      "path": "World Notes/World/Major Regions/The Westios Empire/God Empress of the Setting Sun.md"
     },
     {
       "basename": "Ivphyn",
-      "path": "World Notes/World/Religion/Westios Pantheon/Ivphyn.md"
+      "path": "World Notes/World/Religions/Westios Pantheon/Ivphyn.md"
     },
     {
       "basename": "Dotthar",
-      "path": "World Notes/World/Religion/Westios Pantheon/Dotthar.md"
+      "path": "World Notes/World/Religions/Westios Pantheon/Dotthar.md"
     },
     {
       "basename": "Beast-Races",
-      "path": "World Notes/Major Regions/The Westios Empire/Beast-Races.md"
+      "path": "World Notes/World/Major Regions/The Westios Empire/Beast-Races.md"
     },
     {
       "basename": "Game Notes",
@@ -51,10 +91,6 @@
     {
       "basename": "Systems",
       "path": "Game Notes/Systems/Systems.md"
-    },
-    {
-      "basename": "Game-Moodboard",
-      "path": "Game Notes/Game-Moodboard.canvas"
     },
     {
       "basename": "UI-Moodboard",
@@ -73,40 +109,24 @@
       "path": "World Notes/World/Classes/Fighter.md"
     },
     {
-      "basename": "The Northern Reaches",
-      "path": "World Notes/Major Regions/The Northern Reaches/The Northern Reaches.md"
-    },
-    {
-      "basename": "TempMap",
-      "path": "World Notes/TempMap.md"
-    },
-    {
       "basename": "Overview of Yenthas",
-      "path": "World Notes/Major Regions/The Forests of Nard/Overview of Yenthas.md"
-    },
-    {
-      "basename": "The Forests of Nard",
-      "path": "World Notes/Major Regions/The Forests of Nard/The Forests of Nard.md"
+      "path": "World Notes/World/Major Regions/The Forests of Nard/Overview of Yenthas.md"
     },
     {
       "basename": "Nard the Mapmaker",
-      "path": "World Notes/Major Regions/The Forests of Nard/Nard the Mapmaker.md"
+      "path": "World Notes/World/Major Regions/The Forests of Nard/Nard the Mapmaker.md"
     },
     {
       "basename": "The Goblin Caves",
-      "path": "World Notes/Major Regions/The Forgotten Lands/The Goblin Caves.md"
+      "path": "World Notes/World/Major Regions/The Forgotten Lands/The Goblin Caves.md"
     },
     {
       "basename": "Thorin Ragnorok",
       "path": "World Notes/World/Characters/Thorin Ragnorok.md"
     },
     {
-      "basename": "Overview of Nil Daral",
-      "path": "World Notes/Major Regions/Nil Daral, Dwarven City/Overview of Nil Daral.md"
-    },
-    {
       "basename": "Othir Lightbreaker the 3rd",
-      "path": "World Notes/Major Regions/Nil Daral, Dwarven City/Othir Lightbreaker the 3rd.md"
+      "path": "World Notes/World/Major Regions/Nil Daral, Dwarven City/Othir Lightbreaker the 3rd.md"
     },
     {
       "basename": "Aldorin",
@@ -126,11 +146,11 @@
     },
     {
       "basename": "The Great Goblin Army",
-      "path": "World Notes/Major Regions/The Forgotten Lands/The Great Goblin Army.md"
+      "path": "World Notes/World/Major Regions/The Forgotten Lands/The Great Goblin Army.md"
     },
     {
       "basename": "Dakad the Goblin Herald",
-      "path": "World Notes/Major Regions/The Forgotten Lands/Dakad the Goblin Herald.md"
+      "path": "World Notes/World/Major Regions/The Forgotten Lands/Dakad the Goblin Herald.md"
     },
     {
       "basename": "Ilindrial Magus",
@@ -138,7 +158,7 @@
     },
     {
       "basename": "The Barren Lands",
-      "path": "World Notes/Major Regions/The Forgotten Lands/The Barren Lands.md"
+      "path": "World Notes/World/Major Regions/The Forgotten Lands/The Barren Lands.md"
     },
     {
       "basename": "Paladin",
@@ -146,7 +166,7 @@
     },
     {
       "basename": "Government of the Kingdom",
-      "path": "World Notes/Major Regions/The Central Kingdom/Government of the Kingdom.md"
+      "path": "World Notes/World/Major Regions/The Central Kingdom/Government of the Kingdom.md"
     },
     {
       "basename": "Pasted image 20250206231255",
@@ -179,26 +199,6 @@
     {
       "basename": "Rune Magic",
       "path": "World Notes/World/Magic/Rune Magic.md"
-    },
-    {
-      "basename": "Pasted image 20250206160508",
-      "path": "Other/Images/Pasted image 20250206160508.png"
-    },
-    {
-      "basename": "Pasted image 20250206160430",
-      "path": "Other/Images/Pasted image 20250206160430.png"
-    },
-    {
-      "basename": "Pasted image 20250206160423",
-      "path": "Other/Images/Pasted image 20250206160423.png"
-    },
-    {
-      "basename": "Pasted image 20250206160415",
-      "path": "Other/Images/Pasted image 20250206160415.png"
-    },
-    {
-      "basename": "Pasted image 20250206160409",
-      "path": "Other/Images/Pasted image 20250206160409.png"
     }
   ],
   "omittedPaths": [],

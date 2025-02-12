@@ -9,7 +9,7 @@ banner_y: 0.5
 - 🏈 Overview
     - [[Game Overview]]
     - [[Themes]]
-    - [[Moodboard]]
+    - [[Game-Moodboard.canvas|Moodboard]]
 - 👨‍👩‍👦 Information
     - [[Monetization]]
     - [[Targeted Platforms]]
@@ -31,7 +31,7 @@ banner_y: 0.5
 
 - 💼 Setting
     - [[Overview of the World]]
-    - [[Major Locations]]
+    - [[Maps]]
     - [[Geography & Biomes]]
 - 💰 Magic System
     - [[Mana]]

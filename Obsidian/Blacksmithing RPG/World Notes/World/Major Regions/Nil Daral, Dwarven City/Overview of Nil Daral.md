@@ -1,3 +1,9 @@
+Nil Daral
+Alternate Names:
+The Great City of the Dwarves
+Size: 700,000 mi2
+Population: 5.8 million
+
 
 The kings come from a long line named Lightbreaker. Long because its been like 2000 years not because there was a lot of them.
 The king is currently [[Othir Lightbreaker the 3rd]]. Quite the name for someone so constantly underground. 

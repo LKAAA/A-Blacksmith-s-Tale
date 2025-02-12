@@ -22,41 +22,6 @@
               "icon": "lucide-file",
               "title": "Home"
             }
-          },
-          {
-            "id": "b3a9630e2c81fe2a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "World Notes/World/Religion/The Central Kingdom Religion/The True God.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "The True God"
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "93d85c61de52a0ef",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "8b702d504b9dd719",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "World Notes/World/Religion/Westios Pantheon/Overview of the Pantheon of Westios.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Overview of the Pantheon of Westios"
-            }
           }
         ]
       }
@@ -227,44 +192,47 @@
       "tldraw:Create new tldrawing": false
     }
   },
-  "active": "b3a9630e2c81fe2a",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "World Notes/World/Religion/Westios Pantheon/Overview of the Pantheon of Westios.md",
-    "World Notes/Major Regions/The Westios Empire/Overview of Westios.md",
     "Home.md",
-    "World Notes/World/Races/Elves.md",
-    "World Notes/Major Regions/The Westios Empire/God Empress of the Setting Sun.md",
+    "Game Notes/Game-Moodboard.canvas",
     "World Notes/Overview of the World.md",
-    "World Notes/Major Regions/The Forgotten Lands/Overview of the Forgotten Lands.md",
-    "World Notes/World/Religion/Westios Pantheon/Ivphyn.md",
+    "World Notes/World/Magic/Magi-tech.md",
+    "World Notes/Maps.md",
+    "World Notes/World/Maps/Akora 2025-02-10-00-32 (3).png",
+    "World Notes/World/Major Regions/The Central Kingdom/Overview of the Central Kingdom.md",
+    "World Notes/World/Major Regions/The Northern Reaches/The Northern Reaches.md",
+    "World Notes/World/Major Regions/The Forgotten Lands/Overview of the Forgotten Lands.md",
+    "World Notes/World/Major Regions/The Forests of Nard/The Eastern Forest.md",
+    "World Notes/World/Major Regions/Nil Daral, Dwarven City/Overview of Nil Daral.md",
+    "World Notes/World/Major Regions/The Westios Empire/Overview of Westios.md",
+    "World Notes/World/Maps/Akora 2025-02-10-00-32.png",
+    "World Notes/World/Maps/Akora 2025-02-10-00-31 (1).png",
+    "World Notes/World/Maps",
+    "World Notes/TempMap.md",
+    "World Notes/World/Religions/The Central Kingdom Religion/The True God.md",
+    "World Notes/World/Religions/Westios Pantheon/Overview of the Pantheon of Westios.md",
+    "World Notes/World/Races/Elves.md",
+    "World Notes/World/Major Regions/The Westios Empire/God Empress of the Setting Sun.md",
+    "World Notes/World/Religions/Westios Pantheon/Ivphyn.md",
     "World Notes/World/Religion/Westios Pantheon/Akora.md",
     "World Notes/Major Regions/The Westios Empire/Akora.md",
-    "World Notes/World/Religion/Westios Pantheon/Dotthar.md",
-    "World Notes/World/Religion/The Central Kingdom Religion/The True God.md",
-    "World Notes/World/Religion/The Central Kingdom Religion",
-    "World Notes/World/Religion/Westios Pantheon",
-    "World Notes/World/Religion",
-    "World Notes/Major Regions/The Westios Empire/Beast-Races.md",
+    "World Notes/World/Religions/Westios Pantheon/Dotthar.md",
+    "World Notes/World/Religions/The Central Kingdom Religion",
+    "World Notes/World/Religions/Westios Pantheon",
+    "World Notes/World/Religions",
+    "World Notes/World/Major Regions/The Westios Empire/Beast-Races.md",
     "Game Notes/Game Notes.canvas",
     "TeenyTinyPixls-o2zo.ttf",
     "Game Notes/Systems/Systems.md",
     "Game Notes/Systems",
     "Game Notes/Game Notes.md",
-    "Game Notes/Game-Moodboard.canvas",
     "Game Notes/UI-Moodboard.canvas",
     "Game Notes/World Building The Game.canvas",
     "TO-DO.md",
     "World Notes/World/Classes/Fighter.md",
-    "World Notes/Major Regions/The Northern Reaches/The Northern Reaches.md",
-    "World Notes/TempMap.md",
-    "World Notes/Major Regions/The Northern Reaches",
-    "World Notes/Major Regions/The Forests of Nard/Overview of Yenthas.md",
-    "World Notes/Major Regions/The Forests of Nard/The Forests of Nard.md",
-    "World Notes/Major Regions/The Forests of Nard/Nard the Mapmaker.md",
-    "World Notes/Major Regions/The Forgotten Lands/The Goblin Caves.md",
-    "World Notes/World/Characters/Thorin Ragnorok.md",
-    "World Notes/Major Regions/Nil Daral, Dwarven City/Overview of Nil Daral.md",
-    "World Notes/Major Regions/Nil Daral, Dwarven City/Othir Lightbreaker the 3rd.md",
+    "World Notes/World/Major Regions/The Northern Reaches",
+    "World Notes/World/Major Regions/The Forests of Nard/Overview of Yenthas.md",
     "Other/Images/Pasted image 20250206231255.png",
     "Other/Images/Pasted image 20250206160514.png",
     "Other/Images/Pasted image 20250206160508.png",
@@ -272,13 +240,9 @@
     "Other/Images/Pasted image 20250206160423.png",
     "Other/Images/Pasted image 20250206160415.png",
     "Other/Images/Pasted image 20250206160409.png",
-    "Other/Images/Pasted image 20250206160354.png",
-    "Other/Images/Pasted image 20250206160346.png",
-    "Other/Images/Pasted image 20250206160317.png",
-    "World Notes/Major Regions/The Forests of Nard",
-    "World Notes/Major Regions/The Forgotten Lands",
-    "World Notes/Major Regions/Nil Daral, Dwarven City",
-    "World Notes/Major Regions/The Westios Empire",
+    "World Notes/World/Major Regions/The Forests of Nard",
+    "World Notes/World/Major Regions/The Forgotten Lands",
+    "World Notes/World/Major Regions/Nil Daral, Dwarven City",
     "Other/Reference Boards/Untitled.canvas"
   ]
 }
