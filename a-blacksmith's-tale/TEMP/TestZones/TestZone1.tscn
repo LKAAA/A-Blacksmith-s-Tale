@@ -301,7 +301,6 @@ tile_set = SubResource("TileSet_8kqvv")
 [node name="NorthTransition" parent="Transition Zones" instance=ExtResource("5_bo2f2")]
 position = Vector2(328, -62)
 next_zone = "res://TEMP/TestZones/TestZone2.tscn"
-next_zone_num = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition Zones/NorthTransition"]
 position = Vector2(0, -37)

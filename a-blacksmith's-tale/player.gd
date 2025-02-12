@@ -10,7 +10,7 @@ const RUNSPEED: float = 90 # Base runspeed
 var speed: float # current speed with any bonuses
 var isSprinting: bool = false
 
-const ROLLSPEED: float = 200
+const ROLLSPEED: float = 150
 
 var input_vector: Vector2
 var roll_vector: Vector2
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 			_handle_movement_anims()
 		PLAYER_STATES.DODGEROLL:
 			pass
-	
+			
 	move_and_slide()
 
 func _handle_movement() -> void:
@@ -38,6 +38,7 @@ func _handle_movement() -> void:
 	if input_vector != Vector2.ZERO:
 		roll_vector = input_vector
 	velocity = input_vector * speed
+	
 	velocity = velocity.limit_length(speed)
 
 func _handle_input() -> void:
@@ -51,7 +52,7 @@ func _handle_input() -> void:
 func dodgeroll() -> void:
 	current_state = PLAYER_STATES.DODGEROLL
 	#hitbox.enabled = false
-	velocity = roll_vector * ROLLSPEED
+	velocity = roll_vector.normalized() * ROLLSPEED
 	sprite.play("Roll_Down")
 
 func _handle_movement_anims() -> void:
