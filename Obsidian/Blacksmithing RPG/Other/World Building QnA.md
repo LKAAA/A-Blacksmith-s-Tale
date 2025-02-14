@@ -7,8 +7,6 @@ The game is based around a small town and a large city and the wilderness in bet
 
 The [[Currency|currency]] is gold, silver, and bronze coins. One gold coin is worth 10 silver coins, 1 silver coin is worth 10 copper coins. 
 
-The [[The Empire|empire]] provides the money.
-
 You earn money through labor, crafting, or seeking treasures in the wild.
 
 #### **What can money get you in this world?**

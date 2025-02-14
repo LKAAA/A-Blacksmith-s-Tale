@@ -13,8 +13,6 @@ A copper coin can purchase you a candle, a sack, or a whetstone as an example. A
 -----------------------------------------------------
 *Other notes*
 
-The [[The Empire|empire]] provides the money to the people.
-
 You can earn money through labor, or commonly through seeking treasures in dungeons.
 
 Money can secure you food, shelter, and comforts, or buy you passage to distant lands and exotic wares.

@@ -2,5 +2,6 @@
   "enabledCssSnippets": [
     "dashboard",
     "dashboard-ReadLineLength"
-  ]
+  ],
+  "cssTheme": "ITS Theme"
 }
