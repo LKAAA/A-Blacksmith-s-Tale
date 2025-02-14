@@ -17,34 +17,50 @@ Akora (pronounced: Ah-core-ah) is a major continent on the planet [[Saelis]].
 #### Geography
 
 ###### Northwest
+[[The Northern Reaches]]
+[[Westios]] colony
 
 ###### North
+[[The Northern Reaches]]
+[[Sylhserin]]
 
 ###### Northeast
+[[The Eastern Forest]]
+[[Yenthas]]
 
 ###### West
+[[Westios]]
 
 ###### Interior 
+[[The Central Kingdom]]
 
 ###### East
+[[The Eastern Forest]]
 
 ###### Southwest
+The [[Akesian Isles]]
 
 ###### South
+[[The Barren Lands]]
+[[Overview of the Forgotten Lands|The Forgotten Lands]]
+[[The Goblin Caves]]
 
 ###### Southeast
+[[Nil Daral]]
 
 ###### Underground
+[[The Goblin Caves]]
+[[Nil Daral]]
 
 #### History
 
-The known history of Akora spans several thousand years.
+The known history of Akora spans for several thousand years.
 
 ###### The First Age
 >[!caption|left]
 >Main Article: [[The First Age]]
 
-<br>The First Age was a period spanning from 8000 [[Records of Time|BH]] to 4000 [[Records of Time|BH]]. It was the beginning of recorded time on [[Akora]], when it was just the [[Dwarves]] living deep in the continent and the [[Elves]] freely roaming in the forests of the surface. Much of the south of Akora was occupied by [[Elemental Dragons|Dragons]] that roamed the surface, though this was the time period before many became the [[Dracari]].
+<br>The First Age was a period spanning from 8000 [[Records of Time|BH]] to 4000 [[Records of Time|BH]]. It was the beginning of recorded time on [[Akora]], when it was just the [[Dwarves]] living deep in the continent and the [[Elves]] freely roaming in the forests of the surface. Much of the south of Akora was occupied by [[Elemental Dragons|Dragons]] that roamed the surface, though this was the time period before many Dragons became the [[Dracari]].
 
 ###### The Emergence Age
 >[!caption|left]
@@ -65,5 +81,5 @@ This age is marked as an era of peace. The great Elvish city of [[Sylhserin]] in
 >Main Article: [[The Present Age]]
 
 <br>The Present Age is sometimes known as the human age. It begun in the year 1 [[Records of Time|AH]], during what was known as the [[Advent of Humanity]] to the [[Elves]]. It was the arrival of the first [[Humans]] on the continent of [[Akora]]. It is considered one of the worst time periods in the history of Akora. 
-It included many calamitous events such as the [[Destruction of Sylhserin]] in 294 [[Records of Time|AH]] and the [[Goblin Wars]] of 804 [[Records of Time|AH]].
+It included many calamitous events such as the [[Destruction of Sylhserin]] in 294 [[Records of Time|AH]] and the [[Goblin Wars]] of 804 [[Records of Time|AH]]. The [[emergence of demons]] in 1094 [[Records of Time|AH]] was yet another calamity of this time period. 
 

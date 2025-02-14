@@ -12,3 +12,6 @@ Miggs
 Pewt
 Ginba
 Quin
+Skur
+Skyr
+

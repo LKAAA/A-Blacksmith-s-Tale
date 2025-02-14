@@ -23,7 +23,7 @@ banner_y: 0.5
 >| Deities | The deities of all the pantheons and races |
 >| Magic | The magic of Akora, from runic, to casting, and even the new magi-tech |
 >| Items | Gems and jewelry, poisons and potions, weapons and armor, everything from small trinkets to mythical artifacts |
->| [[Maps]] | Maps of the different areas of Akora |
+>| [[Maps of Akora]] | Maps of the different areas of Akora |
 >  
 ># Content of the Game
 >| |
@@ -59,7 +59,7 @@ banner_y: 0.5
 
 - Setting
     - [[Overview of the World]]
-    - [[Maps]]
+    - [[Maps of Akora]]
     - [[Akora]]
 - Magic System
     - [[Mana]]
