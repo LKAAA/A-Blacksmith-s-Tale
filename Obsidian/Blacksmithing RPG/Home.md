@@ -11,7 +11,8 @@ banner_y: 0.5
 >Welcome traveler! This is the wiki for the world of Akora, the setting for my upcoming game **A Blacksmith's Tale**.
 >
 >
->| Content of the World |
+># Content of the World
+>| |
 >| ---- | ---- |
 >| People | The characters of Akora |
 >| Races | All of the races of the Akora |
@@ -24,7 +25,8 @@ banner_y: 0.5
 >| Items | Gems and jewelry, poisons and potions, weapons and armor, everything from small trinkets to mythical artifacts |
 >| [[Maps]] | Maps of the different areas of Akora |
 >  
->| Content of the Game |
+># Content of the Game
+>| |
 >| ---- | ---- |
 >| Characters | The main characters in the game |
 >| Locations | The main locations of the game |

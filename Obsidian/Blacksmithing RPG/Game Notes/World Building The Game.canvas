@@ -9,12 +9,12 @@
 		{"id":"eff533675c1ffa00","type":"text","text":"Economy","x":560,"y":-280,"width":250,"height":60,"color":"6"},
 		{"id":"1163acffa37e37f5","type":"text","text":"Magic (Used by People)","x":705,"y":-180,"width":250,"height":60,"color":"6"},
 		{"id":"a57fdc39f4589d1c","type":"file","file":"World Notes/Overview of the World.md","x":-935,"y":-400,"width":400,"height":400},
-		{"id":"d2c9ca9bb9ce2740","type":"file","file":"World Notes/World/Resources/The Natural Resources.md","x":-465,"y":-200,"width":400,"height":400},
+		{"id":"d2c9ca9bb9ce2740","type":"file","file":"World Notes/World/Items/Resources/The Natural Resources.md","x":-465,"y":-200,"width":400,"height":400},
 		{"id":"bd72939fd36ce035","type":"text","text":"#### Narrative Integration\n#### --- The Influence on the Plot ---","x":2480,"y":-780,"width":280,"height":200,"color":"5"},
 		{"id":"aa1539b78b066b62","type":"text","text":"#### Culture and Society\n#### --- The \"Human\" Element ---","x":1370,"y":-780,"width":280,"height":200,"color":"6"},
 		{"id":"7305d0a0eace2bdd","type":"text","text":"Politics","x":2000,"y":-400,"width":250,"height":60,"color":"6"},
 		{"id":"66e5112e527e7992","type":"text","text":"Religion","x":1650,"y":-400,"width":250,"height":60,"color":"6"},
-		{"id":"67f76ec74d2f1e38","x":2180,"y":-180,"width":400,"height":400,"type":"file","file":"World Notes/World/Major Regions/The Central Kingdom/Government of the Kingdom.md"},
+		{"id":"67f76ec74d2f1e38","x":2180,"y":-180,"width":400,"height":400,"type":"file","file":"World Notes/World/Geography/Kingdoms/The Central Kingdom/Government of the Kingdom.md"},
 		{"id":"531af43b39c0ba0a","x":1510,"y":-240,"width":250,"height":60,"type":"text","text":"There is a church that holds power"}
 	],
 	"edges":[

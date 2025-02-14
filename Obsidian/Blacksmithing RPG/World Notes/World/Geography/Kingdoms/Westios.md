@@ -60,5 +60,5 @@ The Westios people follow the [[Overview the Westios Pantheon|Westios Pantheon]]
 
 The empress' full title is "The God Empress of the Setting Sun". She proclaims herself as [[Ivphyn]], the goddess of law and order, the queen of the heavens descended down to Akora to lead her people against the god chaos and demons, [[Dotthar]]. No living being is allowed to see her face (in public), and all nobles must wear blindfolds in his presence, lest they burn to death from her power.
 
-The God Empress of the Setting Sun, divine Ivphyn, declared that all [[Beast-Races]] are born from Dotthar's corruption, a remnant of his sin still in this world. They are unworthy of freedom, fit only for servitude, degradation, and suffering. Beaten, bound in chains, and stripped of dignity, they should be offered only as tools to sate the whims and desires of the pure humans. "A blight upon this world, and one that must be treated as such."
+The God Empress of the Setting Sun, divine Ivphyn, declared that all [[Beast Races]] are born from Dotthar's corruption, a remnant of his sin still in this world. They are unworthy of freedom, fit only for servitude, degradation, and suffering. Beaten, bound in chains, and stripped of dignity, they should be offered only as tools to sate the whims and desires of the pure humans. "A blight upon this world, and one that must be treated as such."
 

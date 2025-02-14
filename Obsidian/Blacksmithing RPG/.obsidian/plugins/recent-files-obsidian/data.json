@@ -1,12 +1,160 @@
 {
   "recentFiles": [
     {
+      "basename": "Westios",
+      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
+    },
+    {
+      "basename": "The Central Kingdom",
+      "path": "World Notes/World/Geography/Kingdoms/The Central Kingdom.md"
+    },
+    {
+      "basename": "Akora",
+      "path": "World Notes/World/Geography/Continents/Akora.md"
+    },
+    {
+      "basename": "Yenthas",
+      "path": "World Notes/World/Geography/Cities/Yenthas.md"
+    },
+    {
+      "basename": "Urodh",
+      "path": "World Notes/World/Geography/Cities/Urodh.md"
+    },
+    {
+      "basename": "Nil Daral",
+      "path": "World Notes/World/Geography/Cities/Nil Daral.md"
+    },
+    {
+      "basename": "Koran",
+      "path": "World Notes/World/Geography/Cities/Koran.md"
+    },
+    {
+      "basename": "Illenal",
+      "path": "World Notes/World/Geography/Cities/Illenal.md"
+    },
+    {
+      "basename": "Aldorin",
+      "path": "World Notes/World/Geography/Cities/Aldorin.md"
+    },
+    {
+      "basename": "Humanoid Races",
+      "path": "World Notes/World/Races/Humanoid Races/Humanoid Races.md"
+    },
+    {
+      "basename": "Elemental Dragons",
+      "path": "World Notes/World/Creatures/Elemental Dragons.md"
+    },
+    {
+      "basename": "Artherus Sneeveling",
+      "path": "World Notes/World/People/Artherus Sneeveling.md"
+    },
+    {
+      "basename": "Dakad the Goblin Herald",
+      "path": "World Notes/World/People/Dakad the Goblin Herald.md"
+    },
+    {
+      "basename": "Genro Linnaeus",
+      "path": "World Notes/World/People/Genro Linnaeus.md"
+    },
+    {
+      "basename": "Ilindrial Magus",
+      "path": "World Notes/World/People/Ilindrial Magus.md"
+    },
+    {
+      "basename": "Nard the Mapmaker",
+      "path": "World Notes/World/People/Nard the Mapmaker.md"
+    },
+    {
+      "basename": "Pagus Thinsly",
+      "path": "World Notes/World/People/Pagus Thinsly.md"
+    },
+    {
+      "basename": "Thorin Ragnorok",
+      "path": "World Notes/World/People/Thorin Ragnorok.md"
+    },
+    {
+      "basename": "TO-DO",
+      "path": "TO-DO.md"
+    },
+    {
+      "basename": "Dragon Steel",
+      "path": "World Notes/World/Items/Resources/Dragon Steel.md"
+    },
+    {
+      "basename": "The Natural Resources",
+      "path": "World Notes/World/Items/Resources/The Natural Resources.md"
+    },
+    {
       "basename": "Home",
       "path": "Home.md"
     },
     {
-      "basename": "Westios",
-      "path": "World Notes/World/Major Regions/The Westios Empire/Westios.md"
+      "basename": "Saelis",
+      "path": "World Notes/World/Planetary Objects/Planets/Saelis.md"
+    },
+    {
+      "basename": "The Emergence Age",
+      "path": "World Notes/World/History/Ages/The Emergence Age.md"
+    },
+    {
+      "basename": "The First Age",
+      "path": "World Notes/World/History/Ages/The First Age.md"
+    },
+    {
+      "basename": "Monstrous Races",
+      "path": "World Notes/World/Races/Monstrous Races/Monstrous Races.md"
+    },
+    {
+      "basename": "The Present Age",
+      "path": "World Notes/World/History/Ages/The Present Age.md"
+    },
+    {
+      "basename": "The Last Great Age",
+      "path": "World Notes/World/History/Ages/The Last Great Age.md"
+    },
+    {
+      "basename": "Advent of Humanity",
+      "path": "World Notes/World/History/Major Events/Advent of Humanity.md"
+    },
+    {
+      "basename": "Overview of the World",
+      "path": "World Notes/Overview of the World.md"
+    },
+    {
+      "basename": "Dracari",
+      "path": "World Notes/World/Races/Beast Races/Dracari.md"
+    },
+    {
+      "basename": "Name Ideas",
+      "path": "Other/Name Ideas.md"
+    },
+    {
+      "basename": "Overview the Westios Pantheon",
+      "path": "World Notes/World/Culture/Religions/Westios Pantheon/Overview the Westios Pantheon.md"
+    },
+    {
+      "basename": "The Great Goblin Army",
+      "path": "World Notes/World/Regions/The Forgotten Lands/The Great Goblin Army.md"
+    },
+    {
+      "basename": "Overview of the Forgotten Lands",
+      "path": "World Notes/World/Regions/The Forgotten Lands/Overview of the Forgotten Lands.md"
+    },
+    {
+      "basename": "The Barren Lands",
+      "path": "World Notes/World/Regions/The Forgotten Lands/The Barren Lands.md"
+    },
+    {
+      "basename": "Beast Races",
+      "path": "World Notes/World/Races/Beast Races/Beast Races.md"
+    },
+    {
+      "basename": "Records of Time",
+      "path": "World Notes/World/History/Records of Time.md"
+    },
+    {
+      "basename": "Dwarves",
+      "path": "World Notes/World/Races/Humanoid Races/Dwarves.md"
     },
     {
       "basename": "World Building QnA",
@@ -14,71 +162,31 @@
     },
     {
       "basename": "Currency",
-      "path": "World Notes/World/Features/Currency.md"
-    },
-    {
-      "basename": "Akora",
-      "path": "World Notes/World/Continents/Akora.md"
+      "path": "World Notes/World/Culture/Currency.md"
     },
     {
       "basename": "Kuvaris",
-      "path": "World Notes/World/Planetary Objects/Kuvaris.md"
-    },
-    {
-      "basename": "Saelis",
-      "path": "World Notes/World/Planetary Objects/Saelis.md"
-    },
-    {
-      "basename": "Name Ideas",
-      "path": "Other/Name Ideas.md"
-    },
-    {
-      "basename": "Yenthas",
-      "path": "World Notes/World/Major Regions/The Forests of Nard/Yenthas.md"
+      "path": "World Notes/World/Planetary Objects/Moons/Kuvaris.md"
     },
     {
       "basename": "The Eastern Forest",
-      "path": "World Notes/World/Major Regions/The Forests of Nard/The Eastern Forest.md"
-    },
-    {
-      "basename": "Nard the Mapmaker",
-      "path": "World Notes/World/Major Regions/The Forests of Nard/Nard the Mapmaker.md"
-    },
-    {
-      "basename": "The Central Kingdom",
-      "path": "World Notes/World/Major Regions/The Central Kingdom/The Central Kingdom.md"
-    },
-    {
-      "basename": "Government of the Kingdom",
-      "path": "World Notes/World/Major Regions/The Central Kingdom/Government of the Kingdom.md"
+      "path": "World Notes/World/Regions/The Eastern Forest.md"
     },
     {
       "basename": "Othir Lightbreaker the 3rd",
-      "path": "World Notes/World/Major Regions/Nil Daral, Dwarven City/Othir Lightbreaker the 3rd.md"
-    },
-    {
-      "basename": "Nil Daral",
-      "path": "World Notes/World/Major Regions/Nil Daral, Dwarven City/Nil Daral.md"
+      "path": "World Notes/World/People/Rulers/Othir Lightbreaker the 3rd.md"
     },
     {
       "basename": "The Northern Reaches",
-      "path": "World Notes/World/Major Regions/The Northern Reaches/The Northern Reaches.md"
+      "path": "World Notes/World/Regions/The Northern Reaches.md"
     },
     {
       "basename": "God Empress of the Setting Sun",
-      "path": "World Notes/World/Major Regions/The Westios Empire/God Empress of the Setting Sun.md"
+      "path": "World Notes/World/People/Rulers/God Empress of the Setting Sun.md"
     },
     {
       "basename": "Maps",
       "path": "World Notes/Maps.md"
-    },
-    {
-      "basename": "Overview of the World",
-      "path": "World Notes/Overview of the World.md"
-    },
-    {
-      "basename": "Overview the Westios Pantheon",
-      "path": "World Notes/World/Religions/Westios Pantheon/Overview the Westios Pantheon.md"
     },
     {
       "basename": "Akora 2025-02-10-00-31 (1)",
@@ -91,110 +199,6 @@
     {
       "basename": "Magi-tech",
       "path": "World Notes/World/Magic/Magi-tech.md"
-    },
-    {
-      "basename": "Rune Magic",
-      "path": "World Notes/World/Magic/Rune Magic.md"
-    },
-    {
-      "basename": "Beast-Races",
-      "path": "World Notes/World/Major Regions/The Westios Empire/Beast-Races.md"
-    },
-    {
-      "basename": "Adventurer's Guild",
-      "path": "World Notes/World/Guilds/Adventurer's Guild.md"
-    },
-    {
-      "basename": "Dracari",
-      "path": "World Notes/World/Races/Dracari.md"
-    },
-    {
-      "basename": "Game Notes",
-      "path": "Game Notes/Game Notes.canvas"
-    },
-    {
-      "basename": "Blacksmithing Mechanics",
-      "path": "Game Notes/Systems/Blacksmithing Mechanics.md"
-    },
-    {
-      "basename": "Leveling-Skills System",
-      "path": "Game Notes/Systems/Leveling-Skills System.md"
-    },
-    {
-      "basename": "Systems",
-      "path": "Game Notes/Systems/Systems.md"
-    },
-    {
-      "basename": "Game-Moodboard",
-      "path": "Game Notes/Game-Moodboard.canvas"
-    },
-    {
-      "basename": "Akora 2025-02-10-00-32 (3)",
-      "path": "World Notes/World/Maps/Akora 2025-02-10-00-32 (3).png"
-    },
-    {
-      "basename": "Overview of the Forgotten Lands",
-      "path": "World Notes/World/Major Regions/The Forgotten Lands/Overview of the Forgotten Lands.md"
-    },
-    {
-      "basename": "Akora 2025-02-10-00-32",
-      "path": "World Notes/World/Maps/Akora 2025-02-10-00-32.png"
-    },
-    {
-      "basename": "The True God",
-      "path": "World Notes/World/Religions/The Central Kingdom Religion/The True God.md"
-    },
-    {
-      "basename": "Elves",
-      "path": "World Notes/World/Races/Elves.md"
-    },
-    {
-      "basename": "Ivphyn",
-      "path": "World Notes/World/Religions/Westios Pantheon/Ivphyn.md"
-    },
-    {
-      "basename": "Dotthar",
-      "path": "World Notes/World/Religions/Westios Pantheon/Dotthar.md"
-    },
-    {
-      "basename": "UI-Moodboard",
-      "path": "Game Notes/UI-Moodboard.canvas"
-    },
-    {
-      "basename": "World Building The Game",
-      "path": "Game Notes/World Building The Game.canvas"
-    },
-    {
-      "basename": "TO-DO",
-      "path": "TO-DO.md"
-    },
-    {
-      "basename": "Fighter",
-      "path": "World Notes/World/Classes/Fighter.md"
-    },
-    {
-      "basename": "The Goblin Caves",
-      "path": "World Notes/World/Major Regions/The Forgotten Lands/The Goblin Caves.md"
-    },
-    {
-      "basename": "Thorin Ragnorok",
-      "path": "World Notes/World/Characters/Thorin Ragnorok.md"
-    },
-    {
-      "basename": "Aldorin",
-      "path": "World Notes/World/Locations/Aldorin.md"
-    },
-    {
-      "basename": "Koran",
-      "path": "World Notes/World/Locations/Koran.md"
-    },
-    {
-      "basename": "Illenal",
-      "path": "World Notes/World/Locations/Illenal.md"
-    },
-    {
-      "basename": "Urodh",
-      "path": "World Notes/World/Locations/Urodh.md"
     }
   ],
   "omittedPaths": [],

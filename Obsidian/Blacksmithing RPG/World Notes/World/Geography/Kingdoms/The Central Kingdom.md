@@ -1,3 +1,9 @@
+The Central Kingdom
+Alternate Names: 
+The Holy Land
+Size: 4.7 million mi2
+Population: ~24 million
+
 The Kingdom is ruled by a Monarchy.
 The governance of provinces is delegated to noble families.
 

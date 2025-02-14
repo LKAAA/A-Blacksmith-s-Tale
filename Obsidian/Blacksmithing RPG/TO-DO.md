@@ -1,3 +1,4 @@
 
-Figure out human kingdom name
-Figure out human empire name
+Finalize the regions of Akora
+
+Current is the Eastern Forests
