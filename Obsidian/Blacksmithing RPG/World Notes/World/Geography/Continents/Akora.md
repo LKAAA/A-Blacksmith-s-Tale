@@ -17,8 +17,7 @@ Akora (pronounced: Ah-core-ah) is a major continent on the planet [[Saelis]].
 #### Geography
 
 ###### Northwest
-[[The Northern Reaches]]
-[[Westios]] colony
+Once a lush forest of green that housed the ancient [[Elves|elven]] city of [[Sylhserin]], 
 
 ###### North
 [[The Northern Reaches]]
@@ -60,13 +59,20 @@ The known history of Akora spans for several thousand years.
 >[!caption|left]
 >Main Article: [[The First Age]]
 
-<br>The First Age was a period spanning from 8000 [[Records of Time|BH]] to 4000 [[Records of Time|BH]]. It was the beginning of recorded time on [[Akora]], when it was just the [[Dwarves]] living deep in the continent and the [[Elves]] freely roaming in the forests of the surface. Much of the south of Akora was occupied by [[Elemental Dragons|Dragons]] that roamed the surface, though this was the time period before many Dragons became the [[Dracari]].
+<br>The first age spanned from 12000 [[Records of Time|BH]] to 8000 [[Records of Time|BH]]. 
+
+###### The Fallen Age
+>[!caption|left]
+>Main Article: [[The Fallen Age]]
+
+<br>The Fallen Age was a period that spanned from 8000 [[Records of Time|BH]] to 5000 [[Records of Time|BH]].
+
 
 ###### The Emergence Age
 >[!caption|left]
 >Main Article: [[The Emergence Age]]
 
-<br>The Emergence age was a period from 4000 [[Records of Time|BH]] to around 2000 [[Records of Time|BH]]. It was a time where a great number of new races emerged on [[Akora]]. The [[Beast Races]] made their first emergence in this era, as well as many of the remaining [[Elemental Dragons|Dragons]] of the previous age becoming the [[Dracari]].
+<br>The First Age was a period spanning from 8000 [[Records of Time|BH]] to 4000 [[Records of Time|BH]]. It was the beginning of recorded time on [[Akora]], when it was just the [[Dwarves]] living deep in the continent and the [[Elves]] freely roaming in the forests of the surface. Much of the south of Akora was occupied by [[Elemental Dragons|Dragons]] that roamed the surface, though this was the time period before many Dragons became the [[Dracari]].<br>The Emergence age was a period from 4000 [[Records of Time|BH]] to around 2000 [[Records of Time|BH]]. It was a time where a great number of new races emerged on [[Akora]]. The [[Beast Races]] made their first emergence in this era, as well as many of the remaining [[Elemental Dragons|Dragons]] of the previous age becoming the [[Dracari]].
 Deep in the south of Akora emerged the [[Monstrous Races]], including the [[Goblins]], [[Trolls]], and [[Orcs]]. While the Goblins preferred to stay in their deep labyrinths of caverns with the Trolls following suit, the [[Orcs]] preferred to spread out across the continent, making it as far as central Akora.
 
 ###### The Last Great Age

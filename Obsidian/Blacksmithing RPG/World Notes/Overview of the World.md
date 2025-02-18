@@ -12,7 +12,7 @@ Akora is split into 6 major regions:
 | Region               | Alt. Names                    | Pop.             | Size                   | Religion                                                      |
 | -------------------- | ----------------------------- | ---------------- | ---------------------- | ------------------------------------------------------------- |
 | The Central Kingdom  | The Holy Land                 | 24 mil           | 1.8 mil mi<sup>2</sup> | [[The True God]]                                              |
-| The Westios Empire   | Empire of the Setting Sun     | 11 mil           | 1.2 mil mi<sup>2</sup> | [[Overview the Westios Pantheon\|The Westios Pantheon]] |
+| The Westios Empire   | Empire of the Setting Sun     | 11 mil           | 1.2 mil mi<sup>2</sup> | [[The Westios Pantheon\|The Westios Pantheon]] |
 | Nil Daral            | The Great City of the Dwarves | 5.8 mil          | 50,000 mi<sup>2</sup>  | God of Rocks? idk                                             |
 | The Eastern Forest   | The Forest of Nard            | 150,000 (10,000) | 562,000 mi<sup>2</sup> | ---                                                           |
 | The Forgotten Lands  | The Cursed Lands              | Less than 50,000 | 1.4 mil mi<sup>2</sup> | ---                                                           |

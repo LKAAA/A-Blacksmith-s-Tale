@@ -1,8 +1,96 @@
 {
   "recentFiles": [
     {
+      "basename": "Akora",
+      "path": "World Notes/World/Geography/Continents/Akora.md"
+    },
+    {
+      "basename": "Aurevia",
+      "path": "World Notes/World/Geography/Cities/Aurevia.md"
+    },
+    {
+      "basename": "The First Age",
+      "path": "World Notes/World/History/Ages/The First Age.md"
+    },
+    {
+      "basename": "Westios",
+      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
+    },
+    {
+      "basename": "The Westios Pantheon",
+      "path": "World Notes/World/Culture/Religions/Westios Pantheon/The Westios Pantheon.md"
+    },
+    {
+      "basename": "Currency",
+      "path": "World Notes/World/Culture/Currency.md"
+    },
+    {
+      "basename": "Adventurers",
+      "path": "World Notes/World/Culture/Jobs/Adventurers.md"
+    },
+    {
       "basename": "Home",
       "path": "Home.md"
+    },
+    {
+      "basename": "Aldorin",
+      "path": "World Notes/World/Geography/Cities/Aldorin.md"
+    },
+    {
+      "basename": "Yenthas",
+      "path": "World Notes/World/Geography/Cities/Yenthas.md"
+    },
+    {
+      "basename": "Urodh",
+      "path": "World Notes/World/Geography/Cities/Urodh.md"
+    },
+    {
+      "basename": "Nil Daral",
+      "path": "World Notes/World/Geography/Cities/Nil Daral.md"
+    },
+    {
+      "basename": "Koran",
+      "path": "World Notes/World/Geography/Cities/Koran.md"
+    },
+    {
+      "basename": "Name Ideas",
+      "path": "Other/Name Ideas.md"
+    },
+    {
+      "basename": "Borin Ragnorok",
+      "path": "World Notes/World/People/Borin Ragnorok.md"
+    },
+    {
+      "basename": "S-Rank",
+      "path": "World Notes/World/Culture/Ranks/S-Rank.md"
+    },
+    {
+      "basename": "Nard the Mapmaker",
+      "path": "World Notes/World/People/Nard the Mapmaker.md"
+    },
+    {
+      "basename": "Pagus Thinsly",
+      "path": "World Notes/World/People/Pagus Thinsly.md"
+    },
+    {
+      "basename": "Ilindrial Magus",
+      "path": "World Notes/World/People/Ilindrial Magus.md"
+    },
+    {
+      "basename": "Genro Linnaeus",
+      "path": "World Notes/World/People/Genro Linnaeus.md"
+    },
+    {
+      "basename": "Artherus Sneeveling",
+      "path": "World Notes/World/People/Artherus Sneeveling.md"
+    },
+    {
+      "basename": "Dragon Steel",
+      "path": "World Notes/World/Items/Resources/Dragon Steel.md"
+    },
+    {
+      "basename": "Tales of the Ancient Heroes",
+      "path": "World Notes/World/Items/Literature/Tales of the Ancient Heroes.md"
     },
     {
       "basename": "Lapison",
@@ -21,14 +109,6 @@
       "path": "World Notes/World/Races/Monstrous Races/Demons.md"
     },
     {
-      "basename": "Akora",
-      "path": "World Notes/World/Geography/Continents/Akora.md"
-    },
-    {
-      "basename": "Westios",
-      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
-    },
-    {
       "basename": "Trolls",
       "path": "World Notes/World/Races/Monstrous Races/Trolls.md"
     },
@@ -39,10 +119,6 @@
     {
       "basename": "Overview of the World",
       "path": "World Notes/Overview of the World.md"
-    },
-    {
-      "basename": "Name Ideas",
-      "path": "Other/Name Ideas.md"
     },
     {
       "basename": "Akora 2025-02-10-00-32",
@@ -89,32 +165,8 @@
       "path": "World Notes/World/Items/Resources/The Natural Resources.md"
     },
     {
-      "basename": "Yenthas",
-      "path": "World Notes/World/Geography/Cities/Yenthas.md"
-    },
-    {
-      "basename": "Urodh",
-      "path": "World Notes/World/Geography/Cities/Urodh.md"
-    },
-    {
-      "basename": "Nil Daral",
-      "path": "World Notes/World/Geography/Cities/Nil Daral.md"
-    },
-    {
-      "basename": "Koran",
-      "path": "World Notes/World/Geography/Cities/Koran.md"
-    },
-    {
       "basename": "Illenal",
       "path": "World Notes/World/Geography/Cities/Illenal.md"
-    },
-    {
-      "basename": "Aldorin",
-      "path": "World Notes/World/Geography/Cities/Aldorin.md"
-    },
-    {
-      "basename": "Currency",
-      "path": "World Notes/World/Culture/Currency.md"
     },
     {
       "basename": "Humanoid Races",
@@ -125,48 +177,16 @@
       "path": "World Notes/World/Creatures/Elemental Dragons.md"
     },
     {
-      "basename": "Artherus Sneeveling",
-      "path": "World Notes/World/People/Artherus Sneeveling.md"
-    },
-    {
       "basename": "Dakad the Goblin Herald",
       "path": "World Notes/World/People/Dakad the Goblin Herald.md"
-    },
-    {
-      "basename": "Genro Linnaeus",
-      "path": "World Notes/World/People/Genro Linnaeus.md"
-    },
-    {
-      "basename": "Ilindrial Magus",
-      "path": "World Notes/World/People/Ilindrial Magus.md"
-    },
-    {
-      "basename": "Nard the Mapmaker",
-      "path": "World Notes/World/People/Nard the Mapmaker.md"
-    },
-    {
-      "basename": "Pagus Thinsly",
-      "path": "World Notes/World/People/Pagus Thinsly.md"
-    },
-    {
-      "basename": "Thorin Ragnorok",
-      "path": "World Notes/World/People/Thorin Ragnorok.md"
     },
     {
       "basename": "TO-DO",
       "path": "TO-DO.md"
     },
     {
-      "basename": "Dragon Steel",
-      "path": "World Notes/World/Items/Resources/Dragon Steel.md"
-    },
-    {
       "basename": "The Emergence Age",
       "path": "World Notes/World/History/Ages/The Emergence Age.md"
-    },
-    {
-      "basename": "The First Age",
-      "path": "World Notes/World/History/Ages/The First Age.md"
     },
     {
       "basename": "The Present Age",
@@ -179,26 +199,6 @@
     {
       "basename": "Advent of Humanity",
       "path": "World Notes/World/History/Major Events/Advent of Humanity.md"
-    },
-    {
-      "basename": "Dracari",
-      "path": "World Notes/World/Races/Beast Races/Dracari.md"
-    },
-    {
-      "basename": "Overview the Westios Pantheon",
-      "path": "World Notes/World/Culture/Religions/Westios Pantheon/Overview the Westios Pantheon.md"
-    },
-    {
-      "basename": "The Great Goblin Army",
-      "path": "World Notes/World/Regions/The Forgotten Lands/The Great Goblin Army.md"
-    },
-    {
-      "basename": "Overview of the Forgotten Lands",
-      "path": "World Notes/World/Regions/The Forgotten Lands/Overview of the Forgotten Lands.md"
-    },
-    {
-      "basename": "The Barren Lands",
-      "path": "World Notes/World/Regions/The Forgotten Lands/The Barren Lands.md"
     }
   ],
   "omittedPaths": [],

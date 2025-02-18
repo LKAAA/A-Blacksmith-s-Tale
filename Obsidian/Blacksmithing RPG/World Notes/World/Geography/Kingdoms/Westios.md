@@ -6,28 +6,28 @@
 >| Geography |
 >| ---- | ----| 
 >| Type | Empire | 
->| Region | North-West Akora |
+>| Region | [[Akora]] |
 >| Aliases | Empire of the Setting Sun <br>The Holy Sun's Empire |
->| Capital | --- |
+>| Capital | [[Aurevia]] |
 >| Size | 1.2 million mi<sup>2</sup> | 
 >
 >| Society |
 >| ---- | ----| 
 >| Demonym | Westian | 
->| Races | Human (Westian) <br>minority of Nekojin<br>Kitsunari <br>(discriminated against) |
->| Languages | Common | 
->| Religions | Westios Pantheon |
+>| Races | [[Human]] (Westian) <br>minority of [[Nekojin]]<br>[[Kitsunari]] <br>(discriminated against) |
+>| Languages | [[Common]] | 
+>| Religions | [[The Westios Pantheon]] |
 >
 >| Politics |
 >| ---- | ----| 
 >| Type | Oligarchy | 
->| Ruler | The God Empress of the Rising Sun |
->|Allegiances | The Central Kingdoms (Strained) |
+>| Ruler | [[God Empress of the Setting Sun]] |
+>|Allegiances | [[The Central Kingdom]] (Strained) |
 >
 >| History |
 >| ---- | ----| 
->- 2931 - Ivphyn descends from the heavens into North-Western Akora
->- 2932 - The Westios Empire is established
+>- 384 AH - [[Ivphyn]] descends from the heavens into North-Western Akora
+>- 385 AH - The Westios Empire is established, as well as [[Aurevia]] the capital
 
 Westios (pronounced: west-e-os) is an oligarchical empire of [[Akora]] located in the west. It is ruled by an empress, with several smaller provinces ruled by lords who answer directly to the empress.
 
@@ -36,7 +36,7 @@ Westios (pronounced: west-e-os) is an oligarchical empire of [[Akora]] located i
 >
 >“All things fade into twilight, all paths lead to dusk, but my light is eternal.” 
 
-Westios was first founded in 2932, after Ivphyn supposedly descended from her palace in the heavens to save the humans from the [[The Sin of Dotthar|sin of Dotthar]]. Calling herself [[God Empress of the Setting Sun|The God Empress of the Setting Sun]], proclaimed that she would bring peace to the lost people of Akora, and restore order to the chaos Dotthar caused. 
+Westios was first founded in 385 [[Records of Time|AH]], after Ivphyn supposedly descended from her palace in the heavens to save the humans from the [[The Sin of Dotthar|sin of Dotthar]]. Calling herself [[God Empress of the Setting Sun|The God Empress of the Setting Sun]], proclaimed that she would bring peace to the lost people of Akora, and restore order to the chaos Dotthar caused. 
 
 ##### Society
 
@@ -51,7 +51,7 @@ Westios was first founded in 2932, after Ivphyn supposedly descended from her pa
 ###### Racial Tensions
 
 ###### Religion
-The Westios people follow the [[Overview the Westios Pantheon|Westios Pantheon]], a collection group of gods with Ivphyn being the queen of them and Dotthar being a brother of Ivphyn and the main "antagonist" of the gods. Although most of the gods are worshiped, Ivphyn and Ydis are the most wide spread with the biggest temples. The only god restricted of worship in the Empire of the Setting Sun is Dotthar, god of chaos and sworn enemy of Ivphyn. Though he is married to Necesse, goddess of magic, worship of Necesse is allowed under the condition of condemnation of her husband.
+The Westios people follow the [[The Westios Pantheon|Westios Pantheon]], a collection group of gods with Ivphyn being the queen of them and Dotthar being a brother of Ivphyn and the main "antagonist" of the gods. Although most of the gods are worshiped, Ivphyn and Ydis are the most wide spread with the biggest temples. The only god restricted of worship in the Empire of the Setting Sun is Dotthar, god of chaos and sworn enemy of Ivphyn. Though he is married to Necesse, goddess of magic, worship of Necesse is allowed under the condition of condemnation of her husband.
 
 ##### History
 

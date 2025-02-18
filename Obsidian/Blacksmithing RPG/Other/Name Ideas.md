@@ -15,3 +15,12 @@ Quin
 Skur
 Skyr
 
+
+
+Vesperis (vesper meaning evening)
+
+Vesperia
+
+Elystria
+
+Ivphara (references Ivphyn? She did create the empire)
