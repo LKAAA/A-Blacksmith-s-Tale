@@ -1,8 +1,8 @@
-The Eastern Forest
 Alternate Names:
+The Eastern Forest
 The Wilds
 The Forest of Nard
-Size: 1 million mi2
+Size: ~135,000 mi²
 Known Population: >10,000
 Unknown Population: 150,000
 

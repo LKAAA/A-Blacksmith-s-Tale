@@ -1,5 +1,5 @@
 >[!infobox]
->![[Akora 2025-02-10-00-31 (1).png|cover hsmall]]
+>![[Map of Akora.png|cover hsmall]]
 ><div style="text-align: center;">The northern hemisphere of Saelis, showing the continent Akora.</div>
 >
 >###### Akora
@@ -17,31 +17,47 @@ Akora (pronounced: Ah-core-ah) is a major continent on the planet [[Saelis]].
 #### Geography
 
 ###### Northwest
-Once a lush forest of green that housed the ancient [[Elves|elven]] city of [[Sylhserin]], 
+Once a region of lush forests, it now lies in an eternal winter. This region is generally called "The Northern Reaches", and merges with the region to the east of it. It is currently mostly uninhabited besides a few small tribes. 
+Located in the center of this north-western region is the ruins of the [[Elves|elven]] city [[Sylhserin]], which was destroyed by a [[Nothern Reaches Dungeon Unsealing|dungeon being accidentally unsealed]] in 325 [[Records of Time|AH]].
+Contains: 
+- The [[Pale Tundra]]
+- Ruins of [[Sylhserin]]
+- The [[Unsealed Dungeon of the North]]
 
 ###### North
-[[The Northern Reaches]]
-[[Sylhserin]]
+A continuation of [[The Northern Reaches]], the north contains a sub region of it called the [[Pale Tundra]]. The Pale tundra is an expansive plain of snow surrounded by the [[Wintermaw Peaks]], a massive chain of mountains that act as a sort of wall between the eternal winter of the Northern Reaches and the rest of Akora. 
+Contains:
+- The [[Pale Tundra]]
+- The [[Wintermaw Peaks]]
 
 ###### Northeast
-[[The Eastern Forest]]
-[[Yenthas]]
+The north-east does not lay in eternal snow, but instead sits on the other side of the [[Wintermaw Peaks]]. The entire north-east is covered in a massive forest called the [[The Elderwoods|Elderwoods]]. This ancient forest hides the elven city called [[Yenthas]]. An ancient magic surrounds this region hiding Yenthas, and causing the region to be mostly unexplored by those who do not know of the city. 
+Contains:
+- The [[The Elderwoods|Elderwoods]]
+- [[Yenthas]]
+- [[Sealed Dungeon of the Elderwoods]]
 
 ###### West
-[[Westios]]
+This region includes the empire of [[Westios]], located from the western coast of the [[Ocean of Glass]], across the [[Golden Steppe]], all the way to the [[Duskridge Mountains]]. Further south along the western coast lies the [[Shattered Isles]], a once bustling island that was shattered into isles when a dungeon was unsealed.
+Contains:
+- The [[Ocean of Glass]]
+- The [[Golden Steppe]]
+- The [[Duskridge Mountains]]
+- The [[Shattered Isles]]
+- The Empire of [[Westios]]
 
 ###### Interior 
 [[The Central Kingdom]]
 
 ###### East
-[[The Eastern Forest]]
+[[The Elderwoods]]
 
 ###### Southwest
 The [[Akesian Isles]]
 
 ###### South
 [[The Barren Lands]]
-[[Overview of the Forgotten Lands|The Forgotten Lands]]
+[[The Forgotten Lands|The Forgotten Lands]]
 [[The Goblin Caves]]
 
 ###### Southeast
@@ -88,4 +104,20 @@ This age is marked as an era of peace. The great Elvish city of [[Sylhserin]] in
 
 <br>The Present Age is sometimes known as the human age. It begun in the year 1 [[Records of Time|AH]], during what was known as the [[Advent of Humanity]] to the [[Elves]]. It was the arrival of the first [[Humans]] on the continent of [[Akora]]. It is considered one of the worst time periods in the history of Akora. 
 It included many calamitous events such as the [[Destruction of Sylhserin]] in 294 [[Records of Time|AH]] and the [[Goblin Wars]] of 804 [[Records of Time|AH]]. The [[emergence of demons]] in 1094 [[Records of Time|AH]] was yet another calamity of this time period. 
+
+
+##### Appendix
+
+Region Sizes in mi²
+- [[The Northern Reaches]]: ~280,000 mi²
+- [[Than]]: ~160,000 mi² 
+- [[Vashkara]]: ~40,000 mi²
+- [[Westios]]: ~80,000 mi²
+- [[The Shattered Isles]]: ~15,000 mi²
+- [[The Elderwoods]]: ~135,000 mi²
+- [[The Dwarven Lands]]: ~140,000 mi²
+- [[The Forgotten Lands]]: ~320,000 mi²
+- [[The Central Kingdom]]: ~120,000 mi²
+- Unnamed Kingdom: ~200,000 mi²
+- [[The Islands of Nislia|Islands of Nislia]]:  ~19,000 mi²
 

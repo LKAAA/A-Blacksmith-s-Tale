@@ -1,5 +1,5 @@
 >[!infobox]
->![[Akora 2025-02-10-00-31 (1).png|cover hsmall]]
+>![[Map of Akora.png|cover hsmall]]
 ><div style="text-align: center;">The northern hemisphere of Saelis, showing the continent Akora.</div>
 >
 >###### Saelis

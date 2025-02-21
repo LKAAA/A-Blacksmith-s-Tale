@@ -1,5 +1,5 @@
 >[!infobox]
->![[Akora 2025-02-10-00-31 (1).png|cover hsmall]]
+>![[Map of Akora.png|cover hsmall]]
 ><div style="text-align: center;">The continent of Akora, on which Aurevia is located in the yellow region.</div>
 >
 >###### Aurevia

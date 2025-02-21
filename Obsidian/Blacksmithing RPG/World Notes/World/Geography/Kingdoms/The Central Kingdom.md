@@ -1,7 +1,7 @@
 The Central Kingdom
 Alternate Names: 
 The Holy Land
-Size: 4.7 million mi2
+Size: ~120,000 million mi2
 Population: ~24 million
 
 The Kingdom is ruled by a Monarchy.

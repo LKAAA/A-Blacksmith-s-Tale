@@ -1,5 +1,5 @@
 >[!infobox]
->![[Akora 2025-02-10-00-31 (1).png|cover hsmall]]
+>![[Map of Akora.png|cover hsmall]]
 ><div style="text-align: center;">The continent of Akora, on which Westios is located in yellow.</div>
 >
 >###### Westios
@@ -9,7 +9,7 @@
 >| Region | [[Akora]] |
 >| Aliases | Empire of the Setting Sun <br>The Holy Sun's Empire |
 >| Capital | [[Aurevia]] |
->| Size | 1.2 million mi<sup>2</sup> | 
+>| Size | ~80,000 mi<sup>2</sup> | 
 >
 >| Society |
 >| ---- | ----| 

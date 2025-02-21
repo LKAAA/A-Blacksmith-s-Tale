@@ -5,16 +5,88 @@
       "path": "World Notes/World/Geography/Continents/Akora.md"
     },
     {
+      "basename": "The Islands of Nislia",
+      "path": "World Notes/World/Regions/The Islands of Nislia.md"
+    },
+    {
+      "basename": "The Central Kingdom",
+      "path": "World Notes/World/Geography/Kingdoms/The Central Kingdom.md"
+    },
+    {
+      "basename": "The Shattered Isles",
+      "path": "World Notes/World/Regions/The Shattered Isles.md"
+    },
+    {
+      "basename": "The Dwarven Lands",
+      "path": "World Notes/World/Regions/The Dwarven Lands.md"
+    },
+    {
+      "basename": "The Elderwoods",
+      "path": "World Notes/World/Regions/The Elderwoods.md"
+    },
+    {
+      "basename": "The Northern Reaches",
+      "path": "World Notes/World/Regions/The Northern Reaches.md"
+    },
+    {
+      "basename": "Than",
+      "path": "World Notes/World/Geography/Kingdoms/Than.md"
+    },
+    {
+      "basename": "Vashkara",
+      "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
+    },
+    {
+      "basename": "Westios",
+      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
+    },
+    {
+      "basename": "The Forgotten Lands",
+      "path": "World Notes/World/Regions/The Forgotten Lands/The Forgotten Lands.md"
+    },
+    {
+      "basename": "Home",
+      "path": "Home.md"
+    },
+    {
+      "basename": "Vashkara-Than-Map1",
+      "path": "World Notes/World/Maps/Images/Vashkara-Than-Map1.png"
+    },
+    {
+      "basename": "Maps of Akora",
+      "path": "World Notes/World/Maps/Maps of Akora.md"
+    },
+    {
+      "basename": "Map of Akora",
+      "path": "World Notes/World/Maps/Images/Map of Akora.png"
+    },
+    {
+      "basename": "Tldraw 2025-02-20 10.18PM",
+      "path": "Other/Tldraw 2025-02-20 10.18PM.md"
+    },
+    {
+      "basename": "Name Ideas",
+      "path": "Other/Name Ideas.md"
+    },
+    {
+      "basename": "Yenthas",
+      "path": "World Notes/World/Geography/Cities/Yenthas.md"
+    },
+    {
+      "basename": "Artherus Sneeveling",
+      "path": "World Notes/World/People/Artherus Sneeveling.md"
+    },
+    {
+      "basename": "Nard the Mapmaker",
+      "path": "World Notes/World/People/Nard the Mapmaker.md"
+    },
+    {
       "basename": "Aurevia",
       "path": "World Notes/World/Geography/Cities/Aurevia.md"
     },
     {
       "basename": "The First Age",
       "path": "World Notes/World/History/Ages/The First Age.md"
-    },
-    {
-      "basename": "Westios",
-      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
     },
     {
       "basename": "The Westios Pantheon",
@@ -29,16 +101,8 @@
       "path": "World Notes/World/Culture/Jobs/Adventurers.md"
     },
     {
-      "basename": "Home",
-      "path": "Home.md"
-    },
-    {
       "basename": "Aldorin",
       "path": "World Notes/World/Geography/Cities/Aldorin.md"
-    },
-    {
-      "basename": "Yenthas",
-      "path": "World Notes/World/Geography/Cities/Yenthas.md"
     },
     {
       "basename": "Urodh",
@@ -53,20 +117,12 @@
       "path": "World Notes/World/Geography/Cities/Koran.md"
     },
     {
-      "basename": "Name Ideas",
-      "path": "Other/Name Ideas.md"
-    },
-    {
       "basename": "Borin Ragnorok",
       "path": "World Notes/World/People/Borin Ragnorok.md"
     },
     {
       "basename": "S-Rank",
       "path": "World Notes/World/Culture/Ranks/S-Rank.md"
-    },
-    {
-      "basename": "Nard the Mapmaker",
-      "path": "World Notes/World/People/Nard the Mapmaker.md"
     },
     {
       "basename": "Pagus Thinsly",
@@ -79,10 +135,6 @@
     {
       "basename": "Genro Linnaeus",
       "path": "World Notes/World/People/Genro Linnaeus.md"
-    },
-    {
-      "basename": "Artherus Sneeveling",
-      "path": "World Notes/World/People/Artherus Sneeveling.md"
     },
     {
       "basename": "Dragon Steel",
@@ -121,26 +173,6 @@
       "path": "World Notes/Overview of the World.md"
     },
     {
-      "basename": "Akora 2025-02-10-00-32",
-      "path": "World Notes/World/Maps/Images/Akora 2025-02-10-00-32.png"
-    },
-    {
-      "basename": "Akora 2025-02-10-00-31 (1)",
-      "path": "World Notes/World/Maps/Images/Akora 2025-02-10-00-31 (1).png"
-    },
-    {
-      "basename": "Akora 2025-02-10-00-32 (3)",
-      "path": "World Notes/World/Maps/Images/Akora 2025-02-10-00-32 (3).png"
-    },
-    {
-      "basename": "Maps of Akora",
-      "path": "World Notes/World/Maps/Maps of Akora.md"
-    },
-    {
-      "basename": "The Central Kingdom",
-      "path": "World Notes/World/Geography/Kingdoms/The Central Kingdom.md"
-    },
-    {
       "basename": "World Building The Game",
       "path": "Game Notes/World Building The Game.canvas"
     },
@@ -167,38 +199,6 @@
     {
       "basename": "Illenal",
       "path": "World Notes/World/Geography/Cities/Illenal.md"
-    },
-    {
-      "basename": "Humanoid Races",
-      "path": "World Notes/World/Races/Humanoid Races/Humanoid Races.md"
-    },
-    {
-      "basename": "Elemental Dragons",
-      "path": "World Notes/World/Creatures/Elemental Dragons.md"
-    },
-    {
-      "basename": "Dakad the Goblin Herald",
-      "path": "World Notes/World/People/Dakad the Goblin Herald.md"
-    },
-    {
-      "basename": "TO-DO",
-      "path": "TO-DO.md"
-    },
-    {
-      "basename": "The Emergence Age",
-      "path": "World Notes/World/History/Ages/The Emergence Age.md"
-    },
-    {
-      "basename": "The Present Age",
-      "path": "World Notes/World/History/Ages/The Present Age.md"
-    },
-    {
-      "basename": "The Last Great Age",
-      "path": "World Notes/World/History/Ages/The Last Great Age.md"
-    },
-    {
-      "basename": "Advent of Humanity",
-      "path": "World Notes/World/History/Major Events/Advent of Humanity.md"
     }
   ],
   "omittedPaths": [],
