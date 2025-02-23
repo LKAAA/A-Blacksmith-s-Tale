@@ -1,1 +1,1 @@
-An [[S-Rank]] Fighter. In 804 [[Records of Time|AH]] he led the armies of the [[The Central Kingdom|Central Kingdom]] against [[Dakad the Goblin Herald]] and [[The Great Goblin Army]] in the [[Goblin Wars]].
+An [[S-Rank]] Fighter. In 804 [[Records of Time|AH]] he led the armies of the [[The Central Kingdoms|Central Kingdom]] against [[Dakad the Goblin Herald]] and [[The Great Goblin Army]] in the [[Goblin Wars]].

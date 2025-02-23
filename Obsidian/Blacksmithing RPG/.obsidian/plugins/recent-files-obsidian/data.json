@@ -1,16 +1,48 @@
 {
   "recentFiles": [
     {
+      "basename": "The Central Kingdoms",
+      "path": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md"
+    },
+    {
       "basename": "Akora",
       "path": "World Notes/World/Geography/Continents/Akora.md"
     },
     {
-      "basename": "The Islands of Nislia",
-      "path": "World Notes/World/Regions/The Islands of Nislia.md"
+      "basename": "Fort Laiedd",
+      "path": "World Notes/World/Geography/Cities/Fort Laiedd.md"
     },
     {
-      "basename": "The Central Kingdom",
-      "path": "World Notes/World/Geography/Kingdoms/The Central Kingdom.md"
+      "basename": "Home",
+      "path": "Home.md"
+    },
+    {
+      "basename": "Vashkara",
+      "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
+    },
+    {
+      "basename": "Than",
+      "path": "World Notes/World/Geography/Kingdoms/Than.md"
+    },
+    {
+      "basename": "Westios",
+      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
+    },
+    {
+      "basename": "Urodh",
+      "path": "World Notes/World/Geography/Cities/Urodh.md"
+    },
+    {
+      "basename": "Artherus Sneeveling",
+      "path": "World Notes/World/People/Artherus Sneeveling.md"
+    },
+    {
+      "basename": "Ilindrial Magus",
+      "path": "World Notes/World/People/Ilindrial Magus.md"
+    },
+    {
+      "basename": "The Islands of Nislia",
+      "path": "World Notes/World/Regions/The Islands of Nislia.md"
     },
     {
       "basename": "The Shattered Isles",
@@ -29,24 +61,8 @@
       "path": "World Notes/World/Regions/The Northern Reaches.md"
     },
     {
-      "basename": "Than",
-      "path": "World Notes/World/Geography/Kingdoms/Than.md"
-    },
-    {
-      "basename": "Vashkara",
-      "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
-    },
-    {
-      "basename": "Westios",
-      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
-    },
-    {
       "basename": "The Forgotten Lands",
       "path": "World Notes/World/Regions/The Forgotten Lands/The Forgotten Lands.md"
-    },
-    {
-      "basename": "Home",
-      "path": "Home.md"
     },
     {
       "basename": "Vashkara-Than-Map1",
@@ -71,10 +87,6 @@
     {
       "basename": "Yenthas",
       "path": "World Notes/World/Geography/Cities/Yenthas.md"
-    },
-    {
-      "basename": "Artherus Sneeveling",
-      "path": "World Notes/World/People/Artherus Sneeveling.md"
     },
     {
       "basename": "Nard the Mapmaker",
@@ -105,10 +117,6 @@
       "path": "World Notes/World/Geography/Cities/Aldorin.md"
     },
     {
-      "basename": "Urodh",
-      "path": "World Notes/World/Geography/Cities/Urodh.md"
-    },
-    {
       "basename": "Nil Daral",
       "path": "World Notes/World/Geography/Cities/Nil Daral.md"
     },
@@ -127,10 +135,6 @@
     {
       "basename": "Pagus Thinsly",
       "path": "World Notes/World/People/Pagus Thinsly.md"
-    },
-    {
-      "basename": "Ilindrial Magus",
-      "path": "World Notes/World/People/Ilindrial Magus.md"
     },
     {
       "basename": "Genro Linnaeus",
@@ -195,10 +199,6 @@
     {
       "basename": "The Natural Resources",
       "path": "World Notes/World/Items/Resources/The Natural Resources.md"
-    },
-    {
-      "basename": "Illenal",
-      "path": "World Notes/World/Geography/Cities/Illenal.md"
     }
   ],
   "omittedPaths": [],

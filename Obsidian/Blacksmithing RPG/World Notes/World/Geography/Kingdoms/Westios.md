@@ -22,7 +22,7 @@
 >| ---- | ----| 
 >| Type | Oligarchy | 
 >| Ruler | [[God Empress of the Setting Sun]] |
->|Allegiances | [[The Central Kingdom]] (Strained) |
+>|Allegiances | [[The Central Kingdoms]] (Strained) |
 >
 >| History |
 >| ---- | ----| 
@@ -44,7 +44,11 @@ Westios was first founded in 385 [[Records of Time|AH]], after Ivphyn supposedly
 - Westian: Located all across the empire, this demesne is taken by most people of the empire
 - (Capital Name): This is demesne of people from the capital of Westios
 
-###### Cities
+###### Locations
+
+Major Cities:
+- [[Aurevia]] - Capital City 
+- 
 
 ###### Relations
 

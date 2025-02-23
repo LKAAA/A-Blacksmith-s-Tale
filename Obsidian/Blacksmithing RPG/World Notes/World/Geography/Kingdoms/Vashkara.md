@@ -33,14 +33,18 @@ Once the furthest west region of [[Than]], Vashkara now stands independent after
 ##### Locations
 
 Major Cities:
-- [[Velstara]]- Capital city - famous for its sprawling harbors, black markets, and powerful trade guilds.
-- [[Vasthold]] - militarized city - holds the [[Vashterian Guard]] and many mercenary guilds.
+- [[Velstara]]- Capital city - Heavily fortified military city. This is the home of the [[Vashterian Guard]]
+- [[Vasthold]] - militarized city - Fortified city that serves as a massive military academy for training warriors, strategists, and mages. Also trains the  [[Vashterian Guard]] 
+- [[Drakenvaar]] - Nestled deep in the [[Velstine Mountains]], this city is ruled by a [[Dracari]] mercenary. Capital of mercenary guilds. 
 
-Villages:
-- Silvermere
+Major Towns: 
+- [[Ranthin]] - Holds a large arena, known for its frequent and flashy fights
+- [[Blackspire]] - Major town known for its massive harbor and large black market.
+
+Smaller Towns:
+- Silvermere 
 - Redcrest
-
-[[Drakenvaar]] - Nestled deep in the [[Velstine Mountains]], this hidden city is ruled by a [[Dracari]] warrior.
+- Wildgarde
 
 ##### Important Figures
 [[Grand Duke Silian Vashteria]] - Age 52

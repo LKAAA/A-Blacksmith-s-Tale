@@ -12,7 +12,7 @@
 >| ---- | ---- | 
 >| Demonym | Akorian |
 
-Akora (pronounced: Ah-core-ah) is a major continent on the planet [[Saelis]]. 
+Akora (pronounced: Ah-core-ah) is a major continent on the planet [[Saelis]]. The current year of Akora is 1085 [[Records of Time|AH]].
 
 #### Geography
 
@@ -47,7 +47,7 @@ Contains:
 - The Empire of [[Westios]]
 
 ###### Interior 
-[[The Central Kingdom]]
+[[The Central Kingdoms]]
 
 ###### East
 [[The Elderwoods]]
@@ -103,7 +103,7 @@ This age is marked as an era of peace. The great Elvish city of [[Sylhserin]] in
 >Main Article: [[The Present Age]]
 
 <br>The Present Age is sometimes known as the human age. It begun in the year 1 [[Records of Time|AH]], during what was known as the [[Advent of Humanity]] to the [[Elves]]. It was the arrival of the first [[Humans]] on the continent of [[Akora]]. It is considered one of the worst time periods in the history of Akora. 
-It included many calamitous events such as the [[Destruction of Sylhserin]] in 294 [[Records of Time|AH]] and the [[Goblin Wars]] of 804 [[Records of Time|AH]]. The [[emergence of demons]] in 1094 [[Records of Time|AH]] was yet another calamity of this time period. 
+It included many calamitous events such as the [[Destruction of Sylhserin]] in 294 [[Records of Time|AH]] and the [[Goblin Wars]] of 804 [[Records of Time|AH]].  
 
 
 ##### Appendix
@@ -117,7 +117,63 @@ Region Sizes in mi²
 - [[The Elderwoods]]: ~135,000 mi²
 - [[The Dwarven Lands]]: ~140,000 mi²
 - [[The Forgotten Lands]]: ~320,000 mi²
-- [[The Central Kingdom]]: ~120,000 mi²
+- [[The Central Kingdoms]]: ~120,000 mi²
 - Unnamed Kingdom: ~200,000 mi²
 - [[The Islands of Nislia|Islands of Nislia]]:  ~19,000 mi²
 
+
+
+Than - Agricultural / Trade kingdom - 
+	Wealthy Agricultural/Trade kingdom with merchant guilds, banking centers, and major ports. Cities thrive on trade, and the countryside supports large farmlands. 
+- 7 Cities
+- 18 Towns
+- 2 - 2.5 million pop
+- avg  city pop: 60-80k
+- avg town pop: 500 - 8000
+- Major trade partners: Westios, The Central Kingdoms, Unnamed Kingdom
+- At war with: Vashkara - Severe tension and border disputes lead to frequent fighting on the western border. 
+
+Vashkara - Militaristic Kingdom -
+	A Militaristic Kingdom with fortified cities, black-market trading, and mercenary guilds. The economy is driven by warfare and mercenary contracts.
+- 3 Cities
+- 5 Towns
+- 400,000 - 700,000 pop
+- avg city pop: 40-60k
+- avg town pop: 1000 - 12000
+- At war with: Than - Severe tension and border disputes lead to frequent fighting on the eastern border; Westios - Frequent mercenary raiding parties are sent out on the west coast in the ocean of glass.
+
+Westios - Religious Kingdom
+	A religious Empire ruled by a "descended god". Holy cities are frequent and laws are strictly enforced under religious doctrine. High Xenophobia and racism to non-human races.
+- 6 Cities
+- 14 Towns
+- 1.2-1.5 million pop
+- avg city pop: 50-80k
+- avg town pop: 500-8000
+- Major trade partners - Than
+- Tension with The Central Kingdoms due to difference in religion. No religious war yet.
+- At war with Vashkara due to frequent mercenary attacks along the west coast.
+
+The Central Kingdoms - Religious Kingdom - 
+	A religious Kingdom where the church wields enormous power and seeks to take control from the king. Holy orders and inquisitors enforce doctrine.
+- 8 Cities
+- 24 Towns
+- 2.2-2.5 million pop
+- avg city pop: 40000-70000
+- avg town pop: 500- 10000
+- Major trade partners: Than, Unnamed Kingdom
+- Tensions with  Westios due to religious difference (Quote: Heretics)
+
+Unnamed Kingdom - Decentralized Confederations - 
+	A decentralized Confederation of warring city-states where noble houses constantly struggle for dominance. Alliances shift often, and stability is rare.
+- 11 cities
+- 30 towns
+- 2-2.8 million pop
+- avg city pop: 35,000-60000
+- avg town pop: 500-10000
+- Tensions with themselves>??>????
+- Major trade partners - Western city states manage some trade with The Central kingdom, while some eastern city states trade with the dwarves of Nil Daral.
+
+
+
+Priests from the Central Kingdoms frequently visit known dungeons to strengthen seals and ensure that they stay sealed. This is one of their major trade services as they are the only one with the magic (besides the hidden elves). 
+Vashkara is the only region that abstains from this service. They instead sit a guard 24/7 around the dungeon and don't care LMFAO.

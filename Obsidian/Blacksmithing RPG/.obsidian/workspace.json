@@ -24,17 +24,17 @@
             }
           },
           {
-            "id": "46bf381dc0969ce7",
+            "id": "389c5ef87d6289c7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "World Notes/World/Geography/Continents/Akora.md",
+                "file": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Akora"
+              "title": "The Central Kingdoms"
             }
           }
         ],
@@ -71,7 +71,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Kingdom",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -148,11 +148,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from The Central Kingdoms"
             }
           },
           {
@@ -176,17 +177,27 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "World Notes/World/Races/Dracari.md",
+                "file": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Dracari"
+              "title": "Outline of The Central Kingdoms"
+            }
+          },
+          {
+            "id": "949b3e58dc5b3a86",
+            "type": "leaf",
+            "state": {
+              "type": "broken-links-view",
+              "state": {},
+              "icon": "unlink",
+              "title": "Broken links"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -204,23 +215,33 @@
       "templates:Insert template": false,
       "homepage:Open homepage": false,
       "templater-obsidian:Templater": false,
-      "tldraw:Create new tldrawing": false
+      "tldraw:Create new tldrawing": false,
+      "obsidian-dangling-links:Show dangling links panel": false,
+      "broken-links:View broken links": false
     }
   },
-  "active": "46bf381dc0969ce7",
+  "active": "389c5ef87d6289c7",
   "lastOpenFiles": [
-    "World Notes/World/Regions/The Islands of Nislia.md",
     "World Notes/World/Geography/Continents/Akora.md",
-    "World Notes/World/Geography/Kingdoms/The Central Kingdom.md",
+    "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md",
+    "World Notes/World/Geography/Cities/Fort Laiedd.md",
+    "Home.md",
+    "World Notes/World/Geography/Kingdoms/Vashkara.md",
+    "World Notes/World/Geography/Kingdoms/Than.md",
+    "World Notes/World/Geography/Kingdoms/Westios.md",
+    "World Notes/World/Geography/Kingdoms/Tr.md",
+    "World Notes/World/Geography/Cities/Urodh.md",
+    "World Notes/World/Geography/Kingdoms/Grand Inquisitor Marcellus.md",
+    "World Notes/World/Geography/Kingdoms/King Edgard Howsen.md",
+    "World Notes/World/Geography/Kingdoms/King.md",
+    "World Notes/World/People/Artherus Sneeveling.md",
+    "World Notes/World/People/Ilindrial Magus.md",
+    "World Notes/World/Regions/The Islands of Nislia.md",
     "World Notes/World/Regions/The Shattered Isles.md",
     "World Notes/World/Regions/The Dwarven Lands.md",
     "World Notes/World/Regions/The Elderwoods.md",
     "World Notes/World/Regions/The Northern Reaches.md",
-    "World Notes/World/Geography/Kingdoms/Than.md",
-    "World Notes/World/Geography/Kingdoms/Vashkara.md",
-    "World Notes/World/Geography/Kingdoms/Westios.md",
     "World Notes/World/Regions/The Forgotten Lands/The Forgotten Lands.md",
-    "Home.md",
     "World Notes/World/Maps/Images/Vashkara-Than-Map1.png",
     "World Notes/World/Maps/Maps of Akora.md",
     "World Notes/World/Maps/Images/Second Map of Akora.png",
@@ -229,16 +250,8 @@
     "Other/Tldraw 2025-02-20 10.18PM.md",
     "Other/Name Ideas.md",
     "World Notes/World/Geography/Cities/Yenthas.md",
-    "World Notes/World/People/Artherus Sneeveling.md",
     "World Notes/World/People/Nard the Mapmaker.md",
     "World Notes/World/Geography/Cities/Aurevia.md",
-    "World Notes/World/History/Ages/The First Age.md",
-    "World Notes/World/Culture/Religions/Westios Pantheon/The Westios Pantheon.md",
-    "World Notes/World/Culture/Currency.md",
-    "World Notes/World/Culture/Jobs/Adventurers.md",
-    "World Notes/World/Geography/Cities/Aldorin.md",
-    "World Notes/World/Geography/Cities/Urodh.md",
-    "World Notes/World/Geography/Cities/Nil Daral.md",
     "World Notes/World/Maps/Images",
     "Game Notes/World Building The Game.canvas",
     "Game Notes/Game Notes.canvas",
