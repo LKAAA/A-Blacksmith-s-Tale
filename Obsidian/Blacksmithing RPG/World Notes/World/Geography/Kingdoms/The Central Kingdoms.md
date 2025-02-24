@@ -22,16 +22,16 @@
 >| ---- | ----| 
 >| Type | Theocratic Monarchy | 
 >| Ruler | [[King Edgard Howsen]] |
->|Allegiances | [[Than]], [[Nil Daral]] |
+>|Allegiances | [[Than]], [[Nil Daral]], [[The Unnamed Magocracy]] |
 >
 >| History |
 >| ---- | ----| 
 >- 846 AH - The Northern kingdom conquers the Southern kingdom to become the Central Kingdoms.
 
 
-##### Society
+#### Society
 
-###### Locations
+##### Locations
 
 **Major Cities:**
 - [[Kinthia]] - Capital city of the Central Kingdoms (once the Northern Kingdom's capital). A grand city filled with cathedrals and contains the second largest palace in Akora.
@@ -66,26 +66,24 @@
 
 ###### The Royal Family
 - [[King Edgard Howsen]] - Age 58
-- [[Queen Amara Howsen]] - Age 54
-- [[First Prince Alstonso Howsen]] - Age 22
-- [[Second Prince Thalian Howsen]] - Age 18
-- [[First Princess Bianca Howsen]] - Age 24
-- [[Second Princess Lola Howsen]] - Age 19
+	- [[Queen Amara Howsen]] - Age 54
+		- [[First Prince Alstonso Howsen]] - Age 22
+		- [[Second Prince Thalian Howsen]] - Age 18
+		- [[First Princess Bianca Howsen]] - Age 24
+		- [[Second Princess Lola Howsen]] - Age 19
 
 ###### Other Important Figures
 - [[Grand Inquisitor Marcellius]] - Highest-ranked official of the church's religious force in [[Whitechapel]]. He also serves as the de facto lord of Whitechapel. 
 - [[Archbishop Renwald]] - Head of the church of [[Kinthia]], and main advisor to [[King Edgard Howsen|King Edgard]].
+- - [[Bishop Eulvis]] - Head of the church of Abbey's Reach. Also leads the religious school there.
+
 - [[Duke Bertram Vael]] - Age 38 - Loyal vassal to the king. Duke of the [[Koran]] duchy.
 	- [[Duchess Lucilia Vael]] - Age 34
-	- [[Lady Lola Vael]] - Age 15
-- [[Bishop Eulvis]] - Head of the church of Abbey's Reach. Also leads the religious school there.
+		- [[Lady Lola Vael]] - Age 15
 
 ##### Historic Events
 
-
-
 ###### Recent Events
-
 
 ##### Appendix
 

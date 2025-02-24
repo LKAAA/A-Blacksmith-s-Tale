@@ -22,7 +22,7 @@
 >| ---- | ----| 
 >| Type | Mercantile Monarchy | 
 >| Ruler | [[King Aldric Thane IV]] |
->|Allegiances | --- |
+>|Allegiances | [[Westios]], [[The Central Kingdoms]], [[The Unnamed Magocracy]], [[Nil Daral]] |
 >
 >| History |
 >| ---- | ----| 
@@ -32,9 +32,13 @@
 Than is a large kingdom ruled by a king, that also heavily relies on a council of wealthy merchants to make decisions as well as several noble families. It is a vast kingdom built on trade, and serves as a thriving region between the [[The Central Kingdoms|Central Kingdom]] and the [[The Northern Reaches|Northern Reaches]]. 
 Than serves as a gateway into the [[The Northern Reaches|Northern Reaches]], as the [[Frozen Vale]] on it's northern border is the main way in by land. The [[Frostspire]] is the furthest known settlement in the [[The Northern Reaches|Northern Reaches]] and serves as a testament to the calling of man to venture where nature tells us not to.
 
-##### Society
+#### Society
 
-###### Locations
+##### Magic
+Magic in Than is limited to nobles only. When Than was first founded it was during an age of what some might call magical darkness. There was no widespread teaching of magic. The common belief was that magic causes more problems than it solves for the common and uneducated people. As such it was declared by [[House Thane]] that all magic be limited to nobility only.
+After the recent dungeon unsealing in both midwestern Than and further south near Port Elysia, [[King Aldric Thane IV|King Aldric IV]] has begrudgingly begun to allow foreign adventuring mages to enter Than to clear the overflowing monsters. Foreign mages are only allowed to enter Than if they have the required paperwork, some of which includes a valid [[adventurer's ID]], and a letter from the school that was studied at.
+
+##### Locations
 
 **Major Cities:**
 - [[Valthane]] - Capital city - Largest port city in Akora, massive trade hub with banks, shipyards, and merchant guilds
@@ -60,16 +64,16 @@ Than serves as a gateway into the [[The Northern Reaches|Northern Reaches]], as 
 *14 more unnamed smaller towns.* 
 
 ##### Important figures
-[[King Aldric Thane IV]] - Age 48 
-[[Queen Isolde Thane]] - Age 45
-[[Prince Aldric Thane V]] - Age 22 
-[[Princess Alisi Thane]] - Age 16
+- [[King Aldric Thane IV]] - Age 48 
+	- [[Queen Isolde Thane]] - Age 45
+		- [[Prince Aldric Thane V]] - Age 22 
+		- [[Princess Alisi Thane]] - Age 16
 
-[[Lord Gyaren Blackthorne]] - Lord of [[Ironhold]]
-[[Countess Yvanna Merciline]] - Countess of [[Frostgate]]
-[[Master Jordan Delmont]] - Leader of the [[Merchant Guild of Than]]
-[[Duke Remial Caervan]] - Duke of [[Goldenfield]]
-[[Lord Feldrin Stine]] - Lord of [[Rivermeet]]
+- [[Lord Gyaren Blackthorne]] - Lord of [[Ironhold]]
+- [[Countess Yvanna Merciline]] - Countess of [[Frostgate]]
+- [[Master Jordan Delmont]] - Leader of the [[Merchant Guild of Than]]
+- [[Duke Remial Caervan]] - Duke of [[Goldenfield]]
+- [[Lord Feldrin Stine]] - Lord of [[Rivermeet]]
 
 ##### Historic Events
 
@@ -86,5 +90,5 @@ The Merchant guild has become bolder recently, and begun to challenge the king's
 ##### Appendix
 Roughly the size of Texas or France
 
-Current map of Than and Vashkara:
+Outdated map of Than and Vashkara:
 ![[Vashkara-Than-Map1.png]]

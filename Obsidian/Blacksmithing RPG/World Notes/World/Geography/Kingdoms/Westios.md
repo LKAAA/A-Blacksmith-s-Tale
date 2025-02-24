@@ -22,7 +22,7 @@
 >| ---- | ----| 
 >| Type | Oligarchy | 
 >| Ruler | [[God Empress of the Setting Sun]] |
->|Allegiances | [[The Central Kingdoms]] (Strained) |
+>|Allegiances | [[Than]], [[The Unnamed Magocracy]] |
 >
 >| History |
 >| ---- | ----| 

@@ -1,8 +1,84 @@
 {
   "recentFiles": [
     {
+      "basename": "The Unnamed Magocracy",
+      "path": "World Notes/World/Geography/Kingdoms/The Unnamed Magocracy.md"
+    },
+    {
+      "basename": "Vashkara",
+      "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
+    },
+    {
+      "basename": "Yenthas",
+      "path": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Yenthas.md"
+    },
+    {
+      "basename": "Nil Daral",
+      "path": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Nil Daral.md"
+    },
+    {
+      "basename": "Westios",
+      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
+    },
+    {
       "basename": "The Central Kingdoms",
       "path": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md"
+    },
+    {
+      "basename": "Than",
+      "path": "World Notes/World/Geography/Kingdoms/Than.md"
+    },
+    {
+      "basename": "The Black Sun",
+      "path": "World Notes/World/Culture/Groups/The Black Sun.md"
+    },
+    {
+      "basename": "Rune Magic",
+      "path": "World Notes/World/Magic/Rune Magic.md"
+    },
+    {
+      "basename": "Magi-tech",
+      "path": "World Notes/World/Magic/Magi-tech.md"
+    },
+    {
+      "basename": "Casting Magic",
+      "path": "World Notes/World/Magic/Casting Magic.md"
+    },
+    {
+      "basename": "Flowing Mana",
+      "path": "World Notes/World/Magic/Mana/Flowing Mana.md"
+    },
+    {
+      "basename": "Mana Core",
+      "path": "World Notes/World/Magic/Mana/Mana Core.md"
+    },
+    {
+      "basename": "Mana",
+      "path": "World Notes/World/Magic/Mana/Mana.md"
+    },
+    {
+      "basename": "Flowing Mana Springs",
+      "path": "World Notes/World/Magic/Mana/Flowing Mana Springs.md"
+    },
+    {
+      "basename": "Runic",
+      "path": "World Notes/World/Culture/Languages/Runic.md"
+    },
+    {
+      "basename": "Home",
+      "path": "Home.md"
+    },
+    {
+      "basename": "Cult of Dotthar",
+      "path": "World Notes/World/Culture/Groups/Cult of Dotthar.md"
+    },
+    {
+      "basename": "Ivphyn",
+      "path": "World Notes/World/Culture/Religions/Westios Pantheon/Ivphyn.md"
+    },
+    {
+      "basename": "Aldorin",
+      "path": "World Notes/World/Geography/Cities/Aldorin.md"
     },
     {
       "basename": "Akora",
@@ -11,22 +87,6 @@
     {
       "basename": "Fort Laiedd",
       "path": "World Notes/World/Geography/Cities/Fort Laiedd.md"
-    },
-    {
-      "basename": "Home",
-      "path": "Home.md"
-    },
-    {
-      "basename": "Vashkara",
-      "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
-    },
-    {
-      "basename": "Than",
-      "path": "World Notes/World/Geography/Kingdoms/Than.md"
-    },
-    {
-      "basename": "Westios",
-      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
     },
     {
       "basename": "Urodh",
@@ -85,10 +145,6 @@
       "path": "Other/Name Ideas.md"
     },
     {
-      "basename": "Yenthas",
-      "path": "World Notes/World/Geography/Cities/Yenthas.md"
-    },
-    {
       "basename": "Nard the Mapmaker",
       "path": "World Notes/World/People/Nard the Mapmaker.md"
     },
@@ -111,14 +167,6 @@
     {
       "basename": "Adventurers",
       "path": "World Notes/World/Culture/Jobs/Adventurers.md"
-    },
-    {
-      "basename": "Aldorin",
-      "path": "World Notes/World/Geography/Cities/Aldorin.md"
-    },
-    {
-      "basename": "Nil Daral",
-      "path": "World Notes/World/Geography/Cities/Nil Daral.md"
     },
     {
       "basename": "Koran",
@@ -151,54 +199,6 @@
     {
       "basename": "Lapison",
       "path": "World Notes/World/Races/Beast Races/Lapison.md"
-    },
-    {
-      "basename": "Beast Races",
-      "path": "World Notes/World/Races/Beast Races/Beast Races.md"
-    },
-    {
-      "basename": "Monstrous Races",
-      "path": "World Notes/World/Races/Monstrous Races/Monstrous Races.md"
-    },
-    {
-      "basename": "Demons",
-      "path": "World Notes/World/Races/Monstrous Races/Demons.md"
-    },
-    {
-      "basename": "Trolls",
-      "path": "World Notes/World/Races/Monstrous Races/Trolls.md"
-    },
-    {
-      "basename": "Dungeons",
-      "path": "World Notes/World/Geography/Dungeons.md"
-    },
-    {
-      "basename": "Overview of the World",
-      "path": "World Notes/Overview of the World.md"
-    },
-    {
-      "basename": "World Building The Game",
-      "path": "Game Notes/World Building The Game.canvas"
-    },
-    {
-      "basename": "Game Notes",
-      "path": "Game Notes/Game Notes.canvas"
-    },
-    {
-      "basename": "Game-Moodboard",
-      "path": "Game Notes/Game-Moodboard.canvas"
-    },
-    {
-      "basename": "UI-Moodboard",
-      "path": "Game Notes/UI-Moodboard.canvas"
-    },
-    {
-      "basename": "Saelis",
-      "path": "World Notes/World/Planetary Objects/Planets/Saelis.md"
-    },
-    {
-      "basename": "The Natural Resources",
-      "path": "World Notes/World/Items/Resources/The Natural Resources.md"
     }
   ],
   "omittedPaths": [],
