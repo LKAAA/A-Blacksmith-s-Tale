@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dyo1byeq58lh2"]
+
+[ext_resource type="Script" path="res://Data/item_data.gd" id="1_o8yqx"]
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="2_qrg31"]
+
+[resource]
+script = ExtResource("1_o8yqx")
+name = "Iron Bar"
+description = "A smelted bar of iron."
+sprite = ExtResource("2_qrg31")

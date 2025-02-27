@@ -1,13 +1,10 @@
-extends Node2D
-class_name Core
+class_name Core extends Node2D
 
-const TEST_ZONE_1 = preload("res://TEMP/TestZones/TestZone1.tscn")
-const TEST_ZONE_2 = preload("res://TEMP/TestZones/TestZone2.tscn")
 const PLAYER = preload("res://Player/player.tscn")
 
 @onready var loading_screen: LoadingScreen = $LoadingScreen/LoadingScreen
 
-var cur_path: String
+var cur_zone: String
 var cur_transition: int
 
 var current_zone: Zone
@@ -20,11 +17,11 @@ func _ready() -> void:
 
 # @param path is the path of the scene to transition to
 # @param transition is the number in the transitions array on each zone to teleport the player to
-func load_zone(path: String = "", transition: int = 99) -> void:
+func load_zone(zone: String = "", transition: int = 99) -> void:
 	# If there is no zone already (This is the first zone spawned in) - Do first time set up
 	if !current_zone: # If there is no zone already
 		print("Loading default / First zone")
-		current_zone = TEST_ZONE_1.instantiate()
+		current_zone = load("res://TEMP/TestZone1.tscn").instantiate()
 		add_child(current_zone)
 		
 		for t in current_zone.transitions:
@@ -35,8 +32,8 @@ func load_zone(path: String = "", transition: int = 99) -> void:
 	
 	# If there is already a zone set up some variables and start the loading scren fade_in  animation
 	else:
-		print("Loading " + path)
-		cur_path = path
+		print("Loading " + zone)
+		cur_zone = zone
 		cur_transition = transition
 		loading_screen.fade_in()
 
@@ -46,7 +43,7 @@ func load_zone(path: String = "", transition: int = 99) -> void:
 func fade_in_finished() -> void:
 	# If there is a zone
 	
-	next_zone = load(cur_path).instantiate()
+	next_zone = load(cur_zone).instantiate()
 	call_deferred("add_child", next_zone)
 
 	if player:
@@ -65,7 +62,7 @@ func fade_in_finished() -> void:
 	for t in current_zone.transitions:
 		t.transition_entered.connect(load_zone)
 	
-	cur_path = ""
+	cur_zone = ""
 	cur_transition = 0
 	
 	loading_screen.fade_out()

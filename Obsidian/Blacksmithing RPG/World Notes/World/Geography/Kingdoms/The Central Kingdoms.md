@@ -75,11 +75,11 @@
 ###### Other Important Figures
 - [[Grand Inquisitor Marcellius]] - Highest-ranked official of the church's religious force in [[Whitechapel]]. He also serves as the de facto lord of Whitechapel. 
 - [[Archbishop Renwald]] - Head of the church of [[Kinthia]], and main advisor to [[King Edgard Howsen|King Edgard]].
-- - [[Bishop Eulvis]] - Head of the church of Abbey's Reach. Also leads the religious school there.
+- [[Bishop Eulvis]] - Head of the church of Abbey's Reach. Also leads the religious school there.
 
 - [[Duke Bertram Vael]] - Age 38 - Loyal vassal to the king. Duke of the [[Koran]] duchy.
 	- [[Duchess Lucilia Vael]] - Age 34
-		- [[Lady Lola Vael]] - Age 15
+		- [[Lady Lyra Vael]] - Age 15
 
 ##### Historic Events
 

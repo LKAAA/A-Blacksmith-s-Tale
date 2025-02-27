@@ -1,5 +1,5 @@
-extends Control
-class_name LoadingScreen
+class_name LoadingScreen extends Control
+
 @onready var animation_player: AnimationPlayer = $ColorRect/AnimationPlayer
 
 signal fade_in_finished

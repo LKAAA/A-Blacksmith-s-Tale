@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c8rk03ra086wv"]
+[gd_scene load_steps=13 format=4 uid="uid://dvwot1kpvrq0i"]
 
 [ext_resource type="Script" path="res://Scripts/Zone.gd" id="1_nq038"]
 [ext_resource type="Texture2D" uid="uid://boio4rgvdby0s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_6l6p6"]
@@ -304,7 +304,7 @@ tile_set = SubResource("TileSet_8kqvv")
 
 [node name="SouthTransition" parent="Transition Zones" instance=ExtResource("5_dmplm")]
 position = Vector2(328, 214)
-next_zone = "res://TEMP/TestZones/TestZone1.tscn"
+next_zone = "res://TEMP/TestZone1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition Zones/SouthTransition"]
 position = Vector2(0, 42)
@@ -312,7 +312,7 @@ shape = SubResource("RectangleShape2D_6fopl")
 
 [node name="EastTransition" parent="Transition Zones" instance=ExtResource("5_dmplm")]
 position = Vector2(628, 193)
-next_zone = "res://TEMP/TestZones/TestZone1.tscn"
+next_zone = "res://TEMP/TestZone1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition Zones/EastTransition"]
 position = Vector2(49, -1)

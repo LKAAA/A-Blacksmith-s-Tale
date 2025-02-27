@@ -1,9 +1,11 @@
-extends CharacterBody2D
-class_name PlayerBase
+class_name PlayerBase extends CharacterBody2D
 
 # Player base handles movement and input
+@onready var label: Label = %Label
 
 @onready var sprite: AnimatedSprite2D = $Sprite2D
+
+@export var inventory: Inventory = Inventory.new()
 
 const WALKSPEED: float = 60 # Base walkspeed
 const RUNSPEED: float = 90 # Base runspeed
@@ -23,6 +25,7 @@ func _ready() -> void:
 	speed = calculate_current_speed(0)
 
 func _physics_process(delta: float) -> void:
+	label.text = str(inventory.inventory)
 	match current_state:
 		PLAYER_STATES.MOVE:
 			_handle_movement()

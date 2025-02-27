@@ -1,12 +1,44 @@
 {
   "recentFiles": [
     {
-      "basename": "The Unnamed Magocracy",
-      "path": "World Notes/World/Geography/Kingdoms/The Unnamed Magocracy.md"
+      "basename": "Home",
+      "path": "Home.md"
     },
     {
       "basename": "Vashkara",
       "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
+    },
+    {
+      "basename": "The Unnamed Magocracy",
+      "path": "World Notes/World/Geography/Kingdoms/The Unnamed Magocracy.md"
+    },
+    {
+      "basename": "The Central Kingdoms",
+      "path": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md"
+    },
+    {
+      "basename": "Than",
+      "path": "World Notes/World/Geography/Kingdoms/Than.md"
+    },
+    {
+      "basename": "Flowing Mana Springs",
+      "path": "World Notes/World/Magic/Mana/Flowing Mana Springs.md"
+    },
+    {
+      "basename": "Flowing Mana",
+      "path": "World Notes/World/Magic/Mana/Flowing Mana.md"
+    },
+    {
+      "basename": "Mana",
+      "path": "World Notes/World/Magic/Mana/Mana.md"
+    },
+    {
+      "basename": "Mana Core",
+      "path": "World Notes/World/Magic/Mana/Mana Core.md"
+    },
+    {
+      "basename": "Casting Magic",
+      "path": "World Notes/World/Magic/Casting Magic.md"
     },
     {
       "basename": "Yenthas",
@@ -21,14 +53,6 @@
       "path": "World Notes/World/Geography/Kingdoms/Westios.md"
     },
     {
-      "basename": "The Central Kingdoms",
-      "path": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md"
-    },
-    {
-      "basename": "Than",
-      "path": "World Notes/World/Geography/Kingdoms/Than.md"
-    },
-    {
       "basename": "The Black Sun",
       "path": "World Notes/World/Culture/Groups/The Black Sun.md"
     },
@@ -41,32 +65,8 @@
       "path": "World Notes/World/Magic/Magi-tech.md"
     },
     {
-      "basename": "Casting Magic",
-      "path": "World Notes/World/Magic/Casting Magic.md"
-    },
-    {
-      "basename": "Flowing Mana",
-      "path": "World Notes/World/Magic/Mana/Flowing Mana.md"
-    },
-    {
-      "basename": "Mana Core",
-      "path": "World Notes/World/Magic/Mana/Mana Core.md"
-    },
-    {
-      "basename": "Mana",
-      "path": "World Notes/World/Magic/Mana/Mana.md"
-    },
-    {
-      "basename": "Flowing Mana Springs",
-      "path": "World Notes/World/Magic/Mana/Flowing Mana Springs.md"
-    },
-    {
       "basename": "Runic",
       "path": "World Notes/World/Culture/Languages/Runic.md"
-    },
-    {
-      "basename": "Home",
-      "path": "Home.md"
     },
     {
       "basename": "Cult of Dotthar",

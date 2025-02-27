@@ -1,10 +1,14 @@
-[gd_scene load_steps=13 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=19 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://boio4rgvdby0s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_ntypt"]
 [ext_resource type="Texture2D" uid="uid://hpqp361x0elh" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt.png" id="3_4oc81"]
 [ext_resource type="Texture2D" uid="uid://bdxahjvqc3a7s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="4_8wkoa"]
 [ext_resource type="PackedScene" uid="uid://xbr07uqgqq1r" path="res://Scenes/transition_zone.tscn" id="5_bo2f2"]
+[ext_resource type="PackedScene" uid="uid://uid2qlo1vyf5" path="res://Scenes/item_pickup.tscn" id="6_vjrfg"]
+[ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/iron_ore.tres" id="7_ojt8e"]
+[ext_resource type="Script" path="res://Data/stack_data.gd" id="8_yhkl1"]
+[ext_resource type="Resource" uid="uid://dyo1byeq58lh2" path="res://Data/Items/iron_bar.tres" id="9_008y1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7diq"]
 texture = ExtResource("2_ntypt")
@@ -278,6 +282,16 @@ sources/0 = SubResource("TileSetAtlasSource_nb3wt")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fopl"]
 size = Vector2(50, 32)
 
+[sub_resource type="Resource" id="Resource_fcgr2"]
+script = ExtResource("8_yhkl1")
+item = ExtResource("7_ojt8e")
+count = 50
+
+[sub_resource type="Resource" id="Resource_egw07"]
+script = ExtResource("8_yhkl1")
+item = ExtResource("9_008y1")
+count = 10
+
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_x1thp")
 transitions = [NodePath("Transition Zones/NorthTransition")]
@@ -300,8 +314,15 @@ tile_set = SubResource("TileSet_8kqvv")
 
 [node name="NorthTransition" parent="Transition Zones" instance=ExtResource("5_bo2f2")]
 position = Vector2(328, -62)
-next_zone = "res://TEMP/TestZones/TestZone2.tscn"
+next_zone = "res://TEMP/TestZone2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition Zones/NorthTransition"]
 position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_6fopl")
+
+[node name="ItemPickup" parent="." instance=ExtResource("6_vjrfg")]
+item = SubResource("Resource_fcgr2")
+
+[node name="ItemPickup2" parent="." instance=ExtResource("6_vjrfg")]
+position = Vector2(201, 33)
+item = SubResource("Resource_egw07")

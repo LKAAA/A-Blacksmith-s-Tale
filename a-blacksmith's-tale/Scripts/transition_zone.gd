@@ -1,5 +1,4 @@
-extends Area2D
-class_name TransitionArea
+class_name TransitionArea extends Area2D
 
 signal transition_entered(next_zone_path, next_zone_num)
 

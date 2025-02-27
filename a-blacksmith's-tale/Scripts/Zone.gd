@@ -1,4 +1,3 @@
-extends Node2D
-class_name Zone
+class_name Zone extends Node2D
 
 @export var transitions: Array[TransitionArea]
