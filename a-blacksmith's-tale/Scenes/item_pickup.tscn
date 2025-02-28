@@ -10,7 +10,6 @@ radius = 7.0
 
 [node name="ItemPickup" type="Area2D"]
 top_level = true
-position = Vector2(138, 33)
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_trajx")

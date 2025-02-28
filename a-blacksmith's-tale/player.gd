@@ -5,7 +5,9 @@ class_name PlayerBase extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 
-@export var inventory: Inventory = Inventory.new()
+@onready var menu_ui: Control = $UI/Menu_UI
+
+@export var inventory: InventoryData = InventoryData.new()
 
 const WALKSPEED: float = 60 # Base walkspeed
 const RUNSPEED: float = 90 # Base runspeed
@@ -23,9 +25,9 @@ var current_state: PLAYER_STATES
 
 func _ready() -> void:
 	speed = calculate_current_speed(0)
+	menu_ui._set_player_inventory(inventory)
 
 func _physics_process(delta: float) -> void:
-	label.text = str(inventory.inventory)
 	match current_state:
 		PLAYER_STATES.MOVE:
 			_handle_movement()
@@ -51,6 +53,10 @@ func _handle_input() -> void:
 	
 	if Input.is_action_just_pressed("ui_dodgeroll"):
 		dodgeroll()
+	
+	if Input.is_action_just_pressed("ui_inventory"):
+		menu_ui._update_player_inventory(inventory)
+		menu_ui.visible = !menu_ui.visible
 
 func dodgeroll() -> void:
 	current_state = PLAYER_STATES.DODGEROLL
@@ -90,7 +96,6 @@ func calculate_current_speed(bonuses) -> float:
 		return WALKSPEED + bonuses
 
 func _on_sprite_2d_animation_finished() -> void:
-	print("This")
 	if current_state == PLAYER_STATES.DODGEROLL:
 		#hitbox.enabled = true
 		current_state = PLAYER_STATES.MOVE

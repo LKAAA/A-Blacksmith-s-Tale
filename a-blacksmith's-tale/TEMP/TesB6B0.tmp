@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=14 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://boio4rgvdby0s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_ntypt"]
@@ -6,9 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bdxahjvqc3a7s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="4_8wkoa"]
 [ext_resource type="PackedScene" uid="uid://xbr07uqgqq1r" path="res://Scenes/transition_zone.tscn" id="5_bo2f2"]
 [ext_resource type="PackedScene" uid="uid://uid2qlo1vyf5" path="res://Scenes/item_pickup.tscn" id="6_vjrfg"]
-[ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/iron_ore.tres" id="7_ojt8e"]
-[ext_resource type="Script" path="res://Data/slot_data.gd" id="8_yhkl1"]
-[ext_resource type="Resource" uid="uid://dyo1byeq58lh2" path="res://Data/Items/iron_bar.tres" id="9_008y1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7diq"]
 texture = ExtResource("2_ntypt")
@@ -282,16 +279,6 @@ sources/0 = SubResource("TileSetAtlasSource_nb3wt")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fopl"]
 size = Vector2(50, 32)
 
-[sub_resource type="Resource" id="Resource_rsj2a"]
-script = ExtResource("8_yhkl1")
-item_data = ExtResource("9_008y1")
-quantity = 50
-
-[sub_resource type="Resource" id="Resource_v1uqm"]
-script = ExtResource("8_yhkl1")
-item_data = ExtResource("7_ojt8e")
-quantity = 700
-
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_x1thp")
 transitions = [NodePath("Transition Zones/NorthTransition")]
@@ -321,9 +308,6 @@ position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_6fopl")
 
 [node name="ItemPickup" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(271, 39)
-slot_data = SubResource("Resource_rsj2a")
 
 [node name="ItemPickup2" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(400, 32)
-slot_data = SubResource("Resource_v1uqm")
+position = Vector2(201, 33)

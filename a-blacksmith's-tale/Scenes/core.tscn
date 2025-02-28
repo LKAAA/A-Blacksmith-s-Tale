@@ -7,5 +7,6 @@
 script = ExtResource("1_gb7ya")
 
 [node name="LoadingScreen" type="CanvasLayer" parent="."]
+layer = 20
 
 [node name="LoadingScreen" parent="LoadingScreen" instance=ExtResource("2_377ls")]

@@ -1,8 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://cuy4dikcyhbr2"]
+[gd_scene load_steps=32 format=3 uid="uid://cuy4dikcyhbr2"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_cx3in"]
 [ext_resource type="Texture2D" uid="uid://bqktms2cbpgah" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_0djqn"]
+[ext_resource type="Resource" uid="uid://da5paxap81syu" path="res://Data/Inventories/player_inventory.tres" id="2_10i02"]
 [ext_resource type="Texture2D" uid="uid://cvj1f4u77wcbv" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="3_o5lx4"]
+[ext_resource type="Script" path="res://Scripts/inventory_ui.gd" id="4_55epm"]
+[ext_resource type="PackedScene" uid="uid://bpnq7hvfew8e7" path="res://Scenes/slot.tscn" id="4_o0fur"]
+[ext_resource type="Script" path="res://Scripts/menu_ui.gd" id="5_axli7"]
+[ext_resource type="Resource" uid="uid://dyo1byeq58lh2" path="res://Data/Items/iron_bar.tres" id="8_so5pf"]
+[ext_resource type="Script" path="res://Data/slot_data.gd" id="9_0xqw6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wvv1"]
 atlas = ExtResource("2_0djqn")
@@ -189,9 +195,15 @@ animations = [{
 radius = 5.0
 height = 14.0
 
+[sub_resource type="Resource" id="Resource_2nuyg"]
+script = ExtResource("9_0xqw6")
+item_data = ExtResource("8_so5pf")
+quantity = 4
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 129
 script = ExtResource("1_cx3in")
+inventory = ExtResource("2_10i02")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hgb4b")
@@ -220,4 +232,51 @@ offset_right = 47.0
 offset_bottom = 23.0
 text = "ITEMS"
 
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Menu_UI" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_axli7")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/Menu_UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Menu_UI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="InventoryUI" type="GridContainer" parent="UI/Menu_UI/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 9
+script = ExtResource("4_55epm")
+
+[node name="GrabbedSlot" parent="UI/Menu_UI" instance=ExtResource("4_o0fur")]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+slot_item_data = SubResource("Resource_2nuyg")
+
 [connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="gui_input" from="UI/Menu_UI" to="UI/Menu_UI" method="_on_gui_input"]
