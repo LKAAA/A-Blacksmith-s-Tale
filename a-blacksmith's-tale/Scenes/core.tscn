@@ -10,3 +10,4 @@ script = ExtResource("1_gb7ya")
 layer = 20
 
 [node name="LoadingScreen" parent="LoadingScreen" instance=ExtResource("2_377ls")]
+mouse_filter = 1
