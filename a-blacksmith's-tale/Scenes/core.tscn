@@ -1,13 +1,89 @@
-[gd_scene load_steps=3 format=3 uid="uid://co5cc6txkeplv"]
+[gd_scene load_steps=6 format=3 uid="uid://co5cc6txkeplv"]
 
 [ext_resource type="Script" path="res://Scripts/core.gd" id="1_gb7ya"]
 [ext_resource type="PackedScene" uid="uid://cj3yjqmwsa42r" path="res://Scenes/loading_screen.tscn" id="2_377ls"]
+[ext_resource type="PackedScene" uid="uid://bpnq7hvfew8e7" path="res://Scenes/slot.tscn" id="3_ak6bg"]
+[ext_resource type="Script" path="res://Scripts/menu_ui.gd" id="3_se76q"]
+[ext_resource type="Script" path="res://Scripts/inventory_ui.gd" id="4_alorl"]
 
 [node name="Core" type="Node2D"]
 script = ExtResource("1_gb7ya")
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Menu_UI" type="Control" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("3_se76q")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/Menu_UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Menu_UI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="InventoryUI" type="GridContainer" parent="UI/Menu_UI/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 9
+script = ExtResource("4_alorl")
+
+[node name="GrabbedSlot" parent="UI/Menu_UI" instance=ExtResource("3_ak6bg")]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+mouse_filter = 1
 
 [node name="LoadingScreen" type="CanvasLayer" parent="."]
 layer = 20
 
 [node name="LoadingScreen" parent="LoadingScreen" instance=ExtResource("2_377ls")]
 mouse_filter = 1
+
+[node name="Slot" parent="LoadingScreen" instance=ExtResource("3_ak6bg")]
+offset_left = 304.0
+offset_top = 278.0
+offset_right = 336.0
+offset_bottom = 310.0
+
+[node name="Test_UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Test_UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="Test_UI/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 47.0
+offset_bottom = 23.0
+mouse_filter = 1
+text = "ITEMS"

@@ -25,6 +25,7 @@ func set_slot_data(slot_data: SlotData) -> void:
 			label.hide()	
 
 func _on_gui_input(event: InputEvent) -> void:
+	print("Emitt")
 	if event is InputEventMouseButton \
 			and (event.button_index == MOUSE_BUTTON_LEFT \
 			or event.button_index == MOUSE_BUTTON_RIGHT) \

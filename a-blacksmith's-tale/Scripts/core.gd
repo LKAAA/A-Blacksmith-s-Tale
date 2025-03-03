@@ -3,6 +3,7 @@ class_name Core extends Node2D
 const PLAYER = preload("res://Player/player.tscn")
 
 @onready var loading_screen: LoadingScreen = $LoadingScreen/LoadingScreen
+@onready var menu_ui: Control = %Menu_UI
 
 var cur_zone: String
 var cur_transition: int
@@ -14,6 +15,10 @@ var player: PlayerBase
 func _ready() -> void:
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
+
+func open_inventory(inventory_data: InventoryData) -> void:
+	menu_ui._update_player_inventory(inventory_data)
+	menu_ui.visible = !menu_ui.visible
 
 # @param path is the path of the scene to transition to
 # @param transition is the number in the transitions array on each zone to teleport the player to
@@ -29,6 +34,7 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		
 		player = PLAYER.instantiate()
 		current_zone.add_child(player)
+		player.open_inventory.connect(open_inventory)
 	
 	# If there is already a zone set up some variables and start the loading scren fade_in  animation
 	else:

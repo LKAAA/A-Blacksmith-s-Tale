@@ -6,6 +6,7 @@ extends Control
 func _physics_process(delta: float) -> void:
 	grabbed_slot.position = get_global_mouse_position()
 
+
 func _set_player_inventory(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_interacted.connect(on_inventory_interact)
 	inventory_ui.set_inventory_data(inventory_data)

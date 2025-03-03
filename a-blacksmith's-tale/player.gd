@@ -1,12 +1,8 @@
 class_name PlayerBase extends CharacterBody2D
 
 # Player base handles movement and input
-@onready var label: Label = %Label
 
 @onready var sprite: AnimatedSprite2D = $Sprite2D
-
-@onready var menu_ui: Control = $UI/Menu_UI
-
 @export var inventory: InventoryData = InventoryData.new()
 
 const WALKSPEED: float = 60 # Base walkspeed
@@ -23,9 +19,10 @@ var prev_direction: int
 enum PLAYER_STATES { MOVE, DODGEROLL, ATTACK, INTERACTING }
 var current_state: PLAYER_STATES 
 
+signal open_inventory(inventory: InventoryData)
+
 func _ready() -> void:
 	speed = calculate_current_speed(0)
-	menu_ui._set_player_inventory(inventory)
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -55,8 +52,7 @@ func _handle_input() -> void:
 		dodgeroll()
 	
 	if Input.is_action_just_pressed("ui_inventory"):
-		menu_ui._update_player_inventory(inventory)
-		menu_ui.visible = !menu_ui.visible
+		open_inventory.emit(inventory)
 
 func dodgeroll() -> void:
 	current_state = PLAYER_STATES.DODGEROLL
