@@ -35,6 +35,7 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		player = PLAYER.instantiate()
 		current_zone.add_child(player)
 		player.open_inventory.connect(open_inventory)
+		menu_ui._set_player_inventory(player.inventory)
 	
 	# If there is already a zone set up some variables and start the loading scren fade_in  animation
 	else:

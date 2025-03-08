@@ -321,7 +321,7 @@ position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_6fopl")
 
 [node name="ItemPickup" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(271, 39)
+position = Vector2(81, 46)
 slot_data = SubResource("Resource_rsj2a")
 
 [node name="ItemPickup2" parent="." instance=ExtResource("6_vjrfg")]
