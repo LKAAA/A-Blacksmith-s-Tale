@@ -2,7 +2,7 @@ class_name Core extends Node2D
 
 const PLAYER = preload("res://Player/player.tscn")
 
-@onready var loading_screen: LoadingScreen = $LoadingScreen/LoadingScreen
+@onready var loading_screen: LoadingScreen = %LoadingScreen
 @onready var menu_ui: Control = %Menu_UI
 
 var cur_zone: String

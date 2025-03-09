@@ -8,3 +8,5 @@ script = ExtResource("1_7kfmq")
 name = "Iron Ore"
 description = "A raw chunk of iron ore."
 sprite = ExtResource("2_i1x7e")
+type = "Material"
+stackable = true

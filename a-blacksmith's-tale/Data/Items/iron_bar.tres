@@ -8,3 +8,5 @@ script = ExtResource("1_o8yqx")
 name = "Iron Bar"
 description = "A smelted bar of iron."
 sprite = ExtResource("2_qrg31")
+type = "Material"
+stackable = true

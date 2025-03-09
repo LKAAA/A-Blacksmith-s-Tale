@@ -31,7 +31,6 @@ func can_partially_merge_with(other_slot_data: SlotData, inventory_data: Invento
 
 # @param other_slot_data - slot data that will get combined into this one
 func fully_merge_with(other_slot_data: SlotData) -> void:
-	print(other_slot_data.quantity)
 	quantity += other_slot_data.quantity
 
 func partially_merge_with(other_slot_data: SlotData) -> SlotData:

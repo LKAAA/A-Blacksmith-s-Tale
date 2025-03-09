@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/core.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Popups="*res://Scenes/popups.tscn"
+
 [display]
 
 window/size/viewport_width=640
