@@ -46,7 +46,6 @@ func drop_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 		slot_data.fully_merge_with(grabbed_slot_data)
 	else:
 		inventory_slots[index] = grabbed_slot_data
-		print(inventory_slots[index])
 		return_slot_data = slot_data
 	
 	inventory_updated.emit(self)

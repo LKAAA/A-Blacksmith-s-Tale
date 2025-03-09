@@ -8,6 +8,8 @@ var correction = Vector2i()
 @onready var type_label: Label = %Type_Label
 @onready var description_label: Label = %Description_Label
 
+func _ready() -> void:
+	%ItemPopup.unfocusable = true
 
 func _physics_process(delta: float) -> void:
 	mouse_pos = get_viewport().get_mouse_position()

@@ -29,30 +29,32 @@
 >- 523 AH - Founded by [[House Thane]], originally a minor noble family.
 >- 698 AH - The separation of the western region of [[Vashkara]] happened due to power disputes between [[House Thane]] and [[House Vashteria]].
 
-Than is a large kingdom ruled by a king, that also heavily relies on a council of wealthy merchants to make decisions as well as several noble families. It is a vast kingdom built on trade, and serves as a thriving region between the [[The Central Kingdoms|Central Kingdom]] and the [[The Northern Reaches|Northern Reaches]]. 
-Than serves as a gateway into the [[The Northern Reaches|Northern Reaches]], as the [[Frozen Vale]] on it's northern border is the main way in by land. The [[Frostspire]] is the furthest known settlement in the [[The Northern Reaches|Northern Reaches]] and serves as a testament to the calling of man to venture where nature tells us not to.
+Than is a large kingdom under the rule of both a king as well as a [[Council of Than|council]] of wealthy merchants and noble families. Than is built on a core of agricultural trade, and is located between the [[The Central Kingdoms|Central Kingdom]], the [[The Northern Reaches|Northern Reaches]], and [[Vashkara]]. 
+Than is sometimes known as the Gateway of the North as it houses the only clear entrance way into the [[The Northern Reaches|Northern Reaches]]. [[Frostspire]] is the furthest known settlement in the [[The Northern Reaches|Northern Reaches]].
 
 #### Society
 
+##### Ruling Party
+Than is under the rule of [[House Thane]] and [[King Aldric Thane IV]]. While Than is ruled by a monarchy the King allows a [[Council of Than|council]] of both noble families and rich merchant and guild leaders to influence or make many of the decisions focused on trade and economy.
+
 ##### Magic
-Magic in Than is limited to nobles only. When Than was first founded it was during an age of what some might call magical darkness. There was no widespread teaching of magic. The common belief was that magic causes more problems than it solves for the common and uneducated people. As such it was declared by [[House Thane]] that all magic be limited to nobility only.
-After the recent dungeon unsealing in both midwestern Than and further south near Port Elysia, [[King Aldric Thane IV|King Aldric IV]] has begrudgingly begun to allow foreign adventuring mages to enter Than to clear the overflowing monsters. Foreign mages are only allowed to enter Than if they have the required paperwork, some of which includes a valid [[adventurer's ID]], and a letter from the school that was studied at.
+Magic in Than is limited to the nobility only, though there are rumors that the rich can also purchase the privilege to use magic. When Than was first founded it was during an age of what some might call a magical darkness. There was no widespread teaching of magic throughout the world as there is now and it was the common belief that magic causes more problems than it solves for the common and uneducated people. One of the founding principles of Than was the limitation of all magic to nobility only. 
+After the recent dungeon unsealing in both midwestern Than and further south near [[Port Elysia]], [[King Aldric Thane IV|King Aldric IV]] has begrudgingly begun to allow foreign adventuring [[Mage|mages]] to enter Than to clear the overflowing monsters after complaints from the nobility of being worked too hard. Foreign mages are only allowed to enter Than if they have the required paperwork, some of which includes a valid [[adventurer's ID]], and a valid degree from one of the [[Magic Schools|major magic schools]].
 
 ##### Locations
 
 **Major Cities:**
-- [[Valthane]] - Capital city - Largest port city in Akora, massive trade hub with banks, shipyards, and merchant guilds
-- [[Ironhold]] - Fortress city in the south, guarding the mountain pass to the central kingdoms
-- [[Rivermeet]] - Major city on the intersection of two rivers
-- [[Goldenfield]] - A farming city, a major part of the kingdom's grain trade
-- [[Port Elysia]] - Second largest port city in Than
-- [[Ironfair]] - One of the western border cities. Also a key producer in metal goods, weapons, and tools
+- [[Valthane]] - Capital city - Largest port city in Akora, massive trade hub with banks, shipyards, and merchant guilds. Houses both the King as well as the Council.
+- [[Ironhold]] - Fortress city in the south, guarding the mountain pass to the [[The Central Kingdoms|Central Kingdoms]]
+- [[Rivermeet]] - Major farming city on the intersection of two rivers.
+- [[Goldenfield]] - Major farming city, provides almost ½ of the entire kingdom's agricultural trade.
+- [[Port Elysia]] - Second largest port city in Than, another major trade hub.
+- [[Ironfair]] - One of the western border cities. Also a key producer in metal goods, weapons, and tools.
 - [[Dellhulm]] - The second of the western border cities. 
 
 **Major Towns:** 
 - [[Frostgate]] - Large fort in front of the [[Frozen Vale]], serves as the gatehouse of the north.
 - [[Frostspire]] - Farthest north outpost in the northern reaches. Keeps an advanced lookout on any happenings in the region.
-- [[Guildhelm]] - A neutral trade town where merchants can settle disputes under an independent ruling council.
 - Highemere - Large town that serves as a rest stop in between Ironhold and Goldenfield.
 
 **Smaller Towns:** 
@@ -79,13 +81,12 @@ After the recent dungeon unsealing in both midwestern Than and further south nea
 
 The Beast-Race conflict of Westios
 - Around 754 AH, many beast-races began fleeing to Than from [[Westios]], but were still faced with much discrimination
-- The Merchant Guild were for supporting integrating beast-races into Than for economic reasons, but many of the noble families resist due to prejudice. 
+- The Merchant Guild were for supporting the integration of beast-races into Than for economic reasons, but many of the noble families resisted due to prejudice.
+- It was eventually agreed upon to allow many of the beast-refugees to stay but most face wage discrimination to this day.
 
 ###### Recent Events
-Tensions in Frostgate
+High tensions in Frostgate
 - Strange rumors have been emerging from Frostspire, causing Frostgate to be put on high alert
-
-The Merchant guild has become bolder recently, and begun to challenge the king's rule more frequently
 
 ##### Appendix
 Roughly the size of Texas or France

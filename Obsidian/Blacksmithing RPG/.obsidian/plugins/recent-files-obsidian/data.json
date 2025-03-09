@@ -1,24 +1,28 @@
 {
   "recentFiles": [
     {
+      "basename": "Westios",
+      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
+    },
+    {
+      "basename": "Than",
+      "path": "World Notes/World/Geography/Kingdoms/Than.md"
+    },
+    {
       "basename": "Vashkara",
       "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
-    },
-    {
-      "basename": "Home",
-      "path": "Home.md"
-    },
-    {
-      "basename": "The Unnamed Magocracy",
-      "path": "World Notes/World/Geography/Kingdoms/The Unnamed Magocracy.md"
     },
     {
       "basename": "The Central Kingdoms",
       "path": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md"
     },
     {
-      "basename": "Than",
-      "path": "World Notes/World/Geography/Kingdoms/Than.md"
+      "basename": "The Unnamed Magocracy",
+      "path": "World Notes/World/Geography/Kingdoms/The Unnamed Magocracy.md"
+    },
+    {
+      "basename": "Home",
+      "path": "Home.md"
     },
     {
       "basename": "Flowing Mana Springs",
@@ -47,10 +51,6 @@
     {
       "basename": "Nil Daral",
       "path": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Nil Daral.md"
-    },
-    {
-      "basename": "Westios",
-      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
     },
     {
       "basename": "The Black Sun",

@@ -28,14 +28,21 @@
 >| ---- | ----| 
 >- 846 AH - The Northern kingdom conquers the Southern kingdom to become the Central Kingdoms.
 
+The Central Kingdoms was at one point a collection of smaller kingdoms located in the central region of [[Akora]], but was united into one by the religious order of [[King Alvin Howsen]] with heavy assistance from the [[Church of the True God]], which was, and still is, the major religion in most of the kingdoms.
 
 #### Society
+
+##### Ruling Party
+The Central Kingdoms is ruled by a monarchy with heavy religious influence from the [[Church of the True God]]. While the cities in the central kingdoms are ruled on paper by dukes and lords appointed by the king, many bishops and inquisitors of the church hold more influence over the cities than the lords themselves.
+
+##### Magic
+Magic is freely used across the Central Kingdoms, with the exception of both divine or light magic, and chaos or dark magic, which are restricted by the church. Divine magic, which is under strict ruling to only be used by the church, is used by them to keep a tight hold on the power to both heal people and cleanse dungeons. Chaos magic is restricted by the church as it is said to be of the devil.
 
 ##### Locations
 
 **Major Cities:**
-- [[Kinthia]] - Capital city of the Central Kingdoms (once the Northern Kingdom's capital). A grand city filled with cathedrals and contains the second largest palace in Akora.
-- [[Koran]] - A large trade city located near the border of Than. 
+- [[Kinthia]] - Capital city of the Central Kingdoms (once the [[Alkorian Kingdom]]'s capital). A grand city filled with cathedrals and contains the second largest palace in [[Akora]].
+- [[Koran]] - A large trade city located near the border of [[Than]].
 - [[Whitechapel]] - A large city with a devoted church. Headquarters to the dungeon sealing department of the church. 
 - [[Abbey's Reach]] - A devoted city to the [[Church of the True God|True God]] faith. Location of the largest religious university in Akora.
 - [[Maudina]] - City located near the border of [[Westios]]
