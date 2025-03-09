@@ -15,9 +15,7 @@ func _ready() -> void:
 func set_slot_data(slot: SlotData) -> void:
 	
 	if slot:
-		print(slot)
 		slot_data = slot
-		print(slot_data)
 		if slot_data.item_data.sprite:
 			texture_rect.texture = slot_data.item_data.sprite
 		
@@ -31,16 +29,19 @@ func set_slot_data(slot: SlotData) -> void:
 		texture_rect.texture = null
 		label.hide()
 
+func update_popup() -> void:
+	if slot_data == null:
+		return
+	
+	Popups.ItemPopup(slot_data.item_data)
+
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and (event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT) and event.is_pressed():
 		slot_clicked.emit(get_index(), event.button_index)
 
 
 func _on_mouse_entered() -> void:
-	if slot_data == null:
-		return
-	
-	Popups.ItemPopup(Rect2i(Vector2i(global_position), Vector2i(size)), slot_data.item_data)
+	update_popup()
 
 
 func _on_mouse_exited() -> void:

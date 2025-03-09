@@ -1,6 +1,6 @@
 class_name InventoryData extends Resource
 
-signal inventory_updated(inventory_data: InventoryData)
+signal inventory_updated(inventory_data: InventoryData, index: int)
 signal inventory_interacted(inventory_data: InventoryData, index: int, button: int)
 
 @export var inventory_slots: Array[SlotData] = []
@@ -9,7 +9,7 @@ func pick_up_slot_data(slot_data: SlotData) -> bool:
 	for index in inventory_slots.size():
 		if inventory_slots[index] and inventory_slots[index].can_fully_merge_with(slot_data):
 			inventory_slots[index].fully_merge_with(slot_data)
-			inventory_updated.emit(self)
+			inventory_updated.emit(self, index)
 			return true
 	
 	for index in inventory_slots.size():
@@ -18,13 +18,14 @@ func pick_up_slot_data(slot_data: SlotData) -> bool:
 			for i in inventory_slots.size():
 				if not inventory_slots[i]:
 					inventory_slots[i] = new_slot
-					inventory_updated.emit(self)
+					inventory_updated.emit(self, i)
+					inventory_updated.emit(self, index)
 					return true
 
 	for index in inventory_slots.size():
 		if not inventory_slots[index]:
 			inventory_slots[index] = slot_data
-			inventory_updated.emit(self)
+			inventory_updated.emit(self, index)
 			return true
 	
 	return false
@@ -33,7 +34,7 @@ func grab_slot_data(index: int) -> SlotData:
 	var slot_data = inventory_slots[index]
 	if slot_data:
 		inventory_slots[index] = null
-		inventory_updated.emit(self)
+		inventory_updated.emit(self, index)
 		return slot_data
 	else:
 		return null
@@ -47,8 +48,9 @@ func drop_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 	else:
 		inventory_slots[index] = grabbed_slot_data
 		return_slot_data = slot_data
+		Popups.ItemPopup(inventory_slots[index].item_data)
 	
-	inventory_updated.emit(self)
+	inventory_updated.emit(self, index)
 	return return_slot_data
 
 func grab_new_single_slot_data(index: int) -> SlotData:
@@ -58,7 +60,7 @@ func grab_new_single_slot_data(index: int) -> SlotData:
 		return_slot_data = slot_data.create_single_slot_data()
 		if inventory_slots[index].quantity < 1:
 			inventory_slots[index] = null
-		inventory_updated.emit(self)
+		inventory_updated.emit(self, index)
 		return return_slot_data
 	else:
 		return null
@@ -70,7 +72,8 @@ func grab_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 		slot_data.quantity -= 1
 		if inventory_slots[index].quantity < 1:
 			inventory_slots[index] = null
-		inventory_updated.emit(self)
+			Popups.HideItemPopup()
+		inventory_updated.emit(self, index)
 		return grabbed_slot_data
 	else:
 		return grabbed_slot_data
@@ -84,7 +87,8 @@ func drop_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 	elif slot_data.can_merge_with(grabbed_slot_data):
 		slot_data.fully_merge_with(grabbed_slot_data.create_single_slot_data())
 	
-	inventory_updated.emit(self)
+	inventory_updated.emit(self, index)
+	
 	
 	if grabbed_slot_data.quantity > 0:
 		return grabbed_slot_data

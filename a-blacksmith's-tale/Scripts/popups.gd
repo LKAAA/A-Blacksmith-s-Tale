@@ -1,8 +1,10 @@
 extends Control
 
 var mouse_pos: Vector2
-var padding = 6
+var padding_x = 6
+var padding_y = 12
 var correction = Vector2i()
+var grabbed_item = false
 
 @onready var name_label: Label = %Name_Label
 @onready var type_label: Label = %Type_Label
@@ -12,10 +14,16 @@ func _ready() -> void:
 	%ItemPopup.unfocusable = true
 
 func _physics_process(delta: float) -> void:
+	if grabbed_item:
+		padding_x = 24
+		padding_y = 22
+	else:
+		padding_x = 8
+		padding_y = 10
 	mouse_pos = get_viewport().get_mouse_position()
-	%ItemPopup.position = Vector2(mouse_pos.x + padding, mouse_pos.y + padding)
+	%ItemPopup.position = Vector2(mouse_pos.x + padding_x, mouse_pos.y + padding_y)
 
-func ItemPopup(slot: Rect2i,item: ItemData):
+func ItemPopup(item: ItemData):
 	if item != null:
 		%ItemPopup.size = Vector2i.ZERO
 	
