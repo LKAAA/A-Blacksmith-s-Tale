@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cuy4dikcyhbr2"]
+[gd_scene load_steps=27 format=3 uid="uid://cuy4dikcyhbr2"]
 
 [ext_resource type="Script" uid="uid://cfaixpdbolxqs" path="res://player.gd" id="1_cx3in"]
 [ext_resource type="Texture2D" uid="uid://bqktms2cbpgah" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_0djqn"]
@@ -190,6 +190,9 @@ animations = [{
 radius = 5.0
 height = 14.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwnis"]
+size = Vector2(48, 48)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 129
 script = ExtResource("1_cx3in")
@@ -197,7 +200,7 @@ inventory = ExtResource("2_10i02")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hgb4b")
-animation = &"Roll_Down"
+animation = &"Idle_Down"
 autoplay = "Idle_Down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -205,4 +208,14 @@ autoplay = "Idle_Down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t14g3")
 
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_gwnis")
+
 [connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_exited"]

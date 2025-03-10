@@ -2,6 +2,8 @@ class_name PlayerBase extends CharacterBody2D
 
 # Player base handles movement and input
 
+@onready var all_interactions = []
+
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @export var inventory: InventoryData = InventoryData.new()
 
@@ -53,6 +55,9 @@ func _handle_input() -> void:
 	
 	if Input.is_action_just_pressed("ui_inventory"):
 		open_inventory.emit(inventory)
+	
+	if Input.is_action_just_pressed("ui_interact"):
+		execute_interaction()
 
 func dodgeroll() -> void:
 	current_state = PLAYER_STATES.DODGEROLL
@@ -95,3 +100,17 @@ func _on_sprite_2d_animation_finished() -> void:
 	if current_state == PLAYER_STATES.DODGEROLL:
 		#hitbox.enabled = true
 		current_state = PLAYER_STATES.MOVE
+
+# Interaction Funcs
+
+func _on_interaction_area_entered(area: Area2D) -> void:
+	all_interactions.insert(0, area)
+
+func _on_interaction_area_exited(area: Area2D) -> void:
+	all_interactions.erase(area)
+
+func execute_interaction() -> void:
+	if all_interactions:
+		var current_interaction = all_interactions[0]
+		if current_interaction.get_parent().has_method("_on_interact"):
+			current_interaction.get_parent()._on_interact()

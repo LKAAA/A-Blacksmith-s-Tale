@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=33 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://boio4rgvdby0s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_ntypt"]
@@ -13,6 +13,9 @@
 [ext_resource type="Resource" uid="uid://cfe48xar3dp0q" path="res://Data/Items/oak_long_tool_handle.tres" id="11_xp42o"]
 [ext_resource type="Resource" uid="uid://r4bslb1evnvq" path="res://Data/Items/iron_pickaxe_head.tres" id="12_7023x"]
 [ext_resource type="Resource" uid="uid://b28a8c0aq5y08" path="res://Data/Items/iron_pickaxe.tres" id="13_g8qwa"]
+[ext_resource type="Script" uid="uid://cw230kghxqh75" path="res://Scripts/chest.gd" id="14_6mo1a"]
+[ext_resource type="Texture2D" uid="uid://bhkv28fd2pwbb" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="14_8d832"]
+[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/interact_area.tscn" id="16_6mo1a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7diq"]
 texture = ExtResource("2_ntypt")
@@ -316,6 +319,15 @@ script = ExtResource("8_yhkl1")
 item_data = ExtResource("13_g8qwa")
 quantity = 1
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwclm"]
+atlas = ExtResource("14_8d832")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8d832"]
+size = Vector2(16, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mo1a"]
+
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_x1thp")
 transitions = [NodePath("Transition Zones/NorthTransition"), NodePath("Transition Zones/EastTransition")]
@@ -355,29 +367,45 @@ position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_6fopl")
 
 [node name="ItemPickup" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(289, 187)
+position = Vector2(73, 55)
 slot_data = SubResource("Resource_rsj2a")
 
 [node name="ItemPickup2" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(277, 176)
+position = Vector2(61, 44)
 slot_data = SubResource("Resource_d5yei")
 
 [node name="ItemPickup3" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(306, 199)
+position = Vector2(90, 67)
 slot_data = SubResource("Resource_yg32u")
 
 [node name="ItemPickup4" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(274, 197)
+position = Vector2(58, 65)
 slot_data = SubResource("Resource_oubvd")
 
 [node name="ItemPickup5" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(298, 175)
+position = Vector2(82, 43)
 slot_data = SubResource("Resource_kurom")
 
 [node name="ItemPickup6" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(298, 175)
+position = Vector2(82, 43)
 slot_data = SubResource("Resource_g0d61")
 
 [node name="ItemPickup7" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(298, 175)
+position = Vector2(82, 43)
 slot_data = SubResource("Resource_g0d61")
+
+[node name="Chest" type="StaticBody2D" parent="."]
+position = Vector2(312, 152)
+script = ExtResource("14_6mo1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chest"]
+texture = SubResource("AtlasTexture_uwclm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_8d832")
+
+[node name="Interactable" parent="Chest" instance=ExtResource("16_6mo1a")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/Interactable"]
+shape = SubResource("RectangleShape2D_6mo1a")
