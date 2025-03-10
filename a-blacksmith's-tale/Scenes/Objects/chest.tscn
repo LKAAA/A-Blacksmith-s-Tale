@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxn142l8tsc8v"]
+
+[ext_resource type="Script" uid="uid://cw230kghxqh75" path="res://Scripts/chest.gd" id="1_matv7"]
+[ext_resource type="Texture2D" uid="uid://bhkv28fd2pwbb" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="2_e2yg2"]
+[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/interact_area.tscn" id="3_o3y3u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwclm"]
+atlas = ExtResource("2_e2yg2")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8d832"]
+size = Vector2(16, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mo1a"]
+
+[node name="Chest" type="StaticBody2D" groups=["external_inventory"]]
+script = ExtResource("1_matv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_uwclm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_8d832")
+
+[node name="Interactable" parent="." instance=ExtResource("3_o3y3u")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_6mo1a")

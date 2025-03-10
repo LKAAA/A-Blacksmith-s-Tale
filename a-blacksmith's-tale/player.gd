@@ -54,7 +54,7 @@ func _handle_input() -> void:
 		dodgeroll()
 	
 	if Input.is_action_just_pressed("ui_inventory"):
-		open_inventory.emit(inventory)
+		open_inventory.emit()
 	
 	if Input.is_action_just_pressed("ui_interact"):
 		execute_interaction()

@@ -1,10 +1,13 @@
-extends Control
+class_name Menu extends Control
 
 @onready var grabbed_slot: Slot = %GrabbedSlot
-@onready var inventory_ui: InventoryUI = %InventoryUI
 @export var grabbed_slot_padding = -5
 
+@onready var player_inventory: PanelContainer = %PlayerInventory
+@onready var external_inventory: PanelContainer = %ExternalInventory
+
 var grabbed_slot_data: SlotData = null
+var external_inventory_owner
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
@@ -12,10 +15,26 @@ func _physics_process(delta: float) -> void:
 
 func _set_player_inventory(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_interacted.connect(on_inventory_interact)
-	inventory_ui.set_inventory_data(inventory_data)
+	player_inventory.set_inventory_data(inventory_data)
+
+func _set_external_inventory(_external_inventory) -> void:
+	external_inventory_owner = _external_inventory
+	var inventory_data = external_inventory_owner.inventory_data
+	
+	inventory_data.inventory_interacted.connect(on_inventory_interact)
+	external_inventory.set_inventory_data(inventory_data)
+
+func clear_external_inventory() -> void:
+	if external_inventory_owner:
+		var inventory_data = external_inventory_owner.inventory_data
+		
+		inventory_data.inventory_interacted.disconnect(on_inventory_interact)
+		external_inventory.clear_inventory_data(inventory_data)
+		
+		external_inventory_owner = null
 
 func _update_player_inventory(inventory_data: InventoryData) -> void:
-	inventory_ui.populate_grid(inventory_data)
+	player_inventory.populate_grid(inventory_data)
 
 func on_inventory_interact(inventory_data: InventoryData, index: int, button: int) -> void:
 	match [grabbed_slot_data, button]:

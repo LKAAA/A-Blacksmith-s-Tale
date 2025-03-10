@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=36 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://boio4rgvdby0s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_ntypt"]
@@ -13,9 +13,8 @@
 [ext_resource type="Resource" uid="uid://cfe48xar3dp0q" path="res://Data/Items/oak_long_tool_handle.tres" id="11_xp42o"]
 [ext_resource type="Resource" uid="uid://r4bslb1evnvq" path="res://Data/Items/iron_pickaxe_head.tres" id="12_7023x"]
 [ext_resource type="Resource" uid="uid://b28a8c0aq5y08" path="res://Data/Items/iron_pickaxe.tres" id="13_g8qwa"]
-[ext_resource type="Script" uid="uid://cw230kghxqh75" path="res://Scripts/chest.gd" id="14_6mo1a"]
-[ext_resource type="Texture2D" uid="uid://bhkv28fd2pwbb" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="14_8d832"]
-[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/interact_area.tscn" id="16_6mo1a"]
+[ext_resource type="PackedScene" uid="uid://cxn142l8tsc8v" path="res://Scenes/Objects/chest.tscn" id="14_8d832"]
+[ext_resource type="Script" uid="uid://dfsikqcptkoj0" path="res://Data/inventory_data.gd" id="15_uwclm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7diq"]
 texture = ExtResource("2_ntypt")
@@ -319,14 +318,45 @@ script = ExtResource("8_yhkl1")
 item_data = ExtResource("13_g8qwa")
 quantity = 1
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwclm"]
-atlas = ExtResource("14_8d832")
-region = Rect2(16, 16, 16, 16)
+[sub_resource type="Resource" id="Resource_6mo1a"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("13_g8qwa")
+quantity = 1
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8d832"]
-size = Vector2(16, 14)
+[sub_resource type="Resource" id="Resource_qsvcl"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("10_oamql")
+quantity = 69
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mo1a"]
+[sub_resource type="Resource" id="Resource_quhww"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("7_ojt8e")
+quantity = 73
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
+
+[sub_resource type="Resource" id="Resource_r6337"]
+script = ExtResource("15_uwclm")
+inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_6mo1a"), null, null, null, SubResource("Resource_qsvcl"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, SubResource("Resource_quhww"), null, null])
+metadata/_custom_type_script = "uid://dfsikqcptkoj0"
+
+[sub_resource type="Resource" id="Resource_uwclm"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("12_7023x")
+quantity = 1
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
+
+[sub_resource type="Resource" id="Resource_dpgyg"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("11_xp42o")
+quantity = 1
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
+
+[sub_resource type="Resource" id="Resource_6bgdf"]
+script = ExtResource("15_uwclm")
+inventory_slots = Array[ExtResource("8_yhkl1")]([null, null, null, null, null, null, null, SubResource("Resource_uwclm"), SubResource("Resource_dpgyg"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_x1thp")
@@ -394,18 +424,12 @@ slot_data = SubResource("Resource_g0d61")
 position = Vector2(82, 43)
 slot_data = SubResource("Resource_g0d61")
 
-[node name="Chest" type="StaticBody2D" parent="."]
+[node name="Objects" type="Node" parent="."]
+
+[node name="Chest" parent="Objects" instance=ExtResource("14_8d832")]
 position = Vector2(312, 152)
-script = ExtResource("14_6mo1a")
+inventory_data = SubResource("Resource_r6337")
 
-[node name="Sprite2D" type="Sprite2D" parent="Chest"]
-texture = SubResource("AtlasTexture_uwclm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_8d832")
-
-[node name="Interactable" parent="Chest" instance=ExtResource("16_6mo1a")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest/Interactable"]
-shape = SubResource("RectangleShape2D_6mo1a")
+[node name="Chest2" parent="Objects" instance=ExtResource("14_8d832")]
+position = Vector2(376, 152)
+inventory_data = SubResource("Resource_6bgdf")
