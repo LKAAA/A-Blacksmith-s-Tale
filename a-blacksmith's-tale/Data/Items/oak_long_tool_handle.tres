@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cfe48xar3dp0q"]
+
+[ext_resource type="Script" path="res://Data/item_data.gd" id="1_fseug"]
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="2_7djx5"]
+
+[resource]
+script = ExtResource("1_fseug")
+name = "Long Oak Handle"
+description = "A long handle of oak wood, commonly used for tools."
+sprite = ExtResource("2_7djx5")
+type = "Material"
+stackable = false

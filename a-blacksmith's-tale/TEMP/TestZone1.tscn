@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=27 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://boio4rgvdby0s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_ntypt"]
@@ -9,6 +9,10 @@
 [ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/iron_ore.tres" id="7_ojt8e"]
 [ext_resource type="Script" path="res://Data/slot_data.gd" id="8_yhkl1"]
 [ext_resource type="Resource" uid="uid://dyo1byeq58lh2" path="res://Data/Items/iron_bar.tres" id="9_008y1"]
+[ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="10_oamql"]
+[ext_resource type="Resource" uid="uid://cfe48xar3dp0q" path="res://Data/Items/oak_long_tool_handle.tres" id="11_xp42o"]
+[ext_resource type="Resource" uid="uid://r4bslb1evnvq" path="res://Data/Items/iron_pickaxe_head.tres" id="12_7023x"]
+[ext_resource type="Resource" uid="uid://b28a8c0aq5y08" path="res://Data/Items/iron_pickaxe.tres" id="13_g8qwa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7diq"]
 texture = ExtResource("2_ntypt")
@@ -287,10 +291,30 @@ script = ExtResource("8_yhkl1")
 item_data = ExtResource("9_008y1")
 quantity = 50
 
-[sub_resource type="Resource" id="Resource_v1uqm"]
+[sub_resource type="Resource" id="Resource_d5yei"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("7_ojt8e")
 quantity = 700
+
+[sub_resource type="Resource" id="Resource_yg32u"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("10_oamql")
+quantity = 500
+
+[sub_resource type="Resource" id="Resource_oubvd"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("11_xp42o")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_kurom"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("12_7023x")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_g0d61"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("13_g8qwa")
+quantity = 1
 
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_x1thp")
@@ -321,9 +345,29 @@ position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_6fopl")
 
 [node name="ItemPickup" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(81, 46)
+position = Vector2(289, 187)
 slot_data = SubResource("Resource_rsj2a")
 
 [node name="ItemPickup2" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(400, 32)
-slot_data = SubResource("Resource_v1uqm")
+position = Vector2(277, 176)
+slot_data = SubResource("Resource_d5yei")
+
+[node name="ItemPickup3" parent="." instance=ExtResource("6_vjrfg")]
+position = Vector2(306, 199)
+slot_data = SubResource("Resource_yg32u")
+
+[node name="ItemPickup4" parent="." instance=ExtResource("6_vjrfg")]
+position = Vector2(274, 197)
+slot_data = SubResource("Resource_oubvd")
+
+[node name="ItemPickup5" parent="." instance=ExtResource("6_vjrfg")]
+position = Vector2(298, 175)
+slot_data = SubResource("Resource_kurom")
+
+[node name="ItemPickup6" parent="." instance=ExtResource("6_vjrfg")]
+position = Vector2(298, 175)
+slot_data = SubResource("Resource_g0d61")
+
+[node name="ItemPickup7" parent="." instance=ExtResource("6_vjrfg")]
+position = Vector2(298, 175)
+slot_data = SubResource("Resource_g0d61")
