@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj3yjqmwsa42r"]
 
-[ext_resource type="Script" path="res://Scripts/loading_screen.gd" id="1_btdyh"]
+[ext_resource type="Script" uid="uid://c7h76lxhkbp35" path="res://Scripts/loading_screen.gd" id="1_btdyh"]
 
 [sub_resource type="Animation" id="Animation_to4uh"]
 resource_name = "Fade_In"
@@ -51,9 +51,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w8tud"]
 _data = {
-"Fade_In": SubResource("Animation_to4uh"),
-"Fade_Out": SubResource("Animation_e0ydi"),
-"RESET": SubResource("Animation_omspn")
+&"Fade_In": SubResource("Animation_to4uh"),
+&"Fade_Out": SubResource("Animation_e0ydi"),
+&"RESET": SubResource("Animation_omspn")
 }
 
 [node name="LoadingScreen" type="Control"]

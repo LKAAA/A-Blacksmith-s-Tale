@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xbr07uqgqq1r"]
 
-[ext_resource type="Script" path="res://Scripts/transition_zone.gd" id="1_54num"]
+[ext_resource type="Script" uid="uid://dosfufhhjgl1v" path="res://Scripts/transition_zone.gd" id="1_54num"]
 
 [node name="TransitionZone" type="Area2D"]
 collision_layer = 128

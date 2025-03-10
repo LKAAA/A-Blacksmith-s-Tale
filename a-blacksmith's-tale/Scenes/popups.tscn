@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bu5x1dusj40ce"]
 
-[ext_resource type="Script" path="res://Scripts/popups.gd" id="1_nruhi"]
+[ext_resource type="Script" uid="uid://dohljk3hgoqk3" path="res://Scripts/popups.gd" id="1_nruhi"]
 [ext_resource type="FontFile" uid="uid://d1hqkgwbu8f1p" path="res://Assets/Fonts/TeenyTinyPixls-o2zo.ttf" id="2_ym2nx"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_gnq7y"]

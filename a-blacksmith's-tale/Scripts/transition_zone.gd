@@ -11,5 +11,6 @@ signal transition_entered(next_zone_path, next_zone_num)
 # The transition array of each zone
 func _on_body_entered(body: Node2D) -> void:
 	if next_zone:
+		print("Entered Transition Zone")
 		set_deferred("monitoring", false)
 		transition_entered.emit(next_zone, next_zone_num)

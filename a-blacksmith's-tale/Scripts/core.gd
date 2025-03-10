@@ -34,6 +34,7 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		
 		player = PLAYER.instantiate()
 		current_zone.add_child(player)
+		player.position = Vector2(300,80)
 		player.open_inventory.connect(open_inventory)
 		menu_ui._set_player_inventory(player.inventory)
 	
