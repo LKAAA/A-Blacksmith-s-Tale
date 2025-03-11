@@ -6,6 +6,7 @@ class_name Menu extends Control
 @onready var player_inventory: PanelContainer = %PlayerInventory
 @onready var external_inventory: PanelContainer = %ExternalInventory
 
+var external = false
 var grabbed_slot_data: SlotData = null
 var external_inventory_owner
 
@@ -37,6 +38,13 @@ func _update_player_inventory(inventory_data: InventoryData) -> void:
 	player_inventory.populate_grid(inventory_data)
 
 func on_inventory_interact(inventory_data: InventoryData, index: int, button: int) -> void:
+	if external == true:
+		if Input.is_key_pressed(KEY_SHIFT) && button == MOUSE_BUTTON_LEFT:
+			if grabbed_slot_data:
+				pass
+			else:
+				print("SHIFT CLICK THAT MO FO")
+				
 	match [grabbed_slot_data, button]:
 		[null, MOUSE_BUTTON_LEFT]:
 			#print("Has nothing, grab all slot data")

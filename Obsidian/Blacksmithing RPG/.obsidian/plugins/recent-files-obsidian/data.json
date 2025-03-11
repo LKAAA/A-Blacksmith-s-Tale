@@ -1,6 +1,34 @@
 {
   "recentFiles": [
     {
+      "basename": "Tanning",
+      "path": "Game Notes/Systems/Tanning.md"
+    },
+    {
+      "basename": "Blacksmithing Mechanics",
+      "path": "Game Notes/Systems/Blacksmithing Mechanics.md"
+    },
+    {
+      "basename": "Systems",
+      "path": "Game Notes/Systems/Systems.md"
+    },
+    {
+      "basename": "Leveling-Skills System",
+      "path": "Game Notes/Systems/Leveling-Skills System.md"
+    },
+    {
+      "basename": "Home",
+      "path": "Home.md"
+    },
+    {
+      "basename": "The Natural Resources",
+      "path": "World Notes/World/Items/Resources/The Natural Resources.md"
+    },
+    {
+      "basename": "Dragon Steel",
+      "path": "World Notes/World/Items/Resources/Dragon Steel.md"
+    },
+    {
       "basename": "Westios",
       "path": "World Notes/World/Geography/Kingdoms/Westios.md"
     },
@@ -19,10 +47,6 @@
     {
       "basename": "The Unnamed Magocracy",
       "path": "World Notes/World/Geography/Kingdoms/The Unnamed Magocracy.md"
-    },
-    {
-      "basename": "Home",
-      "path": "Home.md"
     },
     {
       "basename": "Flowing Mana Springs",
@@ -175,30 +199,6 @@
     {
       "basename": "Borin Ragnorok",
       "path": "World Notes/World/People/Borin Ragnorok.md"
-    },
-    {
-      "basename": "S-Rank",
-      "path": "World Notes/World/Culture/Ranks/S-Rank.md"
-    },
-    {
-      "basename": "Pagus Thinsly",
-      "path": "World Notes/World/People/Pagus Thinsly.md"
-    },
-    {
-      "basename": "Genro Linnaeus",
-      "path": "World Notes/World/People/Genro Linnaeus.md"
-    },
-    {
-      "basename": "Dragon Steel",
-      "path": "World Notes/World/Items/Resources/Dragon Steel.md"
-    },
-    {
-      "basename": "Tales of the Ancient Heroes",
-      "path": "World Notes/World/Items/Literature/Tales of the Ancient Heroes.md"
-    },
-    {
-      "basename": "Lapison",
-      "path": "World Notes/World/Races/Beast Races/Lapison.md"
     }
   ],
   "omittedPaths": [],

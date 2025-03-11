@@ -22,6 +22,7 @@ enum PLAYER_STATES { MOVE, DODGEROLL, ATTACK, INTERACTING }
 var current_state: PLAYER_STATES 
 
 signal open_inventory(inventory: InventoryData)
+signal use
 
 func _ready() -> void:
 	speed = calculate_current_speed(0)
@@ -58,6 +59,9 @@ func _handle_input() -> void:
 	
 	if Input.is_action_just_pressed("ui_interact"):
 		execute_interaction()
+	
+	if Input.is_action_just_pressed("ui_use"):
+		use.emit()
 
 func dodgeroll() -> void:
 	current_state = PLAYER_STATES.DODGEROLL

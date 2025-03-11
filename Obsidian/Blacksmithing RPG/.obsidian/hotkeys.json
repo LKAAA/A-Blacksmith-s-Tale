@@ -7,5 +7,14 @@
       ],
       "key": "D"
     }
+  ],
+  "surfing:usingGoogle-to-search": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "P"
+    }
   ]
 }

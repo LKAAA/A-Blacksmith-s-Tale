@@ -19,7 +19,7 @@ Prepare materials for each part of tool
 - Gather leather from skinning animals
 - Alternates to all of these is to purchase from merchants
 
-**Tanning**
+[[Tanning]]
 
 Place leather on curing racks
 Wait (a long time)

@@ -5,6 +5,7 @@ var padding_x = 6
 var padding_y = 12
 var correction = Vector2i()
 var grabbed_item = false
+var active
 
 @onready var name_label: Label = %Name_Label
 @onready var type_label: Label = %Type_Label
@@ -24,14 +25,15 @@ func _physics_process(delta: float) -> void:
 	%ItemPopup.position = Vector2(mouse_pos.x + padding_x, mouse_pos.y + padding_y)
 
 func ItemPopup(item: ItemData):
-	if item != null:
-		%ItemPopup.size = Vector2i.ZERO
-	
-	name_label.text = item.name
-	type_label.text = item.type
-	description_label.text = item.description
-	
-	%ItemPopup.popup()
+	if active:
+		if item != null:
+			%ItemPopup.size = Vector2i.ZERO
+		
+		name_label.text = item.name
+		type_label.text = item.type
+		description_label.text = item.description
+		
+		%ItemPopup.popup()
 
 func HideItemPopup():
 	%ItemPopup.hide()

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cjiq8puq2y5kp"]
+
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/item_data.gd" id="1_rvmly"]
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="2_unul8"]
+
+[resource]
+script = ExtResource("1_rvmly")
+name = "Uncured Leather"
+description = "A length of uncured leather."
+sprite = ExtResource("2_unul8")
+type = "Material"
+stackable = true
+metadata/_custom_type_script = "uid://1sj1rrsd7jss"
