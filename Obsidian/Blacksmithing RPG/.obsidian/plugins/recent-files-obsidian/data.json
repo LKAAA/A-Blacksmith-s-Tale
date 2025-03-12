@@ -1,12 +1,32 @@
 {
   "recentFiles": [
     {
-      "basename": "Tanning",
-      "path": "Game Notes/Systems/Tanning.md"
+      "basename": "Item List",
+      "path": "Game Notes/Item List.md"
+    },
+    {
+      "basename": "Dragon Steel",
+      "path": "World Notes/World/Items/Resources/Dragon Steel.md"
+    },
+    {
+      "basename": "The Natural Resources",
+      "path": "World Notes/World/Items/Resources/The Natural Resources.md"
+    },
+    {
+      "basename": "Game Notes",
+      "path": "Game Notes/Game Notes.canvas"
     },
     {
       "basename": "Blacksmithing Mechanics",
       "path": "Game Notes/Systems/Blacksmithing Mechanics.md"
+    },
+    {
+      "basename": "Home",
+      "path": "Home.md"
+    },
+    {
+      "basename": "Tanning",
+      "path": "Game Notes/Systems/Tanning.md"
     },
     {
       "basename": "Systems",
@@ -15,18 +35,6 @@
     {
       "basename": "Leveling-Skills System",
       "path": "Game Notes/Systems/Leveling-Skills System.md"
-    },
-    {
-      "basename": "Home",
-      "path": "Home.md"
-    },
-    {
-      "basename": "The Natural Resources",
-      "path": "World Notes/World/Items/Resources/The Natural Resources.md"
-    },
-    {
-      "basename": "Dragon Steel",
-      "path": "World Notes/World/Items/Resources/Dragon Steel.md"
     },
     {
       "basename": "Westios",
@@ -191,14 +199,6 @@
     {
       "basename": "Adventurers",
       "path": "World Notes/World/Culture/Jobs/Adventurers.md"
-    },
-    {
-      "basename": "Koran",
-      "path": "World Notes/World/Geography/Cities/Koran.md"
-    },
-    {
-      "basename": "Borin Ragnorok",
-      "path": "World Notes/World/People/Borin Ragnorok.md"
     }
   ],
   "omittedPaths": [],

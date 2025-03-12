@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cw230kghxqh75" path="res://Scripts/chest.gd" id="1_matv7"]
 [ext_resource type="Texture2D" uid="uid://bhkv28fd2pwbb" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Chest.png" id="2_e2yg2"]
-[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/interact_area.tscn" id="3_o3y3u"]
+[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="3_o3y3u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uwclm"]
 atlas = ExtResource("2_e2yg2")
@@ -23,7 +23,7 @@ texture = SubResource("AtlasTexture_uwclm")
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_8d832")
 
-[node name="Interactable" parent="." instance=ExtResource("3_o3y3u")]
+[node name="InteractArea" parent="." instance=ExtResource("3_o3y3u")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 shape = SubResource("RectangleShape2D_6mo1a")

@@ -79,6 +79,7 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		menu_ui._set_player_inventory(player.inventory)
 		game_ui._set_hotbar_inventory(player.inventory)
 		load_external_inventories(current_zone)
+		Global.player = player
 	
 	# If there is already a zone set up some variables and start the loading scren fade_in  animation
 	else:

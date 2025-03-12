@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://7waftdht5yup"]
+
+[ext_resource type="Script" uid="uid://dlhinh2181k2u" path="res://Scripts/intake_tester.gd" id="1_ke0l7"]
+
+[node name="RecipeTester" type="Node2D"]
+script = ExtResource("1_ke0l7")
