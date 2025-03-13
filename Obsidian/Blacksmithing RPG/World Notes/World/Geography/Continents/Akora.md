@@ -38,13 +38,13 @@ Contains:
 - [[Sealed Dungeon of the Elderwoods]]
 
 ###### West
-This region includes the empire of [[Westios]], located from the western coast of the [[Ocean of Glass]], across the [[Golden Steppe]], all the way to the [[Duskridge Mountains]]. Further south along the western coast lies the [[Shattered Isles]], a once bustling island that was shattered into isles when a dungeon was unsealed.
+This region includes the empire of [[Zentharis]], located from the western coast of the [[Ocean of Glass]], across the [[Golden Steppe]], all the way to the [[Duskridge Mountains]]. Further south along the western coast lies the [[Shattered Isles]], a once bustling island that was shattered into isles when a dungeon was unsealed.
 Contains:
 - The [[Ocean of Glass]]
 - The [[Golden Steppe]]
 - The [[Duskridge Mountains]]
 - The [[Shattered Isles]]
-- The Empire of [[Westios]]
+- The Empire of [[Zentharis]]
 
 ###### Interior 
 [[The Central Kingdoms]]
@@ -112,14 +112,14 @@ Region Sizes in mi²
 - [[The Northern Reaches]]: ~280,000 mi²
 - [[Than]]: ~160,000 mi² 
 - [[Vashkara]]: ~40,000 mi²
-- [[Westios]]: ~80,000 mi²
+- [[Zentharis]]: ~80,000 mi²
 - [[The Shattered Isles]]: ~15,000 mi²
 - [[The Elderwoods]]: ~135,000 mi²
 - [[The Dwarven Lands]]: ~140,000 mi²
 - [[The Forgotten Lands]]: ~320,000 mi²
 - [[The Central Kingdoms]]: ~120,000 mi²
-- Unnamed Kingdom: ~200,000 mi²
-- [[The Islands of Nislia|Islands of Nislia]]:  ~19,000 mi²
+- [[Thaumara]]: ~200,000 mi²
+- [[Nislia|Nislia]]:  ~19,000 mi²
 
 
 

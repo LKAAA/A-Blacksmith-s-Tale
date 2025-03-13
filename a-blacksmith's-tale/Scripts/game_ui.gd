@@ -9,10 +9,12 @@ var active_slot: int = 0
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_scroll_up"):
 		active_slot = wrapi(active_slot - 1, 0, 12)  # Wraps between 0 and 11
+		set_active_slot()
 		print(active_slot)
 
 	if Input.is_action_just_pressed("ui_scroll_down"):
 		active_slot = wrapi(active_slot + 1, 0, 12)
+		set_active_slot()
 		print(active_slot)
 
 func _unhandled_key_input(event: InputEvent) -> void:
@@ -28,7 +30,14 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	
 	if event.keycode in key_to_slot:
 		active_slot = key_to_slot[event.keycode]
+		set_active_slot()
 		print(active_slot)
+
+func set_active_slot() -> void:
+	var active_slot_data = Global.player.inventory.inventory_slots[active_slot]
+	Global.active_slot = active_slot_data
+	if active_slot_data:
+		print(active_slot_data.item_data)
 
 func _set_hotbar_inventory(inventory_data: InventoryData) -> void:
 	hotbar.set_inventory_data(inventory_data, 12, false)

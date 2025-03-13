@@ -2,7 +2,7 @@
 “All things fade into twilight, all paths lead to dusk, but my light is eternal.”
 
 The empress' full title is "The God Empress of the Setting Sun". 
-She proclaims herself as [[Ivphyn]], the goddess of law and order, the queen of the heavens descended down to [[Akora]] to lead her people against the god chaos and demons, [[Dotthar]]. Unknown to the people of [[Westios|Westios]] she is a false god who is simply a very powerful [[S-Rank]] [[Mage]] gifted in light magic. 
+She proclaims herself as [[Ivphyn]], the goddess of law and order, the queen of the heavens descended down to [[Akora]] to lead her people against the god chaos and demons, [[Dotthar]]. Unknown to the people of [[Zentharis|Zentharis]] she is a false god who is simply a very powerful [[S-Rank]] [[Mage]] gifted in light magic. 
 
 No living being is allowed to see her face (in public),  and all nobles must wear blindfolds in his presence, lest they burn to death from her power. 
 

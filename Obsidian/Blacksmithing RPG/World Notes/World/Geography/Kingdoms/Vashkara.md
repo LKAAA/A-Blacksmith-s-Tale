@@ -35,7 +35,7 @@ Once the furthest west region of [[Than]], Vashkara now stands independent after
 ##### Ruling Party
 Vashkara is ruled by [[Grand Duke Silian Vashteria]] under [[House Vashteria]]. Grand Duke Vashteria has a close knit circle of ruling lords called the Highlords that rule the various cities and towns of Vashkara. These Highlords generally have free reign over their given settlement but have each sworn fealty to the Grand Duke and follow his rule. 
 
-Vashkara is heavily influenced by the [[The Black Sun|Black Sun]], a sect of the [[cult of Dotthar]]. Many high ranking officials have been inducted into the Black Sun including the [[Lord Chancellor Barek Deelo|Grand Duke’s closest advisor]]. They are constantly manipulating the choices of the Grand Duke in an effort to convince them to wage war with the [[Westios]] Empire.
+Vashkara is heavily influenced by the [[The Black Sun|Black Sun]], a sect of the [[cult of Dotthar]]. Many high ranking officials have been inducted into the Black Sun including the [[Lord Chancellor Barek Deelo|Grand Duke’s closest advisor]]. They are constantly manipulating the choices of the Grand Duke in an effort to convince them to wage war with the [[Zentharis]] Empire.
 
 ##### Magic
 Vashkara at its core is built upon the foundations of [[Than#Magic|Than]]’s principles, but holds a more militaristic focus instead of agriculture and trade. [[Mage|Mages]] in Vashkara are seen as weak. Brute strength is valued highly in Vashkara, but this does not mean that they don’t believe mages still have their uses. While [[casting magic]] is not commonly used in Vashkara there is a frequent use of [[Rune Magic|runic]] engravings to enhance weapons and armor and make them more powerful.
@@ -74,7 +74,7 @@ Smaller Towns:
 Border disputes with [[Than]] occur frequently, with merchants being heavily taxed for passing through and tariffs being placed on goods going in between the two kingdoms.
 
 ##### Appendix
-A sect of the [[Cult of Dotthar]] is hidden deep within the city of [[Vasthold]]. This sect emerged around 50 years ago and came from [[Westios]]. It follows one of the gods of [[The Westios Pantheon]], that being [[Dotthar]] the god of chaos.
+A sect of the [[Cult of Dotthar]] is hidden deep within the city of [[Vasthold]]. This sect emerged around 50 years ago and came from [[Zentharis]]. It follows one of the gods of [[The Zentharis Pantheon]], that being [[Dotthar]] the god of chaos.
 
 Roughly the size of South Carolina or Austria.
 Peninsula Width: ~100 Miles

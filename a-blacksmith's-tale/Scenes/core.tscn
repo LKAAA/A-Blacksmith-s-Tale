@@ -23,22 +23,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_se76q")
+metadata/_edit_lock_ = true
 
 [node name="PlayerInventory" parent="UI/Menu_UI" instance=ExtResource("3_gxbf5")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = -155.0
-offset_top = 3.0
-offset_right = 155.0
-offset_bottom = 109.0
+offset_top = 0.0
+offset_bottom = 88.0
 
 [node name="ExternalInventory" parent="UI/Menu_UI" instance=ExtResource("3_gxbf5")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = -206.0
-offset_top = -103.0
-offset_right = 206.0
-offset_bottom = 3.0
+offset_top = -88.0
+offset_bottom = 0.0
 
 [node name="GrabbedSlot" parent="UI/Menu_UI" instance=ExtResource("3_ak6bg")]
 unique_name_in_owner = true
@@ -56,6 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("5_gl8j7")
+metadata/_edit_lock_ = true
 
 [node name="Hotbar" parent="UI/Game_UI" instance=ExtResource("3_gxbf5")]
 unique_name_in_owner = true
@@ -63,10 +61,8 @@ layout_mode = 1
 anchors_preset = 7
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -206.0
-offset_top = -41.0
-offset_right = 206.0
-offset_bottom = -3.0
+offset_top = -38.0
+offset_bottom = -6.0
 grow_vertical = 0
 
 [node name="LoadingScreen" parent="UI" instance=ExtResource("2_377ls")]

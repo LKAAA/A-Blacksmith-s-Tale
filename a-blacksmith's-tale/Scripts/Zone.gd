@@ -3,7 +3,7 @@ class_name Zone extends Node2D
 @export var transitions: Array[TransitionArea]
 @export var external_inventories: Array
 
-# THIS CODE IS DISGUSTING - AVERT YOUR EYES
+# THIS CODE IS DISGUSTING - AVERT YOUR EYESA
 func get_external_inventories() -> Array:
 	for child in get_children():
 		if child.name == "Objects":

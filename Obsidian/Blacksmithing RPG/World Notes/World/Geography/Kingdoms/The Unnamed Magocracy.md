@@ -1,1 +1,0 @@
-Unnamed kingdom is a magocracy. Lead by a council of the most powerful mages. Large magic academy. Area for Scholarly mages to be a part of. Large export is the recently created Magi-tech.

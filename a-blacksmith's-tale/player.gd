@@ -30,13 +30,15 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	match current_state:
 		PLAYER_STATES.MOVE:
-			_handle_movement()
+			if not Global.game_paused:
+				_handle_movement()
+				_handle_movement_anims()
 			_handle_input()
-			_handle_movement_anims()
 		PLAYER_STATES.DODGEROLL:
 			pass
-			
-	move_and_slide()
+	
+	if not Global.game_paused:
+		move_and_slide()
 
 func _handle_movement() -> void:
 	input_vector = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
@@ -47,21 +49,24 @@ func _handle_movement() -> void:
 	velocity = velocity.limit_length(speed)
 
 func _handle_input() -> void:
-	if Input.is_action_just_pressed("ui_sprint"):
-		isSprinting = !isSprinting
-		speed = calculate_current_speed(0)
-	
-	if Input.is_action_just_pressed("ui_dodgeroll"):
-		dodgeroll()
 	
 	if Input.is_action_just_pressed("ui_inventory"):
 		open_inventory.emit()
+		_play_idle_animation()
 	
-	if Input.is_action_just_pressed("ui_interact"):
-		execute_interaction()
-	
-	if Input.is_action_just_pressed("ui_use"):
-		use.emit()
+	if not Global.game_paused:
+		if Input.is_action_just_pressed("ui_use"):
+			use.emit()
+		
+		if Input.is_action_just_pressed("ui_interact"):
+			execute_interaction()
+		
+		if Input.is_action_just_pressed("ui_sprint"):
+			isSprinting = !isSprinting
+			speed = calculate_current_speed(0)
+		
+		if Input.is_action_just_pressed("ui_dodgeroll"):
+			dodgeroll()
 
 func dodgeroll() -> void:
 	current_state = PLAYER_STATES.DODGEROLL

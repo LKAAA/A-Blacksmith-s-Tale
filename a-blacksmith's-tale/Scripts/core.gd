@@ -25,9 +25,11 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	if menu_ui.visible:
 		game_ui.hide()
 		Popups.active = true
+		Global.game_paused = true
 	else:
 		game_ui.show()
 		Popups.active = false
+		Global.game_paused = false
 	
 	menu_ui._update_player_inventory(player.inventory)
 	menu_ui.player_inventory.visible = true
@@ -37,13 +39,13 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 		menu_ui.external_inventory.visible = true
 		menu_ui.external = true
 		external = true
-		menu_ui.player_inventory.position = Vector2(114,183)
+		menu_ui.player_inventory.position = Vector2(150,180)
 	else:
 		menu_ui.clear_external_inventory()
 		menu_ui.external_inventory.visible = false
 		menu_ui.external = false
 		external = false
-		menu_ui.player_inventory.position = Vector2(114,127)
+		menu_ui.player_inventory.position = Vector2(150,141)
 
 func load_external_inventories(zone: Zone) -> void:
 	var external_inventories: Array = zone.get_external_inventories()

@@ -6,7 +6,7 @@
 >| Geography |
 >| ---- | ----| 
 >| Type | Capital | 
->| Region | The [[Westios]] empire, [[Akora]] |
+>| Region | The [[Zentharis]] empire, [[Akora]] |
 >| Aliases | The City of Light <br>The Holy City |
 >| Size | City | 
 >
@@ -15,7 +15,7 @@
 >| Demonym | Aureian | 
 >| Races | [[Humans]] (Westian) <br>minority of [[Nekojin]]<br>[[Kitsunari]] <br>(discriminated against) |
 >| Languages | [[Common]] | 
->| Religions | [[The Westios Pantheon]] |
+>| Religions | [[The Zentharis Pantheon]] |
 >
 >| Commerce |
 >| ---- | ----| 

@@ -13,4 +13,4 @@
 >| Day length | 30.3 Saelis days |
 >| Year length | 26.4 Saelis days |
 
-Kuvaris is the name of the moon that orbits [[Saelis]]. The people of the [[Westios|Westios]] empire call it by the name of the goddess of the moon, Lunis, but most simply call it the moon. 
+Kuvaris is the name of the moon that orbits [[Saelis]]. The people of the [[Zentharis|Zentharis]] empire call it by the name of the goddess of the moon, Lunis, but most simply call it the moon. 

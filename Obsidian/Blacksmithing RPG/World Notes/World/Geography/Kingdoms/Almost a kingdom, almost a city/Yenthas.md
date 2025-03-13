@@ -1,3 +1,35 @@
+Yenthas is 
+
+##### Society
+
+##### Ruling Party
+
+##### Magic
+
+
+##### Locations
+
+**Major Cities:**
+
+
+**Major Towns:** 
+
+
+**Smaller Towns:** 
+
+
+##### Important figures
+
+
+##### Historic Events
+
+
+
+###### Recent Events
+
+
+##### Appendix
+
 Yenthas, the hidden kingdom of the elves.
 
 Its basically a big expansive city hidden in a giant forest.

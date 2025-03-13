@@ -22,7 +22,7 @@
 >| ---- | ----| 
 >| Type | Theocratic Monarchy | 
 >| Ruler | [[King Edgard Howsen]] |
->|Allegiances | [[Than]], [[Nil Daral]], [[The Unnamed Magocracy]] |
+>|Allegiances | [[Than]], [[Nil Daral]], [[Thaumara]] |
 >
 >| History |
 >| ---- | ----| 
@@ -45,7 +45,7 @@ Magic is freely used across the Central Kingdoms, with the exception of both div
 - [[Koran]] - A large trade city located near the border of [[Than]].
 - [[Whitechapel]] - A large city with a devoted church. Headquarters to the dungeon sealing department of the church. 
 - [[Abbey's Reach]] - A devoted city to the [[Church of the True God|True God]] faith. Location of the largest religious university in Akora.
-- [[Maudina]] - City located near the border of [[Westios]]
+- [[Maudina]] - City located near the border of [[Zentharis]]
 - [[Port Ameray]] - Largest port city in the Central Kingdoms, located on the western border.
 - [[Port Centrelia]] - Second largest port city in the Central Kingdoms, located on the eastern border.
 - [[Direfront]] - Large city located on the border of the Unnamed Kingdom.

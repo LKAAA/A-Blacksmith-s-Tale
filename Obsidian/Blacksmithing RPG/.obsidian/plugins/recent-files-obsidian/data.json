@@ -1,6 +1,62 @@
 {
   "recentFiles": [
     {
+      "basename": "Yenthas",
+      "path": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Yenthas.md"
+    },
+    {
+      "basename": "Nil Daral",
+      "path": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Nil Daral.md"
+    },
+    {
+      "basename": "Nislia",
+      "path": "World Notes/World/Geography/Kingdoms/Nislia.md"
+    },
+    {
+      "basename": "Zentharis",
+      "path": "World Notes/World/Geography/Kingdoms/Zentharis.md"
+    },
+    {
+      "basename": "The Central Kingdoms",
+      "path": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md"
+    },
+    {
+      "basename": "Thaumara",
+      "path": "World Notes/World/Geography/Kingdoms/Thaumara.md"
+    },
+    {
+      "basename": "Than",
+      "path": "World Notes/World/Geography/Kingdoms/Than.md"
+    },
+    {
+      "basename": "Akora",
+      "path": "World Notes/World/Geography/Continents/Akora.md"
+    },
+    {
+      "basename": "Home",
+      "path": "Home.md"
+    },
+    {
+      "basename": "The Zentharis Pantheon",
+      "path": "World Notes/World/Culture/Religions/Westios Pantheon/The Zentharis Pantheon.md"
+    },
+    {
+      "basename": "Vashkara",
+      "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
+    },
+    {
+      "basename": "UI-Moodboard",
+      "path": "Game Notes/UI-Moodboard.canvas"
+    },
+    {
+      "basename": "Pasted image 20250206160030",
+      "path": "Other/Images/Pasted image 20250206160030.png"
+    },
+    {
+      "basename": "Game-Moodboard",
+      "path": "Game Notes/Game-Moodboard.canvas"
+    },
+    {
       "basename": "Item List",
       "path": "Game Notes/Item List.md"
     },
@@ -21,10 +77,6 @@
       "path": "Game Notes/Systems/Blacksmithing Mechanics.md"
     },
     {
-      "basename": "Home",
-      "path": "Home.md"
-    },
-    {
       "basename": "Tanning",
       "path": "Game Notes/Systems/Tanning.md"
     },
@@ -35,26 +87,6 @@
     {
       "basename": "Leveling-Skills System",
       "path": "Game Notes/Systems/Leveling-Skills System.md"
-    },
-    {
-      "basename": "Westios",
-      "path": "World Notes/World/Geography/Kingdoms/Westios.md"
-    },
-    {
-      "basename": "Than",
-      "path": "World Notes/World/Geography/Kingdoms/Than.md"
-    },
-    {
-      "basename": "Vashkara",
-      "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
-    },
-    {
-      "basename": "The Central Kingdoms",
-      "path": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md"
-    },
-    {
-      "basename": "The Unnamed Magocracy",
-      "path": "World Notes/World/Geography/Kingdoms/The Unnamed Magocracy.md"
     },
     {
       "basename": "Flowing Mana Springs",
@@ -75,14 +107,6 @@
     {
       "basename": "Casting Magic",
       "path": "World Notes/World/Magic/Casting Magic.md"
-    },
-    {
-      "basename": "Yenthas",
-      "path": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Yenthas.md"
-    },
-    {
-      "basename": "Nil Daral",
-      "path": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Nil Daral.md"
     },
     {
       "basename": "The Black Sun",
@@ -113,10 +137,6 @@
       "path": "World Notes/World/Geography/Cities/Aldorin.md"
     },
     {
-      "basename": "Akora",
-      "path": "World Notes/World/Geography/Continents/Akora.md"
-    },
-    {
       "basename": "Fort Laiedd",
       "path": "World Notes/World/Geography/Cities/Fort Laiedd.md"
     },
@@ -131,10 +151,6 @@
     {
       "basename": "Ilindrial Magus",
       "path": "World Notes/World/People/Ilindrial Magus.md"
-    },
-    {
-      "basename": "The Islands of Nislia",
-      "path": "World Notes/World/Regions/The Islands of Nislia.md"
     },
     {
       "basename": "The Shattered Isles",
@@ -179,26 +195,6 @@
     {
       "basename": "Nard the Mapmaker",
       "path": "World Notes/World/People/Nard the Mapmaker.md"
-    },
-    {
-      "basename": "Aurevia",
-      "path": "World Notes/World/Geography/Cities/Aurevia.md"
-    },
-    {
-      "basename": "The First Age",
-      "path": "World Notes/World/History/Ages/The First Age.md"
-    },
-    {
-      "basename": "The Westios Pantheon",
-      "path": "World Notes/World/Culture/Religions/Westios Pantheon/The Westios Pantheon.md"
-    },
-    {
-      "basename": "Currency",
-      "path": "World Notes/World/Culture/Currency.md"
-    },
-    {
-      "basename": "Adventurers",
-      "path": "World Notes/World/Culture/Jobs/Adventurers.md"
     }
   ],
   "omittedPaths": [],

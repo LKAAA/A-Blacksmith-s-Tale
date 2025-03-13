@@ -2,15 +2,58 @@ class_name CuringRack extends StaticBody2D
 
 @onready var interact_area: Interactable = $InteractArea
 @onready var recipe_tester: RecipeTester = $RecipeTester
+@onready var timer: Timer = $Timer
 
 @export var recipes: Array[RecipeData]
+
+var active_recipe: RecipeData
+var active: bool = false
+var ready_to_pickup: bool = false
 
 func _ready() -> void:
 	interact_area.interact = Callable(self, "_on_interact")
 
 func _on_interact() -> void:
-	print("result: " + str(recipe_tester.test_inventory(recipes[0], Global.player.inventory)))
-	print("Use Curing Rack")
+	if not active:
+		if ready_to_pickup:
+			print("Pick up")
+			for output in active_recipe.output:
+				var slot_data = SlotData.new()
+				slot_data.item_data = output
+				slot_data.quantity = 1
+				if Global.player.inventory.pick_up_slot_data(slot_data):
+					ready_to_pickup = false
+					active_recipe = null
+					print("Picked up")
+				else:
+					print("Inventory Full")
+		else:
+			print("Try to start curing")
+			if Global.active_slot:
+				for recipe in recipes:
+					if recipe_tester.test_item(recipe, Global.active_slot.item_data):
+						active_recipe = recipe
+						begin_curing()
+						break
+	else:
+		print("Already on")
+
+func begin_curing() -> void:
+	# Remove ingredient from inventory
+	# Start timer equivalent to recipe's time
+	for slot in Global.player.inventory.inventory_slots:
+		if slot:
+			if slot.item_data == active_recipe.ingredients[0]:
+				Global.player.inventory.remove_single_item(active_recipe.ingredients[0])
+				timer.start(active_recipe.time_to_make)
+				active = true
+				print("Start Curing")
+	
 
 # Change this to check active item vs inventory
 # Add ya know actually turning the item into something different
+
+func _on_timer_timeout() -> void:
+	print("DONE")
+	active = false
+	ready_to_pickup = true

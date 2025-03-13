@@ -22,7 +22,7 @@
 >| ---- | ----| 
 >| Type | Mercantile Monarchy | 
 >| Ruler | [[King Aldric Thane IV]] |
->|Allegiances | [[Westios]], [[The Central Kingdoms]], [[The Unnamed Magocracy]], [[Nil Daral]] |
+>|Allegiances | [[Zentharis]], [[The Central Kingdoms]], [[Thaumara]], [[Nil Daral]] |
 >
 >| History |
 >| ---- | ----| 
@@ -80,7 +80,7 @@ After the recent dungeon unsealing in both midwestern Than and further south nea
 ##### Historic Events
 
 The Beast-Race conflict of Westios
-- Around 754 AH, many beast-races began fleeing to Than from [[Westios]], but were still faced with much discrimination
+- Around 754 AH, many beast-races began fleeing to Than from [[Zentharis]], but were still faced with much discrimination
 - The Merchant Guild were for supporting the integration of beast-races into Than for economic reasons, but many of the noble families resisted due to prejudice.
 - It was eventually agreed upon to allow many of the beast-refugees to stay but most face wage discrimination to this day.
 

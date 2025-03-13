@@ -24,21 +24,35 @@
             }
           },
           {
-            "id": "6f2389f83cbcb5e2",
+            "id": "d3b2aebbfbe2ddc9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Game Notes/Item List.md",
+                "file": "World Notes/World/Geography/Continents/Akora.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Item List"
+              "title": "Akora"
+            }
+          },
+          {
+            "id": "647012d1b382b68d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Yenthas.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Yenthas"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -113,7 +127,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 266.5
+    "width": 271.5
   },
   "right": {
     "id": "1c0f7146d06e54f2",
@@ -219,35 +233,38 @@
       "broken-links:View broken links": false
     }
   },
-  "active": "6f2389f83cbcb5e2",
+  "active": "647012d1b382b68d",
   "lastOpenFiles": [
+    "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Nil Daral.md",
+    "World Notes/World/Geography/Kingdoms/Nislia.md",
+    "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Yenthas.md",
+    "World Notes/World/Geography/Kingdoms/Zentharis.md",
+    "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md",
+    "World Notes/World/Geography/Kingdoms/Thaumara.md",
+    "World Notes/World/Geography/Kingdoms/Than.md",
+    "World Notes/World/Geography/Continents/Akora.md",
+    "World Notes/World/Regions/The Islands of Nislia.md",
+    "Home.md",
+    "World Notes/World/Culture/Religions/Westios Pantheon/The Zentharis Pantheon.md",
+    "World Notes/World/Geography/Kingdoms/Vashkara.md",
+    "Game Notes/UI-Moodboard.canvas",
+    "Game Notes/Game-Moodboard.canvas",
+    "Game Notes/Item List.md",
     "World Notes/World/Items/Resources/Dragon Steel.md",
     "World Notes/World/Items/Resources/The Natural Resources.md",
-    "Game Notes/Item List.md",
     "Game Notes/Game Notes.canvas",
     "Game Notes/Systems/Blacksmithing Mechanics.md",
-    "Home.md",
     "Game Notes/Systems/Tanning.md",
     "Game Notes/Systems/Systems.md",
     "Game Notes/Systems/Leveling-Skills System.md",
-    "World Notes/World/Geography/Kingdoms/Westios.md",
-    "World Notes/World/Geography/Kingdoms/Than.md",
-    "World Notes/World/Geography/Kingdoms/Vashkara.md",
-    "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md",
-    "World Notes/World/Geography/Kingdoms/The Unnamed Magocracy.md",
     "World Notes/World/Magic/Mana/Flowing Mana Springs.md",
     "World Notes/World/Magic/Mana/Flowing Mana.md",
     "World Notes/World/Magic/Mana/Mana.md",
     "World Notes/World/Magic/Mana/Mana Core.md",
     "World Notes/World/Magic/Casting Magic.md",
-    "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Yenthas.md",
     "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city",
-    "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Nil Daral.md",
     "World Notes/World/Culture/Groups/The Black Sun.md",
     "World Notes/World/Magic/Rune Magic.md",
-    "World Notes/World/Magic/Magi-tech.md",
-    "World Notes/World/Culture/Languages/Runic.md",
-    "World Notes/World/Culture/Groups/Cult of Dotthar.md",
     "World Notes/World/Culture/Groups",
     "World Notes/World/Maps/Images/Vashkara-Than-Map1.png",
     "World Notes/World/Maps/Images/Second Map of Akora.png",
@@ -255,8 +272,6 @@
     "World Notes/World/Maps/Images/Map of Akora.png",
     "World Notes/World/Maps/Images",
     "Game Notes/World Building The Game.canvas",
-    "Game Notes/Game-Moodboard.canvas",
-    "Game Notes/UI-Moodboard.canvas",
     "World Notes/World/Planetary Objects/Planets",
     "World Notes/World/Planetary Objects/Moons",
     "World Notes/World/Items/Untitled",

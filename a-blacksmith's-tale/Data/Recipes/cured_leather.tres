@@ -10,5 +10,5 @@ script = ExtResource("2_gpntb")
 recipe_name = "Cured Leather"
 ingredients = Array[ExtResource("1_53rbh")]([ExtResource("2_bifsp")])
 output = Array[ExtResource("1_53rbh")]([ExtResource("3_oxalj")])
-time_to_make = 40
+time_to_make = 5
 metadata/_custom_type_script = "uid://c53g5l4c0tu8s"

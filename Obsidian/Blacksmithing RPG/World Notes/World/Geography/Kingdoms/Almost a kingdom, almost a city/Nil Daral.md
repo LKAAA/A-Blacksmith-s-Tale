@@ -1,3 +1,35 @@
+Nil Daral is 
+
+##### Society
+
+##### Ruling Party
+
+##### Magic
+
+
+##### Locations
+
+**Major Cities:**
+
+
+**Major Towns:** 
+
+
+**Smaller Towns:** 
+
+
+##### Important figures
+
+
+##### Historic Events
+
+
+
+###### Recent Events
+
+
+##### Appendix
+
 Nil Daral
 Alternate Names:
 The Great City of the Dwarves
