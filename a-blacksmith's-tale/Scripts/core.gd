@@ -24,11 +24,9 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	
 	if menu_ui.visible:
 		game_ui.hide()
-		Popups.active = true
 		Global.game_paused = true
 	else:
 		game_ui.show()
-		Popups.active = false
 		Global.game_paused = false
 	
 	menu_ui._update_player_inventory(player.inventory)

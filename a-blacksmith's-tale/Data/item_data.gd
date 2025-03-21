@@ -6,3 +6,6 @@ class_name ItemData extends Resource
 @export var type: String = "Material"
 
 @export var stackable: bool = true
+
+func use(_target) -> void:
+	pass

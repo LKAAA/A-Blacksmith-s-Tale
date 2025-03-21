@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=42 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://boio4rgvdby0s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_ntypt"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://dfsikqcptkoj0" path="res://Data/inventory_data.gd" id="15_uwclm"]
 [ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/uncured_leather.tres" id="16_qsvcl"]
 [ext_resource type="Resource" uid="uid://kpjm1k573bkg" path="res://Data/Items/cured_leather.tres" id="17_quhww"]
+[ext_resource type="Resource" uid="uid://b2pa1b6wmduol" path="res://Data/Items/fried_egg.tres" id="18_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/curing_rack.tscn" id="18_quhww"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/recipe_data.gd" id="19_dpgyg"]
 [ext_resource type="Resource" uid="uid://c2xi2unhicxyu" path="res://Data/Recipes/cured_leather.tres" id="20_6bgdf"]
@@ -352,9 +353,15 @@ item_data = ExtResource("17_quhww")
 quantity = 30
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
+[sub_resource type="Resource" id="Resource_x8coi"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("18_6bgdf")
+quantity = 69
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
+
 [sub_resource type="Resource" id="Resource_6bgdf"]
 script = ExtResource("15_uwclm")
-inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_dpgyg"), SubResource("Resource_4hkp2"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_dpgyg"), SubResource("Resource_4hkp2"), SubResource("Resource_x8coi"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
@@ -426,21 +433,21 @@ slot_data = SubResource("Resource_g0d61")
 [node name="Objects" type="Node" parent="."]
 
 [node name="Chest" parent="Objects" instance=ExtResource("14_8d832")]
-position = Vector2(312, 152)
+position = Vector2(40, 152)
 inventory_data = SubResource("Resource_r6337")
 
 [node name="Chest2" parent="Objects" instance=ExtResource("14_8d832")]
-position = Vector2(376, 152)
+position = Vector2(40, 120)
 inventory_data = SubResource("Resource_6bgdf")
 
 [node name="CuringRack" parent="Objects" instance=ExtResource("18_quhww")]
-position = Vector2(200, 152)
+position = Vector2(40, 216)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="CuringRack2" parent="Objects" instance=ExtResource("18_quhww")]
-position = Vector2(136, 152)
+position = Vector2(40, 184)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="CuringRack3" parent="Objects" instance=ExtResource("18_quhww")]
-position = Vector2(168, 152)
+position = Vector2(40, 248)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])

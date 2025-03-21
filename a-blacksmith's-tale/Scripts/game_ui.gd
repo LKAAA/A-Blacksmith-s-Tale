@@ -37,7 +37,7 @@ func set_active_slot() -> void:
 	var active_slot_data = Global.player.inventory.inventory_slots[active_slot]
 	Global.active_slot = active_slot_data
 	if active_slot_data:
-		print(active_slot_data.item_data)
+		print(active_slot_data.item_data.name)
 
 func _set_hotbar_inventory(inventory_data: InventoryData) -> void:
 	hotbar.set_inventory_data(inventory_data, 12, false)
@@ -46,6 +46,11 @@ func _set_hotbar_inventory(inventory_data: InventoryData) -> void:
 func use_slot() -> void:
 	var active_slot_data = player_inventory.inventory_slots[active_slot]
 	if active_slot_data:
+		match active_slot_data.item_data.type:
+			"Consumable":
+				active_slot_data.item_data.use(Global.player)
+			"Tool":
+				print("Tool")
 		print("Using " + active_slot_data.item_data.name)
 	else:
 		print("No item in slot " + str(active_slot))

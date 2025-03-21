@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemDataTool" load_steps=3 format=3 uid="uid://chnmxveu56yux"]
+
+[ext_resource type="Script" uid="uid://bygdluhg5efcj" path="res://Data/item_data_tool.gd" id="1_52vtj"]
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="2_u0cry"]
+
+[resource]
+script = ExtResource("1_52vtj")
+tool_type = "Axe"
+tool_efficiency = 1
+tool_damage = 1
+name = "Iron Axe"
+description = "An axe made of iron."
+sprite = ExtResource("2_u0cry")
+type = "Tool"
+stackable = false
+metadata/_custom_type_script = "uid://bygdluhg5efcj"

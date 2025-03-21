@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dm4oa85xd4lmy"]
+
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/item_data.gd" id="1_giqkx"]
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="2_3bqaw"]
+
+[resource]
+script = ExtResource("1_giqkx")
+name = "Stone"
+description = "A chunk of stone."
+sprite = ExtResource("2_3bqaw")
+type = "Material"
+stackable = true
+metadata/_custom_type_script = "uid://1sj1rrsd7jss"

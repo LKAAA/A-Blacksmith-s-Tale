@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "Artherus Sneeveling",
+      "path": "World Notes/World/People/Artherus Sneeveling.md"
+    },
+    {
+      "basename": "Home",
+      "path": "Home.md"
+    },
+    {
+      "basename": "Nard the Mapmaker",
+      "path": "World Notes/World/People/Nard the Mapmaker.md"
+    },
+    {
       "basename": "Yenthas",
       "path": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Yenthas.md"
     },
@@ -31,10 +43,6 @@
     {
       "basename": "Akora",
       "path": "World Notes/World/Geography/Continents/Akora.md"
-    },
-    {
-      "basename": "Home",
-      "path": "Home.md"
     },
     {
       "basename": "The Zentharis Pantheon",
@@ -145,10 +153,6 @@
       "path": "World Notes/World/Geography/Cities/Urodh.md"
     },
     {
-      "basename": "Artherus Sneeveling",
-      "path": "World Notes/World/People/Artherus Sneeveling.md"
-    },
-    {
       "basename": "Ilindrial Magus",
       "path": "World Notes/World/People/Ilindrial Magus.md"
     },
@@ -191,10 +195,6 @@
     {
       "basename": "Name Ideas",
       "path": "Other/Name Ideas.md"
-    },
-    {
-      "basename": "Nard the Mapmaker",
-      "path": "World Notes/World/People/Nard the Mapmaker.md"
     }
   ],
   "omittedPaths": [],
