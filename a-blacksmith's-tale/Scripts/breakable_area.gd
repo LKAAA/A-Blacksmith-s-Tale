@@ -1,8 +1,8 @@
-class_name Interactable extends Area2D
+class_name Breakable extends Area2D
 
 var hovering: bool = false
 
-var interact: Callable = func():
+var hit: Callable = func():
 	pass
 
 func _on_mouse_entered() -> void:

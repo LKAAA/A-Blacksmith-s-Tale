@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=48 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://boio4rgvdby0s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_ntypt"]
@@ -21,6 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/curing_rack.tscn" id="18_quhww"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/recipe_data.gd" id="19_dpgyg"]
 [ext_resource type="Resource" uid="uid://c2xi2unhicxyu" path="res://Data/Recipes/cured_leather.tres" id="20_6bgdf"]
+[ext_resource type="Texture2D" uid="uid://b7ijt60p65fp2" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="22_4hkp2"]
+[ext_resource type="Script" uid="uid://buj6j3glpbgjq" path="res://Scripts/breakable_object.gd" id="22_xm65n"]
+[ext_resource type="PackedScene" uid="uid://csik1l3vdm67g" path="res://Scenes/Components/breakable_area.tscn" id="24_xm65n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7diq"]
 texture = ExtResource("2_ntypt")
@@ -364,6 +367,16 @@ script = ExtResource("15_uwclm")
 inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_dpgyg"), SubResource("Resource_4hkp2"), SubResource("Resource_x8coi"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8coi"]
+atlas = ExtResource("22_4hkp2")
+region = Rect2(16, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm65n"]
+size = Vector2(8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jjfm"]
+size = Vector2(12, 20)
+
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_x1thp")
 transitions = [NodePath("Transition Zones/NorthTransition"), NodePath("Transition Zones/EastTransition")]
@@ -451,3 +464,21 @@ recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 [node name="CuringRack3" parent="Objects" instance=ExtResource("18_quhww")]
 position = Vector2(40, 248)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
+
+[node name="Tree" type="StaticBody2D" parent="Objects" groups=["breakable_object"]]
+position = Vector2(312, 152)
+script = ExtResource("22_xm65n")
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Tree"]
+position = Vector2(0, -11)
+texture = SubResource("AtlasTexture_x8coi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_xm65n")
+
+[node name="breakable_area" parent="Objects/Tree" instance=ExtResource("24_xm65n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Tree/breakable_area"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_7jjfm")

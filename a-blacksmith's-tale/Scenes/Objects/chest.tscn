@@ -27,3 +27,6 @@ shape = SubResource("RectangleShape2D_8d832")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 shape = SubResource("RectangleShape2D_6mo1a")
+
+[connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea" to="InteractArea" method="_on_mouse_exited"]

@@ -1,14 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://co5cc6txkeplv"]
+[gd_scene load_steps=11 format=3 uid="uid://co5cc6txkeplv"]
 
 [ext_resource type="Script" uid="uid://cyvr7g2773o5h" path="res://Scripts/core.gd" id="1_gb7ya"]
 [ext_resource type="PackedScene" uid="uid://cj3yjqmwsa42r" path="res://Scenes/loading_screen.tscn" id="2_377ls"]
+[ext_resource type="Texture2D" uid="uid://bwuwanbeisd5t" path="res://Assets/TileSelection.png" id="2_cyfn3"]
 [ext_resource type="PackedScene" uid="uid://bpnq7hvfew8e7" path="res://Scenes/slot.tscn" id="3_ak6bg"]
+[ext_resource type="Script" uid="uid://dvvttwwalrnt4" path="res://Scripts/selection_indicator.gd" id="3_gbnb7"]
 [ext_resource type="PackedScene" uid="uid://lb776xffqplh" path="res://Scenes/inventory.tscn" id="3_gxbf5"]
 [ext_resource type="Script" uid="uid://cyi4hp58wflgb" path="res://Scripts/menu_ui.gd" id="3_se76q"]
 [ext_resource type="Script" uid="uid://v0ngdpadiu6" path="res://Scripts/game_ui.gd" id="5_gl8j7"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sxaq"]
+texture = ExtResource("2_cyfn3")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_byey5"]
+sources/0 = SubResource("TileSetAtlasSource_2sxaq")
+
 [node name="Core" type="Node2D"]
 script = ExtResource("1_gb7ya")
+
+[node name="Hovering Indicator" type="TileMapLayer" parent="."]
+z_index = 210
+tile_set = SubResource("TileSet_byey5")
+script = ExtResource("3_gbnb7")
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 21

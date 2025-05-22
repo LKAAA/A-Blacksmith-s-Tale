@@ -5,6 +5,7 @@ const PLAYER = preload("res://Player/player.tscn")
 @onready var loading_screen: LoadingScreen = %LoadingScreen
 @onready var menu_ui: Menu = %Menu_UI
 @onready var game_ui: GameUI = %Game_UI
+@onready var hovering_indicator: TileMapLayer = $"Hovering Indicator"
 
 var external: bool = false
 
@@ -18,6 +19,15 @@ var player: PlayerBase
 func _ready() -> void:
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
+
+#region tile selection
+
+func detect_clicked_on_object():
+	pass
+
+#endregion
+
+#region Inventory
 
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	menu_ui.visible = !menu_ui.visible
@@ -57,6 +67,10 @@ func unload_external_inventories(zone: Zone) -> void:
 		if node.is_connected("toggle_inventory", toggle_inventory_interface):
 			node.toggle_inventory.disconnect(toggle_inventory_interface)
 			print("Disconnected " + node.name)
+
+#endregion
+
+#region loading zones
 
 # @param path is the path of the scene to transition to
 # @param transition is the number in the transitions array on each zone to teleport the player to
@@ -120,3 +134,5 @@ func fade_in_finished() -> void:
 	cur_transition = 0
 	
 	loading_screen.fade_out()
+
+#endregion

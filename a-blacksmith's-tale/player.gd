@@ -3,6 +3,7 @@ class_name PlayerBase extends CharacterBody2D
 # Player base handles movement and input
 
 @onready var all_interactions = []
+@onready var all_breakables = []
 
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @export var inventory: InventoryData = InventoryData.new()
@@ -56,7 +57,8 @@ func _handle_input() -> void:
 	
 	if not Global.game_paused:
 		if Input.is_action_just_pressed("ui_use"):
-			use.emit()
+			execute_breakable()
+			#use.emit()
 		
 		if Input.is_action_just_pressed("ui_interact"):
 			execute_interaction()
@@ -113,13 +115,27 @@ func _on_sprite_2d_animation_finished() -> void:
 # Interaction Funcs
 
 func _on_interaction_area_entered(area: Area2D) -> void:
-	all_interactions.insert(0, area)
+	if area.is_in_group("breakable"):
+		all_breakables.insert(0, area)
+	if area.is_in_group("interactable"):
+		all_interactions.insert(0, area)
 
 func _on_interaction_area_exited(area: Area2D) -> void:
-	all_interactions.erase(area)
+	if area.is_in_group("breakable"):
+		all_breakables.erase(area)
+	if area.is_in_group("interactable"):
+		all_interactions.erase(area)
 
 func execute_interaction() -> void:
 	if all_interactions:
-		var current_interaction = all_interactions[0]
-		if current_interaction.get_parent().has_method("_on_interact"):
-			current_interaction.get_parent()._on_interact()
+		for i in all_interactions:
+			if i.hovering:
+				if i.get_parent().has_method("_on_interact"):
+					i.get_parent()._on_interact()
+
+func execute_breakable() -> void:
+	if all_breakables:
+		for i in all_breakables:
+			if i.hovering:
+				if i.get_parent().has_method("_on_hit"):
+					i.get_parent()._on_hit()
