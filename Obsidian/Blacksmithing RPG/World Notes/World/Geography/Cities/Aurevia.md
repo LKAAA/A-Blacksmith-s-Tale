@@ -15,7 +15,7 @@
 >| Demonym | Aureian | 
 >| Races | [[Humans]] (Westian) <br>minority of [[Nekojin]]<br>[[Kitsunari]] <br>(discriminated against) |
 >| Languages | [[Common]] | 
->| Religions | [[The Zentharis Pantheon]] |
+>| Religions | [[The Zentharian Pantheon]] |
 >
 >| Commerce |
 >| ---- | ----| 

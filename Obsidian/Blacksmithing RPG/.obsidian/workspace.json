@@ -22,8 +22,21 @@
               "icon": "lucide-file",
               "title": "Home"
             }
+          },
+          {
+            "id": "14aef4411faeef81",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "World Notes/World/Maps/Images/Vashkara-Than-Map1.png"
+              },
+              "icon": "lucide-image",
+              "title": "Vashkara-Than-Map1"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -204,43 +217,45 @@
       "broken-links:View broken links": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "14aef4411faeef81",
   "lastOpenFiles": [
-    "World Notes/World/Geography/Kingdoms/Than.md",
-    "World Notes/World/Geography/Kingdoms/Vashkara.md",
+    "World Notes/World/Maps/Maps of Akora.md",
+    "World Notes/World/Maps/Images/Vashkara-Than-Map1.png",
+    "World Notes/World/Maps/Images/Map of Akora.png",
+    "Other/Images/Dracari-Wing-Anatomy.png",
+    "Other/Images/de3zkbtb46q2.webp",
     "Home.md",
     "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md",
-    "World Notes/World/Geography/Kingdoms/Thaumara.md",
-    "World Notes/World/Geography/Kingdoms/Nislia.md",
-    "World Notes/World/Geography/Kingdoms/Zentharis.md",
-    "Other/Name Ideas.md",
-    "World Notes/World/People/Artherus Sneeveling.md",
+    "World Notes/World/Geography/Continents/Akora.md",
+    "World Notes/World/Geography/Continents/Nothern Reaches Dungeon Unsealing.md",
+    "World Notes/World/Planetary Objects/Planets/Saelis.md",
+    "World Notes/World/People/Borin Ragnorok.md",
+    "World Notes/World/People/Ilindrial Magus.md",
+    "World Notes/World/Items/Literature/Tales of the Ancient Heroes.md",
+    "World Notes/World/People/Pagus Thinsly.md",
     "World Notes/World/People/Nard the Mapmaker.md",
+    "World Notes/World/People/Artherus Sneeveling.md",
+    "World Notes/World/Magic/Mana/Flowing Mana.md",
     "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Yenthas.md",
     "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Nil Daral.md",
-    "World Notes/World/Geography/Continents/Akora.md",
+    "World Notes/World/Geography/Kingdoms/Nislia.md",
+    "World Notes/World/Geography/Kingdoms/Thaumara.md",
+    "World Notes/World/Geography/Kingdoms/Zentharis.md",
+    "World Notes/World/Geography/Kingdoms/Vashkara.md",
+    "World Notes/World/Geography/Kingdoms/Than.md",
+    "World Notes/World/People/Rulers/God Empress of the Setting Sun.md",
+    "World Notes/World/Culture/Religions/Westios Pantheon/The Zentharian Pantheon.md",
+    "Other/Name Ideas.md",
     "World Notes/World/Regions/The Islands of Nislia.md",
-    "World Notes/World/Culture/Religions/Westios Pantheon/The Zentharis Pantheon.md",
     "Game Notes/UI-Moodboard.canvas",
     "Game Notes/Game-Moodboard.canvas",
     "Game Notes/Item List.md",
     "World Notes/World/Items/Resources/Dragon Steel.md",
-    "World Notes/World/Items/Resources/The Natural Resources.md",
     "Game Notes/Game Notes.canvas",
-    "Game Notes/Systems/Blacksmithing Mechanics.md",
-    "Game Notes/Systems/Tanning.md",
-    "Game Notes/Systems/Systems.md",
-    "Game Notes/Systems/Leveling-Skills System.md",
-    "World Notes/World/Magic/Mana/Flowing Mana Springs.md",
-    "World Notes/World/Magic/Mana/Flowing Mana.md",
-    "World Notes/World/Magic/Mana/Mana.md",
-    "World Notes/World/Magic/Mana/Mana Core.md",
     "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city",
     "World Notes/World/Culture/Groups",
-    "World Notes/World/Maps/Images/Vashkara-Than-Map1.png",
     "World Notes/World/Maps/Images/Second Map of Akora.png",
     "World Notes/World/Maps/Images/Akora 2025-02-10-00-32.png",
-    "World Notes/World/Maps/Images/Map of Akora.png",
     "World Notes/World/Maps/Images",
     "Game Notes/World Building The Game.canvas",
     "World Notes/World/Planetary Objects/Planets",
@@ -254,8 +269,6 @@
     "Other/Images/Pasted image 20250206160514.png",
     "Other/Images/Pasted image 20250206160508.png",
     "Other/Images/Pasted image 20250206160430.png",
-    "Other/Images/Pasted image 20250206160423.png",
-    "Other/Images/Pasted image 20250206160415.png",
     "Other/Reference Boards/Untitled.canvas"
   ]
 }

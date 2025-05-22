@@ -71,8 +71,18 @@ After the recent dungeon unsealing in both midwestern Than and further south nea
 		- [[Prince Aldric Thane V]] - Age 22 
 		- [[Princess Alisi Thane]] - Age 16
 
+- [[Grand Duke Teiros Mercili]] - Grand duke of [[Rivermeet]]
+	- [[Grand Duchess Elira Mercili]] - Daughter of [[Duke Remial Caervan]]
+		- Son between them
+		- Daughter 1 between them
+		- Daughter 2 between them
+
+- [[Count Galeon Vane]] - Count of [[Frostguard]]
+	- [[Countess Yvanna Vane]] - Countess of [[Frostguard]] - Bastard child of [[Grand Duke Teiros Mercili]] and a made named Yanni
+
+
+
 - [[Lord Gyaren Blackthorne]] - Lord of [[Ironhold]]
-- [[Countess Yvanna Merciline]] - Countess of [[Frostgate]]
 - [[Master Jordan Delmont]] - Leader of the [[Merchant Guild of Than]]
 - [[Duke Remial Caervan]] - Duke of [[Goldenfield]]
 - [[Lord Feldrin Stine]] - Lord of [[Rivermeet]]

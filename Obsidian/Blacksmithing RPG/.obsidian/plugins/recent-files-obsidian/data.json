@@ -1,44 +1,72 @@
 {
   "recentFiles": [
     {
+      "basename": "Vashkara-Than-Map1",
+      "path": "World Notes/World/Maps/Images/Vashkara-Than-Map1.png"
+    },
+    {
+      "basename": "Maps of Akora",
+      "path": "World Notes/World/Maps/Maps of Akora.md"
+    },
+    {
+      "basename": "Map of Akora",
+      "path": "World Notes/World/Maps/Images/Map of Akora.png"
+    },
+    {
+      "basename": "Dracari-Wing-Anatomy",
+      "path": "Other/Images/Dracari-Wing-Anatomy.png"
+    },
+    {
+      "basename": "de3zkbtb46q2",
+      "path": "Other/Images/de3zkbtb46q2.webp"
+    },
+    {
       "basename": "Home",
       "path": "Home.md"
-    },
-    {
-      "basename": "Than",
-      "path": "World Notes/World/Geography/Kingdoms/Than.md"
-    },
-    {
-      "basename": "Vashkara",
-      "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
     },
     {
       "basename": "The Central Kingdoms",
       "path": "World Notes/World/Geography/Kingdoms/The Central Kingdoms.md"
     },
     {
-      "basename": "Thaumara",
-      "path": "World Notes/World/Geography/Kingdoms/Thaumara.md"
+      "basename": "Akora",
+      "path": "World Notes/World/Geography/Continents/Akora.md"
     },
     {
-      "basename": "Nislia",
-      "path": "World Notes/World/Geography/Kingdoms/Nislia.md"
+      "basename": "Nothern Reaches Dungeon Unsealing",
+      "path": "World Notes/World/Geography/Continents/Nothern Reaches Dungeon Unsealing.md"
     },
     {
-      "basename": "Zentharis",
-      "path": "World Notes/World/Geography/Kingdoms/Zentharis.md"
+      "basename": "Saelis",
+      "path": "World Notes/World/Planetary Objects/Planets/Saelis.md"
     },
     {
-      "basename": "Name Ideas",
-      "path": "Other/Name Ideas.md"
+      "basename": "Borin Ragnorok",
+      "path": "World Notes/World/People/Borin Ragnorok.md"
+    },
+    {
+      "basename": "Ilindrial Magus",
+      "path": "World Notes/World/People/Ilindrial Magus.md"
+    },
+    {
+      "basename": "Tales of the Ancient Heroes",
+      "path": "World Notes/World/Items/Literature/Tales of the Ancient Heroes.md"
+    },
+    {
+      "basename": "Pagus Thinsly",
+      "path": "World Notes/World/People/Pagus Thinsly.md"
+    },
+    {
+      "basename": "Nard the Mapmaker",
+      "path": "World Notes/World/People/Nard the Mapmaker.md"
     },
     {
       "basename": "Artherus Sneeveling",
       "path": "World Notes/World/People/Artherus Sneeveling.md"
     },
     {
-      "basename": "Nard the Mapmaker",
-      "path": "World Notes/World/People/Nard the Mapmaker.md"
+      "basename": "Flowing Mana",
+      "path": "World Notes/World/Magic/Mana/Flowing Mana.md"
     },
     {
       "basename": "Yenthas",
@@ -49,12 +77,36 @@
       "path": "World Notes/World/Geography/Kingdoms/Almost a kingdom, almost a city/Nil Daral.md"
     },
     {
-      "basename": "Akora",
-      "path": "World Notes/World/Geography/Continents/Akora.md"
+      "basename": "Nislia",
+      "path": "World Notes/World/Geography/Kingdoms/Nislia.md"
     },
     {
-      "basename": "The Zentharis Pantheon",
-      "path": "World Notes/World/Culture/Religions/Westios Pantheon/The Zentharis Pantheon.md"
+      "basename": "Thaumara",
+      "path": "World Notes/World/Geography/Kingdoms/Thaumara.md"
+    },
+    {
+      "basename": "Zentharis",
+      "path": "World Notes/World/Geography/Kingdoms/Zentharis.md"
+    },
+    {
+      "basename": "Vashkara",
+      "path": "World Notes/World/Geography/Kingdoms/Vashkara.md"
+    },
+    {
+      "basename": "Than",
+      "path": "World Notes/World/Geography/Kingdoms/Than.md"
+    },
+    {
+      "basename": "God Empress of the Setting Sun",
+      "path": "World Notes/World/People/Rulers/God Empress of the Setting Sun.md"
+    },
+    {
+      "basename": "The Zentharian Pantheon",
+      "path": "World Notes/World/Culture/Religions/Westios Pantheon/The Zentharian Pantheon.md"
+    },
+    {
+      "basename": "Name Ideas",
+      "path": "Other/Name Ideas.md"
     },
     {
       "basename": "UI-Moodboard",
@@ -105,10 +157,6 @@
       "path": "World Notes/World/Magic/Mana/Flowing Mana Springs.md"
     },
     {
-      "basename": "Flowing Mana",
-      "path": "World Notes/World/Magic/Mana/Flowing Mana.md"
-    },
-    {
       "basename": "Mana",
       "path": "World Notes/World/Magic/Mana/Mana.md"
     },
@@ -151,50 +199,6 @@
     {
       "basename": "Fort Laiedd",
       "path": "World Notes/World/Geography/Cities/Fort Laiedd.md"
-    },
-    {
-      "basename": "Urodh",
-      "path": "World Notes/World/Geography/Cities/Urodh.md"
-    },
-    {
-      "basename": "Ilindrial Magus",
-      "path": "World Notes/World/People/Ilindrial Magus.md"
-    },
-    {
-      "basename": "The Shattered Isles",
-      "path": "World Notes/World/Regions/The Shattered Isles.md"
-    },
-    {
-      "basename": "The Dwarven Lands",
-      "path": "World Notes/World/Regions/The Dwarven Lands.md"
-    },
-    {
-      "basename": "The Elderwoods",
-      "path": "World Notes/World/Regions/The Elderwoods.md"
-    },
-    {
-      "basename": "The Northern Reaches",
-      "path": "World Notes/World/Regions/The Northern Reaches.md"
-    },
-    {
-      "basename": "The Forgotten Lands",
-      "path": "World Notes/World/Regions/The Forgotten Lands/The Forgotten Lands.md"
-    },
-    {
-      "basename": "Vashkara-Than-Map1",
-      "path": "World Notes/World/Maps/Images/Vashkara-Than-Map1.png"
-    },
-    {
-      "basename": "Maps of Akora",
-      "path": "World Notes/World/Maps/Maps of Akora.md"
-    },
-    {
-      "basename": "Map of Akora",
-      "path": "World Notes/World/Maps/Images/Map of Akora.png"
-    },
-    {
-      "basename": "Tldraw 2025-02-20 10.18PM",
-      "path": "Other/Tldraw 2025-02-20 10.18PM.md"
     }
   ],
   "omittedPaths": [],

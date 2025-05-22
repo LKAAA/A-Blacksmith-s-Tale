@@ -1,4 +1,4 @@
-The Cult of Dotthar originates from Westios, but has slowly spread into other regions of Akora. Dotthar is the [[The Zentharis Pantheon|Westios Pantheon's]] god of chaos. The Cult of Dotthar is separated into multiple sects that all follow his word independently and claim to have been spoken to by Dotthar themselves. 
+The Cult of Dotthar originates from Westios, but has slowly spread into other regions of Akora. Dotthar is the [[The Zentharian Pantheon|Westios Pantheon's]] god of chaos. The Cult of Dotthar is separated into multiple sects that all follow his word independently and claim to have been spoken to by Dotthar themselves. 
 
 ##### Sects
 - [[The Black Sun]]

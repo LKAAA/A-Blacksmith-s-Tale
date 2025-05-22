@@ -74,7 +74,7 @@ Smaller Towns:
 Border disputes with [[Than]] occur frequently, with merchants being heavily taxed for passing through and tariffs being placed on goods going in between the two kingdoms.
 
 ##### Appendix
-A sect of the [[Cult of Dotthar]] is hidden deep within the city of [[Vasthold]]. This sect emerged around 50 years ago and came from [[Zentharis]]. It follows one of the gods of [[The Zentharis Pantheon]], that being [[Dotthar]] the god of chaos.
+A sect of the [[Cult of Dotthar]] is hidden deep within the city of [[Vasthold]]. This sect emerged around 50 years ago and came from [[Zentharis]]. It follows one of the gods of [[The Zentharian Pantheon]], that being [[Dotthar]] the god of chaos.
 
 Roughly the size of South Carolina or Austria.
 Peninsula Width: ~100 Miles
