@@ -1,3 +1,0 @@
-The Black Sun is a sect of the [[Cult of Dotthar]] located and working in [[Vashkara]]. Their goal is to take control of the [[Grand Duke Silian Vashteria]] thus gaining control of Vashkara as a whole. They plan on using this control to manipulate the Grand Duke into attack [[Zentharis]] with the end goal of defeating Westios's empress, the god [[Ivphyn]], counterpart of [[Dotthar]], goddess of order.
-
-The leader of the Black Sun, the Hand of Dotthar as he calls himself, is the main advisor of [[Grand Duke Silian Vashteria]]. 

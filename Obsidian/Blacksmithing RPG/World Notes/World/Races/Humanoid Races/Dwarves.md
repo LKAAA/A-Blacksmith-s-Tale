@@ -1,4 +1,0 @@
-
-Dwarves are stout and sturdy beings, renowned for their craftsmanship and resilience. They typically have stocky builds, strong muscles, and broad shoulders, reflecting their affinity for physical labor and underground dwelling. Dwarves excel in mining, metalwork, and stonemasonry, creating intricate structures and durable goods that withstand the test of time. Despite their gruff exterior, dwarves value loyalty and honor, forming close-knit communities and fiercely defending their homes and traditions.
-
-The Dwarves have begun to intermingle with humans and live in the same towns, however in the past they lived separately in underground cities. These cities still exist, but more and more dwarves have been moving out from them.

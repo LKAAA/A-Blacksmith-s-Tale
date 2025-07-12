@@ -1,19 +1,9 @@
-The world is made up of a major continent titled "[[Akora]]" and a few smaller islands dotted around. This continent is located on the planet [[Saelis]].
+12,684 years have passed since the first beings began to record their history on the world of [[Saelis]]. Much has changed in those 12,000 years. Continents have risen and fallen, races have been born and yet more gone extinct, civilizations have appeared and just as many have disappeared from the history of others. 
 
-Akora is split into 6 major regions:
-[[The Central Kingdoms|The Central Kingdoms]] - The largest kingdom on Akora, located directly in the center of the continent. Ruled by a monarchy with several smaller regions ruled by noble families, they welcome all races into their borders.  
-[[Zentharis|The Westios Empire]] - Also known as the Empire of the Setting Sun, located in the west, it is ruled by the [[God Empress of the Setting Sun]], who proclaims herself to be the [[Ivphyn|God of Light]] descended to rule Westios. 
-[[Nil Daral|Nil Daral]], the Great Dwarven City - A large region in the south-east that houses the kingdom of the Dwarves, a large underground city that has been continuously expanded over centuries of excavation. 
-[[The Elderwoods]] - A great forest in the east. At the center of this forest is [[Yenthas|Yenthas]], the hidden city of the elves.
-[[The Forgotten Lands|The Forgotten Lands]] - The farthest south region of Akora. It is a barren land that houses few but the Goblins hidden in the deepest caves of the mountains. 
-[[The Northern Reaches]] - The region to the north, an everlasting winter. A large mountain range walls off the majority of the land of snow, with only a few passes that are very difficult to pass through. Expansion and exploration in this region is very difficult. 
+The three current continents of [[Saelis]] are as follows:
 
+- [[Akora]] - Akora is the largest continent on [[Saelis]] and where a majority of it's stories take place. It's vast regions cover all climates and temperates, and houses numerous civilizations of different time periods and races. It's history is storied and dots back to the beginning of recorded time on [[Saelis]].
 
-| Region               | Alt. Names                    | Pop.             | Size                   | Religion                                                      |
-| -------------------- | ----------------------------- | ---------------- | ---------------------- | ------------------------------------------------------------- |
-| The Central Kingdom  | The Holy Land                 | 24 mil           | 1.8 mil mi<sup>2</sup> | [[The True God]]                                              |
-| The Westios Empire   | Empire of the Setting Sun     | 11 mil           | 1.2 mil mi<sup>2</sup> | [[The Zentharian Pantheon\|The Westios Pantheon]] |
-| Nil Daral            | The Great City of the Dwarves | 5.8 mil          | 50,000 mi<sup>2</sup>  | God of Rocks? idk                                             |
-| The Eastern Forest   | The Forest of Nard            | 150,000 (10,000) | 562,000 mi<sup>2</sup> | ---                                                           |
-| The Forgotten Lands  | The Cursed Lands              | Less than 50,000 | 1.4 mil mi<sup>2</sup> | ---                                                           |
-| The Northern Reaches | The North                     | Less than 10,000 | 1.6 mil mi<sup>2</sup> | ---                                                           |
+- [[Northern Cerfan]] - The northern continent of the Cerfans. It is the origin place of the [[Human]] race. [[Northern Cerfan]] is a significantly warmer continent than [[Southern Cerfan]]. The Equator of [[Saelis]] goes through the north of the continent. In the year of 12,281 both northern and southern Cerfan befell numerous disasters on the continental level leading to almost the complete destruction of the continents. At present day only the shattered remains of the continents remain with few remnants of life on it still.
+
+- [[Southern Cerfan]] - The southern continent of the Cerfans. It's history follows the same path as [[Northern Cerfan]] but with the temperature being significantly colder.

@@ -13,7 +13,7 @@
 		{"id":"aa1539b78b066b62","type":"text","text":"#### Culture and Society\n#### --- The \"Human\" Element ---","x":1370,"y":-780,"width":280,"height":200,"color":"6"},
 		{"id":"7305d0a0eace2bdd","type":"text","text":"Politics","x":2000,"y":-400,"width":250,"height":60,"color":"6"},
 		{"id":"66e5112e527e7992","type":"text","text":"Religion","x":1650,"y":-400,"width":250,"height":60,"color":"6"},
-		{"id":"d2c9ca9bb9ce2740","type":"file","file":"World Notes/World/Items/Resources/The Natural Resources.md","x":-465,"y":-280,"width":400,"height":400}
+		{"id":"d2c9ca9bb9ce2740","type":"file","file":"World Notes/Continents/Akora/Items/Resources/The Natural Resources.md","x":-465,"y":-280,"width":400,"height":400}
 	],
 	"edges":[
 		{"id":"7638771ef9d2c364","fromNode":"5f002a640d989b35","fromSide":"bottom","toNode":"70dfc603281e506c","toSide":"top"},
