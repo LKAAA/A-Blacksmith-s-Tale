@@ -2,7 +2,6 @@ class_name Chest extends StaticBody2D
 
 @onready var interact_area: Interactable = $InteractArea
 
-
 signal toggle_inventory(external_inventory_owner)
 
 @export var inventory_data: InventoryData

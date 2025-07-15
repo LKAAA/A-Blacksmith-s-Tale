@@ -1,0 +1,46 @@
+**Player**
+- Movement
+	- 8 way movement
+	- Clamped movement speed in diagonal directions
+	- Sprinting that increases movement speed
+	- movement speed can be increased by outside factors
+- Dodgeroll
+	- 8 way dodgeroll
+	- Immune to damage when rolling
+	- Has a cooldown
+	- Sprinting is faster than constantly rolling
+	- Only usable when  holding a weapon
+- Item System
+	- Inventory System with items most similar to stardew valley
+	- Item types that do different things
+		- Consumables
+			- When equipped and left click press will use the item and cause an effect
+			- Can use the object
+			- Can give you a different object back
+		- Different Tools and Weapons can be equipped
+			- When left click is pressed, use the currently equipped tool
+				- Weapons will do weapon specific attack
+				- Tools will try and hit in front of the player
+					- Different tools can break different objects
+						- Pickaxe breaks rocks
+						- Axe breaks trees
+						- Knife can be used on certain enemies to skin them
+**Health Module**
+	- Node titled HealthModule
+	- Can be attached to any object to instantly give it health
+	- Has Maxhealth and Curhealth variables
+	- Has damage and heal functions
+	- Has get/set for maxhealth
+	- death signal
+**Hitbox Module**
+	- Area2D Node titled HitboxModule
+	- Can be attached to any object to give it a hitbox
+	- has a slot for a health module in its script
+	- used to detect when to damage the object
+**Loot Module**
+	- Node titled LootModule
+	- Can be attached to any object
+	- Connect a signal to the "Drop Item" function
+	- This will hold the "LootTable" resource
+	- Use this to do weighted randomization for dropping of items
+	- supports dropping multiple items at once

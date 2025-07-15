@@ -5,6 +5,8 @@ var hovering: bool = false
 var interact: Callable = func():
 	pass
 
+# REMEMBER TO CONNECT SIGNALS WHEN MAKING NEW OBJECT
+
 func _on_mouse_entered() -> void:
 	hovering = true
 

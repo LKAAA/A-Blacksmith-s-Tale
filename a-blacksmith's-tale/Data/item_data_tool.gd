@@ -1,7 +1,7 @@
 extends ItemData
 class_name ItemDataTool
 
-@export_enum("Pickaxe", "Axe") var tool_type: String
+@export_enum("Pickaxe", "Axe", "Shovel") var tool_type: String
 @export var tool_efficiency: int = 1
 @export var tool_damage: int = 1
 

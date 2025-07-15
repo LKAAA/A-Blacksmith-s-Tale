@@ -27,6 +27,13 @@ func detect_clicked_on_object():
 
 #endregion
 
+#region breakable objects
+
+func request_break(breakable_object):
+	breakable_object._on_hit(game_ui.get_active_item())
+
+#endregion
+
 #region Inventory
 
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
@@ -90,6 +97,7 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		player.inventory.inventory_slots.resize(36)
 		player.open_inventory.connect(toggle_inventory_interface)
 		player.use.connect(game_ui.use_slot)
+		player.request_break.connect(request_break)
 		menu_ui._set_player_inventory(player.inventory)
 		game_ui._set_hotbar_inventory(player.inventory)
 		load_external_inventories(current_zone)

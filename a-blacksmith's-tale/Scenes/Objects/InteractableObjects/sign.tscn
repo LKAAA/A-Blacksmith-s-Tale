@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://duxvb6kudsmba"]
+
+[ext_resource type="Script" uid="uid://d20fn5d1p4n0a" path="res://Scripts/dialogue_interaction.gd" id="1_6ck10"]
+[ext_resource type="Texture2D" uid="uid://b3nalmgkjv7m3" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="2_274hp"]
+[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="3_tagwb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvl10"]
+size = Vector2(17, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5qe2"]
+atlas = ExtResource("2_274hp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdpjq"]
+
+[node name="Sign" type="StaticBody2D"]
+script = ExtResource("1_6ck10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_lvl10")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_x5qe2")
+
+[node name="InteractArea" parent="." instance=ExtResource("3_tagwb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource("RectangleShape2D_vdpjq")
+
+[connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea" to="InteractArea" method="_on_mouse_exited"]

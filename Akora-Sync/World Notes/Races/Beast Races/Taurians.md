@@ -1,0 +1,2 @@
+Taurians are sturdy and resilient beings, with the lower bodies and heads of bulls and the upper bodies of humanoids. They possess powerful muscles, broad chests, and imposing horns that curve from their heads. Taurians are creatures of strength and endurance, able to withstand the rigors of labor and combat with ease. They value honor and tradition, forming tight-knit communities and fiercely defending their territories. Despite their intimidating appearance, Taurians are often gentle and steadfast allies to those they trust, loyal to the end in both friendship and battle.
+
