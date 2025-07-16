@@ -42,6 +42,10 @@ The demons are highly intelligent creatures that were once the ancient [[Relvaâ€
 >[!caption|left]
 >Main Article: [[Monstrous Races]]
 
+The monsters of Saelis come in two forms, intelligent monsters, and unintelligent monsters (often referred to as just monsters). Currently the intelligent monsters are the [[Orcs]], the [[Goblins]], and the [[Demons]]. The current unintelligent monsters are [[Trolls]], though there are a lot more monsters not fleshed out (think common DND monsters). 
+Intelligent monsters are monsters that can learn language, communicate, and learn, while unintelligent monsters act more on animalistic instincts (Though that's not to say they can't be smart like an animal in the real world is smart). 
+[[Orcs]], [[Goblins]], and [[Trolls]] first emerged from a [[Dungeon Burst]] in the south of Akora. The orcs created cities and towns on the surface first in the south, before beginning to expand northward. The trolls and goblins stayed in the south, hiding under the vast mountain ranges, in tunnel systems that they created. 
+The [[Goblins]] formed clans
 
 
 ##### Races

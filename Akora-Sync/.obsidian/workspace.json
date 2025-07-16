@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stories/Yvanna Story/Chapters/Chapter 1.md",
+                "file": "Game Notes/Systems/Dialogue System.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 1"
+              "title": "Dialogue System"
             }
           }
         ]
@@ -33,12 +33,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "World Notes/Continents/Akora/Geography/Kingdoms/Thaumara.md",
+                "file": "World Notes/Continents/Akora/Geography/Continents/Akora.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thaumara"
+              "title": "Akora"
             }
           }
         ]
@@ -191,10 +191,15 @@
   },
   "active": "1a5d0bf9e8ca3709",
   "lastOpenFiles": [
+    "World Notes/Overview of the World.md",
+    "Game Notes/Systems/Dialogue System.md",
+    "World Notes/Continents/Akora/Geography/Continents/Akora.md",
+    "World Notes/Continents/Akora/Geography/Kingdoms/Thaumara.md",
+    "World Notes/Races/Monstrous Races/Monstrous Races.md",
+    "Stories/Yvanna Story/Chapters/Chapter 1.md",
     "Stories/Yvanna Story/Yvanna Story.md",
     "Stories/Reina Story.md",
     "World Notes/Continents/Akora/Culture/The Council of Seven.md",
-    "World Notes/Continents/Akora/Geography/Kingdoms/Thaumara.md",
     "World Notes/Continents/Akora/Geography/Kingdoms/Vashkara.md",
     "World Notes/Continents/Akora/Geography/Kingdoms/The Central Kingdoms.md",
     "World Notes/Continents/Akora/Geography/Kingdoms/Ivpheria.md",
@@ -203,7 +208,6 @@
     "World Notes/Races/Dracari.md",
     "Stories/Duchess Story.md",
     "Stories/Yvanna Story/Yvanna Story Notes.md",
-    "Stories/Yvanna Story/Chapters/Chapter 1.md",
     "Stories/Yvanna Story/Chapters",
     "Stories/Yvanna Story",
     "Stories",
@@ -216,11 +220,7 @@
     "World Notes/Continents/Akora/People/Ruling Figures/Thaumara/Valian Tempus.md",
     "World Notes/Races/Humanoid Races/Elves.md",
     "World Notes/Races/Humanoid Races/Dwarves.md",
-    "World Notes/Races/Humanoid Races/Humans.md",
-    "World Notes/Continents/Akora/Items/Resources/Glistening Silver.md",
     "World Notes/Continents/Akora/People/Ruling Figures/Thaumara",
-    "World Notes/Continents/Akora/People/Ruling Figures/King Alvin Howsen.md",
-    "World Notes/Continents/Akora/Culture/Religions/The Ivpherian Pantheon.md",
     "World Notes/The Gods",
     "World Notes/Continents/Akora/Maps/Images/Vashkara-Than-Map1.png",
     "Game Notes/World Building The Game.canvas",

@@ -7,19 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://xbr07uqgqq1r" path="res://Scenes/transition_zone.tscn" id="5_bo2f2"]
 [ext_resource type="PackedScene" uid="uid://uid2qlo1vyf5" path="res://Scenes/item_pickup.tscn" id="6_vjrfg"]
 [ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/iron_ore.tres" id="7_ojt8e"]
-[ext_resource type="Script" uid="uid://2ix4cc5ucs7j" path="res://Data/slot_data.gd" id="8_yhkl1"]
+[ext_resource type="Script" uid="uid://2ix4cc5ucs7j" path="res://Data/Scripts/slot_data.gd" id="8_yhkl1"]
 [ext_resource type="Resource" uid="uid://dyo1byeq58lh2" path="res://Data/Items/iron_bar.tres" id="9_008y1"]
 [ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="10_oamql"]
 [ext_resource type="Resource" uid="uid://cfe48xar3dp0q" path="res://Data/Items/oak_long_tool_handle.tres" id="11_xp42o"]
 [ext_resource type="Resource" uid="uid://r4bslb1evnvq" path="res://Data/Items/iron_pickaxe_head.tres" id="12_7023x"]
 [ext_resource type="Resource" uid="uid://b28a8c0aq5y08" path="res://Data/Items/iron_pickaxe.tres" id="13_g8qwa"]
 [ext_resource type="PackedScene" uid="uid://cxn142l8tsc8v" path="res://Scenes/Objects/InteractableObjects/chest.tscn" id="14_8d832"]
-[ext_resource type="Script" uid="uid://dfsikqcptkoj0" path="res://Data/inventory_data.gd" id="15_uwclm"]
+[ext_resource type="Script" uid="uid://dfsikqcptkoj0" path="res://Data/Scripts/inventory_data.gd" id="15_uwclm"]
 [ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/uncured_leather.tres" id="16_qsvcl"]
 [ext_resource type="Resource" uid="uid://kpjm1k573bkg" path="res://Data/Items/cured_leather.tres" id="17_quhww"]
 [ext_resource type="Resource" uid="uid://b2pa1b6wmduol" path="res://Data/Items/fried_egg.tres" id="18_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/InteractableObjects/curing_rack.tscn" id="18_quhww"]
-[ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/recipe_data.gd" id="19_dpgyg"]
+[ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="19_dpgyg"]
 [ext_resource type="Resource" uid="uid://c2xi2unhicxyu" path="res://Data/Recipes/cured_leather.tres" id="20_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://dstxblro34alg" path="res://Scenes/Objects/BreakableObjects/tree.tscn" id="22_4hkp2"]
 [ext_resource type="PackedScene" uid="uid://duxvb6kudsmba" path="res://Scenes/Objects/InteractableObjects/sign.tscn" id="23_x8coi"]
@@ -456,6 +456,7 @@ recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="Tree" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(312, 152)
+required_tool_type = "Pickaxe"
 
 [node name="Sign" parent="Objects" instance=ExtResource("23_x8coi")]
-position = Vector2(312, 296)
+position = Vector2(296, 248)
