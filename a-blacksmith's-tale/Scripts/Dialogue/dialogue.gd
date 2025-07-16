@@ -33,6 +33,12 @@ func _on_type_timer_timeout() -> void:
 func message_is_fully_visible() -> bool:
 	return content.visible_characters >= content.get_total_character_count() - 1
 
+func fast_forward_message() -> void:
+	content.visible_characters = content.get_total_character_count()
+	_playing_voice = false
+	type_timer.stop()
+	message_completed.emit()
+
 func _on_dialogue_voice_player_finished() -> void:
 	if _playing_voice:
 		dialogue_voice_player.playSFX(0)

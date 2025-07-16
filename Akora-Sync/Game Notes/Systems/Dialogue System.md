@@ -19,3 +19,10 @@ Two important things
 What do I want them to say?
 How do I want them to deliver it?
 
+
+NEXT: 
+Hook up to json file
+read in all json information into dictionary
+Get character name
+Portraits
+Fast forward message

@@ -49,6 +49,14 @@ func _input(event: InputEvent) -> void:
 			_show_current()
 		else:
 			_hide()
+	elif(event.is_pressed() and 
+		!event.is_echo() and
+		event is InputEventKey and 
+		event.keycode == KEY_ENTER and
+		_is_active and
+		not cur_dialogue_instance.message_is_fully_visible()
+	):
+		cur_dialogue_instance.fast_forward_message()
 
 func _hide() -> void:
 	cur_dialogue_instance.disconnect("message_completed", _on_message_completed)

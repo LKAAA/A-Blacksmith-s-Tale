@@ -33,7 +33,7 @@ func request_break(breakable_object):
 
 func _request_dialogue() -> void:
 	print("recieved signal")
-	dialogue_manager.show_messages(["Hello I am a sign.", "I am still a sign", "I promise I won't change.", "[rainbow]Holy fuck I'm gay now[/rainbow]"])
+	dialogue_manager.show_messages(["Hello I am a sign.", "I am still a sign", "I promise I won't change.", "[rainbow]Holy fuck I'm gay now[/rainbow]", "[rainbow]GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY [/rainbow]"])
 
 func _on_dialogue_manager_finished() -> void:
 	#next_label.visible = true
