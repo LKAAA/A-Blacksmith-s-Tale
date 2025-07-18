@@ -24,6 +24,7 @@ var current_state: PLAYER_STATES
 
 signal open_inventory(inventory: InventoryData)
 signal use
+signal request_break
 
 func _ready() -> void:
 	speed = calculate_current_speed(0)
@@ -118,6 +119,7 @@ func _on_interaction_area_entered(area: Area2D) -> void:
 	if area.is_in_group("breakable"):
 		all_breakables.insert(0, area)
 	if area.is_in_group("interactable"):
+		print("Added Interaction")
 		all_interactions.insert(0, area)
 
 func _on_interaction_area_exited(area: Area2D) -> void:
@@ -138,4 +140,5 @@ func execute_breakable() -> void:
 		for i in all_breakables:
 			if i.hovering:
 				if i.get_parent().has_method("_on_hit"):
-					i.get_parent()._on_hit()
+					request_break.emit(i.get_parent())
+					#i.get_parent()._on_hit(get_active_item())

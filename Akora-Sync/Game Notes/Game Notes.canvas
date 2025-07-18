@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"7fede1399cfd87f2","type":"file","file":"Game Notes/Systems/Leveling-Skills System.md","x":1325,"y":142,"width":400,"height":400},
+		{"id":"3442625db6eb1bfe","type":"file","file":"Game Notes/Systems/Blacksmithing Mechanics.md","x":900,"y":142,"width":400,"height":400},
+		{"id":"b34b60ad6bd85f67","type":"text","text":"Core","x":280,"y":-440,"width":250,"height":60},
+		{"id":"904196984cccefcf","type":"text","text":"The core controls loading different segments of the map, loading save data\n\nIt will also take charge of placing the player in the correct transition","x":206,"y":-340,"width":399,"height":160},
+		{"id":"6abc2eb20f349441","type":"text","text":"Scene tree will look like this:\n\nCore\n- Current Game Scene\n\t- Tilemap\n\t- Player","x":650,"y":-558,"width":250,"height":297},
+		{"id":"80e5942676d6431c","type":"file","file":"Game Notes/Systems/Systems.md","x":-416,"y":125,"width":821,"height":554},
+		{"id":"649f4853b74ed44b","type":"text","text":"Base Systems to make the core of the game\n\n**Make the core of the game then basically just release content updates**\n\n","x":-202,"y":-82,"width":393,"height":122},
+		{"id":"2dd501d1a357c9af","type":"text","text":"The point of these modules is that they can be reused for multiple objects\n\nAn enemy will have the same modules as a tree and reuse the same code","x":512,"y":263,"width":250,"height":279},
+		{"id":"756c93067b0113f2","type":"text","text":"CORE MECHANICS\n","x":1200,"y":-240,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"6edff8f8a1a742d9","fromNode":"b34b60ad6bd85f67","fromSide":"bottom","toNode":"904196984cccefcf","toSide":"top"},
+		{"id":"3bc822235741ef7a","fromNode":"b34b60ad6bd85f67","fromSide":"right","toNode":"6abc2eb20f349441","toSide":"left"},
+		{"id":"c837aa2b4d625b0d","fromNode":"649f4853b74ed44b","fromSide":"bottom","toNode":"80e5942676d6431c","toSide":"top"},
+		{"id":"86aeb537c33b304a","fromNode":"80e5942676d6431c","fromSide":"right","toNode":"2dd501d1a357c9af","toSide":"left"},
+		{"id":"b316aebc832b5aab","fromNode":"756c93067b0113f2","fromSide":"bottom","toNode":"3442625db6eb1bfe","toSide":"top"},
+		{"id":"c9b975d6902a3fa1","fromNode":"756c93067b0113f2","fromSide":"bottom","toNode":"7fede1399cfd87f2","toSide":"top"}
+	]
+}

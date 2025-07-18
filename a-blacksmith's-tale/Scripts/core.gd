@@ -6,6 +6,8 @@ const PLAYER = preload("res://Player/player.tscn")
 @onready var menu_ui: Menu = %Menu_UI
 @onready var game_ui: GameUI = %Game_UI
 @onready var hovering_indicator: TileMapLayer = $"Hovering Indicator"
+@onready var dialogue_manager: DialogueManager = $DialogueManager
+
 
 var external: bool = false
 
@@ -20,10 +22,31 @@ func _ready() -> void:
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
 
-#region tile selection
+#region objects
 
-func detect_clicked_on_object():
+func request_break(breakable_object):
+	breakable_object._on_hit(game_ui.get_active_item())
+
+#endregion
+
+#region Dialogue System
+
+func _request_dialogue() -> void:
+	print("recieved signal")
+	dialogue_manager.show_messages(["Hello I am a sign.", "I am still a sign", "I promise I won't change.", "[rainbow]Holy fuck I'm gay now[/rainbow]", "[rainbow]GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY[/rainbow]"])
+
+func _on_dialogue_manager_finished() -> void:
+	#next_label.visible = true
 	pass
+
+func _on_dialogue_manager_message_completed() -> void:
+	#next_label.visible = false
+	pass # Replace with function body.
+
+
+func _on_dialogue_manager_message_requested() -> void:
+	#next_label.visible = false
+	pass # Replace with function body.
 
 #endregion
 
@@ -90,10 +113,15 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		player.inventory.inventory_slots.resize(36)
 		player.open_inventory.connect(toggle_inventory_interface)
 		player.use.connect(game_ui.use_slot)
+		player.request_break.connect(request_break)
 		menu_ui._set_player_inventory(player.inventory)
 		game_ui._set_hotbar_inventory(player.inventory)
 		load_external_inventories(current_zone)
 		Global.player = player
+		
+		for child:DialogueInteraction in current_zone.get_dialogue_objects():
+			if not child.request_dialogue.is_connected(_request_dialogue):
+				child.request_dialogue.connect(_request_dialogue)
 	
 	# If there is already a zone set up some variables and start the loading scren fade_in  animation
 	else:
@@ -129,6 +157,10 @@ func fade_in_finished() -> void:
 		t.transition_entered.connect(load_zone)
 	
 	load_external_inventories(current_zone)
+	
+	for child: DialogueInteraction in current_zone.get_dialogue_objects():
+		if not child.request_dialogue.is_connected(_request_dialogue):
+				child.request_dialogue.connect(_request_dialogue)
 	
 	cur_zone = ""
 	cur_transition = 0

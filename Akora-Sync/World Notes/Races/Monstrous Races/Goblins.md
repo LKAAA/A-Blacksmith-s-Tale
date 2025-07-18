@@ -1,0 +1,2 @@
+Goblins are cunning and resourceful beings, known for their adaptability and survival instincts. They typically have small, wiry frames, with sharp features, pointed ears, and keen, beady eyes that miss little. Goblins are skilled scavengers and traders, able to thrive in even the harshest of environments. While often viewed as untrustworthy by other races, goblins possess a strong sense of community and loyalty to their own kind. They excel in the art of invention and improvisation, using their ingenuity to overcome challenges and outwit their adversaries.
+

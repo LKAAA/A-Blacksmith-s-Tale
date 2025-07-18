@@ -1,0 +1,1 @@
+An [[Elves|Elvish]] village located near [[Koran]]. 

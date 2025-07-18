@@ -1,0 +1,20 @@
+{
+  "obsidian-dangling-links:show-dangling-links-view": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "D"
+    }
+  ],
+  "surfing:usingGoogle-to-search": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "P"
+    }
+  ]
+}
