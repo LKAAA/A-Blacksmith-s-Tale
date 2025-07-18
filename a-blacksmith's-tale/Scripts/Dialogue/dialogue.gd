@@ -4,8 +4,8 @@ class_name Dialogue
 @onready var content: RichTextLabel = $MarginContainer/Content
 @onready var type_timer: Timer = $TypeTimer
 @onready var pause_timer: Timer = $PauseTimer
-@onready var dialogue_voice_player: AudioStreamPlayer = $DialogueVoicePlayer
 @onready var pause_calculator: Node = $PauseCalculator
+@onready var random_sound_player: RandomSoundPlayer = $RandomSoundPlayer
 
 var _playing_voice := false
 
@@ -18,7 +18,7 @@ func update_message(message: String) -> void:
 	type_timer.start()
 	
 	_playing_voice = true
-	dialogue_voice_player.playSFX(0)
+	random_sound_player.playSFX(0)
 
 func _on_type_timer_timeout() -> void:
 	pause_calculator.check_at_position(content.visible_characters)
@@ -39,13 +39,13 @@ func fast_forward_message() -> void:
 	type_timer.stop()
 	message_completed.emit()
 
-func _on_dialogue_voice_player_finished() -> void:
+func _on_random_sound_player_finished() -> void:
 	if _playing_voice:
-		dialogue_voice_player.playSFX(0)
+		random_sound_player.playSFX(0)
 
 func _on_pause_timer_timeout() -> void:
 	_playing_voice = true
-	dialogue_voice_player.playSFX(0)
+	random_sound_player.playSFX(0)
 	type_timer.start()
 
 func _on_pause_calculator_pause_requested(duration: Variant) -> void:

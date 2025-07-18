@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8s1hryj3es1q"]
+[gd_scene load_steps=5 format=3 uid="uid://c8s1hryj3es1q"]
 
 [ext_resource type="Script" uid="uid://bqbssru4xakxs" path="res://Scripts/Dialogue/dialogue.gd" id="1_5mcti"]
 [ext_resource type="FontFile" uid="uid://d1hqkgwbu8f1p" path="res://Assets/Fonts/TeenyTinyPixls-o2zo.ttf" id="2_4hwkt"]
-[ext_resource type="AudioStream" uid="uid://ckpj6s7g44khr" path="res://Assets/UI/Dialogue/Blop-Mark_DiAngelo-79054334-modified.wav" id="3_shd1d"]
-[ext_resource type="Script" uid="uid://7k6efidsbkxv" path="res://Scripts/Dialogue/dialogue_voice_player.gd" id="4_j1ns2"]
+[ext_resource type="PackedScene" uid="uid://brk8dmxysm7s6" path="res://Scenes/Components/random_sound_player.tscn" id="4_pjl42"]
 [ext_resource type="Script" uid="uid://b36blnm3dcoo" path="res://Scripts/Dialogue/pause_calculator.gd" id="5_n2qm0"]
 
 [node name="Dialogue" type="Control"]
@@ -73,15 +72,12 @@ wait_time = 0.04
 [node name="PauseTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="DialogueVoicePlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_shd1d")
-volume_db = -10.0
-script = ExtResource("4_j1ns2")
-
 [node name="PauseCalculator" type="Node" parent="."]
 script = ExtResource("5_n2qm0")
 
+[node name="RandomSoundPlayer" parent="." instance=ExtResource("4_pjl42")]
+
 [connection signal="timeout" from="TypeTimer" to="." method="_on_type_timer_timeout"]
 [connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]
-[connection signal="finished" from="DialogueVoicePlayer" to="." method="_on_dialogue_voice_player_finished"]
 [connection signal="pause_requested" from="PauseCalculator" to="." method="_on_pause_calculator_pause_requested"]
+[connection signal="finished" from="RandomSoundPlayer" to="." method="_on_random_sound_player_finished"]

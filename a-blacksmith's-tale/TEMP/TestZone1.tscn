@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=36 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://boio4rgvdby0s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_ntypt"]
@@ -6,12 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bdxahjvqc3a7s" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="4_8wkoa"]
 [ext_resource type="PackedScene" uid="uid://xbr07uqgqq1r" path="res://Scenes/transition_zone.tscn" id="5_bo2f2"]
 [ext_resource type="PackedScene" uid="uid://uid2qlo1vyf5" path="res://Scenes/item_pickup.tscn" id="6_vjrfg"]
-[ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/iron_ore.tres" id="7_ojt8e"]
 [ext_resource type="Script" uid="uid://2ix4cc5ucs7j" path="res://Data/Scripts/slot_data.gd" id="8_yhkl1"]
-[ext_resource type="Resource" uid="uid://dyo1byeq58lh2" path="res://Data/Items/iron_bar.tres" id="9_008y1"]
 [ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="10_oamql"]
-[ext_resource type="Resource" uid="uid://cfe48xar3dp0q" path="res://Data/Items/oak_long_tool_handle.tres" id="11_xp42o"]
-[ext_resource type="Resource" uid="uid://r4bslb1evnvq" path="res://Data/Items/iron_pickaxe_head.tres" id="12_7023x"]
 [ext_resource type="Resource" uid="uid://b28a8c0aq5y08" path="res://Data/Items/iron_pickaxe.tres" id="13_g8qwa"]
 [ext_resource type="PackedScene" uid="uid://cxn142l8tsc8v" path="res://Scenes/Objects/InteractableObjects/chest.tscn" id="14_8d832"]
 [ext_resource type="Script" uid="uid://dfsikqcptkoj0" path="res://Data/Scripts/inventory_data.gd" id="15_uwclm"]
@@ -21,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/InteractableObjects/curing_rack.tscn" id="18_quhww"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="19_dpgyg"]
 [ext_resource type="Resource" uid="uid://c2xi2unhicxyu" path="res://Data/Recipes/cured_leather.tres" id="20_6bgdf"]
+[ext_resource type="PackedScene" uid="uid://chk276ad3d5n3" path="res://Scenes/Objects/InteractableObjects/harvestable_item.tscn" id="20_dpgyg"]
 [ext_resource type="PackedScene" uid="uid://dstxblro34alg" path="res://Scenes/Objects/BreakableObjects/tree.tscn" id="22_4hkp2"]
 [ext_resource type="PackedScene" uid="uid://duxvb6kudsmba" path="res://Scenes/Objects/InteractableObjects/sign.tscn" id="23_x8coi"]
 
@@ -296,31 +293,6 @@ sources/0 = SubResource("TileSetAtlasSource_nb3wt")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fopl"]
 size = Vector2(50, 32)
 
-[sub_resource type="Resource" id="Resource_rsj2a"]
-script = ExtResource("8_yhkl1")
-item_data = ExtResource("9_008y1")
-quantity = 50
-
-[sub_resource type="Resource" id="Resource_d5yei"]
-script = ExtResource("8_yhkl1")
-item_data = ExtResource("7_ojt8e")
-quantity = 700
-
-[sub_resource type="Resource" id="Resource_yg32u"]
-script = ExtResource("8_yhkl1")
-item_data = ExtResource("10_oamql")
-quantity = 500
-
-[sub_resource type="Resource" id="Resource_oubvd"]
-script = ExtResource("8_yhkl1")
-item_data = ExtResource("11_xp42o")
-quantity = 1
-
-[sub_resource type="Resource" id="Resource_kurom"]
-script = ExtResource("8_yhkl1")
-item_data = ExtResource("12_7023x")
-quantity = 1
-
 [sub_resource type="Resource" id="Resource_g0d61"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("13_g8qwa")
@@ -404,32 +376,8 @@ next_zone_num = 1
 position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_6fopl")
 
-[node name="ItemPickup" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(143, 54)
-slot_data = SubResource("Resource_rsj2a")
-
-[node name="ItemPickup2" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(61, 44)
-slot_data = SubResource("Resource_d5yei")
-
-[node name="ItemPickup3" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(90, 67)
-slot_data = SubResource("Resource_yg32u")
-
-[node name="ItemPickup4" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(58, 65)
-slot_data = SubResource("Resource_oubvd")
-
-[node name="ItemPickup5" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(82, 43)
-slot_data = SubResource("Resource_kurom")
-
 [node name="ItemPickup6" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(149, 150)
-slot_data = SubResource("Resource_g0d61")
-
-[node name="ItemPickup7" parent="." instance=ExtResource("6_vjrfg")]
-position = Vector2(13, 42)
+position = Vector2(364, 146)
 slot_data = SubResource("Resource_g0d61")
 
 [node name="Objects" type="Node" parent="."]
@@ -460,3 +408,21 @@ required_tool_type = "Pickaxe"
 
 [node name="Sign" parent="Objects" instance=ExtResource("23_x8coi")]
 position = Vector2(296, 248)
+
+[node name="HarvestableItem" parent="Objects" instance=ExtResource("20_dpgyg")]
+position = Vector2(136, 88)
+
+[node name="HarvestableItem2" parent="Objects" instance=ExtResource("20_dpgyg")]
+position = Vector2(152, 88)
+
+[node name="HarvestableItem3" parent="Objects" instance=ExtResource("20_dpgyg")]
+position = Vector2(168, 88)
+
+[node name="HarvestableItem4" parent="Objects" instance=ExtResource("20_dpgyg")]
+position = Vector2(88, 88)
+
+[node name="HarvestableItem5" parent="Objects" instance=ExtResource("20_dpgyg")]
+position = Vector2(104, 88)
+
+[node name="HarvestableItem6" parent="Objects" instance=ExtResource("20_dpgyg")]
+position = Vector2(120, 88)

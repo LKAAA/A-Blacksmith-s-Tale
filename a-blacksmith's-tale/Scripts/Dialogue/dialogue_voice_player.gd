@@ -1,5 +1,5 @@
 extends AudioStreamPlayer
-class_name DialogueVoicePlayer
+class_name RandomSoundPlayer
 
 var _random_number_gen := RandomNumberGenerator.new()
 
