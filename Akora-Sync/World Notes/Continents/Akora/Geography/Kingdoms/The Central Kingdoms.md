@@ -28,7 +28,7 @@
 >| ---- | ----| 
 >- 276 AH - The Northern kingdom conquers the Southern kingdom to become the Central Kingdoms.
 
-The Central Kingdoms was at one point a collection of smaller kingdoms located in the central region of [[Akora]], but was united into one by the religious order of [[King Alvin Howsen IIV]] with heavy assistance from the [[Church of the True God]], which was, and still is, the major religion in most of the kingdoms.
+The Central Kingdoms was at one point a collection of smaller kingdoms located in the central region of [[Akora]], but was united into one by the religious order of [[King Alvin Howsen III]] with heavy assistance from the [[Church of the True God]], which was, and still is, the major religion in most of the kingdoms.
 
 #### History
 

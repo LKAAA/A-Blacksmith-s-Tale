@@ -1,0 +1,2 @@
+Excerpt from the [[Akora]] page:
+On the eastern coast sits the final city of [[The Dwarven Tierce]], [[Nil Telin]]. [[Nil Telin]] resides in [[The Eastern Peaks]], and is known for its unique design of being half underground and half on the surface, boasting one of the largest ports in Akora. It is a feat of [[Dwarves|Dwarven]] engineering that uses massive pully elevators to lift from the engineering district deep underground to the port district on the surface.

@@ -17,7 +17,7 @@ Metals:
 - Elvish Steel
 - Orcish Steel
 - Meteorite
-- Black Iron Sand
+- [[Black Sand]] aka Black iron Sand
 - Devil's Rock (folk name)
 - [[Dragon Steel]]
 - [[Glistening Silver]]

@@ -9,7 +9,7 @@ Ydis (ye-dis) God of peace, art, music, theater, poetry, writing.
 
 [[Dotthar]] (Do-th-are) - God of chaos and demons. King of the Underworld.
 
-Nehelia (Ne-heel-ee-a) - Goddess of magic, inevitability, necessity.
+Nehelia (Ne-heel-ee-a) - Goddess of magic, mana, inevitability, necessity.
 
 Aelia (A-leah) - Goddess of love, beauty, marriage, heirs, home, domesticity, childbirth.
 

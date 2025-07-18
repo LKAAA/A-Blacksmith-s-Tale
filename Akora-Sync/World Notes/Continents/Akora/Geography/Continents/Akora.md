@@ -14,58 +14,112 @@
 
 Akora (pronounced: Ah-core-ah) is a major continent on the planet [[Saelis]]. The current year of Akora is 401 [[Records of Time|AH]].
 
+#### Etymology
+TBD
+
 #### Geography
 
+|           |    Map?     |   (KEK)   |
+| :-------: | :---------: | :-------: |
+| Northwest |    North    | Northeast |
+|   West    |  Interior   |   East    |
+| Southwest |    South    | Southeast |
+|           | Underground |           |
+
 ###### Northwest
-Once a region of lush forests, it now lies in an eternal winter. This region is generally called "The Northern Reaches", and merges with the region to the east of it. It is currently mostly uninhabited besides a few small tribes. 
-Located in the center of this north-western region is the ruins of the [[Elves|elven]] city [[Sylhserin]], which was destroyed by a [[Nothern Reaches Dungeon Unsealing|dungeon being accidentally unsealed]] in 325 [[Records of Time|AH]].
-Contains: 
-- The [[Pale Tundra]]
-- Ruins of [[Sylhserin]]
-- The [[Unsealed Dungeon of the North]]
+The Northwest region of Akora houses two major nations, the wealthy merchant-kingdom [[Than]] and the militaristic Grand Duchy [[Vashkara]]. Once a united kingdom, [[Vashkara]] split off in a brutal rebellion. While [[Vashkara]] remains war-hardened and bitter, Than flourishes through its large port cities and rich merchant guilds. 
+
+Vashkara is rugged with hilly terrain and scattered forests. Than is located on a vast region called [[The Golden Steppe]], a fertile but relatively dry land used for its massive agriculture and horse trade. 
+
+To the east are the [[Ironshale Mountains]], a large range of mountains that separates [[Than]] from [[The Central Kingdoms]]. 
+
+To the north lies the [[Wintermaw Peaks]], another range of mountains barring the eternal winter of the north from [[Than]]. [[The Valley of Frost]] cuts through the mountain range, creating the largest entryway into the [[The Northern Reaches|Northern Reaches]]. Standing at the entrance of this valley lies the aptly named [[Frostgate]]. 
+
+The southern border of [[Than]] lies the [[Sea of Glass]]. The [[Sea of Glass]] is a named that for its serene water that seems to reflect the sky. It has nearly no waves for reasons unknown idk magic probably. Or lack of wind. No fetch? Its a decently sized sea tho idk. Just call it an underwater dungeon doing it. (Lazy worldbuilding poggers).
 
 ###### North
-A continuation of [[The Northern Reaches]], the north contains a sub region of it called the [[Pale Tundra]]. The Pale tundra is an expansive plain of snow surrounded by the [[Wintermaw Peaks]], a massive chain of mountains that act as a sort of wall between the eternal winter of the Northern Reaches and the rest of Akora. 
-Contains:
-- The [[Pale Tundra]]
-- The [[Wintermaw Peaks]]
+Once a region of lush forests, the [[The Northern Reaches|Northern Reaches]], as the North is commonly called, now lies in an eternal winter ever since an ancient dungeon beneath [[Sylhserin]] was unsealed. [[Sylhserin]] was once a great city of elves but it now lays in ruins.
+
+[[The Northern Reaches]] are almost completely separated from the rest of Akora. [[The Northern Reaches]] borders [[Than]] on the south-west side, but is separated by the [[Wintermaw Peaks]], a large chain of mountains that not only serve as a wall between the eternal winter and the dry plains of [[Than]], but also house the largest entranceway into [[The Northern Reaches|Northern Reaches]] called, [[The Valley of Frost]]. 
+
+Not much is still known about the [[The Northern Reaches|Northern Reaches]] by [[Humans]], the records long since lost to time. It is much to dangerous, and seemingly not worth it, to explore deep into it, however some still make the journey. [[Frostspire]] is the furthest outpost in the [[The Northern Reaches|Northern Reaches]] and lies a little ways past the entrance of the [[The Valley of Frost|Valley of Frost]]. 
+
+The southern border of the [[The Northern Reaches|Northern Reaches]] lies the [[The Frozen Sea|Frozen Sea]], a large sea of ice that makes travel by boat nigh on impossible.
+
+To the southeast, the [[The Northern Reaches|Northern Reaches]] are walled by a second mountain range called the [[The Mistspine Range|Mistspine Range]], that separates [[The Veyawood]] from the harsh winds of the north. There is no large way over these mountains, but small pathways fit for the size of a fellowship (of a ring) lie hidden in wait for those who search.
 
 ###### Northeast
-The north-east does not lay in eternal snow, but instead sits on the other side of the [[Wintermaw Peaks]]. The entire north-east is covered in a massive forest called the [[The Elderwoods|Elderwoods]]. This ancient forest hides the elven city called [[Yenthas]]. An ancient magic surrounds this region hiding Yenthas, and causing the region to be mostly unexplored by those who do not know of the city. 
-Contains:
-- The [[The Elderwoods|Elderwoods]]
-- [[Yenthas]]
-- [[Sealed Dungeon of the Elderwoods]]
+To the northeast, across the [[The Mistspine Range|Mistspine Range]], is [[The Veyawood|Veyawood]], a vast seemingly sentient forest that stretches for miles. [[The Veyawood]] is rich with ancient elven magic that cause the forest to change, to seemingly make pathways shift and vanish then reappear leading back the opposite way. At the heart of the forest sits an ancient [[Sealed Dungeon of the Veyawood|dungeon]] that causes this mystical phenomenon. [[Humans]] have been attempting to discover its secrets for centuries but have been unable to, but the [[Elves]] have found ways to control and manipulate this magic to work for themselves, using it to hide [[Yenthas]], the only remaining city of the [[Elves]]. 
+
+To the south of the vast [[The Veyawood|Veyawood]] sits the [[Hinport Mountains]]. Deep underneath this mountain range lies the first of [[The Dwarven Tierce]], three massive underground [[Dwarves|dwarven]] cities that sit in a triangle in the east of Akora. This first [[Dwarves|dwarven]] city is called [[Nil Galor]]. The [[Hinport Mountains]] also serve as a border to the eastern region of Akora. 
+
+Off the eastern coast of the [[The Veyawood|Veyawood]] is [[The Eastern Tides]], and in the midst of it lies 3 islands called [[The Isles of Ash]]. On the center island of these three islands sits [[Mount Onyx]] a massive volcano that appears almost a pitch black even in daylight. [[Mount Onyx]] is covered in what is known as [[Black Sand]]. Centuries ago [[Mount Onyx]] erupted, throwing ash over the eastern regions of Akora, and reaching all the way into the central regions. This ash has since mixed into the ground and practically disappeared in most areas, but on [[Mount Onyx]] the ash mixed with the sand, and due to the abnormally high iron concentration that the sand had, the ash fused with it, turning a deep black color. [[Mount Onyx]] once housed the palace of [[Sun’lin]] the golden dragon, the ruins still lie deep within it.
+
+[[The Eastern Tides]] is a sea that is plagued with storms. It is home to [[Leviathans]], ancient beasts that live under the water. Most maps are useless here, as the weather and sea conditions shift seemingly at random.
+
+To the west on the very edge of the [[The Veyawood|Veyawood]] sits [[The Central Kingdoms]] a large religious kingdom. 
 
 ###### West
-This region includes the empire of [[Ivpheria]], located from the western coast of the [[Ocean of Glass]], across the [[Golden Steppe]], all the way to the [[Duskridge Mountains]]. Further south along the western coast lies the [[Shattered Isles]], a once bustling island that was shattered into isles when a dungeon was unsealed.
-Contains:
-- The [[Ocean of Glass]]
-- The [[Golden Steppe]]
-- The [[Duskridge Mountains]]
-- The [[Shattered Isles]]
-- The Empire of [[Ivpheria]]
+The west of Akora is dominated by [[Ivpheria]], the Empire of the Setting Sun. [[Ivpheria]] sits  on the south side of the [[Sea of Glass]], a marginal sea with waters so calm they seem to be a reflection of the sky. To the east [[Ivpheria]] borders the [[The Central Kingdoms|Central Kingdoms]]. To the west lies the [[Freytic Sea]] and the [[The Shattered Isles|Shattered Isles]]. Once a singular large island, the unsealing of an ancient dungeon shattered the island into pieces, forming the now [[The Shattered Isles|Shattered Isles]].
+
+The south of [[Ivpheria]] is bordered by [[The Forgotten Lands|Forgotten Lands]], an expanse of desert left largely unoccupied by [[Humans]]. The southern towns of [[Ivpheria]] frequently experience raids by [[Goblin Clans]] that live in the [[The Forgotten Lands|Forgotten Lands]], providing yet another reason to stay away. Along with the [[Goblins]], [[Trolls]], and [[Orcs]] that reside in the [[The Forgotten Lands|Forgotten Lands]], the land itself provides very little value, as workable land is hard to come by in the far south. Along the south-east border of [[Ivpheria]] are the [[Duskridge Mountains]], and on the far side of that lies the [[Southern Sea]], a second marginal sea. 
 
 ###### Interior 
-[[The Central Kingdoms]]
+The center of Akora can be split into two parts, the north-west quadrant, and the south-east quadrant. 
+
+To the north-west lies the [[The Central Kingdoms|Central Kingdoms]]. Once a collection of smaller kingdoms they were united into one by [[King Alvin Howsen III]]. They are a religious kingdom that follows the [[Church of the True God]]. To the northwest [[The Central Kingdoms]] borders [[Than]] and the [[Ironshale Mountains]]. The northern border lies on the [[Frozen Sea]]. The northeast border lies on the very edge of the [[The Veyawood|Veyawood]], while the eastern border faces the [[Elven Sea]]. The western border of [[The Central Kingdoms]] sits next to the empire of [[Ivpheria]]. To the south lies the [[Southern Sea]], and to the south-east lies the second quadrant of the interior.
+
+To the south-west of the interior of Akora sits [[Thaumara]] a collection of city states united under the [[The Council of Seven|Council of Seven]], a council of the seven most powerful mages of the time. [[Thaumara]] sits at the forefront of magical studies and innovations. It is home to [[Cadea, Academy of Magics]], the largest academy of magics in Akora.
+
+The north-west border of [[Thaumara]] is [[The Central Kingdoms]], and to the north lies the [[Elven Sea]]. The eastern border sits on the edge of the land owned by [[The Dwarven Tierce]], and to the south [[Thaumara]] borders [[The Forgotten Lands]]. [[Thaumara]] has the furthest settlements in [[The Forgotten Lands]] but are still wary of the land due to the rampant raids from [[Goblin Clans]]. Some villages in the far south by south-east have made contact with villages of [[Orcs]].
 
 ###### East
-[[The Elderwoods]]
+A major portion of the eastern region of Akora is a large swamp called [[The Shining Wetlands]]. [[The Shining Wetlands]] is a freshwater swamp, with a unique characteristic of having a large amount of [[Flowing Mana Springs]], giving it the "Shining" part of it's name. This region is rich with magic and is often referred to as [[The Arcane Fringe]] by scholars. 
+
+In the center of this region lies [[Nil Daral]] located in a mountain called [[The Terrace]], named that way for its strangely flat top. [[Nil Daral]] is the largest of the three dwarven cities in [[The Dwarven Tierce]]. Though it isn't technically the capital of the [[The Dwarven Tierce|Tierce]], it is often treated as such. 
+
+To the north, creating almost a barrier between [[The Shining Wetlands]] and [[The Veyawood]] are the [[Hinport Mountains]] which contains [[Nil Galor]], another of [[The Dwarven Tierce]] cities.
+
+On the eastern coast sits the final city of [[The Dwarven Tierce]], [[Nil Telin]]. [[Nil Telin]] resides in [[The Eastern Peaks]], and is known for its unique design of being half underground and half on the surface, boasting one of the largest ports in Akora. It is a feat of [[Dwarves|Dwarven]] engineering that uses massive pully elevators to lift from the engineering district deep underground to the port district on the surface.
+
+To the southwest, [[The Shining Wetlands]] begins to transition into a rainforest. This area is also considered part of [[The Arcane Fringe]], and has many [[Flowing Mana Springs]] and creeks. This rainforest is often called [[Nehelia's Garden]], named by [[Thaumara|Thaumarian]] scholars. [[Nehelia]] is the goddess of magic and mana. [[Nehelia's Garden]] is in the borders of [[Thaumara]]. 
 
 ###### Southwest
-The [[Akesian Isles]]
+The southwest region of Akora is one of it's smallest regions. It serves as almost a transition zone between the settled [[Humans|human]] lands of [[Ivpheria]] and the deserts of [[The Forgotten Lands]]. 
+
+Trailing across almost the entirety of [[The Forgotten Lands]] are the [[Blistering Mountains]], with the largest in this mountain range being called [[The Barren Summit]]. At the center of [[The Barren Summit]] is the dungeon that the [[Goblins]], [[Trolls]], and [[Orcs]] first emerged from. 
+
+Throughout the [[Blistering Mountains]] are [[The Goblin Caves]], a seemingly never-ending twisting and turning series of caves that travel from one end of the range to the other. Inside live the many [[Goblin Clans]].
 
 ###### South
-[[The Barren Lands]]
-[[The Forgotten Lands|The Forgotten Lands]]
-[[The Goblin Caves]]
+
+The southern region of Akora is a vast region named [[The Forgotten Lands]] that is dominated by broken mesas, sun-scorched canyons, and ancient ruins half-buried in the sand. The [[Blistering Mountains]] are the largest chain of mountains in [[The Forgotten Lands]], that starts in the far south-west and travels down through the center of [[The Forgotten Lands]]. 
+
+Beneath the [[Blistering Mountains]] reside the [[Goblins]] and [[Trolls]], living deep beneath them in the winding and dangerous [[The Goblin Caves|Goblin Caves]]. On the surface the [[Orcs]] live, located near the few rivers and oasis that can be found in the southern regions of [[The Forgotten Lands]]. 
+
+The center of [[The Forgotten Lands]] is a region of desert known as [[The Glass Basin]], a stretch of crystalline desert. Here the sand glitters like thousands of broken mirrors under the sun. The ancient tales of the [[Orcs]] speak of a great battle of rulership between [[Bel’yin]] the rock drake, and another. The fight lasted for years, with each dragon unleashing powerful blasts of heat, melting the desert into glass. Slowly over time the glass shattered and crumbled back to dust, but remnants of that time still remain.
 
 ###### Southeast
-[[Nil Daral]]
+
+The southeast region of Akora is largely ocean. The edges of the [[The Forgotten Lands]] in the west, [[Thaumara]] in the north-west, and [[The Shining Wetlands]] in the north all border the [[Itia's Gulf]], a stretch of water in-between the main Akorian continent and the island nation of [[Nislia]]. 
+
+[[Nislia]] is an island nation that is also the birthplace and sacred home of the [[Beast Races]]. It is a temperate island with high cliffs, and is laden with large areas of untamed and wild forests and land. The [[Beast Races]] have long since traveled over sea into the main continent of [[Akora]] but many still remain the large port cities that [[Nislia]] is known for. 
+
+Past [[Nislia]] lies the open [[The Eastern Tides|Eastern Tides]], a region of sea that is plagued with storms in the north but near [[Nislia]] in the south is slightly more tame in weather.
 
 ###### Underground
-[[The Goblin Caves]]
-[[Nil Daral]]
+Below Akora sprawls many hidden regions. Vast underground caves and networks exist all throughout Akora, the depths of which are unknown to even the gods. The underground tends to mess with the arcane, with the deeper you venture the stranger magic behaves. Light spells dim quickly, illusions can last for days longer than normal, sounds seem to echo into the distance then return hours later. Many dwarves have returned with their minds broken from venturing too deep, saying that they [[heard the voice of the Old Stone]].
+
+[[The Dwarven Tierce]] in the east provide the most famous example of an underground realm. The three cities, [[Nil Galor]], [[Nil Daral]], and [[Nil Telin]] form the corners of a fast subterranean triangle. Linking between them lie deep halls and endless caverns and tunnels. While many lay unexplored, the greatest of all of these tunnels is [[The Mines of Duz Kharan]], named after the famous stone bearer of the same name. This mine seems to reach the very heart of Akora, and links [[Nil Galor]] and [[Nil Daral]], if one is brave enough to travel through its long since abandoned tunnels.
+
+Deep underneath [[The Forgotten Lands]] to the south lie [[The Goblin Caves]], a fast network of tunnels made by the [[Goblins]] and [[Trolls]]. Home to the many [[Goblin Clans]] it is treacherous region that few have explored, and even fewer have returned from. 
+
+To the north-east, deep under [[The Eastern Tides]], a network of tunnels forms a large nest, built by burrowing leviathans. These tunnels have often broken into caves that start from the surface, though one would be foolish to venture to deep for fear of finding the one who made it. 
+
+Throughout Akora are the ancient [[Dungeons]]. Vast underground cities left behind by the ancient [[Relva’kan]]. Once bustling cities, they were overrun with monsters and sealed, trapping monster and people alike. Many have become unsealed releasing the trapped monsters that seem to live forever onto the surface. Others have unleashed curses, and yet all seem to bring tragedy with them. 
+
+And yet in this tragedy hope has arrived for many. The unsealed dungeons have become an opportunity to make a fortune, to grow stronger, or to find secrets untold. The [[Adventurer's Guild]] was formed to combat the unsealed dungeons from unleashing their monsters onto the surface of Akora. Adventurers from all over form groups to travel into these dungeons to clear and loot them, but somehow the monsters seem to always reappear. 
+
 
 #### History
 
@@ -84,7 +138,7 @@ The second Great Calamity occurred soon after, when the earth quaked and shook w
 >[!caption|left]
 >Main Article: [[The Fallen Age]]
 
-<br>The Fallen Age is a period that spanned from 8000 [[Records of Time|BH]] to 5000 [[Records of Time|BH]]. The Fallen Age was a time of darkness, with little to no records of history. Following the [[The Destruction of Relva’kan|Destruction of Relva’kan]] there was no dominant civilization that ruled the land. Instead [[Elemental Dragons]] ruled the land. The strongest of these were Der’sal, the great black dragon, Sun’lin the golden dragon, Bel’yin the rock drake, and Sel’Ven the serpent drake. Each of these dragons controlled the north, east, south, and west respectively. Many other dragons roamed the lands but each followed one of the four great dragons of the time. 
+<br>The Fallen Age, also known to some as the Age of Dragons is a period that spanned from 8000 [[Records of Time|BH]] to 5000 [[Records of Time|BH]]. The Fallen Age was a time of darkness, with little to no records of history. Following the [[The Destruction of Relva’kan|Destruction of Relva’kan]] there was no dominant civilization that ruled the land. Instead [[Elemental Dragons]] ruled the land. The strongest of these were [[Der’sal]], the great black dragon, [[Sun’lin]] the golden dragon, [[Bel’yin]] the rock drake, and [[Sel’Ven]] the serpent drake. Each of these dragons controlled the north, east, south, and west respectively. Many other dragons roamed the lands but each followed one of the four great dragons of the time. 
 
 ###### The Emergence Age
 >[!caption|left]
@@ -111,13 +165,44 @@ It included many calamitous events such as the [[Destruction of Sylhserin]] in 2
 
 ##### Appendix
 
+Mountain range names
+The Windris Slopes
+The Salden Highlands
+The Lummore Peaks
+The Arid Peaks
+The Silver Summit
+Hinport Mountains
+
+
+Mountains
+Highlands
+Summit
+Peaks
+Crags
+Heights
+Tops
+
+Ocean Names
+The Wasting Expanse
+Radcana Depths
+Troto Bay
+Repenterre Ocean
+The Gray Bay
+Matamis Ocean
+The Eastern Tides
+Sutgan Bay
+Rowgar Sea
+
+
+
+
 Region Sizes in mi²
 - [[The Northern Reaches]]: ~280,000 mi²
 - [[Than]]: ~160,000 mi² 
 - [[Vashkara]]: ~40,000 mi²
 - [[Ivpheria]]: ~80,000 mi²
 - [[The Shattered Isles]]: ~15,000 mi²
-- [[The Elderwoods]]: ~135,000 mi²
+- [[The Veyawood]]: ~135,000 mi²
 - [[The Dwarven Lands]]: ~140,000 mi²
 - [[The Forgotten Lands]]: ~320,000 mi²
 - [[The Central Kingdoms]]: ~120,000 mi²

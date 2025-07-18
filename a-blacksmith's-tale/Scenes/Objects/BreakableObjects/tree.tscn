@@ -10,7 +10,7 @@ atlas = ExtResource("3_vnqoo")
 region = Rect2(16, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm65n"]
-size = Vector2(8, 16)
+size = Vector2(10, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jjfm"]
 size = Vector2(12, 20)
@@ -26,7 +26,7 @@ position = Vector2(0, -11)
 texture = SubResource("AtlasTexture_x8coi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_xm65n")
 
 [node name="breakable_area" parent="." instance=ExtResource("4_b1cnt")]

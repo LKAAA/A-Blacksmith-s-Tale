@@ -6,7 +6,7 @@ The three current continents of [[Saelis]] are as follows:
 >[!caption|left]
 >Main Article: [[Akora]]
 
-Akora is the largest continent on [[Saelis]] and where a majority of it's stories take place. It's vast regions cover many diverse climates and biomes, and houses numerous civilizations of different time periods and races. It's history is storied and dots back to the beginning of recorded time on [[Saelis]]. 
+Akora is the largest continent on [[Saelis]] and where a majority of it's stories take place. It's vast regions cover many diverse climates and biomes, and houses numerous civilizations of different time periods and races. It's history is storied and dots back to the beginning of recorded time on [[Saelis]].
 
 #### Northern Cerfan
 >[!caption|left]
@@ -28,8 +28,11 @@ The southern continent of the Cerfans. It's history follows the same path as [[N
 >Main Article: [[Dungeons]]
 
 Dungeons are the name given to the ancient underground cities of the [[Relva’kan]]. They are massive underground labyrinths that seem to twist and turn forever. The origin of these dungeons occurred in [[The First Age]], when countless creatures began to pour out from the underground cities. The Elders quickly sealed them, trapping both the creatures and the [[Relva’kan]] people inside. Left for centuries they slowly festered. 
+
 Recently dungeons have begun to unseal in what is known as a [[Dungeon Burst]]. These Dungeon Bursts can come about in numerous ways, from intelligent [[monsters]] or [[Demons]] finding ways to release the seal from the inside, to unknowing fools opening them from the outside.
+
 The dangers of a dungeon vary by the size and contents of the dungeons, but one thing is for sure, no matter the dungeon, once unsealed, they will keep pouring monsters onto the surface unless continuously cleared of monsters. [[Adventurers]] are called upon to do this work. 
+
 To prevent further [[Dungeon Burst|Dungeon Bursts]], [[Holy Magic]] can be used to strengthen the ancient seals that contain the contents of each dungeon, though the specific magic to replace these seals once burst has been lost to time. It is theorized that the secret might be housed deep inside one of these dungeons.
 
 ##### Demons
@@ -44,13 +47,15 @@ The demons are highly intelligent creatures that were once the ancient [[Relva�
 
 The monsters of Saelis come in two forms, intelligent monsters, and unintelligent monsters (often referred to as just monsters). Currently the intelligent monsters are the [[Orcs]], the [[Goblins]], and the [[Demons]]. The current unintelligent monsters are [[Trolls]], though there are a lot more monsters not fleshed out (think common DND monsters). 
 Intelligent monsters are monsters that can learn language, communicate, and learn, while unintelligent monsters act more on animalistic instincts (Though that's not to say they can't be smart like an animal in the real world is smart). 
-[[Orcs]], [[Goblins]], and [[Trolls]] first emerged from a [[Dungeon Burst]] in the south of Akora. The orcs created cities and towns on the surface first in the south, before beginning to expand northward. The trolls and goblins stayed in the south, hiding under the vast mountain ranges, in tunnel systems that they created. 
-The [[Goblins]] formed clans
 
+[[Orcs]], [[Goblins]], and [[Trolls]] first emerged from a [[Dungeon Burst]] in the south of Akora. The Orcs were the most intelligent of the three. They created cities and towns on the surface first in the south, before beginning to expand northward. While the Goblin's and Trolls held much distrust for the [[surface dwellers]] of Akora, the Orcs held no such reservations. They sought to make peace and alliances with them, but were often denied due to the stigma that the Orcs were closely entwined with the Goblins and Trolls. Though this was true in the past, the Orcs no longer supported the Goblins and Trolls. 
+
+The trolls and goblins stayed in the south, hiding under the vast mountain ranges, in tunnel systems that they created. The [[Goblins]] being the second in intelligence of the three (not that it means much) formed clans. Now released from the dungeon they had been trapped in, the light of the day was too much for them, thus they stayed hidden under the ground. The Trolls, being nothing more than brutish beasts of little intelligence but great strength, stayed with the goblins becoming something akin to servants to them. 
 
 ##### Races
 >[!caption|left]
 >Main Article: [[Beast Races]]; [[Humanoid Races]]
+
 
 
 ##### Gods
