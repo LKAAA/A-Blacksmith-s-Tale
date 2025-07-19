@@ -4,24 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e72a0dbbdfeba959",
+        "id": "79008d26a011659f",
         "type": "tabs",
         "children": [
           {
-            "id": "d8ee23df08b00f07",
+            "id": "fb2ce65921b936da",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Game Notes/Pixel Art Moodboard.canvas",
-                "viewState": {
-                  "x": 5239.770108856886,
-                  "y": -1820.0286611916833,
-                  "zoom": -2.333333333333333
-                }
+                "file": "World Notes/Overview of the World.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Pixel Art Moodboard"
+              "icon": "lucide-file",
+              "title": "Overview of the World"
             }
           }
         ]
@@ -172,24 +169,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d8ee23df08b00f07",
+  "active": "fb2ce65921b936da",
   "lastOpenFiles": [
-    "Pasted image 20250718200947.png",
-    "Pasted image 20250718200303.png",
-    "187318.png",
-    "Grass 1.png",
-    "Tilled_Dirt 1.png",
-    "Hills 1.png",
-    "Water 1.png",
-    "Water.png",
-    "Tilled_Dirt.png",
-    "Hills.png",
-    "Grass.png",
+    "Other/Images/187318.png",
+    "TO-DO.md",
+    "Other/Images/Tilled_Dirt 1.png",
+    "Other/Images/Grass.png",
+    "Game Notes/Systems/THE PLAN.md",
     "Game Notes/Pixel Art Moodboard.canvas",
+    "Other/Images/Pasted image 20250718235129.png",
+    "Game Notes/Systems/Blacksmithing Mechanics.md",
+    "Game Notes/Systems/Systems.md",
+    "Game Notes/Game Notes.canvas",
+    "Other/Images/Pasted image 20250718200947.png",
+    "Other/Images/Pasted image 20250718200303.png",
+    "Other/Images/Grass 1.png",
+    "Other/Images/Hills 1.png",
+    "Other/Images/Water 1.png",
+    "Other/Images/Water.png",
     "Game Notes/World Building The Game.canvas",
     "Game Notes/UI-Moodboard.canvas",
     "Game Notes/Game-Moodboard.canvas",
-    "Game Notes/Game Notes.canvas",
     "World Notes/Continents/Akora/Geography/Kingdoms/Nislia.md",
     "World Notes/Continents/Akora/Geography/Kingdoms/Than.md",
     "World Notes/Continents/Akora/Geography/Kingdoms/Thaumara.md",
@@ -212,10 +212,6 @@
     "World Notes/Continents/Akora/Geography/Continents/Sealed Dungeon of the Veyawood.md",
     "World Notes/Continents/Akora/Regions/The Veyawood.md",
     "World Notes/Continents/Akora/Geography/Kingdoms/Vashkara.md",
-    "World Notes/Continents/Akora/Geography/Continents/Nothern Reaches Dungeon Unsealing.md",
-    "World Notes/Continents/Akora/Geography/Kingdoms/Ivpheria.md",
-    "Game Notes/Systems/Dialogue System.md",
-    "World Notes/Races/Monstrous Races/Monstrous Races.md",
     "Stories/Yvanna Story/Chapters",
     "Stories/Yvanna Story",
     "Stories",

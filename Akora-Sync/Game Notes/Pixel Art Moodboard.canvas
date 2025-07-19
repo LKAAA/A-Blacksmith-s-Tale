@@ -40,14 +40,15 @@
 		{"id":"ef3a5c5a146315be","type":"link","url":"https://www.slynyrd.com/blog/2019/10/21/pixelblog-22-top-down-character-sprites","x":3960,"y":-4640,"width":760,"height":800},
 		{"id":"1b07237c8b65f9dd","type":"link","url":"https://www.slynyrd.com/blog/2019/9/18/pixelblog-21-top-down-objects","x":4840,"y":-4640,"width":720,"height":800},
 		{"id":"9e176ae31f90130d","type":"link","url":"https://www.slynyrd.com/blog/2019/8/27/pixelblog-20-top-down-tiles","x":5640,"y":-4640,"width":880,"height":800},
-		{"id":"45558ef8e8edddad","type":"file","file":"Grass.png","x":-920,"y":-3853,"width":885,"height":564},
-		{"id":"aa6ef6cadbe88b25","type":"file","file":"Hills.png","x":-920,"y":-3289,"width":885,"height":564},
-		{"id":"1447e0c36fda68bb","type":"file","file":"Tilled_Dirt.png","x":-920,"y":-2725,"width":885,"height":564},
-		{"id":"afd4d5455937c0b8","type":"file","file":"Water.png","x":-5,"y":-3853,"width":885,"height":221},
-		{"id":"67c53f6f79a44b1e","type":"file","file":"187318.png","x":2000,"y":1880,"width":1764,"height":2205},
+		{"id":"45558ef8e8edddad","type":"file","file":"Other/Images/Grass.png","x":-920,"y":-3853,"width":885,"height":563},
+		{"id":"aa6ef6cadbe88b25","type":"file","file":"Other/Images/Hills.png","x":-920,"y":-3289,"width":885,"height":563},
+		{"id":"1447e0c36fda68bb","type":"file","file":"Other/Images/Tilled_Dirt.png","x":-920,"y":-2725,"width":885,"height":563},
+		{"id":"afd4d5455937c0b8","type":"file","file":"Other/Images/Water.png","x":-5,"y":-3853,"width":884,"height":221},
+		{"id":"67c53f6f79a44b1e","type":"file","file":"Other/Images/187318.png","x":2000,"y":1880,"width":1764,"height":2205},
 		{"id":"626997eddf4135c4","type":"link","url":"https://www.slynyrd.com/blog/2019/12/21/pixelblog-24-items","x":3020,"y":-4640,"width":940,"height":800},
-		{"id":"205c8cc5820aab0b","x":4860,"y":-2280,"width":1110,"height":757,"type":"file","file":"Pasted image 20250718200303.png"},
-		{"id":"98e6fd4933e3eeff","x":5970,"y":-2280,"width":1294,"height":757,"type":"file","file":"Pasted image 20250718200947.png"}
+		{"id":"205c8cc5820aab0b","type":"file","file":"Other/Images/Pasted image 20250718200303.png","x":4860,"y":-2280,"width":1110,"height":757},
+		{"id":"98e6fd4933e3eeff","type":"file","file":"Other/Images/Pasted image 20250718200947.png","x":5970,"y":-2280,"width":1294,"height":757},
+		{"id":"b9a9d6e07cf85950","x":7839,"y":-677,"width":297,"height":400,"type":"file","file":"Other/Images/Pasted image 20250718235129.png"}
 	],
 	"edges":[]
 }
