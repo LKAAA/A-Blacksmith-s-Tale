@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "9e8f2f90672627a3",
+        "id": "e72a0dbbdfeba959",
         "type": "tabs",
         "children": [
           {
-            "id": "1a5d0bf9e8ca3709",
+            "id": "d8ee23df08b00f07",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "World Notes/Continents/Akora/Geography/Kingdoms/Nislia.md",
-                "mode": "preview",
-                "source": false
+                "file": "Game Notes/Pixel Art Moodboard.canvas",
+                "viewState": {
+                  "x": 5239.770108856886,
+                  "y": -1820.0286611916833,
+                  "zoom": -2.333333333333333
+                }
               },
-              "icon": "lucide-file",
-              "title": "Nislia"
+              "icon": "lucide-layout-dashboard",
+              "title": "Pixel Art Moodboard"
             }
           }
         ]
@@ -169,8 +172,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1a5d0bf9e8ca3709",
+  "active": "d8ee23df08b00f07",
   "lastOpenFiles": [
+    "Pasted image 20250718200947.png",
+    "Pasted image 20250718200303.png",
+    "187318.png",
+    "Grass 1.png",
+    "Tilled_Dirt 1.png",
+    "Hills 1.png",
+    "Water 1.png",
+    "Water.png",
+    "Tilled_Dirt.png",
+    "Hills.png",
+    "Grass.png",
+    "Game Notes/Pixel Art Moodboard.canvas",
+    "Game Notes/World Building The Game.canvas",
+    "Game Notes/UI-Moodboard.canvas",
+    "Game Notes/Game-Moodboard.canvas",
+    "Game Notes/Game Notes.canvas",
+    "World Notes/Continents/Akora/Geography/Kingdoms/Nislia.md",
     "World Notes/Continents/Akora/Geography/Kingdoms/Than.md",
     "World Notes/Continents/Akora/Geography/Kingdoms/Thaumara.md",
     "World Notes/Continents/Akora/Geography/Continents/Akora.md",
@@ -196,31 +216,15 @@
     "World Notes/Continents/Akora/Geography/Kingdoms/Ivpheria.md",
     "Game Notes/Systems/Dialogue System.md",
     "World Notes/Races/Monstrous Races/Monstrous Races.md",
-    "Stories/Yvanna Story/Chapters/Chapter 1.md",
-    "Stories/Yvanna Story/Yvanna Story.md",
     "Stories/Yvanna Story/Chapters",
     "Stories/Yvanna Story",
     "Stories",
     "World Notes/Continents/Akora/People/Ruling Figures/Thaumara",
     "World Notes/The Gods",
-    "World Notes/Continents/Akora/Maps/Images/Vashkara-Than-Map1.png",
-    "Game Notes/World Building The Game.canvas",
     "World Notes/Continents/Akora/Geography/Kingdoms/Almost a kingdom, almost a city",
     "World Notes/Continents/Akora/Regions/The Forgotten Lands",
     "World Notes/Continents/Akora/History/Major Events",
     "World Notes/Continents/Akora/Geography/Continents",
-    "Other/Banners/erol-ahmed-d3pTF3r_hwY-unsplash.jpg",
-    "Other/Images/Pasted image 20250206160249.png",
-    "Other/Images/Pasted image 20250206155924.png",
-    "Other/Images/Pasted image 20250206160317.png",
-    "Other/Images/Pasted image 20250206155942.png",
-    "Other/Images/Pasted image 20250206155839.png",
-    "Other/Images/Pasted image 20250206160238.png",
-    "Other/Images/Pasted image 20250206160258.png",
-    "Other/Images/Pasted image 20250206155934.png",
-    "Other/Reference Boards/Untitled.canvas",
-    "Game Notes/Game-Moodboard.canvas",
-    "Game Notes/UI-Moodboard.canvas",
-    "Game Notes/Game Notes.canvas"
+    "Other/Reference Boards/Untitled.canvas"
   ]
 }
