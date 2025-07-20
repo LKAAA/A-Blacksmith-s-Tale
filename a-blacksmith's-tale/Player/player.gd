@@ -76,20 +76,20 @@ func dodgeroll() -> void:
 	#hitbox.enabled = false
 	velocity = roll_vector.normalized() * ROLLSPEED
 	sprite.play("Roll_Down")
-
+# CHANGE EACH TO "WALK_XXXX" when walk anims are in
 func _handle_movement_anims() -> void:
 	if current_state == PLAYER_STATES.MOVE:
 		if input_vector.y < 0:
-			sprite.play("Walk_Up")
+			sprite.play("Idle_Up")
 			prev_direction = 1
 		elif input_vector.y > 0:
-			sprite.play("Walk_Down")
+			sprite.play("Idle_Down")
 			prev_direction = 2
 		elif input_vector.x > 0:
-			sprite.play("Walk_Right")
+			sprite.play("Idle_Right")
 			prev_direction = 3
 		elif input_vector.x < 0:
-			sprite.play("Walk_Left")
+			sprite.play("Idle_Left")
 			prev_direction = 4
 		else:
 			_play_idle_animation()

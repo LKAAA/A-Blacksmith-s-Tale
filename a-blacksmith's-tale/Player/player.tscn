@@ -1,41 +1,26 @@
-[gd_scene load_steps=27 format=3 uid="uid://cuy4dikcyhbr2"]
+[gd_scene load_steps=24 format=3 uid="uid://cuy4dikcyhbr2"]
 
 [ext_resource type="Script" uid="uid://cfaixpdbolxqs" path="res://Player/player.gd" id="1_cx3in"]
 [ext_resource type="Texture2D" uid="uid://bqktms2cbpgah" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_0djqn"]
 [ext_resource type="Resource" uid="uid://da5paxap81syu" path="res://Data/Inventories/player_inventory.tres" id="2_10i02"]
+[ext_resource type="Texture2D" uid="uid://cokeb7saw2h3y" path="res://Assets/Sprites/CharacterSpriteSheet1.png" id="3_k53q1"]
 [ext_resource type="Texture2D" uid="uid://cvj1f4u77wcbv" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="3_o5lx4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6wvv1"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(0, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhl08"]
+atlas = ExtResource("3_k53q1")
+region = Rect2(0, 32, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ecwta"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(48, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtle1"]
+atlas = ExtResource("3_k53q1")
+region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q0ikx"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(0, 96, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_od3ui"]
+atlas = ExtResource("3_k53q1")
+region = Rect2(16, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8hsm7"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(48, 96, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_khp7a"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(0, 144, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_70vx2"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(48, 144, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5r7c"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(0, 48, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7aer"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(48, 48, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_00tjw"]
+atlas = ExtResource("3_k53q1")
+region = Rect2(16, 32, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t6kva"]
 atlas = ExtResource("3_o5lx4")
@@ -85,10 +70,7 @@ region = Rect2(144, 48, 48, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6wvv1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ecwta")
+"texture": SubResource("AtlasTexture_fhl08")
 }],
 "loop": true,
 "name": &"Idle_Down",
@@ -96,10 +78,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q0ikx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8hsm7")
+"texture": SubResource("AtlasTexture_vtle1")
 }],
 "loop": true,
 "name": &"Idle_Left",
@@ -107,10 +86,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_khp7a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_70vx2")
+"texture": SubResource("AtlasTexture_od3ui")
 }],
 "loop": true,
 "name": &"Idle_Right",
@@ -118,10 +94,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a5r7c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j7aer")
+"texture": SubResource("AtlasTexture_00tjw")
 }],
 "loop": true,
 "name": &"Idle_Up",
@@ -187,8 +160,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t14g3"]
-radius = 5.0
-height = 14.0
+radius = 4.0
+height = 26.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwnis"]
 size = Vector2(48, 48)
@@ -206,6 +179,7 @@ autoplay = "Idle_Down"
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_t14g3")
 
 [node name="InteractionArea" type="Area2D" parent="."]

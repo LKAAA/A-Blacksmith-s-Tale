@@ -33,11 +33,12 @@ func request_break(breakable_object):
 
 func _request_dialogue() -> void:
 	print("recieved signal")
+	Global.game_paused = true
 	dialogue_manager.show_messages(["Hello I am a sign.", "I am still a sign", "I promise I won't change.", "[rainbow]Holy fuck I'm gay now[/rainbow]", "[rainbow]GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY[/rainbow]"])
 
 func _on_dialogue_manager_finished() -> void:
+	Global.game_paused = false
 	#next_label.visible = true
-	pass
 
 func _on_dialogue_manager_message_completed() -> void:
 	#next_label.visible = false

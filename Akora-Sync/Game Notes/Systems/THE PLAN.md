@@ -1,5 +1,4 @@
-After playing Chef RPG this is the new and improved PLAN
-
+After playing Chef RPG this is the new and improved PLAN (that game is fucking inspirational. Like you could screenshot anywhere you are and its fucking art. WANT)
 
 #### Art
 - Use Chef RPG's way of making maps. 
@@ -11,6 +10,10 @@ After playing Chef RPG this is the new and improved PLAN
 - Don't want to be bound to 16x16 tiles
 	- Freedom to make art 
 - characters around 48x20?
+
+- Everything will be drawn by hand, some assets will be had like trees, but uninteractable tree (really big ones?) will be hand placed in drawing software and made to fit
+- decorations will be drawn / planned and then placed in drawing software
+- interactable objects like certain plants, harvestable items, harvestable trees will be in engine objects
 
 #### Mechanics
 - Minigames are fun for a base gameloop
