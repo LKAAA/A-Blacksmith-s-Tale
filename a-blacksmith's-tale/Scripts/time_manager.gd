@@ -18,20 +18,20 @@ const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY
 
 # Variables
 var season: int
-var day
+var day: int
 var cur_weekday: String
 var cur_season: String
 var am_pm: String
-var hour
-var hour_12
-var minute
+var hour: int
+var hour_12: int
+var minute: int
 
 var time: float = 0.0
 var past_minute: float = -1.0
 var past_hour: float = -1.0
 
 # Signals
-signal time_tick
+signal time_tick(_day: int, _hour: int, _hour_12: int, _minute: int, _cur_weekday: String, _cur_season: String, _am_pm: String)
 signal day_end(next_day)
 signal hour_passed
 
@@ -144,5 +144,5 @@ func decideSeason():
 	Global.cur_season = cur_season
 
 func emit_current_time() -> void:
-	#print("%s\n %s, Day: %d\n%02d:%02d %s" % [cur_season, cur_weekday, day, hour, minute, am_pm])
-	time_tick.emit(day, hour_12, minute, cur_weekday, cur_season, am_pm)
+	#print("%s\n %s, Day: %d\n%02d:%02d %s" % [cur_season, cur_weekday, day, hour_12, minute, am_pm])
+	time_tick.emit(day, hour, hour_12, minute, cur_weekday, cur_season, am_pm)

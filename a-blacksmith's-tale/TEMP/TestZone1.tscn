@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=38 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://c14phobpam5im" path="res://Assets/Sprites/BlacksmithBaseTileset.png" id="2_r6337"]
@@ -15,8 +15,11 @@
 [ext_resource type="Resource" uid="uid://b2pa1b6wmduol" path="res://Data/Items/fried_egg.tres" id="18_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/InteractableObjects/curing_rack.tscn" id="18_quhww"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="19_dpgyg"]
+[ext_resource type="Texture2D" uid="uid://cokeb7saw2h3y" path="res://Assets/Sprites/CharacterSpriteSheet1.png" id="20_4hkp2"]
 [ext_resource type="Resource" uid="uid://c2xi2unhicxyu" path="res://Data/Recipes/cured_leather.tres" id="20_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://chk276ad3d5n3" path="res://Scenes/Objects/InteractableObjects/harvestable_item.tscn" id="20_dpgyg"]
+[ext_resource type="Script" uid="uid://8ivyqcoyrmkv" path="res://Scripts/npc_core.gd" id="20_x8coi"]
+[ext_resource type="Script" uid="uid://bc8dn2l61tmo2" path="res://Scripts/npc_schedule_tool.gd" id="21_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://dstxblro34alg" path="res://Scenes/Objects/BreakableObjects/tree.tscn" id="22_4hkp2"]
 [ext_resource type="PackedScene" uid="uid://duxvb6kudsmba" path="res://Scenes/Objects/InteractableObjects/sign.tscn" id="23_x8coi"]
 
@@ -307,6 +310,14 @@ script = ExtResource("15_uwclm")
 inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_dpgyg"), SubResource("Resource_4hkp2"), SubResource("Resource_x8coi"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8coi"]
+atlas = ExtResource("20_4hkp2")
+region = Rect2(32, 33, 16, 31)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xm65n"]
+radius = 5.0
+height = 28.0
+
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_x1thp")
 transitions = [NodePath("Transition Zones/NorthTransition"), NodePath("Transition Zones/EastTransition")]
@@ -397,3 +408,29 @@ position = Vector2(104, 88)
 
 [node name="HarvestableItem6" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(120, 88)
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="NPCCore" type="CharacterBody2D" parent="Characters" groups=["npc_characters"]]
+position = Vector2(673, -30)
+script = ExtResource("20_x8coi")
+npc_name = "TestNPC"
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/NPCCore"]
+texture = SubResource("AtlasTexture_x8coi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/NPCCore"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_xm65n")
+
+[node name="NPCScheduleTool" type="Node2D" parent="Characters/NPCCore"]
+script = ExtResource("21_6bgdf")
+schedule = {
+"spring": "800 (335.0, 140.0) 0 / 1000 (688.0, 162.0) 0 /
+ 1400 (673.0, -30.0) 0 /
+ "
+}
+json_file_name = "TestNPC"
+cur_schedule_name = "spring"
+cur_schedule_time = 1400
+metadata/_custom_type_script = "uid://bc8dn2l61tmo2"

@@ -21,3 +21,13 @@ func get_dialogue_objects() -> Array:
 				if c.is_in_group("dialogue_object"):
 					dialogue_objects.append(c)
 	return dialogue_objects
+
+func get_npcs() -> Array:
+	var npc_characters: Array = []
+	for child in get_children():
+		if child.name == "Characters":
+			for c in child.get_children():
+				npc_characters.append(c)
+	if npc_characters == []:
+		print("No NPC Characters in Zone.")
+	return npc_characters

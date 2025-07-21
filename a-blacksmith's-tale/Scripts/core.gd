@@ -7,6 +7,8 @@ const PLAYER = preload("res://Player/player.tscn")
 @onready var game_ui: GameUI = %Game_UI
 @onready var hovering_indicator: TileMapLayer = $"Hovering Indicator"
 @onready var dialogue_manager: DialogueManager = $DialogueManager
+@onready var schedule_manager: ScheduleManager = $ScheduleManager
+@onready var time_manager: TimeManager = $TimeManager
 
 
 var external: bool = false
@@ -21,6 +23,12 @@ var player: PlayerBase
 func _ready() -> void:
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
+	time_manager.time_tick.connect(time_passed)
+	
+
+func time_passed(_day: int, _hour: int, _hour_12: int, _minute: int, _cur_weekday: String, _cur_season: String, _am_pm: String) -> void:
+	pass
+	#schedule_manager.do_something()
 
 #region objects
 
@@ -120,9 +128,12 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		Global.player = player
 		
 		for child in current_zone.get_dialogue_objects():
-			if child.is_in_group("dialogue_object"):
-				if not child.request_dialogue.is_connected(_request_dialogue):
-					child.request_dialogue.connect(_request_dialogue)
+			if not child.request_dialogue.is_connected(_request_dialogue):
+				child.request_dialogue.connect(_request_dialogue)
+		
+		for child: NPCCore in current_zone.get_npcs():
+			schedule_manager._interpret_schedule(child.npc_name)
+			print("Interpreting " + child.npc_name + "'s schedule")
 	
 	# If there is already a zone set up some variables and start the loading scren fade_in  animation
 	else:
@@ -160,9 +171,12 @@ func fade_in_finished() -> void:
 	load_external_inventories(current_zone)
 	
 	for child in current_zone.get_dialogue_objects():
-		if child.is_in_group("dialogue_object"):
-			if not child.request_dialogue.is_connected(_request_dialogue):
-				child.request_dialogue.connect(_request_dialogue)
+		if not child.request_dialogue.is_connected(_request_dialogue):
+			child.request_dialogue.connect(_request_dialogue)
+	
+	for child: NPCCore in current_zone.get_npcs():
+		schedule_manager._interpret_schedule(child.npc_name)
+		print("Interpreting " + child.npc_name + "'s schedule")
 	
 	cur_zone = ""
 	cur_transition = 0

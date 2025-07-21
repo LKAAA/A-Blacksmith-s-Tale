@@ -11,17 +11,14 @@
             "id": "b9fcb192b96b00aa",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Game Notes/Pixel Art Moodboard.canvas",
-                "viewState": {
-                  "x": 1361.987758724405,
-                  "y": 609.45802144036,
-                  "zoom": 1.1102230246251565e-16
-                }
+                "file": "Game Notes/Systems/NPC Scheduler.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Pixel Art Moodboard"
+              "icon": "lucide-file",
+              "title": "NPC Scheduler"
             }
           },
           {
@@ -188,6 +185,8 @@
   },
   "active": "b9fcb192b96b00aa",
   "lastOpenFiles": [
+    "Game Notes/Pixel Art Moodboard.canvas",
+    "Game Notes/Systems/NPC Scheduler.md",
     "Game Notes/THE PLAN.md",
     "Game Notes/Art List.md",
     "54-Character_Sprite_2.png",
@@ -202,7 +201,6 @@
     "e769e53516e19897985806de93242b10.jpg",
     "Game Notes/Game-Moodboard.canvas",
     "Game Notes/Systems/THE PLAN.md",
-    "Game Notes/Pixel Art Moodboard.canvas",
     "Pixel Art Images/Yippie.md",
     "World Notes/Continents/Akora/Geography/Continents/Yippie.md",
     "Pixel Art Images",
@@ -229,8 +227,6 @@
     "World Notes/Continents/Akora/Geography/Cities/The Dwarven Tierce/Nil Galor.md",
     "World Notes/Continents/Akora/Geography/Cities/The Dwarven Tierce",
     "World Notes/Races/Humanoid Races/Humans.md",
-    "World Notes/Continents/Akora/Geography/Continents/The Valley of Frost.md",
-    "World Notes/Continents/Akora/Geography/Continents/Sea of Glass.md",
     "Stories/Yvanna Story/Chapters",
     "Stories/Yvanna Story",
     "Stories",
