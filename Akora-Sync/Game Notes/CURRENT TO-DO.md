@@ -9,3 +9,9 @@ Z-Index adjusting Component
 - When behind object, lower Z
 - When in front of object, higher Z
 - I had this in previous project, see if I can find that code
+
+Time system
+- had one working in previous project
+- Hook it up with day night cycle as well
+- make sure it pauses when Global.gamePaused
+- Sidenote make sure those crafting things are also pauses (the leather tanning stations)

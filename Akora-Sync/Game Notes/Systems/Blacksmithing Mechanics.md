@@ -123,7 +123,7 @@ ENTER MINIGAME **Freehand Etching**
 - **Mechanic Type**: Timed Processing
 - **Gameplay**:
     - Players place raw hides on a curing rack.
-    - Must wait a long duration (real-world minutes or in-game days).
+    - Must wait a long duration 
     - Leather becomes cured after time has passed.
 
 ## **3. Handle Making (Wood Crafting)**
@@ -131,7 +131,7 @@ ENTER MINIGAME **Freehand Etching**
 - **Mechanic Type**: UI Based Crafting System
 - **Gameplay**:
     - Players take logs to a woodworking bench.
-    - Choose from a list of handles (some require leather wraps).
+    - Choose from a list of handles (some require leather/other materials).
 
 ## **4. Blacksmithing (Core Gameplay Loop)**
 
@@ -159,6 +159,7 @@ ENTER MINIGAME **Freehand Etching**
     - **Mini-Game**: **Rhythm Hammering**
         - Hit metal to the beat to shape it properly.
         - Better timing = higher quality.
+        - no song needed just click when it reaches the right place
 
 ### **Cooling (Quenching)**
 
@@ -172,8 +173,12 @@ ENTER MINIGAME **Freehand Etching**
 
 - **Mechanic Type**: Simple UI-Based Crafting
 - **Gameplay**:
-    - Take forged weapon/tool head and matching handle to the assembly table.
-    - Select parts and click to combine them.
+    - Interact with bench, select recipe
+	- Take all forged pieces and other materials to the assembly table.
+    - opens up a window with a center work area and all of the parts on the sides
+    - Can drag each item around 
+    - Have to drag item into the correct spot
+    - Higher score based on how well you do
 
 ## **6. Optional: Magic Enhancement**
 
@@ -236,6 +241,8 @@ Blacksmithing is divided into multiple facets, each contributing to different as
 - **Leather Curer**
 - **Mana Pool**
 - **Oil Barrel**
+- Woodworking Table
+- Assembly table
 
 ---
 

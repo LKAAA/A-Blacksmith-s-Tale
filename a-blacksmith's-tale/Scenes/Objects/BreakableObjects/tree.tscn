@@ -1,19 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://dstxblro34alg"]
+[gd_scene load_steps=10 format=3 uid="uid://dstxblro34alg"]
 
 [ext_resource type="Script" uid="uid://buj6j3glpbgjq" path="res://Scripts/breakable_object.gd" id="1_k2xnf"]
 [ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="2_dbs57"]
 [ext_resource type="Texture2D" uid="uid://b7ijt60p65fp2" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="3_vnqoo"]
 [ext_resource type="PackedScene" uid="uid://csik1l3vdm67g" path="res://Scenes/Components/breakable_area.tscn" id="4_b1cnt"]
+[ext_resource type="PackedScene" uid="uid://dyc4diepdebv6" path="res://Scenes/Components/behind_adjustment.tscn" id="5_dbs57"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8coi"]
 atlas = ExtResource("3_vnqoo")
 region = Rect2(16, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm65n"]
-size = Vector2(10, 17)
+size = Vector2(10, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jjfm"]
 size = Vector2(12, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbs57"]
+size = Vector2(24, 22)
 
 [node name="Tree" type="StaticBody2D" groups=["breakable_object"]]
 script = ExtResource("1_k2xnf")
@@ -26,7 +30,7 @@ position = Vector2(0, -11)
 texture = SubResource("AtlasTexture_x8coi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5.5)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_xm65n")
 
 [node name="breakable_area" parent="." instance=ExtResource("4_b1cnt")]
@@ -34,3 +38,10 @@ shape = SubResource("RectangleShape2D_xm65n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="breakable_area"]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_7jjfm")
+
+[node name="BehindAdjustment" parent="." instance=ExtResource("5_dbs57")]
+collision_mask = 192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BehindAdjustment"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_dbs57")

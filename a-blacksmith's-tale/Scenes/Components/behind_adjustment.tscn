@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyc4diepdebv6"]
+
+[ext_resource type="Script" uid="uid://dt1cbr151t3en" path="res://Scripts/behind_adjustment.gd" id="1_cnu4k"]
+
+[node name="BehindAdjustment" type="Area2D"]
+script = ExtResource("1_cnu4k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

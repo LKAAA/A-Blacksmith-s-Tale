@@ -13,7 +13,25 @@ After playing Chef RPG this is the new and improved PLAN (that game is fucking i
 
 - Everything will be drawn by hand, some assets will be had like trees, but uninteractable tree (really big ones?) will be hand placed in drawing software and made to fit
 - decorations will be drawn / planned and then placed in drawing software
-- interactable objects like certain plants, harvestable items, harvestable trees will be in engine objects
+- interact-able objects like certain plants, harvestable items, harvestable trees will be in engine objects
+
+- 2 types of item sprites
+	- Based off of Chef RPG
+	- Same as their cooked food being super detailed while materials small 
+	- Type 1: Inventory Icon
+		- 16x16 
+		- Minor details
+		- Specific per item
+		- All items
+	- Type 2: Examine Sprite
+		- 64x64
+		- Major detail
+		- Specific differences
+		- Only for tools / equipment / important things
+		- Shows up when examining item
+			- Currently this could mean tooltip
+			- Or alternatively a specific thing you do
+		- used also when crafting that item
 
 #### Mechanics
 - Minigames are fun for a base gameloop
