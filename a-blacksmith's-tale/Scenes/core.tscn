@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://co5cc6txkeplv"]
+[gd_scene load_steps=14 format=3 uid="uid://co5cc6txkeplv"]
 
 [ext_resource type="Script" uid="uid://cyvr7g2773o5h" path="res://Scripts/core.gd" id="1_gb7ya"]
 [ext_resource type="PackedScene" uid="uid://cj3yjqmwsa42r" path="res://Scenes/loading_screen.tscn" id="2_377ls"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://cyi4hp58wflgb" path="res://Scripts/menu_ui.gd" id="3_se76q"]
 [ext_resource type="Script" uid="uid://v0ngdpadiu6" path="res://Scripts/game_ui.gd" id="5_gl8j7"]
 [ext_resource type="Script" uid="uid://cyp4qogxd3rq" path="res://Scripts/dialogue_manager.gd" id="9_gbnb7"]
+[ext_resource type="Script" uid="uid://csnmp3nbii0d4" path="res://Scripts/time_manager.gd" id="10_2sxaq"]
+[ext_resource type="Texture2D" uid="uid://cw5gn6ita43p3" path="res://Assets/daynightcycle-gradient-texture.tres" id="11_byey5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sxaq"]
 texture = ExtResource("2_cyfn3")
@@ -90,6 +92,12 @@ position = Vector2(322, 360)
 
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("9_gbnb7")
+
+[node name="TimeManager" type="Node" parent="."]
+script = ExtResource("10_2sxaq")
+gradient = ExtResource("11_byey5")
+
+[node name="DaylightCycleModulator" type="CanvasModulate" parent="."]
 
 [connection signal="finished" from="DialogueManager" to="." method="_on_dialogue_manager_finished"]
 [connection signal="message_completed" from="DialogueManager" to="." method="_on_dialogue_manager_message_completed"]

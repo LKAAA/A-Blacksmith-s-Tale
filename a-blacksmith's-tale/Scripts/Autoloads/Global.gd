@@ -11,3 +11,9 @@ enum tool_types {
 	Axe, 
 	Shovel
 	}
+
+# Time
+
+var cur_hour: int
+var cur_day: String
+var cur_season: String
