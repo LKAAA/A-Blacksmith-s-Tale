@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://duxvb6kudsmba"]
 
-[ext_resource type="Script" uid="uid://d20fn5d1p4n0a" path="res://Scripts/dialogue_interaction.gd" id="1_6ck10"]
+[ext_resource type="Script" uid="uid://d20fn5d1p4n0a" path="res://Scripts/sign_interaction.gd" id="1_6ck10"]
 [ext_resource type="Texture2D" uid="uid://b3nalmgkjv7m3" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="2_274hp"]
 [ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="3_tagwb"]
 
@@ -15,6 +15,7 @@ region = Rect2(0, 0, 16, 16)
 
 [node name="Sign" type="StaticBody2D" groups=["dialogue_object"]]
 script = ExtResource("1_6ck10")
+dialogue_file = "ExtraDialogue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1.5)

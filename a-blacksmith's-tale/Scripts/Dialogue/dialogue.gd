@@ -7,11 +7,14 @@ class_name Dialogue
 @onready var pause_calculator: Node = $PauseCalculator
 @onready var random_sound_player: RandomSoundPlayer = $RandomSoundPlayer
 
+var instant_dialogue: bool = false
+
 var _playing_voice := false
 
 signal message_completed()
 
-func update_message(message: String) -> void:
+func update_message(message: String, instant_dia: bool) -> void:
+	instant_dialogue = instant_dia
 	content.bbcode_text = pause_calculator.extract_pauses_from_string(message)
 	content.visible_characters = 0
 	

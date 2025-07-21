@@ -144,5 +144,5 @@ func decideSeason():
 	Global.cur_season = cur_season
 
 func emit_current_time() -> void:
-	print("%s\n %s, Day: %d\n%02d:%02d %s" % [cur_season, cur_weekday, day, hour, minute, am_pm])
+	#print("%s\n %s, Day: %d\n%02d:%02d %s" % [cur_season, cur_weekday, day, hour, minute, am_pm])
 	time_tick.emit(day, hour_12, minute, cur_weekday, cur_season, am_pm)

@@ -31,10 +31,9 @@ func request_break(breakable_object):
 
 #region Dialogue System
 
-func _request_dialogue() -> void:
+func _request_dialogue(object) -> void:
 	print("recieved signal")
-	Global.game_paused = true
-	dialogue_manager.show_messages(["Hello I am a sign.", "I am still a sign", "I promise I won't change.", "[rainbow]Holy fuck I'm gay now[/rainbow]", "[rainbow]GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY GAY[/rainbow]"])
+	dialogue_manager._choose_message(object)
 
 func _on_dialogue_manager_finished() -> void:
 	Global.game_paused = false
@@ -120,9 +119,10 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		load_external_inventories(current_zone)
 		Global.player = player
 		
-		for child:DialogueInteraction in current_zone.get_dialogue_objects():
-			if not child.request_dialogue.is_connected(_request_dialogue):
-				child.request_dialogue.connect(_request_dialogue)
+		for child in current_zone.get_dialogue_objects():
+			if child.is_in_group("dialogue_object"):
+				if not child.request_dialogue.is_connected(_request_dialogue):
+					child.request_dialogue.connect(_request_dialogue)
 	
 	# If there is already a zone set up some variables and start the loading scren fade_in  animation
 	else:
@@ -159,8 +159,9 @@ func fade_in_finished() -> void:
 	
 	load_external_inventories(current_zone)
 	
-	for child: DialogueInteraction in current_zone.get_dialogue_objects():
-		if not child.request_dialogue.is_connected(_request_dialogue):
+	for child in current_zone.get_dialogue_objects():
+		if child.is_in_group("dialogue_object"):
+			if not child.request_dialogue.is_connected(_request_dialogue):
 				child.request_dialogue.connect(_request_dialogue)
 	
 	cur_zone = ""

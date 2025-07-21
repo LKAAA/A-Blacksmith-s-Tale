@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Popups="*res://Scenes/popups.tscn"
 Global="*res://Scripts/Autoloads/Global.gd"
+Progression="*res://Scripts/Autoloads/Progression.gd"
 
 [display]
 

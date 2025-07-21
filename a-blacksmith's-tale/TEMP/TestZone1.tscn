@@ -373,6 +373,12 @@ required_tool_type = "Pickaxe"
 
 [node name="Sign" parent="Objects" instance=ExtResource("23_x8coi")]
 position = Vector2(296, 248)
+dialogue_tag = "Temp_Sign"
+dialogue_instant = false
+
+[node name="Sign2" parent="Objects" instance=ExtResource("23_x8coi")]
+position = Vector2(360, 248)
+dialogue_tag = "Temp_Sign_2"
 
 [node name="HarvestableItem" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(136, 88)
