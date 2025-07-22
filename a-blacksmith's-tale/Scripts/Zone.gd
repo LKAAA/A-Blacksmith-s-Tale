@@ -1,5 +1,6 @@
 class_name Zone extends Node2D
 
+@export var zone_id: int
 @export var transitions: Array[TransitionArea]
 @export var external_inventories: Array
 @export var dialogue_objects: Array

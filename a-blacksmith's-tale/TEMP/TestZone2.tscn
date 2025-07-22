@@ -284,6 +284,7 @@ size = Vector2(50, 32)
 
 [node name="TestZone2" type="Node2D" node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_nq038")
+zone_id = 2
 transitions = [NodePath("Transition Zones/SouthTransition"), NodePath("Transition Zones/EastTransition")]
 
 [node name="Tilemap" type="Node2D" parent="."]

@@ -1,6 +1,6 @@
 extends Node
 
 var NPCS_MET = {
-	"Steve": false,
-	"Robert": true,
+	"TestNPC": false,
+	"TestNPC2": true,
 }

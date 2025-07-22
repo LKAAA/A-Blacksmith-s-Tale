@@ -24,11 +24,16 @@ func _ready() -> void:
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
 	time_manager.time_tick.connect(time_passed)
+	schedule_manager._interpret_schedules()
+	new_day()
 	
 
 func time_passed(_day: int, _hour: int, _hour_12: int, _minute: int, _cur_weekday: String, _cur_season: String, _am_pm: String) -> void:
 	pass
 	#schedule_manager.do_something()
+
+func new_day() -> void:
+	schedule_manager._decide_todays_schedules()
 
 #region objects
 
@@ -132,8 +137,9 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 				child.request_dialogue.connect(_request_dialogue)
 		
 		for child: NPCCore in current_zone.get_npcs():
-			schedule_manager._interpret_schedule(child.npc_name)
-			print("Interpreting " + child.npc_name + "'s schedule")
+			print("Set each npc to the position they should be at rn")
+		
+		Global.cur_zone_id = current_zone.zone_id
 	
 	# If there is already a zone set up some variables and start the loading scren fade_in  animation
 	else:
@@ -175,8 +181,9 @@ func fade_in_finished() -> void:
 			child.request_dialogue.connect(_request_dialogue)
 	
 	for child: NPCCore in current_zone.get_npcs():
-		schedule_manager._interpret_schedule(child.npc_name)
-		print("Interpreting " + child.npc_name + "'s schedule")
+			print("Set each npc to the position they should be at rn")
+	
+	Global.cur_zone_id = current_zone.zone_id
 	
 	cur_zone = ""
 	cur_transition = 0

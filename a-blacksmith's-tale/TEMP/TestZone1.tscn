@@ -320,6 +320,7 @@ height = 28.0
 
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
 script = ExtResource("1_x1thp")
+zone_id = 1
 transitions = [NodePath("Transition Zones/NorthTransition"), NodePath("Transition Zones/EastTransition")]
 
 [node name="Tilemap" type="Node2D" parent="."]
@@ -412,7 +413,7 @@ position = Vector2(120, 88)
 [node name="Characters" type="Node" parent="."]
 
 [node name="NPCCore" type="CharacterBody2D" parent="Characters" groups=["npc_characters"]]
-position = Vector2(673, -30)
+position = Vector2(676, 333)
 script = ExtResource("20_x8coi")
 npc_name = "TestNPC"
 
@@ -426,11 +427,35 @@ shape = SubResource("CapsuleShape2D_xm65n")
 [node name="NPCScheduleTool" type="Node2D" parent="Characters/NPCCore"]
 script = ExtResource("21_6bgdf")
 schedule = {
-"spring": "800 (335.0, 140.0) 0 / 1000 (688.0, 162.0) 0 /
- 1400 (673.0, -30.0) 0 /
- "
+"rain": "1200 (666.0, 159.0) 0 1 / 1200 (678.0, -27.0) 0 1 / ",
+"spring": "800 (678.0, -27.0) 0 1 / 800 (676.0, 333.0) 0 1 / "
 }
 json_file_name = "TestNPC"
 cur_schedule_name = "spring"
-cur_schedule_time = 1400
+cur_schedule_time = 800
+cur_zone_id = 1
+metadata/_custom_type_script = "uid://bc8dn2l61tmo2"
+
+[node name="NPCCore2" type="CharacterBody2D" parent="Characters" groups=["npc_characters"]]
+position = Vector2(15, 15)
+script = ExtResource("20_x8coi")
+npc_name = "TestNPC2"
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/NPCCore2"]
+texture = SubResource("AtlasTexture_x8coi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/NPCCore2"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_xm65n")
+
+[node name="NPCScheduleTool" type="Node2D" parent="Characters/NPCCore2"]
+script = ExtResource("21_6bgdf")
+schedule = {
+"fall": "800 (15.0, 336.0) 0 / 1000 (15.0, 15.0) 0 / ",
+"spring": "800 (676.0, 336.0) 0 / 1800 (15.0, 336.0) 0 / "
+}
+json_file_name = "TestNPC2"
+cur_schedule_name = "fall"
+cur_schedule_time = 1000
+cur_zone_id = null
 metadata/_custom_type_script = "uid://bc8dn2l61tmo2"

@@ -17,3 +17,8 @@ Click button in editor, records current npc position, rotation (1, 2, 3, 4)
 Another option above it to let you input time
 
 Final button that lets you save to .json file
+
+
+Every day load the necessary schedule per npc
+Not all of their schedule just the necessary one
+
