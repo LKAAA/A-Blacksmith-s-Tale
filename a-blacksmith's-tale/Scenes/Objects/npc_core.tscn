@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhnph3wcef2ko"]
+
+[ext_resource type="Script" uid="uid://8ivyqcoyrmkv" path="res://Scripts/npc_core.gd" id="1_coole"]
+[ext_resource type="Texture2D" uid="uid://cokeb7saw2h3y" path="res://Assets/Sprites/CharacterSpriteSheet1.png" id="2_amo08"]
+[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="4_k1dkh"]
+[ext_resource type="PackedScene" uid="uid://dyc4diepdebv6" path="res://Scenes/Components/behind_adjustment.tscn" id="5_g3lnf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8coi"]
+atlas = ExtResource("2_amo08")
+region = Rect2(32, 33, 16, 31)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xm65n"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jjfm"]
+size = Vector2(28, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvl10"]
+size = Vector2(20, 8)
+
+[node name="NPCCore" type="CharacterBody2D" groups=["npc_characters"]]
+z_index = 1
+script = ExtResource("1_coole")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_x8coi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_xm65n")
+
+[node name="InteractArea" parent="." instance=ExtResource("4_k1dkh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7jjfm")
+
+[node name="BehindAdjustment" parent="." instance=ExtResource("5_g3lnf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BehindAdjustment"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_lvl10")
+
+[connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea" to="InteractArea" method="_on_mouse_exited"]

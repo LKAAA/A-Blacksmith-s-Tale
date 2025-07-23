@@ -78,20 +78,78 @@ func _on_message_completed() -> void:
 	message_completed.emit()
 
 func _choose_message(object) -> void:
+	print("Choosing for: " + str(object))
 	var chosen_dialogue = []
 	var dialogue_file_data: Dictionary = {}
 	var instant_dialogue: bool = false
 	
+	# If there is a file there will always be a tag - 
+	# Because only reason a hardcoded file is in their is because the file has multiple character lines
 	if "dialogue_file" in object:
 		dialogue_file_data = load_dialogue(object.dialogue_file)
-	
-	if "dialogue_tag" in object:
 		chosen_dialogue = dialogue_file_data[object.dialogue_tag]
 	
 	if "dialogue_instant" in object:
 		instant_dialogue = object.dialogue_instant
 	
-	show_messages(chosen_dialogue, instant_dialogue)
+	if chosen_dialogue == []:
+		dialogue_file_data = get_dialogue_data(object)
+		chosen_dialogue = decide_dialogue_option(dialogue_file_data, object.char_name)
+		show_messages(chosen_dialogue, false)
+	else:
+		show_messages(chosen_dialogue, instant_dialogue)
+
+func get_dialogue_data(object) -> Dictionary:
+	var dir = DirAccess.open("res://Data/Dialogue/")
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if dir.current_is_dir():
+				print("Found directory: " + file_name)
+			else:
+				print("Found file: " + file_name)
+				var npc_name = file_name.trim_suffix(".json")
+				if npc_name == object.char_name:
+					var file = FileAccess.open("res://Data/Dialogue/" + file_name, FileAccess.READ)
+					var json_conv = JSON.new()
+					json_conv.parse(file.get_as_text())
+					print("Found Data")
+					return json_conv.get_data()
+			file_name = dir.get_next()
+		return {}
+	else:
+		printerr("An error occured when trying to access the path.")
+		return {}
+
+func decide_dialogue_option(data: Dictionary, char_name: String) -> Array:
+	print("Get dialogue option")
+	
+	var season = Global.cur_season.to_lower()
+	var day = Global.cur_day.to_lower()
+	var season_day = season + "_" + day
+	
+	var priority_keys = []
+	if not Progression.NPCS_MET[char_name]:
+		priority_keys.append("unmet")
+	if Global.is_raining:
+		priority_keys.append("rain")
+	priority_keys.append(season_day)
+	priority_keys.append(day)
+	priority_keys.append(season)
+	priority_keys.append("default")
+
+	for key in priority_keys:
+		if data.has(key):
+			if key == "unmet":
+				Progression.NPCS_MET[char_name] = true
+				print("You just met " + char_name)
+			
+			print("Chose Dialogue: " + str(key))
+			return data[key]
+	
+	print("No suitable dialogue option found")
+	return []
 
 func load_dialogue(file_name) -> Dictionary:
 	var file_path = "res://Data/Dialogue/" + file_name + ".json"

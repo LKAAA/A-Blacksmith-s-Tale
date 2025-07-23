@@ -1,0 +1,5 @@
+{
+	"unmet": ["Nice to meet you.{p=0.3} I heard you're the new blacksmith around here?"],
+	"spring": ["A beautiful day today isn't it?{p=0.2} Spring is my favorite season!"],
+	"default": ["Good morning!{p=0.2} How are things settling at your shop?"],
+}

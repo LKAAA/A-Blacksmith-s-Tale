@@ -13,26 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Game Notes/Systems/NPC Scheduler.md",
+                "file": "Game Notes/Systems/Blacksmithing Mechanics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "NPC Scheduler"
-            }
-          },
-          {
-            "id": "9b6bd2a49ca66a00",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://www.youtube.com/watch?v=qNACGP98b6c",
-                "title": "Technique for Creating Beautiful Level Design - YouTube",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Technique for Creating Beautiful Level Design - YouTube"
+              "title": "Blacksmithing Mechanics"
             }
           }
         ]
@@ -185,8 +171,9 @@
   },
   "active": "b9fcb192b96b00aa",
   "lastOpenFiles": [
-    "Game Notes/Pixel Art Moodboard.canvas",
+    "Game Notes/Systems/Dialogue System.md",
     "Game Notes/Systems/NPC Scheduler.md",
+    "Game Notes/Pixel Art Moodboard.canvas",
     "Game Notes/THE PLAN.md",
     "Game Notes/Art List.md",
     "54-Character_Sprite_2.png",

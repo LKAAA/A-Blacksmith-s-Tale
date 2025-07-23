@@ -1,0 +1,5 @@
+{
+	"unmet": ["Oh hello. Who are you?"],
+	"fall": ["The fall weather is so nice and cool.", "What's your favorite season?"],
+	"default": ["Hello again. It's nice to see you around."]
+}

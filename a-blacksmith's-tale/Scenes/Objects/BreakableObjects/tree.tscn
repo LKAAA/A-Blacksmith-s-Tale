@@ -11,13 +11,13 @@ atlas = ExtResource("3_vnqoo")
 region = Rect2(16, 0, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm65n"]
-size = Vector2(10, 13)
+size = Vector2(10, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jjfm"]
 size = Vector2(12, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbs57"]
-size = Vector2(24, 22)
+size = Vector2(24, 15)
 
 [node name="Tree" type="StaticBody2D" groups=["breakable_object"]]
 script = ExtResource("1_k2xnf")
@@ -30,7 +30,7 @@ position = Vector2(0, -11)
 texture = SubResource("AtlasTexture_x8coi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3.5)
+position = Vector2(0, -8.5)
 shape = SubResource("RectangleShape2D_xm65n")
 
 [node name="breakable_area" parent="." instance=ExtResource("4_b1cnt")]
@@ -43,5 +43,5 @@ shape = SubResource("RectangleShape2D_7jjfm")
 collision_mask = 192
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BehindAdjustment"]
-position = Vector2(0, -15)
+position = Vector2(0, -18.5)
 shape = SubResource("RectangleShape2D_dbs57")

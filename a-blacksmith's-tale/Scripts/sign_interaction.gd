@@ -13,4 +13,4 @@ func _ready() -> void:
 
 func _on_interact() -> void:
 	request_dialogue.emit(self)
-	print("Interact with ")
+	print("Interact with " + dialogue_tag)

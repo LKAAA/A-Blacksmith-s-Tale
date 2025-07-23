@@ -10,6 +10,7 @@ Features I want
 - Character portraits with different emotions
 - Be able to set variables
 - Be able to check if a variable is true
+- read {i} as set instant dialogue to true
 
 Json based dialogue system
 
