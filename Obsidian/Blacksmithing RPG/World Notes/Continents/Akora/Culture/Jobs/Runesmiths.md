@@ -1,3 +1,0 @@
-Runesmiths are the name given to the people who often cannot cast magic directly, and instead engrave [[Rune Magic|runes]] from an ancient language called [[Runic]] to channel [[Mana|flowing mana]] into power. This ancient language was discovered by an [[Academic Mages|academic mage]] named [[Artherus Sneeveling]]. He managed to decode this language and learned that it was an ancient form of magic that doesn’t require the user to use mana, but instead uses flowing mana to power runes carved into objects. 
-
-Runesmiths are often looked  down upon because their form of magic is considered *crude*. The major reason for this opinion is because rune magic is quite simple in the known runes that can be engraved on equipment.

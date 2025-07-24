@@ -1,3 +1,0 @@
-[[Dwarves]]
-[[Elves]]
-[[Humans]]

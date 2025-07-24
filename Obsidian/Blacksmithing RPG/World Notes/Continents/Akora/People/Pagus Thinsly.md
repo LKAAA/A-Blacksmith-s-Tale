@@ -1,1 +1,0 @@
-A scholar and writer. His most famous work is [[Tales of the Ancient Heroes]], a book depicting the lives of many ancient heroes.

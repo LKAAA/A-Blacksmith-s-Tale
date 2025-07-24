@@ -1,3 +1,0 @@
-An ancient elven mage who has been along for longer than anyone can remember. He is roughly 800 years old. He is the only remaining mage that knows the lost art of time manipulation. 
-
-Something something taught it to a pupil, pupil turned bad and tried to unseal an ancient dungeon underneath [[Nythalor]], had to put a stop to him. Vowed to never teach time magic because it is too powerful for humans to know.

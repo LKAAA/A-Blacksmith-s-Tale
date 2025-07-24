@@ -1,1 +1,0 @@
-Aldorin is a small fishing village located in the shadow of the ---------- mountains and on lake ---------. It is most known for being saved by the [[S-Rank]] [[Mage]] [[Ilindrial Magus]] who sacrificed his mana core to prevent 3 elemental dragons from razing their village after they were accidentally wakened in the nearby mountains. 

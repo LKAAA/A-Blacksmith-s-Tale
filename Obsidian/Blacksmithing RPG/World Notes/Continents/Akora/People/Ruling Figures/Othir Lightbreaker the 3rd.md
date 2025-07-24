@@ -1,1 +1,0 @@
-Current king of Nil Daral.

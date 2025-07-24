@@ -1,1 +1,0 @@
-King of the established northern kingdom during the [[Advent of Humanity]]. Thaumara is linked to him due to the mages choosing to start Thaumara instead of being ruled by him.

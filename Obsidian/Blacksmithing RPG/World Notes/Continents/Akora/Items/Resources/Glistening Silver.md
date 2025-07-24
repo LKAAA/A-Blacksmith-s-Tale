@@ -1,3 +1,0 @@
-Glistening silver is a highly mana conductive metal that received its name from the small specks of light that seem to float around the metal. It was later discovered that these specks of light were actually small particles of mana that had been absorbed into the raw ore, and when melted and forged began releasing. It is unknown whether or not these flecks of glowing mana are finite. 
-
-Most abundantly found in Thaumara.

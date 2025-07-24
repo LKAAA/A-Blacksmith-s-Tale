@@ -1,1 +1,0 @@
-Springs of [[Flowing Mana|flowing mana]] that have popped up around the realm. 

@@ -1,5 +1,0 @@
-Your mana core can be damaged in two main ways, over usage, or overflowing.
-
-**Over usage** refers to depleting too much mana at once, which can cause your core lose its ability to regenerate mana due to being completely empty. This is quite rare as mages can sense their core and know innately how much mana they can use before it getting to dangerous levels. One of the most famous examples of this happening is the hero [[Ilindrial Magus]], who sacrificed his core by unleashing all of his remaining mana to defeat 3 [[Elemental Dragons|elemental dragons]] at once and save the town of [[Aldorin]] from destruction. 
-
-**Overflowing** is the term for when a mana user tries to speed up their recovery of by bathing in flowing mana but stays long enough to generate more mana than can be stored in their core. This can cause severe damage to the core. 

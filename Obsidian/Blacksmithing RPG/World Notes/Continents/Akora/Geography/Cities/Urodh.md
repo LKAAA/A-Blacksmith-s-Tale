@@ -1,1 +1,0 @@
-A [[Orcs|Orc]] village located near [[Koran]]. 
