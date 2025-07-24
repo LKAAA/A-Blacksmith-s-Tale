@@ -9,11 +9,12 @@ signal message_completed()
 signal finished()
 
 var _messages := []
+var cur_char: String
 var _active_dialogue_offset := 0
 var _is_active := false
 var cur_dialogue_instance: Dialogue
 
-func show_messages(message_list: Array, instant_dialogue: bool) -> void:
+func show_messages(message_list: Array, instant_dialogue: bool, char_name: String = "") -> void:
 	# Only allow triggering if not currently showing something
 	if _is_active:
 		return
@@ -28,6 +29,7 @@ func show_messages(message_list: Array, instant_dialogue: bool) -> void:
 	_is_active = true
 	
 	_messages = message_list
+	cur_char = char_name
 	_active_dialogue_offset = 0
 	
 	var _dialogue = DIALOGUE_SCENE.instantiate()
@@ -40,7 +42,7 @@ func show_messages(message_list: Array, instant_dialogue: bool) -> void:
 
 func _show_current(instant_dialogue: bool) -> void:
 	message_requested.emit()
-	cur_dialogue_instance.update_message(_messages[_active_dialogue_offset], instant_dialogue)
+	cur_dialogue_instance.update_message(_messages[_active_dialogue_offset], instant_dialogue, cur_char)
 	if instant_dialogue:
 		cur_dialogue_instance.fast_forward_message()
 
@@ -95,7 +97,7 @@ func _choose_message(object) -> void:
 	if chosen_dialogue == []:
 		dialogue_file_data = get_dialogue_data(object)
 		chosen_dialogue = decide_dialogue_option(dialogue_file_data, object.char_name)
-		show_messages(chosen_dialogue, false)
+		show_messages(chosen_dialogue, false, object.char_name)
 	else:
 		show_messages(chosen_dialogue, instant_dialogue)
 

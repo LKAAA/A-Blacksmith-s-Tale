@@ -11,7 +11,7 @@
 - Wood Tool Rod
 - Raw Iron
 - Iron Bar
-- Stone
+- Stone (Item)
 
 Leather Curing Rack
 Chest

@@ -13,7 +13,7 @@
 >
 >| Society |
 >| ---- | ----| 
->| Demonym | Centrans | 
+>| Demonym | Kinthians | 
 >| Races | [[Humans]] (45%) <br>[[Beast Races]] (40%) <br>[[Dwarves]] (15%)|
 >| Languages | [[Common]], [[Dwarvish]] | 
 >| Religions |  [[Church of the True God]], [[The Old Ways]] (heavily persecuted) |

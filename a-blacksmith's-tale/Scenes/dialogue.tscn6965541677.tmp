@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8s1hryj3es1q"]
+[gd_scene load_steps=5 format=3 uid="uid://c8s1hryj3es1q"]
 
 [ext_resource type="Script" uid="uid://bqbssru4xakxs" path="res://Scripts/Dialogue/dialogue.gd" id="1_5mcti"]
-[ext_resource type="Texture2D" uid="uid://dd8t8aisc4tml" path="res://TEMP/TestCharPortrait.png" id="2_5mcti"]
 [ext_resource type="FontFile" uid="uid://df73r0oibkmtw" path="res://Assets/Fonts/Fabled_Font.ttf" id="2_pjl42"]
 [ext_resource type="PackedScene" uid="uid://brk8dmxysm7s6" path="res://Scenes/Components/random_sound_player.tscn" id="4_pjl42"]
 [ext_resource type="Script" uid="uid://b36blnm3dcoo" path="res://Scripts/Dialogue/dialogue_commands.gd" id="5_n2qm0"]
@@ -21,16 +20,7 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_5mcti")
 
-[node name="CharacterPortrait" type="TextureRect" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -21.5
-offset_top = -218.0
-offset_right = 170.5
-offset_bottom = 38.0
-texture = ExtResource("2_5mcti")
-
-[node name="BackgroundOutline2" type="ColorRect" parent="."]
+[node name="BackgroundOutline" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,46 +28,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.479408, 0.173565, 0.163196, 1)
-
-[node name="CharNameSection" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BackgroundOutline3" type="ColorRect" parent="CharNameSection"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -16.0
-offset_right = 77.0
-offset_bottom = -37.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.479408, 0.173565, 0.163196, 1)
-
-[node name="Background2" type="ColorRect" parent="CharNameSection/BackgroundOutline3"]
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 114.0
-offset_bottom = 16.0
-color = Color(0.695439, 0.524172, 0.402162, 1)
-
-[node name="CharacterNameLabel" type="RichTextLabel" parent="CharNameSection"]
-unique_name_in_owner = true
-clip_contents = false
-layout_mode = 2
-offset_left = 5.0
-offset_top = -12.0
-offset_right = 113.0
-offset_bottom = 5.0
-theme_override_constants/line_separation = 2
-theme_override_fonts/normal_font = ExtResource("2_pjl42")
-theme_override_font_sizes/normal_font_size = 10
-bbcode_enabled = true
-text = "Stevie Wonder"
-fit_content = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -129,5 +79,5 @@ script = ExtResource("5_n2qm0")
 
 [connection signal="timeout" from="TypeTimer" to="." method="_on_type_timer_timeout"]
 [connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]
-[connection signal="pause_requested" from="DialogueCommands" to="." method="_on_dialogue_commands_pause_requested"]
+[connection signal="pause_requested" from="DialogueCommands" to="." method="_on_pause_calculator_pause_requested"]
 [connection signal="finished" from="RandomSoundPlayer" to="." method="_on_random_sound_player_finished"]

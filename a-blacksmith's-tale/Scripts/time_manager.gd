@@ -23,7 +23,7 @@ var cur_weekday: String
 var cur_season: String
 var am_pm: String
 var hour: int
-var hour_12: int
+var hour_12: int = 1
 var minute: int
 
 var time: float = 0.0
@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 		_recalculate_time()
 		_set_canvas_color()
 		
-		if am_pm == "am" && hour == 2:
+		if am_pm == "AM" && hour == 2:
 			day_end.emit(day + 1)
 			new_day()
 
@@ -84,20 +84,21 @@ func _recalculate_time() -> void:
 	
 
 func _calculate_time_properties() -> void:
-	hour_12 = hour if hour <= 12 else hour - 12
-	am_pm = "am" if hour < 12 else "pm"
+	hour_12 = hour if hour <= 12 else hour - 1
+	am_pm = "AM" if hour < 12 else "PM"
 	if hour == 0: hour_12 = 12
 	decideWeekday()
 	decideSeason()
-	if Global.cur_hour != hour_12:
-		Global.cur_hour = hour_12
+	Global.cur_hour = hour_12
+	Global.cur_minute = minute
+	Global.am_pm = am_pm
 	emit_current_time()
 
 func _set_canvas_color() -> void:
 	var value = (sin (time - PI / 2) + 1.0) / 2.0
-	if am_pm == "am":
+	if am_pm == "AM":
 		daylight_cycle_modulator.color = gradient.gradient.sample(value - 0.1) # Make it a tiny bit darker in the morning
-	if am_pm == "pm":
+	if am_pm == "PM":
 		daylight_cycle_modulator.color = gradient.gradient.sample(value + 0.1) # Delay it getting dark by a tiny bit
 
 func new_day():

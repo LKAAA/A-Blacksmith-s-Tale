@@ -2,9 +2,12 @@ extends Control
 class_name Dialogue
 
 @onready var content: RichTextLabel = $MarginContainer/Content
+@onready var character_name_label: RichTextLabel = %CharacterNameLabel
+@onready var character_portrait: TextureRect = %CharacterPortrait
+@onready var char_name_section: Control = $CharNameSection
 @onready var type_timer: Timer = $TypeTimer
 @onready var pause_timer: Timer = $PauseTimer
-@onready var pause_calculator: Node = $PauseCalculator
+@onready var dialogue_commands: DialogueCommands = $DialogueCommands
 @onready var random_sound_player: RandomSoundPlayer = $RandomSoundPlayer
 
 var instant_dialogue: bool = false
@@ -13,10 +16,19 @@ var _playing_voice := false
 
 signal message_completed()
 
-func update_message(message: String, instant_dia: bool) -> void:
+func update_message(message: String, instant_dia: bool, npc_name: String = "") -> void:
 	instant_dialogue = instant_dia
-	content.bbcode_text = pause_calculator.extract_pauses_from_string(message)
+	content.bbcode_text = dialogue_commands.extract_pauses_from_string(message)
 	content.visible_characters = 0
+	
+	if not npc_name == "":
+		char_name_section.visible = true
+		character_name_label.bbcode_text = npc_name
+		character_portrait.visible = true
+		#character_portrait.texture
+	else:
+		char_name_section.visible = false
+		character_portrait.visible = false
 	
 	type_timer.start()
 	
@@ -24,7 +36,7 @@ func update_message(message: String, instant_dia: bool) -> void:
 	random_sound_player.playSFX(0)
 
 func _on_type_timer_timeout() -> void:
-	pause_calculator.check_at_position(content.visible_characters)
+	dialogue_commands.check_at_position(content.visible_characters)
 	if content.visible_characters < content.get_total_character_count():
 		content.visible_characters += 1
 	else:
@@ -51,7 +63,8 @@ func _on_pause_timer_timeout() -> void:
 	random_sound_player.playSFX(0)
 	type_timer.start()
 
-func _on_pause_calculator_pause_requested(duration: Variant) -> void:
+func _on_dialogue_commands_pause_requested(duration: Variant) -> void:
+	print("HERE")
 	_playing_voice = false
 	type_timer.stop()
 	pause_timer.wait_time = duration
