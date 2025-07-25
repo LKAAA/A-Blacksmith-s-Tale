@@ -1,39 +1,78 @@
-[gd_scene load_steps=8 format=3 uid="uid://caaqdiklusn6s"]
+[gd_scene load_steps=12 format=3 uid="uid://caaqdiklusn6s"]
 
 [ext_resource type="Script" uid="uid://be7jivnwikk0p" path="res://Scripts/curing_rack.gd" id="1_u7nyp"]
-[ext_resource type="Texture2D" uid="uid://b3nalmgkjv7m3" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="2_jqriw"]
 [ext_resource type="PackedScene" uid="uid://7waftdht5yup" path="res://Scenes/Components/recipe_tester.tscn" id="2_lj5t6"]
+[ext_resource type="Texture2D" uid="uid://dhbvvpbp0h7d0" path="res://Assets/Sprites/TanningRackSpriteSheet.png" id="3_bixfi"]
 [ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="3_lj5t6"]
+[ext_resource type="PackedScene" uid="uid://dyc4diepdebv6" path="res://Scenes/Components/behind_adjustment.tscn" id="5_nm6v6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6bgdf"]
-atlas = ExtResource("2_jqriw")
-region = Rect2(48, 48, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm6v6"]
+atlas = ExtResource("3_bixfi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8io8"]
+atlas = ExtResource("3_bixfi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8nfn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm6v6")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8io8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hkp2"]
-size = Vector2(14, 14)
+size = Vector2(32, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8coi"]
+size = Vector2(32, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8io8"]
+size = Vector2(32, 13)
 
 [node name="CuringRack" type="StaticBody2D"]
 script = ExtResource("1_u7nyp")
 
 [node name="RecipeTester" parent="." instance=ExtResource("2_lj5t6")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_6bgdf")
-metadata/_edit_lock_ = true
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i8nfn")
+animation = &"Active"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_4hkp2")
 metadata/_edit_lock_ = true
 
 [node name="InteractArea" parent="." instance=ExtResource("3_lj5t6")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_x8coi")
 metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="BehindAdjustment" parent="." instance=ExtResource("5_nm6v6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BehindAdjustment"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_d8io8")
+
+[connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea" to="InteractArea" method="_on_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

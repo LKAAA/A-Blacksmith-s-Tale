@@ -3,6 +3,7 @@ class_name CuringRack extends StaticBody2D
 @onready var interact_area: Interactable = $InteractArea
 @onready var recipe_tester: RecipeTester = $RecipeTester
 @onready var timer: Timer = $Timer
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 @export var recipes: Array[RecipeData]
 
@@ -24,6 +25,7 @@ func _on_interact() -> void:
 				if Global.player.inventory.pick_up_slot_data(slot_data):
 					ready_to_pickup = false
 					active_recipe = null
+					sprite_2d.play("Idle")
 					print("Picked up")
 				else:
 					print("Inventory Full")
@@ -47,7 +49,9 @@ func begin_curing() -> void:
 				Global.player.inventory.remove_single_item(active_recipe.ingredients[0])
 				timer.start(active_recipe.time_to_make)
 				active = true
+				sprite_2d.play("Active")
 				print("Start Curing")
+				
 	
 
 # Change this to check active item vs inventory
