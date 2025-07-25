@@ -1,7 +1,7 @@
 extends Node2D
 class_name BellowsManager
 
-@onready var interact_area_bellows: Interactable = $"../InteractArea_Bellows"
+@onready var interact_area_bellows: Interactable = $InteractArea_Bellows
 
 signal bellows_interacted
 

@@ -1,7 +1,7 @@
 extends Node2D
 class_name ForgeManager
 
-@onready var interact_area_forge: Interactable = $"../InteractArea_Forge"
+@onready var interact_area_forge: Interactable = $InteractArea_Forge
 
 signal forge_interacted
 

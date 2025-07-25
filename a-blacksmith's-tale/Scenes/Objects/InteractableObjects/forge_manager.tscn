@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfp0p1rqi3t3c"]
+
+[ext_resource type="Script" uid="uid://bdvi018cuf2nu" path="res://Scripts/forge_manager.gd" id="1_gejwj"]
+[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="2_70jx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgeuy"]
+size = Vector2(34, 25)
+
+[node name="Forge_Manager" type="Node2D"]
+script = ExtResource("1_gejwj")
+
+[node name="InteractArea_Forge" parent="." instance=ExtResource("2_70jx8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea_Forge"]
+position = Vector2(-9, 7.5)
+shape = SubResource("RectangleShape2D_rgeuy")
+
+[connection signal="mouse_entered" from="InteractArea_Forge" to="InteractArea_Forge" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea_Forge" to="InteractArea_Forge" method="_on_mouse_exited"]

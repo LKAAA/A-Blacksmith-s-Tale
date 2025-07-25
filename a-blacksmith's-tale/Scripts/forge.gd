@@ -4,9 +4,8 @@ class_name Forge
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
-@onready var bellows_manager: BellowsManager = $Bellows_Manager
 @onready var forge_manager: ForgeManager = $Forge_Manager
-
+@onready var bellows_manager: BellowsManager = $Bellows_Manager
 
 var active: bool = false
 

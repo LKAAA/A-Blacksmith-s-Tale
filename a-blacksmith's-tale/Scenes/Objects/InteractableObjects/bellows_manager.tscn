@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgpvmx7vpqgg7"]
+
+[ext_resource type="Script" uid="uid://brlhf0r2l0675" path="res://Scripts/bellows.gd" id="1_h7yue"]
+[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="2_xdhn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx311"]
+size = Vector2(21, 16)
+
+[node name="Bellows_Manager" type="Node2D"]
+script = ExtResource("1_h7yue")
+
+[node name="InteractArea_Bellows" parent="." instance=ExtResource("2_xdhn8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea_Bellows"]
+position = Vector2(20.5, 9)
+shape = SubResource("RectangleShape2D_cx311")
+
+[connection signal="mouse_entered" from="InteractArea_Bellows" to="InteractArea_Bellows" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea_Bellows" to="InteractArea_Bellows" method="_on_mouse_exited"]

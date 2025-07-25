@@ -1,11 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://iycggt6pykno"]
+[gd_scene load_steps=14 format=3 uid="uid://iycggt6pykno"]
 
 [ext_resource type="Script" uid="uid://cgy30iqbbwfvy" path="res://Scripts/forge.gd" id="1_rgeuy"]
 [ext_resource type="Texture2D" uid="uid://co4af2ujn73lt" path="res://Assets/Sprites/ForgeSpritesheet.png" id="1_wdy5u"]
 [ext_resource type="PackedScene" uid="uid://dyc4diepdebv6" path="res://Scenes/Components/behind_adjustment.tscn" id="2_8gq7j"]
-[ext_resource type="Script" uid="uid://brlhf0r2l0675" path="res://Scripts/bellows.gd" id="2_cx311"]
-[ext_resource type="Script" uid="uid://bdvi018cuf2nu" path="res://Scripts/forge_manager.gd" id="2_rw4v6"]
-[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="3_8gq7j"]
+[ext_resource type="PackedScene" uid="uid://bfp0p1rqi3t3c" path="res://Scenes/Objects/InteractableObjects/forge_manager.tscn" id="2_cx311"]
+[ext_resource type="PackedScene" uid="uid://cgpvmx7vpqgg7" path="res://Scenes/Objects/InteractableObjects/bellows_manager.tscn" id="3_rw4v6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xm65n"]
 atlas = ExtResource("1_wdy5u")
@@ -49,20 +48,12 @@ size = Vector2(11, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8coi"]
 size = Vector2(18, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgeuy"]
-size = Vector2(34, 25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx311"]
-size = Vector2(21, 16)
-
 [node name="Forge" type="StaticBody2D"]
 script = ExtResource("1_rgeuy")
 
-[node name="Forge_Manager" type="Node2D" parent="."]
-script = ExtResource("2_rw4v6")
+[node name="Forge_Manager" parent="." instance=ExtResource("2_cx311")]
 
-[node name="Bellows_Manager" type="Node2D" parent="."]
-script = ExtResource("2_cx311")
+[node name="Bellows_Manager" parent="." instance=ExtResource("3_rw4v6")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lvl10")
@@ -91,21 +82,4 @@ shape = SubResource("RectangleShape2D_lvl10")
 position = Vector2(22, 4)
 shape = SubResource("RectangleShape2D_x8coi")
 
-[node name="InteractArea_Forge" parent="." instance=ExtResource("3_8gq7j")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea_Forge"]
-position = Vector2(-9, 7.5)
-shape = SubResource("RectangleShape2D_rgeuy")
-
-[node name="InteractArea_Bellows" parent="." instance=ExtResource("3_8gq7j")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea_Bellows"]
-position = Vector2(20.5, 9)
-shape = SubResource("RectangleShape2D_cx311")
-
 [node name="Timer" type="Timer" parent="."]
-
-[connection signal="mouse_entered" from="InteractArea_Forge" to="InteractArea_Forge" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="InteractArea_Forge" to="InteractArea_Forge" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="InteractArea_Bellows" to="InteractArea_Bellows" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="InteractArea_Bellows" to="InteractArea_Bellows" method="_on_mouse_exited"]
