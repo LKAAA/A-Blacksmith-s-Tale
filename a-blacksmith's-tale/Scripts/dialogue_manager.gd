@@ -17,6 +17,7 @@ var cur_dialogue_instance: Dialogue
 func show_messages(message_list: Array, instant_dialogue: bool, char_name: String = "") -> void:
 	# Only allow triggering if not currently showing something
 	if _is_active:
+		print("Dialogue is already active")
 		return
 	
 	if message_list == []:
@@ -34,6 +35,7 @@ func show_messages(message_list: Array, instant_dialogue: bool, char_name: Strin
 	
 	var _dialogue = DIALOGUE_SCENE.instantiate()
 	_dialogue.message_completed.connect(_on_message_completed)
+	_dialogue.option_selected.connect(_on_option_selected)
 	dialogue_position.add_child(_dialogue)
 	
 	cur_dialogue_instance = _dialogue
@@ -42,18 +44,30 @@ func show_messages(message_list: Array, instant_dialogue: bool, char_name: Strin
 
 func _show_current(instant_dialogue: bool) -> void:
 	message_requested.emit()
-	cur_dialogue_instance.update_message(_messages[_active_dialogue_offset], instant_dialogue, cur_char)
-	if instant_dialogue:
+	var message = _messages[_active_dialogue_offset]
+	
+	# Check for options (last element is a Dictionar with "options")
+	if typeof(message) == TYPE_DICTIONARY and message.has("options"):
+		cur_dialogue_instance.show_options(message["options"])
+		print("Has dialogue choices")
+	else:
+		print("No dialogue choices")
+		cur_dialogue_instance.update_message(message, instant_dialogue, cur_char)
+	
+	if instant_dialogue and typeof(message) != TYPE_DICTIONARY:
 		cur_dialogue_instance.fast_forward_message()
+
+func _on_option_selected(next_tag: String) -> void:
+	_choose_message({"char_name": cur_char}, next_tag)
 
 func _input(event: InputEvent) -> void:
 	if (
 		event.is_pressed() and 
 		!event.is_echo() and
 		event is InputEventKey and 
-		event.keycode == KEY_ENTER and
+		event.is_action_pressed("ui_dialogue_interact") and
 		_is_active and
-		cur_dialogue_instance.message_is_fully_visible()
+		cur_dialogue_instance.message_is_fully_visible()  and not cur_dialogue_instance.options_section.visible
 	):
 		if _active_dialogue_offset < _messages.size() - 1:
 			_active_dialogue_offset += 1
@@ -63,7 +77,7 @@ func _input(event: InputEvent) -> void:
 	elif(event.is_pressed() and 
 		!event.is_echo() and
 		event is InputEventKey and 
-		event.keycode == KEY_ENTER and
+		event.is_action_pressed("ui_dialogue_interact") and
 		_is_active and
 		not cur_dialogue_instance.message_is_fully_visible()
 	):
@@ -79,7 +93,7 @@ func _hide() -> void:
 func _on_message_completed() -> void:
 	message_completed.emit()
 
-func _choose_message(object) -> void:
+func _choose_message(object, tag = "") -> void:
 	print("Choosing for: " + str(object))
 	var chosen_dialogue = []
 	var dialogue_file_data: Dictionary = {}
@@ -93,6 +107,13 @@ func _choose_message(object) -> void:
 	
 	if "dialogue_instant" in object:
 		instant_dialogue = object.dialogue_instant
+	
+	# If there is a chosen message to go through (Options)
+	if not tag == "":
+		dialogue_file_data = get_dialogue_data(object)
+		chosen_dialogue = get_dialogue_option(dialogue_file_data, tag)
+		_hide()
+		show_messages(chosen_dialogue, false, cur_char)
 	
 	if chosen_dialogue == []:
 		dialogue_file_data = get_dialogue_data(object)
@@ -124,35 +145,6 @@ func get_dialogue_data(object) -> Dictionary:
 		printerr("An error occured when trying to access the path.")
 		return {}
 
-func decide_dialogue_option(data: Dictionary, char_name: String) -> Array:
-	print("Get dialogue option")
-	
-	var season = Global.cur_season.to_lower()
-	var day = Global.cur_day.to_lower()
-	var season_day = season + "_" + day
-	
-	var priority_keys = []
-	if not Progression.NPCS_MET[char_name]:
-		priority_keys.append("unmet")
-	if Global.is_raining:
-		priority_keys.append("rain")
-	priority_keys.append(season_day)
-	priority_keys.append(day)
-	priority_keys.append(season)
-	priority_keys.append("default")
-
-	for key in priority_keys:
-		if data.has(key):
-			if key == "unmet":
-				Progression.NPCS_MET[char_name] = true
-				print("You just met " + char_name)
-			
-			print("Chose Dialogue: " + str(key))
-			return data[key]
-	
-	print("No suitable dialogue option found")
-	return []
-
 func load_dialogue(file_name) -> Dictionary:
 	var file_path = "res://Data/Dialogue/" + file_name + ".json"
 	if FileAccess.file_exists(file_path):
@@ -164,3 +156,70 @@ func load_dialogue(file_name) -> Dictionary:
 		return json_conv.get_data()
 	print("Did not find Data")
 	return {}
+
+func get_dialogue_option(data: Dictionary, tag: String) -> Array:
+	print("Get dialogue option")
+	
+	if data.has(tag):
+		return data[tag]
+	else:
+		printerr("No dialogue for tag: " + tag)
+		return []
+
+func decide_dialogue_option(data: Dictionary, char_name: String) -> Array:
+	print("Decide dialogue option")
+	
+	var priority_keys = _get_priority_keys(char_name)
+	
+	for key in priority_keys:
+		if data.has(key):
+			if key == "unmet":
+				Progression.NPCS_MET[char_name] = true
+				print("You just met " + char_name)
+			
+			print("Chose Dialogue: " + str(key))
+			Progression.NPC_TALK_COUNT[char_name] += 1
+			return data[key]
+	
+	print("No suitable dialogue option found")
+	return []
+
+func _get_priority_keys(char_name: String) -> Array:
+	var season = Global.cur_season.to_lower()
+	var day = Global.cur_day.to_lower()
+	var season_day = season + "_" + day
+	
+	var keys := []
+
+	# General unmet condition
+	if not Progression.NPCS_MET[char_name]:
+		keys.append("unmet")
+
+	# Character-specific logic
+	match char_name:
+		"Seri":
+			keys += _get_seri_priority_keys(char_name)
+
+	# Weather and time priorities
+	if Global.is_raining:
+		keys.append("rain")
+	keys += [season_day, day, season, "default"]
+
+	return keys
+
+func _get_seri_priority_keys(char_name: String) -> Array:
+	var keys := []
+	
+	var talk_count: int = Progression.NPC_TALK_COUNT[char_name]
+	var is_quest_active: bool = Progression.DIALOGUE_ADJUSTABLE_VARS["Seri_Quest_Active"]
+	var name_known: bool = Progression.DIALOGUE_ADJUSTABLE_VARS["Seri_Name_Known"]
+	
+	if not is_quest_active:
+		keys.append(str(talk_count + 1) + "_talk_found")
+	else:
+		keys.append(str(talk_count + 1) + "_talk_quest")
+	
+	if not name_known:
+		keys.append("unknown_name")
+	
+	return keys

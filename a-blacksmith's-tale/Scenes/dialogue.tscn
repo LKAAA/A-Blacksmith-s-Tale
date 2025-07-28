@@ -21,7 +21,15 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_5mcti")
 
-[node name="CharacterPortrait" type="TextureRect" parent="."]
+[node name="Dialogue_Section" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterPortraitDialogue" type="TextureRect" parent="Dialogue_Section"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -21.5
@@ -30,7 +38,7 @@ offset_right = 170.5
 offset_bottom = 38.0
 texture = ExtResource("2_5mcti")
 
-[node name="BackgroundOutline2" type="ColorRect" parent="."]
+[node name="BackgroundOutline2" type="ColorRect" parent="Dialogue_Section"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,12 +47,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.479408, 0.173565, 0.163196, 1)
 
-[node name="CharNameSection" type="Control" parent="."]
+[node name="CharNameSection" type="Control" parent="Dialogue_Section"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BackgroundOutline3" type="ColorRect" parent="CharNameSection"]
+[node name="BackgroundOutline3" type="ColorRect" parent="Dialogue_Section/CharNameSection"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.479408, 0.173565, 0.163196, 1)
 
-[node name="Background2" type="ColorRect" parent="CharNameSection/BackgroundOutline3"]
+[node name="Background2" type="ColorRect" parent="Dialogue_Section/CharNameSection/BackgroundOutline3"]
 layout_mode = 2
 offset_left = 3.0
 offset_top = 3.0
@@ -64,7 +72,7 @@ offset_right = 114.0
 offset_bottom = 16.0
 color = Color(0.695439, 0.524172, 0.402162, 1)
 
-[node name="CharacterNameLabel" type="RichTextLabel" parent="CharNameSection"]
+[node name="CharacterNameLabel" type="RichTextLabel" parent="Dialogue_Section/CharNameSection"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
@@ -76,10 +84,9 @@ theme_override_constants/line_separation = 2
 theme_override_fonts/normal_font = ExtResource("2_pjl42")
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
-text = "Stevie Wonder"
 fit_content = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="MarginContainer2" type="MarginContainer" parent="Dialogue_Section"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,11 +98,11 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Background" type="ColorRect" parent="MarginContainer2"]
+[node name="Background" type="ColorRect" parent="Dialogue_Section/MarginContainer2"]
 layout_mode = 2
 color = Color(0.695439, 0.524172, 0.402162, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="Dialogue_Section"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -107,7 +114,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Content" type="RichTextLabel" parent="MarginContainer"]
+[node name="Dialogue_Content" type="RichTextLabel" parent="Dialogue_Section/MarginContainer"]
 clip_contents = false
 layout_mode = 2
 theme_override_constants/line_separation = 2
@@ -115,6 +122,132 @@ theme_override_fonts/normal_font = ExtResource("2_pjl42")
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 fit_content = true
+
+[node name="Options_Section" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterPortraitOptions" type="TextureRect" parent="Options_Section"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -21.5
+offset_top = -218.0
+offset_right = 170.5
+offset_bottom = 38.0
+texture = ExtResource("2_5mcti")
+
+[node name="BackgroundOutline3" type="ColorRect" parent="Options_Section"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.479408, 0.173565, 0.163196, 1)
+
+[node name="MarginContainer3" type="MarginContainer" parent="Options_Section"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options_Section/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="OptionsBackground1" type="ColorRect" parent="Options_Section/MarginContainer3/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.695439, 0.524172, 0.402162, 1)
+
+[node name="OptionsBackground2" type="ColorRect" parent="Options_Section/MarginContainer3/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.695439, 0.524172, 0.402162, 1)
+
+[node name="OptionsBackground3" type="ColorRect" parent="Options_Section/MarginContainer3/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.695439, 0.524172, 0.402162, 1)
+
+[node name="OptionsBackground4" type="ColorRect" parent="Options_Section/MarginContainer3/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.695439, 0.524172, 0.402162, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Options_Section"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options_Section/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Option1" type="Button" parent="Options_Section/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_pjl42")
+theme_override_font_sizes/font_size = 10
+text = "????"
+flat = true
+alignment = 0
+autowrap_mode = 3
+
+[node name="Option2" type="Button" parent="Options_Section/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_pjl42")
+theme_override_font_sizes/font_size = 10
+text = "????"
+flat = true
+alignment = 0
+autowrap_mode = 3
+
+[node name="Option3" type="Button" parent="Options_Section/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_pjl42")
+theme_override_font_sizes/font_size = 10
+text = "????"
+flat = true
+alignment = 0
+autowrap_mode = 3
+
+[node name="Option4" type="Button" parent="Options_Section/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_pjl42")
+theme_override_font_sizes/font_size = 10
+text = "????"
+flat = true
+alignment = 0
+autowrap_mode = 3
 
 [node name="TypeTimer" type="Timer" parent="."]
 wait_time = 0.04

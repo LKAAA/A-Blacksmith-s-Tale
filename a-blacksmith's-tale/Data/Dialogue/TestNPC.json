@@ -1,6 +1,16 @@
 {
-	"unmet": ["Oh hello {mister^miss}. Who are you?"],
-	"rain": ["This rain is so rainy around here."],
-	"fall": ["The fall weather is so nice and cool.", "What's your favorite season?"],
-	"default": ["Hello again. It's nice to see you around.", "It is currently {time_am}."]
+	"unmet": [
+		"Oh hello {mister^miss}. Who are you?"
+		],
+	"rain": [
+		"This rain is so rainy around here."
+		],
+	"fall": [
+		"The fall weather is so nice and cool.", 
+		"What's your favorite season?"
+		],
+	"default": [
+		"Hello again. It's nice to see you around.", 
+		"It is currently {time_am}."
+		]
 }

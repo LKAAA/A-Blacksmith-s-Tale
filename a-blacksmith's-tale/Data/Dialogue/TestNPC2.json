@@ -1,5 +1,12 @@
 {
-	"unmet": ["Nice to meet you.{p=0.35} I heard you're the new blacksmith around here?"],
-	"spring_monday": ["A beautiful day today isn't it @?", "I need a new shovel soon,{p=0.2} does {shop} have any in stock?"],
-	"default": ["Good morning!{p=0.2} How are things settling at your shop?"],
+	"unmet": [
+		"Nice to meet you.{p=0.35} I heard you're the new blacksmith around here?"
+		],
+	"spring_monday": [
+		"A beautiful day today isn't it @?", 
+		"I need a new shovel soon,{p=0.2} does {shop} have any in stock?"
+		],
+	"default": [
+		"Good morning!{p=0.2} How are things settling at your shop?"
+		],
 }

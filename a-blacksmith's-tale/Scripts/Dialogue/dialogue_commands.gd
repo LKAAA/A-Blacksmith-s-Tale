@@ -100,6 +100,35 @@ func _replacement_commands(dialogue_string: String) -> String:
 				if tag.begins_with("{race"):
 					final_string = final_string.replace('{race}', Global.player_race)
 				
+				if tag.begins_with("{var"):
+					var var_index := tag.find('(') + 1
+					var var_end_index := tag.find(')')
+					
+					if var_index == -1 or var_end_index == -1:
+						push_error("Malformed var tag: missing parentheses")
+						continue
+					
+					var var_name := tag.substr(var_index, var_end_index - var_index).strip_edges()
+					var value_str := tag.substr(var_end_index + 1, tag.length() - var_end_index - 2).strip_edges()
+					var value  : Variant
+					print(value_str)
+					
+					match value_str.to_lower():
+						"true": 
+							value = true
+						"false": 
+							value = false
+						_:
+							if String(value_str).is_valid_float():
+								value = float(value_str)
+							elif String(value_str).is_valid_int():
+								value = int(value_str)
+							else:
+								value = value_str # Fallback to string
+					
+					print("Setting variable: " + var_name + " = " + value_str)
+					Progression.DIALOGUE_ADJUSTABLE_VARS[var_name] = value
+				
 				if tag.contains('^'):
 					var midpoint_index := final_string.find('^', index)
 					var selected_text := ""

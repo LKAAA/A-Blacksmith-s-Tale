@@ -1,0 +1,48 @@
+{
+	"unmet": [
+		"How many times do I have to tell you humans?", 
+		"The dragon heart you're looking for isn't an actual dragon's heart!", 
+		"It's crystals.{p=0.2} Right there!"
+	],
+	"2_talk_found": [
+		"You mean you weren't looking for my heart?", 
+		"Hmph.{p=0.3} Yeah right.{p=0.3} You humans are all the same...", 
+		"well...{p=0.3} If you really weren't...",
+		"then my names Seri.{var(Seri_Name_Known) true}"
+		],
+	"2_talk_quest": [
+		"You blacksmiths are all the same.", 
+		"Whatever.{p=0.3} Take the crystals. I don't need them."
+		],
+	"3_talk_quest": [
+		"How did I know you were a blacksmith?",
+		"Hah.{p=0.3} What a dumb question.", 
+		"I can smell the flames all over you.{p=0.3} The only humans that smell like that are blacksmiths."
+		],
+	"unknown_name": [
+		"You again? Did you run out of crystals already?", 
+	{
+		"options": [
+			{"text": "Yup I ran out already.", "next": "unknown_name_yes_1"},
+			{"text": "No I just wanted to talk to you.", "next": "unknown_name_no_1"},
+		]
+	}
+	],
+	"unknown_name_yes_1": [
+		"Hmph.{p=0.3} How about you learn some manners and at least ask my name before you come begging for more crystals.", 
+	{
+		"options": [
+			{"text": "What's your name?", "next": "unknown_name_yes_2"},
+		]
+	}],
+	"unknown_name_yes_2": [
+		"Hah.{p=0.3} It's Seri.{p=0.2} Take whatever crystals you want, I don't need them.{var(Seri_Name_Known) true}"
+		],
+	"unknown_name_no_1": [
+		"T-talk to me?",
+		"I mean- yeah sure. I guess I can talk for a bit. My name's Seri.{var(Seri_Name_Known) true}"
+		],
+	"default": [
+		"Back again? You're lucky I don't need these crystals for something."
+		]
+}

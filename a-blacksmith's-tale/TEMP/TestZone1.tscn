@@ -427,3 +427,11 @@ char_name = "TestNPC"
 [node name="NPCScheduleTool2" type="Node2D" parent="Characters/NPCCore"]
 script = ExtResource("21_6bgdf")
 metadata/_custom_type_script = "uid://bc8dn2l61tmo2"
+
+[node name="Seri" parent="Characters" instance=ExtResource("20_4hkp2")]
+position = Vector2(440, 248)
+char_name = "Seri"
+
+[node name="NPCScheduleTool2" type="Node2D" parent="Characters/Seri"]
+script = ExtResource("21_6bgdf")
+metadata/_custom_type_script = "uid://bc8dn2l61tmo2"
