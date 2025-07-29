@@ -20,5 +20,5 @@ var NPC_DAYS_SINCE_MET = {
 
 var DIALOGUE_ADJUSTABLE_VARS = {
 	"Seri_Name_Known": false,
-	"Seri_Quest_Active": false,
+	"Seri_Quest_Active": true,
 }

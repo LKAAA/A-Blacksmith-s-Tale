@@ -6,8 +6,12 @@
 [resource]
 script = ExtResource("1_rvmly")
 name = "Uncured Leather"
+id = 1
 description = "A length of uncured leather."
 sprite = ExtResource("2_unul8")
 type = "Material"
+sellable = true
+buy_price = 1
+sell_price = 1
 stackable = true
 metadata/_custom_type_script = "uid://1sj1rrsd7jss"

@@ -37,6 +37,7 @@ func update_popup() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and (event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT) and event.is_pressed():
+		print("Slot clicked: " + str(get_index()))
 		slot_clicked.emit(get_index(), event.button_index)
 
 

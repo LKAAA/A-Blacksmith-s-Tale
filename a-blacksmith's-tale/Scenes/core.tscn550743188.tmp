@@ -48,25 +48,21 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-offset_top = -12.0
-offset_bottom = 20.0
+offset_top = -2.0
+offset_bottom = 30.0
 
 [node name="ExternalInventory" parent="UI/Menu_UI" instance=ExtResource("3_gxbf5")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-offset_top = -98.0
-offset_bottom = -66.0
+offset_top = -88.0
+offset_bottom = -56.0
 
 [node name="GrabbedSlot" parent="UI/Menu_UI" instance=ExtResource("3_ak6bg")]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 mouse_filter = 2
-
-[node name="ShopUI" parent="UI" instance=ExtResource("7_al2hu")]
-unique_name_in_owner = true
-visible = false
 
 [node name="Game_UI" type="Control" parent="UI"]
 unique_name_in_owner = true
@@ -89,6 +85,9 @@ anchor_bottom = 1.0
 offset_top = -38.0
 offset_bottom = -6.0
 grow_vertical = 0
+
+[node name="ShopUI" parent="UI" instance=ExtResource("7_al2hu")]
+visible = false
 
 [node name="LoadingScreen" parent="UI" instance=ExtResource("2_377ls")]
 unique_name_in_owner = true

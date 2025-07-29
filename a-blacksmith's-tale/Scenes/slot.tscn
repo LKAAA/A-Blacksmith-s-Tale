@@ -5,6 +5,8 @@
 
 [node name="Slot" type="Panel"]
 custom_minimum_size = Vector2(24, 24)
+offset_right = 24.0
+offset_bottom = 24.0
 script = ExtResource("1_da45j")
 
 [node name="TextureRect" type="TextureRect" parent="."]

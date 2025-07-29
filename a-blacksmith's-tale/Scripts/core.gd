@@ -5,6 +5,7 @@ const PLAYER = preload("res://Player/player.tscn")
 @onready var loading_screen: LoadingScreen = %LoadingScreen
 @onready var menu_ui: Menu = %Menu_UI
 @onready var game_ui: GameUI = %Game_UI
+@onready var shop_ui: ShopUI = %ShopUI
 @onready var hovering_indicator: TileMapLayer = $"Hovering Indicator"
 @onready var dialogue_manager: DialogueManager = $DialogueManager
 @onready var schedule_manager: ScheduleManager = $ScheduleManager
@@ -110,6 +111,34 @@ func unload_external_inventories(zone: Zone) -> void:
 
 #endregion
 
+#region Shop UI
+
+func toggle_shop_ui(shop_data: ShopData) -> void:
+	shop_ui.visible = !shop_ui.visible
+	
+	if shop_ui.visible:
+		game_ui.hide()
+		Global.game_paused = true
+	else:
+		game_ui.show()
+		Global.game_paused = false
+	
+	shop_ui.set_shop(shop_data, player.inventory)
+
+func load_shops(zone: Zone) -> void:
+	var shops: Array = zone.get_shops()
+	for node in shops:
+		node.toggle_shop.connect(toggle_shop_ui)
+		print("Loaded " + node.name)
+
+func unload_shops(zone: Zone) -> void:
+	var shops: Array = zone.get_shops()
+	for node in shops:
+		if node.is_connected("toggle_shop", toggle_shop_ui):
+			node.toggle_shop.disconnect(toggle_shop_ui)
+			print("Disconnected " + node.name)
+#endregion
+
 #region loading zones
 
 # @param path is the path of the scene to transition to
@@ -134,6 +163,7 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		menu_ui._set_player_inventory(player.inventory)
 		game_ui._set_hotbar_inventory(player.inventory)
 		load_external_inventories(current_zone)
+		load_shops(current_zone)
 		Global.player = player
 		
 		for child in current_zone.get_dialogue_objects():
@@ -170,6 +200,7 @@ func fade_in_finished() -> void:
 	
 	if current_zone:
 		unload_external_inventories(current_zone)
+		unload_shops(current_zone)
 		current_zone.queue_free()
 
 	current_zone = next_zone
@@ -179,6 +210,7 @@ func fade_in_finished() -> void:
 		t.transition_entered.connect(load_zone)
 	
 	load_external_inventories(current_zone)
+	load_shops(current_zone)
 	
 	for child in current_zone.get_dialogue_objects():
 		if not child.request_dialogue.is_connected(_request_dialogue):

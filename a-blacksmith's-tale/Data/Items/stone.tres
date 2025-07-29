@@ -6,8 +6,12 @@
 [resource]
 script = ExtResource("1_giqkx")
 name = "Stone"
+id = 9
 description = "A chunk of stone."
 sprite = ExtResource("2_3bqaw")
 type = "Material"
+sellable = true
+buy_price = 1
+sell_price = 1
 stackable = true
 metadata/_custom_type_script = "uid://1sj1rrsd7jss"

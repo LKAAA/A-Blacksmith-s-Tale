@@ -12,7 +12,7 @@
 		],
 	"2_talk_quest": [
 		"You blacksmiths are all the same.", 
-		"Whatever.{p=0.3} Take the crystals. I don't need them."
+		"Whatever.{p=0.3} Take the crystals. I don't need them.{Item[9x5,10x10]}"
 		],
 	"3_talk_quest": [
 		"How did I know you were a blacksmith?",

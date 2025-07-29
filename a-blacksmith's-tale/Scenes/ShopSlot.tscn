@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://sx82vacbwyjj"]
+
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="1_bd0dc"]
+[ext_resource type="FontFile" uid="uid://df73r0oibkmtw" path="res://Assets/Fonts/Fabled_Font.ttf" id="1_e33cg"]
+[ext_resource type="Script" uid="uid://cn1i6wrmbvnvg" path="res://Scripts/shop_slot.gd" id="1_yk2wf"]
+
+[node name="ShopSlot" type="Panel"]
+custom_minimum_size = Vector2(383, 20)
+offset_right = 380.0
+offset_bottom = 20.0
+script = ExtResource("1_yk2wf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ItemSprite" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_bd0dc")
+stretch_mode = 3
+
+[node name="ItemNameText" type="RichTextLabel" parent="MarginContainer/HBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("1_e33cg")
+theme_override_font_sizes/normal_font_size = 10
+text = "Uncured Leather"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 2
+
+[node name="FillerBlank" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CostText" type="RichTextLabel" parent="MarginContainer/HBoxContainer"]
+clip_contents = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("1_e33cg")
+theme_override_font_sizes/normal_font_size = 10
+text = "20 Gold"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

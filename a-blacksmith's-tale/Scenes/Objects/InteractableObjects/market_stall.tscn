@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://btc44ewohabs5"]
+
+[ext_resource type="Texture2D" uid="uid://xmqa8wyqu7ud" path="res://Assets/Sprites/MarketStallSpritesheet.png" id="1_3ack5"]
+[ext_resource type="Script" uid="uid://c8drvcf8kbqhj" path="res://Scripts/market_stall.gd" id="1_wj8hn"]
+[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="2_a6vpq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6vpq"]
+atlas = ExtResource("1_3ack5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj8hn"]
+atlas = ExtResource("1_3ack5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ack5"]
+size = Vector2(46, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wj8hn"]
+size = Vector2(38, 24)
+
+[node name="MarketStall" type="StaticBody2D" groups=["shop"]]
+script = ExtResource("1_wj8hn")
+
+[node name="FrontStallSprite" type="Sprite2D" parent="."]
+z_index = 1
+texture = SubResource("AtlasTexture_a6vpq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_wj8hn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_3ack5")
+
+[node name="InteractArea" parent="." instance=ExtResource("2_a6vpq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+z_index = 5
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_wj8hn")
+
+[connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea" to="InteractArea" method="_on_mouse_exited"]

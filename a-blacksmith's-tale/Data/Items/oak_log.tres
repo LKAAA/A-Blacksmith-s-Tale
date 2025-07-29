@@ -6,7 +6,11 @@
 [resource]
 script = ExtResource("1_088a0")
 name = "Oak Log"
+id = 10
 description = "A log of oak wood."
 sprite = ExtResource("2_fd4ra")
 type = "Material"
+sellable = true
+buy_price = 1
+sell_price = 1
 stackable = true

@@ -6,7 +6,11 @@
 [resource]
 script = ExtResource("1_o8yqx")
 name = "Iron Bar"
+id = 6
 description = "A smelted bar of iron."
 sprite = ExtResource("2_qrg31")
 type = "Material"
+sellable = true
+buy_price = 1
+sell_price = 1
 stackable = true

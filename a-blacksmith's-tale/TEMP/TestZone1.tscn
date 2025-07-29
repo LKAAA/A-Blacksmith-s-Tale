@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=38 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://c14phobpam5im" path="res://Assets/Sprites/BlacksmithBaseTileset.png" id="2_r6337"]
@@ -20,7 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://chk276ad3d5n3" path="res://Scenes/Objects/InteractableObjects/harvestable_item.tscn" id="20_dpgyg"]
 [ext_resource type="PackedScene" uid="uid://iycggt6pykno" path="res://Scenes/Objects/InteractableObjects/forge.tscn" id="20_x8coi"]
 [ext_resource type="Script" uid="uid://bc8dn2l61tmo2" path="res://Scripts/npc_schedule_tool.gd" id="21_6bgdf"]
+[ext_resource type="PackedScene" uid="uid://btc44ewohabs5" path="res://Scenes/Objects/InteractableObjects/market_stall.tscn" id="21_x8coi"]
 [ext_resource type="PackedScene" uid="uid://dstxblro34alg" path="res://Scenes/Objects/BreakableObjects/tree.tscn" id="22_4hkp2"]
+[ext_resource type="Resource" uid="uid://bo73747f67xfn" path="res://Data/Shops/GeneralStore.tres" id="22_xm65n"]
 [ext_resource type="PackedScene" uid="uid://duxvb6kudsmba" path="res://Scenes/Objects/InteractableObjects/sign.tscn" id="23_x8coi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpgyg"]
@@ -409,6 +411,9 @@ item_drop = ExtResource("16_qsvcl")
 
 [node name="Forge" parent="Objects" instance=ExtResource("20_x8coi")]
 position = Vector2(440, 24)
+
+[node name="MarketStall" parent="Objects" instance=ExtResource("21_x8coi")]
+shop_data = ExtResource("22_xm65n")
 
 [node name="Characters" type="Node" parent="."]
 

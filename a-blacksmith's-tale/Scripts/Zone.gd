@@ -3,6 +3,7 @@ class_name Zone extends Node2D
 @export var zone_id: int
 @export var transitions: Array[TransitionArea]
 @export var external_inventories: Array
+@export var shops: Array
 @export var dialogue_objects: Array
 
 # THIS CODE IS DISGUSTING - AVERT YOUR EYESA
@@ -14,6 +15,15 @@ func get_external_inventories() -> Array:
 					external_inventories.append(c)
 	
 	return external_inventories
+
+func get_shops() -> Array:
+	for child in get_children():
+		if child.name == "Objects":
+			for c in child.get_children():
+				if c.is_in_group("shop"):
+					shops.append(c)
+	
+	return shops
 
 func get_dialogue_objects() -> Array:
 	for child in get_children():

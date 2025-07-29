@@ -11,7 +11,7 @@ region = Rect2(32, 33, 16, 31)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xm65n"]
 radius = 5.0
-height = 12.0
+height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jjfm"]
 size = Vector2(28, 41)
@@ -27,7 +27,7 @@ script = ExtResource("1_coole")
 texture = SubResource("AtlasTexture_x8coi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_xm65n")
 
 [node name="InteractArea" parent="." instance=ExtResource("4_k1dkh")]

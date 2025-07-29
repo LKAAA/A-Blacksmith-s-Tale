@@ -6,7 +6,11 @@
 [resource]
 script = ExtResource("1_fseug")
 name = "Long Oak Handle"
+id = 8
 description = "A long handle of oak wood, commonly used for tools."
 sprite = ExtResource("2_7djx5")
 type = "Material"
+sellable = true
+buy_price = 1
+sell_price = 1
 stackable = false

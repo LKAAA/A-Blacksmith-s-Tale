@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbvvpbp0h7d0"
-path="res://.godot/imported/TanningRackSpritesheet.png-aa63feb2653b9b4c398b0bfd0b008c84.ctex"
+uid="uid://xmqa8wyqu7ud"
+path="res://.godot/imported/MarketStallSpritesheet.png-3a3f135040cc4e7b19b2abdf131ae971.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/TanningRackSpritesheet.png"
-dest_files=["res://.godot/imported/TanningRackSpritesheet.png-aa63feb2653b9b4c398b0bfd0b008c84.ctex"]
+source_file="res://Assets/Sprites/MarketStallSpritesheet.png"
+dest_files=["res://.godot/imported/MarketStallSpritesheet.png-3a3f135040cc4e7b19b2abdf131ae971.ctex"]
 
 [params]
 

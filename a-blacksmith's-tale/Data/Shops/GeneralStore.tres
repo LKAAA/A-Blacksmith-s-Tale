@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ShopData" load_steps=9 format=3 uid="uid://bo73747f67xfn"]
+
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_y4l6c"]
+[ext_resource type="Script" uid="uid://7fg1ru86h4gb" path="res://Data/Scripts/shop_data.gd" id="2_2nkrf"]
+[ext_resource type="Resource" uid="uid://b2pa1b6wmduol" path="res://Data/Items/fried_egg.tres" id="2_8ugvl"]
+[ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="3_6m1ts"]
+[ext_resource type="Resource" uid="uid://dm4oa85xd4lmy" path="res://Data/Items/stone.tres" id="4_5p4k8"]
+[ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/iron_ore.tres" id="5_xyyge"]
+[ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/uncured_leather.tres" id="6_tmea4"]
+[ext_resource type="Resource" uid="uid://b28a8c0aq5y08" path="res://Data/Items/iron_pickaxe.tres" id="7_6m1ts"]
+
+[resource]
+script = ExtResource("2_2nkrf")
+shop_name = "General Store"
+items_sold = Array[ExtResource("1_y4l6c")]([ExtResource("2_8ugvl"), ExtResource("3_6m1ts"), ExtResource("4_5p4k8"), ExtResource("5_xyyge"), ExtResource("6_tmea4"), ExtResource("7_6m1ts")])
+metadata/_custom_type_script = "uid://7fg1ru86h4gb"
