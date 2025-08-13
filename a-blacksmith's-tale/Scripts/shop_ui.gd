@@ -48,6 +48,7 @@ func on_inventory_shop_interact(item_data: ItemData, button: int) -> void:
 func buy_item(item_data: ItemData) -> void:
 	var slot_data = get_item(item_data)
 	Global.player.inventory.pick_up_slot_data(slot_data)
+	Global.player.inventory.inventory_updated
 
 func get_item(item_data: ItemData) -> SlotData:
 	var slot_data = SlotData.new()

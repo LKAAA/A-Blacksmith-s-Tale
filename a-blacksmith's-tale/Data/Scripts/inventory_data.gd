@@ -85,6 +85,30 @@ func remove_single_item(item_data:ItemData) -> bool:
 	print("Item not here ")
 	return false
 
+func remove_items(item_data:ItemData, count: int) -> bool:
+	if not item_data: 
+		printerr("Inventory does not contain " + item_data.name)
+		return false
+	
+	var remaining = count
+	var slot_data: SlotData
+	for slot in inventory_slots:
+		var index = inventory_slots.find(slot)
+		if slot:
+			if slot.item_data == item_data:
+				if slot.quantity >= remaining:
+					slot.quantity -= remaining
+					if slot.quantity < 1:
+						inventory_slots[index] = null
+					inventory_updated.emit(self.index)
+					return true
+				else:
+					slot.quantity -= remaining
+					if slot.quantity < 1:
+						inventory_slots[index] = null
+	
+	return false
+
 func grab_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 	var slot_data = inventory_slots[index]
 	if slot_data and grabbed_slot_data.quantity + 1 <= 999 and slot_data.item_data == grabbed_slot_data.item_data:

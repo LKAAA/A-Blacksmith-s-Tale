@@ -86,5 +86,5 @@ layout_mode = 2
 
 [node name="Inventory" parent="." instance=ExtResource("3_v6quj")]
 layout_mode = 1
-offset_top = 11.0
-offset_bottom = 43.0
+offset_top = 13.0
+offset_bottom = 101.0

@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="ItemDataTool" load_steps=3 format=3 uid="uid://b28a8c0aq5y08"]
+[gd_resource type="Resource" script_class="ItemDataTool" load_steps=4 format=3 uid="uid://b28a8c0aq5y08"]
 
 [ext_resource type="Script" uid="uid://bygdluhg5efcj" path="res://Data/Scripts/item_data_tool.gd" id="1_c7s48"]
-[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="2_odx8o"]
+[ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_c7s48"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbqlv"]
+atlas = ExtResource("2_c7s48")
+region = Rect2(80, 64, 16, 16)
 
 [resource]
 script = ExtResource("1_c7s48")
@@ -11,7 +15,7 @@ tool_damage = 1
 name = "Iron Pickaxe"
 id = 4
 description = "A pickaxe made of iron."
-sprite = ExtResource("2_odx8o")
+sprite = SubResource("AtlasTexture_pbqlv")
 type = "Tool"
 sellable = true
 buy_price = 400

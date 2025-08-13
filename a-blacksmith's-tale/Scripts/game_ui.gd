@@ -43,6 +43,7 @@ func set_active_slot() -> void:
 func _set_hotbar_inventory(inventory_data: InventoryData) -> void:
 	hotbar.set_inventory_data(inventory_data, 12, false)
 	player_inventory = inventory_data
+	hotbar.size = hotbar.get_minimum_size()
 
 func get_active_item() -> ItemData:
 	if player_inventory.inventory_slots[active_slot]:

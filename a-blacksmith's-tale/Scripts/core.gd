@@ -54,7 +54,7 @@ func _request_dialogue(object) -> void:
 	dialogue_manager._choose_message(object)
 
 func _on_dialogue_manager_finished() -> void:
-	Global.game_paused = false
+	Global.unpause_game()
 	#next_label.visible = true
 
 func _on_dialogue_manager_message_completed() -> void:
@@ -70,15 +70,24 @@ func _on_dialogue_manager_message_requested() -> void:
 
 #region Inventory
 
+func escape_ui() -> void:
+	if shop_ui.visible:
+		hide_shop_ui()
+	else:
+		toggle_inventory_interface()
+
 func toggle_inventory_interface(external_inventory_owner = null) -> void:
+	if shop_ui.visible:
+		return
+	
 	menu_ui.visible = !menu_ui.visible
 	
 	if menu_ui.visible:
 		game_ui.hide()
-		Global.game_paused = true
+		Global.pause_game()
 	else:
 		game_ui.show()
-		Global.game_paused = false
+		Global.unpause_game()
 	
 	menu_ui._update_player_inventory(player.inventory)
 	menu_ui.player_inventory.visible = true
@@ -88,13 +97,11 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 		menu_ui.external_inventory.visible = true
 		menu_ui.external = true
 		external = true
-		menu_ui.player_inventory.position = Vector2(150,180)
 	else:
 		menu_ui.clear_external_inventory()
 		menu_ui.external_inventory.visible = false
 		menu_ui.external = false
 		external = false
-		menu_ui.player_inventory.position = Vector2(150,141)
 
 func load_external_inventories(zone: Zone) -> void:
 	var external_inventories: Array = zone.get_external_inventories()
@@ -113,15 +120,21 @@ func unload_external_inventories(zone: Zone) -> void:
 
 #region Shop UI
 
+func hide_shop_ui() -> void:
+	if shop_ui.visible:
+		shop_ui.hide()
+		game_ui.show()
+		Global.unpause_game()
+
 func toggle_shop_ui(shop_data: ShopData) -> void:
 	shop_ui.visible = !shop_ui.visible
 	
 	if shop_ui.visible:
 		game_ui.hide()
-		Global.game_paused = true
+		Global.pause_game()
 	else:
 		game_ui.show()
-		Global.game_paused = false
+		Global.unpause_game()
 	
 	shop_ui.set_shop(shop_data, player.inventory)
 
@@ -158,6 +171,7 @@ func load_zone(zone: String = "", transition: int = 99) -> void:
 		player.position = Vector2(300,80)
 		player.inventory.inventory_slots.resize(36)
 		player.open_inventory.connect(toggle_inventory_interface)
+		player.escape_ui.connect(escape_ui)
 		player.use.connect(game_ui.use_slot)
 		player.request_break.connect(request_break)
 		menu_ui._set_player_inventory(player.inventory)

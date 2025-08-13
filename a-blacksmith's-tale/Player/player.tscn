@@ -174,17 +174,19 @@ script = ExtResource("1_cx3in")
 inventory = ExtResource("2_10i02")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_hgb4b")
 animation = &"Idle_Down"
 autoplay = "Idle_Down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_t14g3")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(0, -9)
 collision_layer = 0
 collision_mask = 320
 monitorable = false

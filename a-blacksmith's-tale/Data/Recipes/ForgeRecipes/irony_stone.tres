@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RecipeData" load_steps=6 format=3 uid="uid://dplusuhn6wen1"]
+
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_dxbe0"]
+[ext_resource type="Resource" uid="uid://dm4oa85xd4lmy" path="res://Data/Items/stone.tres" id="2_4s3gb"]
+[ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="2_xj6gg"]
+[ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/iron_ore.tres" id="3_t6kav"]
+[ext_resource type="Resource" uid="uid://dyo1byeq58lh2" path="res://Data/Items/iron_bar.tres" id="4_t5knk"]
+
+[resource]
+script = ExtResource("2_xj6gg")
+recipe_name = "Irony Stone"
+ingredients = Array[ExtResource("1_dxbe0")]([ExtResource("2_4s3gb"), ExtResource("2_4s3gb"), ExtResource("3_t6kav"), ExtResource("3_t6kav")])
+output = Array[ExtResource("1_dxbe0")]([ExtResource("4_t5knk"), ExtResource("4_t5knk"), ExtResource("4_t5knk"), ExtResource("4_t5knk"), ExtResource("4_t5knk")])
+time_to_make = 0
+metadata/_custom_type_script = "uid://c53g5l4c0tu8s"

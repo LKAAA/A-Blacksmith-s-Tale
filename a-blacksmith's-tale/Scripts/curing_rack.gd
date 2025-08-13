@@ -13,6 +13,10 @@ var ready_to_pickup: bool = false
 
 func _ready() -> void:
 	interact_area.interact = Callable(self, "_on_interact")
+	recipes = Global.load_recipes("res://Data/Recipes/TanningRecipes/")
+	
+	Global.unpaused.connect(unpaused_game)
+	Global.paused.connect(paused_game)
 
 func _on_interact() -> void:
 	if not active:
@@ -51,11 +55,19 @@ func begin_curing() -> void:
 				active = true
 				sprite_2d.play("Active")
 				print("Start Curing")
-				
-	
 
 # Change this to check active item vs inventory
 # Add ya know actually turning the item into something different
+
+func paused_game() -> void:
+	if active:
+		print("Paused tanning")
+		timer.paused = true
+
+func unpaused_game() -> void:
+	if active:
+		print("unpaused tanning")
+		timer.paused = false
 
 func _on_timer_timeout() -> void:
 	print("DONE")

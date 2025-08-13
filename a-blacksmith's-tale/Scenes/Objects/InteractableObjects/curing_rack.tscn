@@ -34,13 +34,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hkp2"]
-size = Vector2(32, 0)
+size = Vector2(32, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8coi"]
 size = Vector2(32, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8io8"]
-size = Vector2(32, 13)
+size = Vector2(32, 20)
 
 [node name="CuringRack" type="StaticBody2D"]
 script = ExtResource("1_u7nyp")
@@ -53,7 +53,7 @@ animation = &"Active"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_4hkp2")
 metadata/_edit_lock_ = true
 
@@ -70,7 +70,7 @@ one_shot = true
 [node name="BehindAdjustment" parent="." instance=ExtResource("5_nm6v6")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BehindAdjustment"]
-position = Vector2(0, -5.5)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_d8io8")
 
 [connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]

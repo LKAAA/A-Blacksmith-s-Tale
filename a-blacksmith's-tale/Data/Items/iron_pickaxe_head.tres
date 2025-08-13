@@ -1,14 +1,18 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://r4bslb1evnvq"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://r4bslb1evnvq"]
 
 [ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_hkxhw"]
-[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="2_kp151"]
+[ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_siu8n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihag1"]
+atlas = ExtResource("2_siu8n")
+region = Rect2(64, 64, 16, 16)
 
 [resource]
 script = ExtResource("1_hkxhw")
 name = "Iron Pickaxe Head"
 id = 7
 description = "An iron pickaxe head."
-sprite = ExtResource("2_kp151")
+sprite = SubResource("AtlasTexture_ihag1")
 type = "Material"
 sellable = true
 buy_price = 1

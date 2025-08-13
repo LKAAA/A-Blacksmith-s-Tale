@@ -28,8 +28,6 @@ func populate_grid(inv: InventoryData, slots_to_update: int = 36, interactable: 
 	
 	inventory_slots.clear()   
 	
-	
-	
 	print("Slots to update: " + str(slots_to_update))
 	for index in range(slots_to_update):
 		var slot = SLOT.instantiate()
@@ -41,8 +39,6 @@ func populate_grid(inv: InventoryData, slots_to_update: int = 36, interactable: 
 		
 		if inv.inventory_slots[index]:
 			slot.set_slot_data(inv.inventory_slots[index])
-	
-	size.y = 88.0
 	
 	if not inv.inventory_slots.size() == inventory_slots.size():
 		printerr("Something went wrong, there aren't enough slots")

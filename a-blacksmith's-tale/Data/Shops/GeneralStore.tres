@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="3_6m1ts"]
 [ext_resource type="Resource" uid="uid://dm4oa85xd4lmy" path="res://Data/Items/stone.tres" id="4_5p4k8"]
 [ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/iron_ore.tres" id="5_xyyge"]
-[ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/uncured_leather.tres" id="6_tmea4"]
+[ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/animal_hide.tres" id="6_tmea4"]
 [ext_resource type="Resource" uid="uid://b28a8c0aq5y08" path="res://Data/Items/iron_pickaxe.tres" id="7_6m1ts"]
 
 [resource]

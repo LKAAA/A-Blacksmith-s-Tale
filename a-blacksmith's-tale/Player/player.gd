@@ -23,6 +23,7 @@ enum PLAYER_STATES { MOVE, DODGEROLL, ATTACK, INTERACTING }
 var current_state: PLAYER_STATES 
 
 signal open_inventory(inventory: InventoryData)
+signal escape_ui
 signal use
 signal request_break
 
@@ -55,6 +56,9 @@ func _handle_input() -> void:
 	if Input.is_action_just_pressed("ui_inventory"):
 		open_inventory.emit()
 		_play_idle_animation()
+	
+	if Input.is_action_just_pressed("ui_esc"):
+		escape_ui.emit()
 	
 	if not Global.game_paused:
 		if Input.is_action_just_pressed("ui_use"):

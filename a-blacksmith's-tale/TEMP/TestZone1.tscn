@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=43 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://c14phobpam5im" path="res://Assets/Sprites/BlacksmithBaseTileset.png" id="2_r6337"]
@@ -6,17 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://xbr07uqgqq1r" path="res://Scenes/transition_zone.tscn" id="5_bo2f2"]
 [ext_resource type="PackedScene" uid="uid://uid2qlo1vyf5" path="res://Scenes/item_pickup.tscn" id="6_vjrfg"]
 [ext_resource type="Script" uid="uid://2ix4cc5ucs7j" path="res://Data/Scripts/slot_data.gd" id="8_yhkl1"]
+[ext_resource type="Resource" uid="uid://dm4oa85xd4lmy" path="res://Data/Items/stone.tres" id="9_7jjfm"]
+[ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/iron_ore.tres" id="10_lvl10"]
 [ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="10_oamql"]
 [ext_resource type="Resource" uid="uid://b28a8c0aq5y08" path="res://Data/Items/iron_pickaxe.tres" id="13_g8qwa"]
 [ext_resource type="PackedScene" uid="uid://cxn142l8tsc8v" path="res://Scenes/Objects/InteractableObjects/chest.tscn" id="14_8d832"]
 [ext_resource type="Script" uid="uid://dfsikqcptkoj0" path="res://Data/Scripts/inventory_data.gd" id="15_uwclm"]
-[ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/uncured_leather.tres" id="16_qsvcl"]
-[ext_resource type="Resource" uid="uid://kpjm1k573bkg" path="res://Data/Items/cured_leather.tres" id="17_quhww"]
+[ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/animal_hide.tres" id="16_qsvcl"]
+[ext_resource type="Resource" uid="uid://kpjm1k573bkg" path="res://Data/Items/leather.tres" id="17_quhww"]
 [ext_resource type="Resource" uid="uid://b2pa1b6wmduol" path="res://Data/Items/fried_egg.tres" id="18_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/InteractableObjects/curing_rack.tscn" id="18_quhww"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="19_dpgyg"]
 [ext_resource type="PackedScene" uid="uid://dhnph3wcef2ko" path="res://Scenes/Objects/npc_core.tscn" id="20_4hkp2"]
-[ext_resource type="Resource" uid="uid://c2xi2unhicxyu" path="res://Data/Recipes/cured_leather.tres" id="20_6bgdf"]
+[ext_resource type="Resource" uid="uid://c2xi2unhicxyu" path="res://Data/Recipes/TanningRecipes/cured_leather.tres" id="20_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://chk276ad3d5n3" path="res://Scenes/Objects/InteractableObjects/harvestable_item.tscn" id="20_dpgyg"]
 [ext_resource type="PackedScene" uid="uid://iycggt6pykno" path="res://Scenes/Objects/InteractableObjects/forge.tscn" id="20_x8coi"]
 [ext_resource type="Script" uid="uid://bc8dn2l61tmo2" path="res://Scripts/npc_schedule_tool.gd" id="21_6bgdf"]
@@ -278,6 +280,24 @@ item_data = ExtResource("13_g8qwa")
 quantity = 1
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
+[sub_resource type="Resource" id="Resource_lvl10"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("9_7jjfm")
+quantity = 1
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
+
+[sub_resource type="Resource" id="Resource_x5qe2"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("10_lvl10")
+quantity = 60
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
+
+[sub_resource type="Resource" id="Resource_vdpjq"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("10_lvl10")
+quantity = 1
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
+
 [sub_resource type="Resource" id="Resource_qsvcl"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("10_oamql")
@@ -286,7 +306,7 @@ metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
 [sub_resource type="Resource" id="Resource_r6337"]
 script = ExtResource("15_uwclm")
-inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_6mo1a"), null, null, null, SubResource("Resource_qsvcl"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_6mo1a"), SubResource("Resource_lvl10"), SubResource("Resource_x5qe2"), SubResource("Resource_vdpjq"), SubResource("Resource_qsvcl"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
 [sub_resource type="Resource" id="Resource_dpgyg"]
@@ -313,6 +333,7 @@ inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_dpgyg"), 
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
+position = Vector2(8, 8)
 script = ExtResource("1_x1thp")
 zone_id = 1
 transitions = [NodePath("Transition Zones/NorthTransition"), NodePath("Transition Zones/EastTransition")]

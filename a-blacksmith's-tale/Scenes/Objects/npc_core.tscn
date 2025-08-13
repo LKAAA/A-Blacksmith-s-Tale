@@ -9,15 +9,14 @@
 atlas = ExtResource("2_amo08")
 region = Rect2(32, 33, 16, 31)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xm65n"]
-radius = 5.0
-height = 28.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5bpb"]
+size = Vector2(14, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jjfm"]
 size = Vector2(28, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvl10"]
-size = Vector2(20, 8)
+size = Vector2(20, 22)
 
 [node name="NPCCore" type="CharacterBody2D" groups=["npc_characters"]]
 z_index = 1
@@ -27,8 +26,8 @@ script = ExtResource("1_coole")
 texture = SubResource("AtlasTexture_x8coi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("CapsuleShape2D_xm65n")
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_m5bpb")
 
 [node name="InteractArea" parent="." instance=ExtResource("4_k1dkh")]
 
@@ -39,7 +38,7 @@ shape = SubResource("RectangleShape2D_7jjfm")
 [node name="BehindAdjustment" parent="." instance=ExtResource("5_g3lnf")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BehindAdjustment"]
-position = Vector2(0, -13)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_lvl10")
 
 [connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]

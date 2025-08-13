@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://kpjm1k573bkg"]
+
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_sqh57"]
+[ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_fq6nx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b6mt"]
+atlas = ExtResource("2_fq6nx")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_sqh57")
+name = "Leather"
+id = 2
+description = "A length of cured leather."
+sprite = SubResource("AtlasTexture_6b6mt")
+type = "Material"
+sellable = true
+buy_price = 1
+sell_price = 1
+stackable = true
+metadata/_custom_type_script = "uid://1sj1rrsd7jss"
