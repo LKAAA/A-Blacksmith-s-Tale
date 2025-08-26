@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi7d83vkxosac"
-path="res://.godot/imported/CliffTilesheetPass1.png-d644af2267b3ded46dee3570730eaec0.ctex"
+uid="uid://2n611u1wf6pu"
+path="res://.godot/imported/CliffTilesheetPass2.png-6fdc66e835ee71c90bbe04ded94a833d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/CliffTilesheetPass1.png"
-dest_files=["res://.godot/imported/CliffTilesheetPass1.png-d644af2267b3ded46dee3570730eaec0.ctex"]
+source_file="res://Assets/Sprites/CliffTilesheetPass2.png"
+dest_files=["res://.godot/imported/CliffTilesheetPass2.png-6fdc66e835ee71c90bbe04ded94a833d.ctex"]
 
 [params]
 
