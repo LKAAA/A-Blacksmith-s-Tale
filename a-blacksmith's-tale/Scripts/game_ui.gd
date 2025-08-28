@@ -8,12 +8,12 @@ var active_slot: int = 0
 
 func _process(delta: float) -> void:
 	if not Global.game_paused: 
-		if Input.is_action_just_pressed("ui_scroll_up"):
+		if Input.is_action_just_pressed("scroll_up"):
 			active_slot = wrapi(active_slot - 1, 0, 12)  # Wraps between 0 and 11
 			set_active_slot()
 			print(active_slot)
 
-		if Input.is_action_just_pressed("ui_scroll_down"):
+		if Input.is_action_just_pressed("scroll_down"):
 			active_slot = wrapi(active_slot + 1, 0, 12)
 			set_active_slot()
 			print(active_slot)

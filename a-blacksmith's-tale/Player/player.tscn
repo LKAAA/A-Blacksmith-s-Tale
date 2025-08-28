@@ -1,10 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://cuy4dikcyhbr2"]
+[gd_scene load_steps=29 format=3 uid="uid://cuy4dikcyhbr2"]
 
 [ext_resource type="Script" uid="uid://cfaixpdbolxqs" path="res://Player/player.gd" id="1_cx3in"]
 [ext_resource type="Texture2D" uid="uid://bqktms2cbpgah" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_0djqn"]
 [ext_resource type="Resource" uid="uid://da5paxap81syu" path="res://Data/Inventories/player_inventory.tres" id="2_10i02"]
+[ext_resource type="PackedScene" uid="uid://jt1ghw5v6uqc" path="res://Scenes/Components/stats_manager.tscn" id="3_fhl08"]
 [ext_resource type="Texture2D" uid="uid://cokeb7saw2h3y" path="res://Assets/Sprites/CharacterSpriteSheet1.png" id="3_k53q1"]
 [ext_resource type="Texture2D" uid="uid://cvj1f4u77wcbv" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="3_o5lx4"]
+[ext_resource type="Script" uid="uid://cei0o4voe378e" path="res://Scripts/StatSystem/stat.gd" id="4_od3ui"]
+[ext_resource type="Resource" uid="uid://bdpsvndtblx45" path="res://Data/Stats/health.tres" id="5_00tjw"]
+[ext_resource type="Resource" uid="uid://c133d4wmnlbkr" path="res://Data/Stats/walk_speed.tres" id="6_x3vf3"]
+[ext_resource type="Resource" uid="uid://bxd5vsro4mtj1" path="res://Data/Stats/run_speed.tres" id="7_apopc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhl08"]
 atlas = ExtResource("3_k53q1")
@@ -172,6 +177,10 @@ z_as_relative = false
 collision_layer = 129
 script = ExtResource("1_cx3in")
 inventory = ExtResource("2_10i02")
+
+[node name="StatsManager" parent="." instance=ExtResource("3_fhl08")]
+unique_name_in_owner = true
+stat_list = Array[ExtResource("4_od3ui")]([ExtResource("5_00tjw"), ExtResource("7_apopc"), ExtResource("6_x3vf3")])
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -9)

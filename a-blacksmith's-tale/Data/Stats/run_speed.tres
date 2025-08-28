@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=3 format=3 uid="uid://bxd5vsro4mtj1"]
+
+[ext_resource type="Script" uid="uid://cjkugyt7dfrn8" path="res://Scripts/StatSystem/modifier.gd" id="1_p5i1q"]
+[ext_resource type="Script" uid="uid://cei0o4voe378e" path="res://Scripts/StatSystem/stat.gd" id="2_lwsdg"]
+
+[resource]
+script = ExtResource("2_lwsdg")
+name = "Run Speed"
+base = 90.0
+modified_base = 0.0
+current = 90.0
+modifiers = Array[ExtResource("1_p5i1q")]([])
+metadata/_custom_type_script = "uid://cei0o4voe378e"

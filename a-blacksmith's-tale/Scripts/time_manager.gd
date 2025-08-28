@@ -91,7 +91,7 @@ func _calculate_time_properties() -> void:
 	decideSeason()
 	Global.cur_hour = hour_12
 	Global.cur_minute = minute
-	Global.am_or_pm = am_or_pm
+	Global.am_pm = am_or_pm
 	emit_current_time()
 
 func _set_canvas_color() -> void:
@@ -142,7 +142,7 @@ func decideSeason():
 			current_season = "Fall"
 		4: 
 			current_season = "Winter"
-	Global.current_season = current_season
+	Global.cur_season = current_season
 
 func emit_current_time() -> void:
 	#print("%s\n %s, Day: %d\n%02d:%02d %s" % [current_season, current_weekday, day, hour_12, minute, am_or_pm])

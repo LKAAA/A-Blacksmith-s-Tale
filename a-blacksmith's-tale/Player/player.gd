@@ -7,10 +7,9 @@ class_name PlayerBase extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @export var inventory: InventoryData = InventoryData.new()
+@onready var stats_manager: CharacterStats = %StatsManager
 
-const WALKSPEED: float = 60 # Base walkspeed
-const RUNSPEED: float = 90 # Base runspeed
-var speed: float # current speed with any bonuses
+var speed: float
 var isSprinting: bool = false
 
 const ROLLSPEED: float = 150
@@ -28,7 +27,7 @@ signal use
 signal request_break
 
 func _ready() -> void:
-	speed = calculate_current_speed(0)
+	speed = stats_manager.get_stat("Walk Speed").current
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -44,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func _handle_movement() -> void:
-	input_vector = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
+	input_vector = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
 	if input_vector != Vector2.ZERO:
 		roll_vector = input_vector
 	velocity = input_vector * speed
@@ -53,26 +52,30 @@ func _handle_movement() -> void:
 
 func _handle_input() -> void:
 	
-	if Input.is_action_just_pressed("ui_inventory"):
+	if Input.is_action_just_pressed("inventory"):
 		open_inventory.emit()
 		_play_idle_animation()
 	
-	if Input.is_action_just_pressed("ui_esc"):
+	if Input.is_action_just_pressed("ui_leave"):
 		escape_ui.emit()
 	
 	if not Global.game_paused:
-		if Input.is_action_just_pressed("ui_use"):
+		if Input.is_action_just_pressed("use"):
 			execute_breakable()
 			#use.emit()
 		
-		if Input.is_action_just_pressed("ui_interact"):
+		if Input.is_action_just_pressed("interact"):
 			execute_interaction()
 		
-		if Input.is_action_just_pressed("ui_sprint"):
-			isSprinting = !isSprinting
-			speed = calculate_current_speed(0)
+		if Input.is_action_just_pressed("sprint"):
+			if isSprinting:
+				isSprinting = false
+				speed = stats_manager.get_stat("Walk Speed").current
+			else:
+				isSprinting = true
+				speed = stats_manager.get_stat("Run Speed").current
 		
-		if Input.is_action_just_pressed("ui_dodgeroll"):
+		if Input.is_action_just_pressed("dodgeroll"):
 			dodgeroll()
 
 func dodgeroll() -> void:
@@ -105,12 +108,6 @@ func _play_idle_animation() -> void:
 		3: sprite.play("Idle_Right")
 		4: sprite.play("Idle_Left")
 		_: sprite.play("Idle_Down")
-
-func calculate_current_speed(bonuses) -> float:
-	if isSprinting:
-		return RUNSPEED + bonuses
-	else:
-		return WALKSPEED + bonuses
 
 func _on_sprite_2d_animation_finished() -> void:
 	if current_state == PLAYER_STATES.DODGEROLL:

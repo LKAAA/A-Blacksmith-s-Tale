@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=3 format=3 uid="uid://bdpsvndtblx45"]
+
+[ext_resource type="Script" uid="uid://cjkugyt7dfrn8" path="res://Scripts/StatSystem/modifier.gd" id="1_as7ec"]
+[ext_resource type="Script" uid="uid://cei0o4voe378e" path="res://Scripts/StatSystem/stat.gd" id="2_iy7ek"]
+
+[resource]
+script = ExtResource("2_iy7ek")
+name = "Health"
+base = 100.0
+modified_base = 0.0
+current = 100.0
+modifiers = Array[ExtResource("1_as7ec")]([])
+metadata/_custom_type_script = "uid://cei0o4voe378e"
