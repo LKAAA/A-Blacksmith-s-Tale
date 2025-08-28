@@ -19,9 +19,9 @@ const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY
 # Variables
 var season: int
 var day: int
-var cur_weekday: String
-var cur_season: String
-var am_pm: String
+var current_weekday: String
+var current_season: String
+var am_or_pm: String
 var hour: int
 var hour_12: int = 1
 var minute: int
@@ -31,7 +31,7 @@ var past_minute: float = -1.0
 var past_hour: float = -1.0
 
 # Signals
-signal time_tick(_day: int, _hour: int, _hour_12: int, _minute: int, _cur_weekday: String, _cur_season: String, _am_pm: String)
+signal time_tick(_day: int, _hour: int, _hour_12: int, _minute: int, _current_weekday: String, _current_season: String, _am_or_pm: String)
 signal day_end(next_day)
 signal hour_passed
 
@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 		_recalculate_time()
 		_set_canvas_color()
 		
-		if am_pm == "AM" && hour == 2:
+		if am_or_pm == "AM" && hour == 2:
 			day_end.emit(day + 1)
 			new_day()
 
@@ -85,20 +85,20 @@ func _recalculate_time() -> void:
 
 func _calculate_time_properties() -> void:
 	hour_12 = hour if hour <= 12 else hour - 1
-	am_pm = "AM" if hour < 12 else "PM"
+	am_or_pm = "AM" if hour < 12 else "PM"
 	if hour == 0: hour_12 = 12
 	decideWeekday()
 	decideSeason()
 	Global.cur_hour = hour_12
 	Global.cur_minute = minute
-	Global.am_pm = am_pm
+	Global.am_or_pm = am_or_pm
 	emit_current_time()
 
 func _set_canvas_color() -> void:
 	var value = (sin (time - PI / 2) + 1.0) / 2.0
-	if am_pm == "AM":
+	if am_or_pm == "AM":
 		daylight_cycle_modulator.color = gradient.gradient.sample(value - 0.1) # Make it a tiny bit darker in the morning
-	if am_pm == "PM":
+	if am_or_pm == "PM":
 		daylight_cycle_modulator.color = gradient.gradient.sample(value + 0.1) # Delay it getting dark by a tiny bit
 
 func new_day():
@@ -117,33 +117,33 @@ func new_day():
 func decideWeekday():
 	match day:
 		1,8,15,22:
-			cur_weekday = "Monday"
+			current_weekday = "Monday"
 		2,9,16,23:
-			cur_weekday = "Tuesday"
+			current_weekday = "Tuesday"
 		3,10,17,24:
-			cur_weekday = "Wednesday"
+			current_weekday = "Wednesday"
 		4,11,18,25:
-			cur_weekday = "Thursday"
+			current_weekday = "Thursday"
 		5,12,19,26:
-			cur_weekday = "Friday"
+			current_weekday = "Friday"
 		6,13,20,27:
-			cur_weekday = "Saturday"
+			current_weekday = "Saturday"
 		7,14,21,28:
-			cur_weekday = "Sunday"
-	Global.cur_day = cur_weekday
+			current_weekday = "Sunday"
+	Global.cur_day = current_weekday
 
 func decideSeason():
 	match season:
 		1:
-			cur_season = "Spring"
+			current_season = "Spring"
 		2:
-			cur_season = "Summer"
+			current_season = "Summer"
 		3: 
-			cur_season = "Fall"
+			current_season = "Fall"
 		4: 
-			cur_season = "Winter"
-	Global.cur_season = cur_season
+			current_season = "Winter"
+	Global.current_season = current_season
 
 func emit_current_time() -> void:
-	#print("%s\n %s, Day: %d\n%02d:%02d %s" % [cur_season, cur_weekday, day, hour_12, minute, am_pm])
-	time_tick.emit(day, hour, hour_12, minute, cur_weekday, cur_season, am_pm)
+	#print("%s\n %s, Day: %d\n%02d:%02d %s" % [current_season, current_weekday, day, hour_12, minute, am_or_pm])
+	time_tick.emit(day, hour, hour_12, minute, current_weekday, current_season, am_or_pm)
