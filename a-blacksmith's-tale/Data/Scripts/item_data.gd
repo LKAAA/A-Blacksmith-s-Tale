@@ -13,3 +13,9 @@ class_name ItemData extends Resource
 
 func use(_target) -> void:
 	pass
+
+func equipped(_target) -> void:
+	pass
+
+func unequipped(_target) -> void:
+	pass

@@ -35,7 +35,7 @@ func clear_external_inventory() -> void:
 		external_inventory_owner = null
 
 func _update_player_inventory(inventory_data: InventoryData) -> void:
-	player_inventory.populate_grid(inventory_data, 36)
+	player_inventory.populate_grid(inventory_data, 36, true)
 
 func on_inventory_interact(inventory_data: InventoryData, index: int, button: int) -> void:
 	if external == true:

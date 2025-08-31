@@ -5,6 +5,8 @@ signal slot_clicked(index: int, button: int)
 @onready var texture_rect: TextureRect = %TextureRect
 @onready var label: Label = %Label
 
+@export var locked: bool = false
+
 @export var slot_data: SlotData
 
 func _ready() -> void:
@@ -37,8 +39,11 @@ func update_popup() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and (event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT) and event.is_pressed():
-		print("Slot clicked: " + str(get_index()))
-		slot_clicked.emit(get_index(), event.button_index)
+		if not locked:
+			print("Slot clicked: " + str(get_index()))
+			slot_clicked.emit(get_index(), event.button_index)
+		else:
+			print("This slot is locked.")
 
 
 func _on_mouse_entered() -> void:

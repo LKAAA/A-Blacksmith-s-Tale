@@ -42,7 +42,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_se76q")
-metadata/_edit_lock_ = true
 
 [node name="PlayerInventory" parent="UI/Menu_UI" instance=ExtResource("3_gxbf5")]
 unique_name_in_owner = true

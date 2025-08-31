@@ -1,5 +1,7 @@
 extends Node
 
+var unlocked_inventory_slots: int = 12
+
 var NPCS_MET = {
 	"TestNPC": false,
 	"TestNPC2": false,
