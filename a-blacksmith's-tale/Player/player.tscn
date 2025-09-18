@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cuy4dikcyhbr2"]
+[gd_scene load_steps=32 format=3 uid="uid://cuy4dikcyhbr2"]
 
 [ext_resource type="Script" uid="uid://cfaixpdbolxqs" path="res://Player/player.gd" id="1_cx3in"]
 [ext_resource type="Texture2D" uid="uid://bqktms2cbpgah" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_0djqn"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://bdpsvndtblx45" path="res://Data/Stats/health.tres" id="5_00tjw"]
 [ext_resource type="Resource" uid="uid://c133d4wmnlbkr" path="res://Data/Stats/walk_speed.tres" id="6_x3vf3"]
 [ext_resource type="Resource" uid="uid://bxd5vsro4mtj1" path="res://Data/Stats/run_speed.tres" id="7_apopc"]
+[ext_resource type="Texture2D" uid="uid://d1du4ohmnv6xa" path="res://TEMP/MaleWalkTest.png" id="10_apopc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhl08"]
 atlas = ExtResource("3_k53q1")
@@ -39,13 +40,21 @@ region = Rect2(16, 16, 16, 16)
 atlas = ExtResource("3_o5lx4")
 region = Rect2(32, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w415j"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(96, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_apopc"]
+atlas = ExtResource("10_apopc")
+region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jljol"]
-atlas = ExtResource("2_0djqn")
-region = Rect2(144, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
+atlas = ExtResource("10_apopc")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5o4e"]
+atlas = ExtResource("10_apopc")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu6f8"]
+atlas = ExtResource("10_apopc")
+region = Rect2(48, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qto7o"]
 atlas = ExtResource("2_0djqn")
@@ -121,10 +130,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w415j")
+"texture": SubResource("AtlasTexture_apopc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jljol")
+"texture": SubResource("AtlasTexture_5htga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5o4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu6f8")
 }],
 "loop": true,
 "name": &"Walk_Down",
@@ -185,8 +200,10 @@ stat_list = Array[ExtResource("4_od3ui")]([ExtResource("5_00tjw"), ExtResource("
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_hgb4b")
-animation = &"Idle_Down"
+animation = &"Walk_Down"
 autoplay = "Idle_Down"
+frame = 3
+frame_progress = 0.0915676
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -9)

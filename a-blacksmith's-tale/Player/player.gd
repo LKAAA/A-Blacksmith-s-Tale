@@ -90,7 +90,7 @@ func _handle_movement_anims() -> void:
 			sprite.play("Idle_Up")
 			prev_direction = 1
 		elif input_vector.y > 0:
-			sprite.play("Idle_Down")
+			sprite.play("Walk_Down")
 			prev_direction = 2
 		elif input_vector.x > 0:
 			sprite.play("Idle_Right")
