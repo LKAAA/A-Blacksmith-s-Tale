@@ -86,28 +86,28 @@ func dodgeroll() -> void:
 # CHANGE EACH TO "WALK_XXXX" when walk anims are in
 func _handle_movement_anims() -> void:
 	if current_state == PLAYER_STATES.MOVE:
-		if input_vector.y < 0:
-			sprite.play("Idle_Up")
-			prev_direction = 1
-		elif input_vector.y > 0:
-			sprite.play("Walk_Down")
-			prev_direction = 2
-		elif input_vector.x > 0:
-			sprite.play("Idle_Right")
+		if input_vector.x > 0:
+			sprite.play("Walk_Right_M")
 			prev_direction = 3
 		elif input_vector.x < 0:
-			sprite.play("Idle_Left")
+			sprite.play("Walk_Left_M")
 			prev_direction = 4
+		elif input_vector.y < 0:
+			sprite.play("Walk_Up_M")
+			prev_direction = 1
+		elif input_vector.y > 0:
+			sprite.play("Walk_Down_M")
+			prev_direction = 2
 		else:
 			_play_idle_animation()
 
 func _play_idle_animation() -> void:
 	match prev_direction:
-		1: sprite.play("Idle_Up")
-		2: sprite.play("Idle_Down")
-		3: sprite.play("Idle_Right")
-		4: sprite.play("Idle_Left")
-		_: sprite.play("Idle_Down")
+		1: sprite.play("Idle_Up_M")
+		2: sprite.play("Idle_Down_M")
+		3: sprite.play("Idle_Right_M")
+		4: sprite.play("Idle_Left_M")
+		_: sprite.play("Idle_Down_M")
 
 func _on_sprite_2d_animation_finished() -> void:
 	if current_state == PLAYER_STATES.DODGEROLL:
