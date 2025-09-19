@@ -8,6 +8,7 @@ class_name PlayerBase extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @export var inventory: InventoryData = InventoryData.new()
 @onready var stats_manager: CharacterStats = %StatsManager
+var gender_suffix
 
 var speed: float
 var isSprinting: bool = false
@@ -28,6 +29,10 @@ signal request_break
 
 func _ready() -> void:
 	speed = stats_manager.get_stat("Walk Speed").current
+	if Global.player_gender == "male":
+		gender_suffix = "_M"
+	else:
+		gender_suffix = "_F"
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -84,30 +89,30 @@ func dodgeroll() -> void:
 	velocity = roll_vector.normalized() * ROLLSPEED
 	sprite.play("Roll_Down")
 # CHANGE EACH TO "WALK_XXXX" when walk anims are in
+
 func _handle_movement_anims() -> void:
-	if current_state == PLAYER_STATES.MOVE:
-		if input_vector.x > 0:
-			sprite.play("Walk_Right_M")
-			prev_direction = 3
-		elif input_vector.x < 0:
-			sprite.play("Walk_Left_M")
-			prev_direction = 4
-		elif input_vector.y < 0:
-			sprite.play("Walk_Up_M")
-			prev_direction = 1
-		elif input_vector.y > 0:
-			sprite.play("Walk_Down_M")
-			prev_direction = 2
-		else:
-			_play_idle_animation()
+	if input_vector.x > 0:
+		sprite.play("Walk_Right" + gender_suffix)
+		prev_direction = 3
+	elif input_vector.x < 0:
+		sprite.play("Walk_Left" + gender_suffix)
+		prev_direction = 4
+	elif input_vector.y < 0:
+		sprite.play("Walk_Up" + gender_suffix)
+		prev_direction = 1
+	elif input_vector.y > 0:
+		sprite.play("Walk_Down" + gender_suffix)
+		prev_direction = 2
+	else:
+		_play_idle_animation()
 
 func _play_idle_animation() -> void:
 	match prev_direction:
-		1: sprite.play("Idle_Up_M")
-		2: sprite.play("Idle_Down_M")
-		3: sprite.play("Idle_Right_M")
-		4: sprite.play("Idle_Left_M")
-		_: sprite.play("Idle_Down_M")
+		1: sprite.play("Idle_Up" + gender_suffix)
+		2: sprite.play("Idle_Down" + gender_suffix)
+		3: sprite.play("Idle_Right" + gender_suffix)
+		4: sprite.play("Idle_Left" + gender_suffix)
+		_: sprite.play("Idle_Down" + gender_suffix)
 
 func _on_sprite_2d_animation_finished() -> void:
 	if current_state == PLAYER_STATES.DODGEROLL:
