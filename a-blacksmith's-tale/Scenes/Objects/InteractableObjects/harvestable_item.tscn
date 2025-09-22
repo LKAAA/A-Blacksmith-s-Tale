@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://chk276ad3d5n3"]
+[gd_scene load_steps=10 format=3 uid="uid://chk276ad3d5n3"]
 
 [ext_resource type="Script" uid="uid://d17a50a47f62d" path="res://Scripts/harvestable_item.gd" id="1_x0og3"]
 [ext_resource type="Resource" uid="uid://b2pa1b6wmduol" path="res://Data/Items/fried_egg.tres" id="2_mclua"]
 [ext_resource type="Texture2D" uid="uid://b7ijt60p65fp2" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="3_rqi6n"]
 [ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="4_frs4t"]
 [ext_resource type="PackedScene" uid="uid://brk8dmxysm7s6" path="res://Scenes/Components/random_sound_player.tscn" id="5_mclua"]
+[ext_resource type="Script" uid="uid://c6dimnd1eafw6" path="res://Scripts/DropTables/loot_component.gd" id="6_rqi6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xm65n"]
 atlas = ExtResource("3_rqi6n")
@@ -34,6 +35,10 @@ shape = SubResource("RectangleShape2D_7jjfm")
 shape = SubResource("RectangleShape2D_lvl10")
 
 [node name="RandomSoundPlayer" parent="." instance=ExtResource("5_mclua")]
+
+[node name="LootComponent" type="Node2D" parent="."]
+script = ExtResource("6_rqi6n")
+metadata/_custom_type_script = "uid://c6dimnd1eafw6"
 
 [connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="InteractArea" to="InteractArea" method="_on_mouse_exited"]

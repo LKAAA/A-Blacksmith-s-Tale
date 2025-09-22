@@ -1,15 +1,14 @@
 extends StaticBody2D
 
-const ITEM_PICKUP = preload("res://Scenes/item_pickup.tscn")
-
 @onready var breakable_area: Area2D = $breakable_area
+@onready var loot_component: LootComponent = %Loot_Component
+
 
 @export var hitpoints: int = 1
 @export_enum("Pickaxe", "Axe", "Shovel") var required_tool_type: String = ""
 @export_range(1, Global.MAX_TOOL_EFFICIENCY) var required_efficiency: int = 1
 
-#var loot_table: LootTable
-@export var item_drop: ItemData
+@export var loot_table: LootTable
 
 func _ready() -> void:
 	breakable_area.hit = Callable(self, "_on_hit")
@@ -33,17 +32,13 @@ func _on_hit(active_item: ItemData) -> void:
 		
 		if hitpoints <= 0:
 			print("Fully broke")
-			var dropped_item = ITEM_PICKUP.instantiate()
-			get_tree().get_root().add_child(dropped_item)
 			
-			var slot_data = SlotData.new()
-			slot_data.item_data = item_drop
-			slot_data.quantity = 4
+			if loot_table:
+				var recieved_loot = loot_table.roll_loot()
+				print("Recieved Loot: ")
 			
-			dropped_item.slot_data = slot_data
-			
-			dropped_item.update_texture()
-			dropped_item.position = self.position
+				for drop in recieved_loot.keys():
+					loot_component.create_pickup(drop, recieved_loot[drop])
 			queue_free()
 			
 			

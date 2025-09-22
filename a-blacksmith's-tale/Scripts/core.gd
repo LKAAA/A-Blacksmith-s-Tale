@@ -125,6 +125,7 @@ func hide_shop_ui() -> void:
 		shop_ui.hide()
 		game_ui.show()
 		Global.unpause_game()
+		Global.shop_active = false
 
 func toggle_shop_ui(shop_data: ShopData) -> void:
 	shop_ui.visible = !shop_ui.visible
@@ -132,9 +133,11 @@ func toggle_shop_ui(shop_data: ShopData) -> void:
 	if shop_ui.visible:
 		game_ui.hide()
 		Global.pause_game()
+		Global.shop_active = true
 	else:
 		game_ui.show()
 		Global.unpause_game()
+		Global.shop_active = false
 	
 	shop_ui.set_shop(shop_data, player.inventory)
 

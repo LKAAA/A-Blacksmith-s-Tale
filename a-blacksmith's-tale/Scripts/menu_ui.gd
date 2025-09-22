@@ -4,9 +4,10 @@ class_name Menu extends Control
 @export var grabbed_slot_padding = -5
 
 @onready var player_inventory: PanelContainer = %PlayerInventory
-@onready var external_inventory: PanelContainer = %ExternalInventory
+@onready var external_inventory: InventoryUI = %ExternalInventory
 
 var external = false
+var external_inv_data: InventoryData = null
 var grabbed_slot_data: SlotData = null
 var external_inventory_owner
 
@@ -20,10 +21,10 @@ func _set_player_inventory(inventory_data: InventoryData) -> void:
 
 func _set_external_inventory(_external_inventory) -> void:
 	external_inventory_owner = _external_inventory
-	var inventory_data = external_inventory_owner.inventory_data
+	external_inv_data = external_inventory_owner.inventory_data
 	
-	inventory_data.inventory_interacted.connect(on_inventory_interact)
-	external_inventory.set_inventory_data(inventory_data)
+	external_inv_data.inventory_interacted.connect(on_inventory_interact)
+	external_inventory.set_inventory_data(external_inv_data)
 
 func clear_external_inventory() -> void:
 	if external_inventory_owner:
@@ -32,6 +33,7 @@ func clear_external_inventory() -> void:
 		inventory_data.inventory_interacted.disconnect(on_inventory_interact)
 		external_inventory.clear_inventory_data(inventory_data)
 		
+		external_inv_data = null
 		external_inventory_owner = null
 
 func _update_player_inventory(inventory_data: InventoryData) -> void:
@@ -40,11 +42,14 @@ func _update_player_inventory(inventory_data: InventoryData) -> void:
 func on_inventory_interact(inventory_data: InventoryData, index: int, button: int) -> void:
 	if external == true:
 		if Input.is_key_pressed(KEY_SHIFT) && button == MOUSE_BUTTON_LEFT:
-			if grabbed_slot_data:
-				pass
+			print("SHIFT CLICK THAT MO FO")
+			if inventory_data == external_inv_data:
+				inventory_data.quick_move_data(index, Global.player.inventory)
 			else:
-				print("SHIFT CLICK THAT MO FO")
-				
+				inventory_data.quick_move_data(index, external_inv_data)
+			
+			return
+	
 	match [grabbed_slot_data, button]:
 		[null, MOUSE_BUTTON_LEFT]:
 			#print("Has nothing, grab all slot data")

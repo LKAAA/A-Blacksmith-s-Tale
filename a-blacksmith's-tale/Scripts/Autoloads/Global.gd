@@ -3,12 +3,16 @@ extends Node
 @export var player: PlayerBase
 @export var player_name: String = "Stevie Wonder"
 @export var player_shop_name: String = "Bricked Up Smithing"
-@export var player_gender: String = "f"
+@export var player_gender: String = "m"
 @export var player_race: String = "Human"
 @export var active_slot: SlotData
 @export var game_paused: bool
+@export var shop_active: bool = false
 signal paused
 signal unpaused
+
+@export var player_gold: int = 9999999999
+
 
 var cur_zone_id: int
 

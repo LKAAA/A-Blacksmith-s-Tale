@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=7 format=3 uid="uid://cnclw3sbpmlac"]
+
+[ext_resource type="Script" uid="uid://dvx6puk3bnkq0" path="res://Scripts/DropTables/loot_entry.gd" id="1_xe51l"]
+[ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="2_7cfcd"]
+[ext_resource type="Resource" uid="uid://cfe48xar3dp0q" path="res://Data/Items/oak_long_tool_handle.tres" id="3_7cfcd"]
+[ext_resource type="Script" uid="uid://wojvluuilm2u" path="res://Scripts/DropTables/loot_table.gd" id="3_o22ex"]
+
+[sub_resource type="Resource" id="Resource_jx2wt"]
+script = ExtResource("1_xe51l")
+item_data = ExtResource("2_7cfcd")
+weight = 1
+drop_chance = 100.0
+amount_low = 12
+amount_high = 24
+metadata/_custom_type_script = "uid://dvx6puk3bnkq0"
+
+[sub_resource type="Resource" id="Resource_o22ex"]
+script = ExtResource("1_xe51l")
+item_data = ExtResource("3_7cfcd")
+weight = 1
+drop_chance = 50.0
+amount_low = 1
+amount_high = 1
+metadata/_custom_type_script = "uid://dvx6puk3bnkq0"
+
+[resource]
+script = ExtResource("3_o22ex")
+entries = Array[ExtResource("1_xe51l")]([SubResource("Resource_jx2wt"), SubResource("Resource_o22ex")])
+rolls = 1
+mode = 1
+metadata/_custom_type_script = "uid://wojvluuilm2u"

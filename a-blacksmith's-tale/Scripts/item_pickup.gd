@@ -22,9 +22,8 @@ func _physics_process(delta: float) -> void:
 		position = position.move_toward(player.position, speed*delta)
 	
 	if inside: 
-		if player.inventory.can_place_slot_data(slot_data):
-			if player.inventory.pick_up_slot_data(slot_data):
-				queue_free()
+		if player.inventory.pick_up_slot_data(slot_data):
+			queue_free()
 
 func _on_outer_body_entered(body: Node2D) -> void:
 	if body: 

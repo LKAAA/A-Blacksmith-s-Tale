@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=44 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://c14phobpam5im" path="res://Assets/Sprites/BlacksmithBaseTileset.png" id="2_r6337"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dhnph3wcef2ko" path="res://Scenes/Objects/npc_core.tscn" id="20_4hkp2"]
 [ext_resource type="Resource" uid="uid://c2xi2unhicxyu" path="res://Data/Recipes/TanningRecipes/cured_leather.tres" id="20_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://chk276ad3d5n3" path="res://Scenes/Objects/InteractableObjects/harvestable_item.tscn" id="20_dpgyg"]
+[ext_resource type="Resource" uid="uid://cnclw3sbpmlac" path="res://Data/LootTables/OakTree_LT.tres" id="20_x5qe2"]
 [ext_resource type="PackedScene" uid="uid://iycggt6pykno" path="res://Scenes/Objects/InteractableObjects/forge.tscn" id="20_x8coi"]
 [ext_resource type="Script" uid="uid://bc8dn2l61tmo2" path="res://Scripts/npc_schedule_tool.gd" id="21_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://btc44ewohabs5" path="res://Scenes/Objects/InteractableObjects/market_stall.tscn" id="21_x8coi"]
@@ -327,6 +328,7 @@ recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 [node name="Tree" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(312, 152)
 required_tool_type = "Pickaxe"
+loot_table = ExtResource("20_x5qe2")
 
 [node name="Sign" parent="Objects" instance=ExtResource("23_x8coi")]
 position = Vector2(296, 248)

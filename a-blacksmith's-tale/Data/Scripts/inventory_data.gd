@@ -6,6 +6,12 @@ signal inventory_interacted(inventory_data: InventoryData, index: int, button: i
 @export var inventory_slots: Array[SlotData] = []
 
 func pick_up_slot_data(slot_data: SlotData) -> bool:
+	if not slot_data:
+		return false
+	
+	if not can_place_slot_data(slot_data):
+		return false
+	
 	for index in inventory_slots.size():
 		if inventory_slots[index] and inventory_slots[index].can_fully_merge_with(slot_data):
 			inventory_slots[index].fully_merge_with(slot_data)
@@ -32,19 +38,16 @@ func pick_up_slot_data(slot_data: SlotData) -> bool:
 
 func can_place_slot_data(slot_data: SlotData) -> bool:
 	if not slot_data:
-		print("Not Slot Data")
 		return false
 	
 	for slot in inventory_slots:
 		if slot and not slot.locked:
-			print("Slot is not unlocked part 1")
 			if slot.can_fully_merge_with(slot_data):
 				return true
 	
 	# 2. Can partially merge (and leftover can fit into an empty unlocked slot)?
 	for slot in inventory_slots:
 		if slot and not slot.locked:
-			print("Slot is not unlocked part 2")
 			if slot.can_partially_merge_with(slot_data, self):
 				# simulate leftover creation
 				var leftover = slot.partially_merge_with(slot_data)
@@ -55,7 +58,7 @@ func can_place_slot_data(slot_data: SlotData) -> bool:
 	
 	for slot in inventory_slots:
 		if not slot:
-			if inventory_slots.find(slot) + 1 >= Progression.unlocked_inventory_slots:
+			if inventory_slots.find(slot) >= Progression.unlocked_inventory_slots:
 				print("Slot is locked")
 			else:
 				return true
@@ -171,6 +174,18 @@ func drop_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 		return grabbed_slot_data
 	else:
 		return null
+
+func quick_move_data(index: int, other_inventory: InventoryData) -> bool:
+	var slot_data = inventory_slots[index]
+	if not slot_data:
+		return false
+	
+	if other_inventory.pick_up_slot_data(slot_data):
+		inventory_slots[index] = null
+		inventory_updated.emit(self, index)
+		return true
+	
+	return false
 
 func  on_slot_clicked(index: int, button: int) -> void:
 	inventory_interacted.emit(self, index, button)
