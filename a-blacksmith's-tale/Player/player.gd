@@ -29,7 +29,7 @@ signal request_break
 
 func _ready() -> void:
 	speed = stats_manager.get_stat("Walk Speed").current
-	if Global.player_gender == "male":
+	if Global.player_gender == "m" or Global.player_gender == "male":
 		gender_suffix = "_M"
 	else:
 		gender_suffix = "_F"
