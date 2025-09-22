@@ -30,6 +30,39 @@ func pick_up_slot_data(slot_data: SlotData) -> bool:
 	
 	return false
 
+func can_place_slot_data(slot_data: SlotData) -> bool:
+	if not slot_data:
+		print("Not Slot Data")
+		return false
+	
+	for slot in inventory_slots:
+		if slot and not slot.locked:
+			print("Slot is not unlocked part 1")
+			if slot.can_fully_merge_with(slot_data):
+				return true
+	
+	# 2. Can partially merge (and leftover can fit into an empty unlocked slot)?
+	for slot in inventory_slots:
+		if slot and not slot.locked:
+			print("Slot is not unlocked part 2")
+			if slot.can_partially_merge_with(slot_data, self):
+				# simulate leftover creation
+				var leftover = slot.partially_merge_with(slot_data)
+				if leftover:
+					for other_slot in inventory_slots:
+						if not other_slot and not leftover.locked: # empty + not locked
+							return true
+	
+	for slot in inventory_slots:
+		if not slot:
+			if inventory_slots.find(slot) + 1 >= Progression.unlocked_inventory_slots:
+				print("Slot is locked")
+			else:
+				return true
+	
+	# 3. Only locked slots available
+	return false
+
 func grab_slot_data(index: int) -> SlotData:
 	var slot_data = inventory_slots[index]
 	if slot_data:

@@ -4,6 +4,7 @@ const MAX_STACK_SIZE: int = 999
 
 @export var item_data: ItemData
 @export_range(0, MAX_STACK_SIZE) var quantity: int = 1: set = set_quantity
+@export var locked: bool = false
 
 
 # @param other_slot_data - slot data that gets compared with the slot data on this slot

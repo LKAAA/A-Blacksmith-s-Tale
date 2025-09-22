@@ -193,35 +193,41 @@ size = Vector2(50, 32)
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("13_g8qwa")
 quantity = 1
+locked = false
 
 [sub_resource type="Resource" id="Resource_6mo1a"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("13_g8qwa")
 quantity = 1
+locked = false
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
 [sub_resource type="Resource" id="Resource_lvl10"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("9_7jjfm")
 quantity = 1
+locked = false
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
 [sub_resource type="Resource" id="Resource_x5qe2"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("10_lvl10")
 quantity = 60
+locked = false
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
 [sub_resource type="Resource" id="Resource_vdpjq"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("10_lvl10")
 quantity = 1
+locked = false
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
 [sub_resource type="Resource" id="Resource_qsvcl"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("10_oamql")
 quantity = 69
+locked = false
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
 [sub_resource type="Resource" id="Resource_r6337"]
@@ -233,18 +239,21 @@ metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("16_qsvcl")
 quantity = 20
+locked = false
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
 [sub_resource type="Resource" id="Resource_4hkp2"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("17_quhww")
 quantity = 30
+locked = false
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
 [sub_resource type="Resource" id="Resource_x8coi"]
 script = ExtResource("8_yhkl1")
 item_data = ExtResource("18_6bgdf")
 quantity = 69
+locked = false
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
 [sub_resource type="Resource" id="Resource_6bgdf"]

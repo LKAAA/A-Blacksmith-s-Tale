@@ -50,6 +50,8 @@ func populate_grid(inv: InventoryData, slots_to_update: int = 36, locked_slots: 
 		
 		if inv.inventory_slots[index]:
 			slot.set_slot_data(inv.inventory_slots[index])
+			if slot.locked:
+				slot.slot_data.locked = true
 		
 		remaining_unlocked_slots -= 1
 	

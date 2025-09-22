@@ -10,9 +10,12 @@ signal slot_clicked(index: int, button: int)
 @export var slot_data: SlotData
 
 func _ready() -> void:
+	print(locked)
 	label.text = ""
 	if slot_data:
 		set_slot_data(slot_data)
+	if locked:
+		self.self_modulate = Color.RED
 
 func set_slot_data(slot: SlotData) -> void:
 	
