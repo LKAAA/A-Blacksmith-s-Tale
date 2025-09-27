@@ -5,43 +5,59 @@ class_name CharacterStats
 var stats: Dictionary = {}
 
 signal death
+signal fully_tired
 
 func _ready() -> void:
 	# Duplicate the stat list so that it is individual per character and not shared
 	for stat in stat_list:
 		var new_stat: Stat = stat.duplicate(true)
-		stats[stat.name] = new_stat
+		stats[stat.name.to_lower()] = new_stat
 
 func get_stat(stat_name: String) -> Stat:
-	if stats[stat_name]: 
-		return stats[stat_name]
+	var stat_n = stat_name.to_lower()
+	if stats[stat_n]: 
+		return stats[stat_n]
 	else:
 		printerr("Stat does not exist on this object")
 		return null
 
 func increase_base(stat_name: String, amount: float) -> void:
-	if !stats[stat_name]: return
-	var stat: Stat = stats[stat_name]
+	var stat_n = stat_name.to_lower()
+	if not stats.get(stat_n):
+		print("Error: '%s' not found in stats." % stat_n)
+		return
+	var stat: Stat = stats[stat_n]
 	stat.base += amount
 	stat.modified_base = calculate_modified_stat(stat.base, stat.modifiers)
 
 func raise_current(stat_name: String, amount: float) -> void:
-	if !stats[stat_name]: return
-	var stat: Stat = stats[stat_name]
+	var stat_n = stat_name.to_lower()
+	if not stats.get(stat_n):
+		print("Error: '%s' not found in stats." % stat_n)
+		return
+	var stat: Stat = stats[stat_n]
 	if stat.current == null: return
 	stat.current += amount
-	if stat.current > stat.modified_base:
-		stat.current = stat.modified_base
+	if stat.current > stat.base:
+		stat.current = stat.base
+	print("%s at %d" % [stat_n, stat.current])
 
 func reduce_current(stat_name: String, amount: float) -> void:
-	if !stats[stat_name]: return
-	var stat: Stat = stats[stat_name]
+	var stat_n = stat_name.to_lower()
+	if not stats.get(stat_n):
+		print("Error: '%s' not found in stats." % stat_n)
+		return
+	var stat: Stat = stats[stat_n]
 	if stat.current == null: return
-	stat.current -= amount
-	if stat.current >= 0:
-		print("%s at 0", stat_name)
+	stat.current -= abs(amount)
+	
+	if stat.current <= 0:
+		print("%s at 0" % stat_n)
 		if stat.name == "health":
 			death.emit()
+		if stat.name == "stamina":
+			fully_tired.emit()
+	print("%s at %d" % [stat_n, stat.current])
 
 func calculate_modified_stat(base_value: float, modifiers: Array[Modifier] = []) -> float:
 	if modifiers.is_empty(): return base_value

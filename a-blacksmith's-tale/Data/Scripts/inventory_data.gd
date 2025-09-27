@@ -101,22 +101,30 @@ func grab_new_single_slot_data(index: int) -> SlotData:
 	else:
 		return null
 
-func remove_single_item(item_data:ItemData) -> bool:
+func remove_single_item(item_data:ItemData, index: int = -1) -> bool:
 	if not item_data:
 		printerr("No item data found.")
 		return false
 	
-	var slot_data: SlotData
-	for slot in inventory_slots:
-		var index = inventory_slots.find(slot)
-		if slot:
-			if slot.item_data == item_data:
-				slot.quantity -= 1
-				print(slot.quantity)
-				if slot.quantity < 1:
-					inventory_slots[index] = null
-				inventory_updated.emit(self, index) 
-				return true
+	if index == -1: 
+		for slot in inventory_slots:
+			var i = inventory_slots.find(slot)
+			if slot:
+				if slot.item_data == item_data:
+					slot.quantity -= 1
+					print(slot.quantity)
+					if slot.quantity < 1:
+						inventory_slots[i] = null
+					inventory_updated.emit(self, i) 
+					return true
+	else:
+		var slot = inventory_slots[index]
+		slot.quantity -= 1
+		print(slot.quantity)
+		if slot.quantity < 1:
+			inventory_slots[index] = null
+		inventory_updated.emit(self, index) 
+		return true
 	
 	print("Item not here ")
 	return false

@@ -40,7 +40,9 @@ func _physics_process(delta: float) -> void:
 			if not Global.game_paused:
 				_handle_movement()
 				_handle_movement_anims()
-			_handle_input()
+			
+			if not Global.dialogue_active:
+				_handle_input()
 		PLAYER_STATES.DODGEROLL:
 			pass
 	
@@ -66,8 +68,7 @@ func _handle_input() -> void:
 	
 	if not Global.game_paused:
 		if Input.is_action_just_pressed("use"):
-			execute_breakable()
-			#use.emit()
+			use.emit()
 		
 		if Input.is_action_just_pressed("interact"):
 			execute_interaction()
@@ -147,4 +148,5 @@ func execute_breakable() -> void:
 			if i.hovering:
 				if i.get_parent().has_method("_on_hit"):
 					request_break.emit(i.get_parent())
+					stats_manager.reduce_current("stamina", Global.tool_usage_stamina)
 					#i.get_parent()._on_hit(get_active_item())

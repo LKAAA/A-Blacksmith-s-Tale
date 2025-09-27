@@ -1,12 +1,19 @@
 class_name GameUI extends Control
 
 @onready var hotbar: InventoryUI = %Hotbar
+@onready var health_bar: ProgressBar = $HealthBar
+@onready var stamina_bar: ProgressBar = $StaminaBar
+@onready var health_bar_text: RichTextLabel = %HealthBarText
+@onready var stamina_bar_text: RichTextLabel = %StaminaBarText
+
 
 var player_inventory: InventoryData
 
 var active_slot: int = 0
 
 func _process(delta: float) -> void:
+	update_bars()
+	
 	if not Global.game_paused: 
 		if Input.is_action_just_pressed("scroll_up"):
 			active_slot = wrapi(active_slot - 1, 0, 12)  # Wraps between 0 and 11
@@ -37,6 +44,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 func set_active_slot() -> void:
 	var active_slot_data = Global.player.inventory.inventory_slots[active_slot]
 	Global.active_slot = active_slot_data
+	Global.active_slot_index = active_slot
 	if active_slot_data:
 		print(active_slot_data.item_data.name)
 
@@ -57,7 +65,22 @@ func use_slot() -> void:
 			"Consumable":
 				active_slot_data.item_data.use(Global.player)
 			"Tool":
-				print("Tool")
+				Global.player.execute_breakable()
 		print("Using " + active_slot_data.item_data.name)
 	else:
 		print("No item in slot " + str(active_slot))
+
+func update_bars() -> void:
+	if not Global.player: 
+		return
+	var health_stat: Stat = Global.player.stats_manager.get_stat("health")
+	var stamina_stat: Stat = Global.player.stats_manager.get_stat("stamina")
+	
+	health_bar.max_value = health_stat.base
+	stamina_bar.max_value = stamina_stat.base
+	
+	health_bar.value = health_stat.current
+	stamina_bar.value = stamina_stat.current
+	
+	health_bar_text.text = "%d/%d" % [health_stat.current, health_stat.base]
+	stamina_bar_text.text = "%d/%d" % [stamina_stat.current, stamina_stat.base]

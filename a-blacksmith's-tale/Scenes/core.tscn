@@ -106,6 +106,49 @@ size_flags_vertical = 0
 clip_contents = true
 custom_minimum_size = Vector2(332, 24)
 
+[node name="HealthBar" type="ProgressBar" parent="UI/Game_UI"]
+self_modulate = Color(0.768962, 0.0816128, 0.175046, 1)
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 27.0
+mouse_filter = 2
+show_percentage = false
+
+[node name="HealthBarText" type="RichTextLabel" parent="UI/Game_UI/HealthBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0000"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaBar" type="ProgressBar" parent="UI/Game_UI"]
+self_modulate = Color(0, 0.781813, 0.480727, 1)
+layout_mode = 0
+offset_top = 27.0
+offset_right = 160.0
+offset_bottom = 54.0
+mouse_filter = 2
+show_percentage = false
+
+[node name="StaminaBarText" type="RichTextLabel" parent="UI/Game_UI/StaminaBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0000"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="LoadingScreen" parent="UI" instance=ExtResource("2_377ls")]
 unique_name_in_owner = true
 mouse_filter = 2

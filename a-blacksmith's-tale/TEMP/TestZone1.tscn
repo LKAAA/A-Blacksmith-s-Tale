@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=46 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="Texture2D" uid="uid://c14phobpam5im" path="res://Assets/Sprites/BlacksmithBaseTileset.png" id="2_r6337"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cxn142l8tsc8v" path="res://Scenes/Objects/InteractableObjects/chest.tscn" id="14_8d832"]
 [ext_resource type="Script" uid="uid://dfsikqcptkoj0" path="res://Data/Scripts/inventory_data.gd" id="15_uwclm"]
 [ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/animal_hide.tres" id="16_qsvcl"]
+[ext_resource type="Resource" uid="uid://jmtmk20jo3jl" path="res://Data/Items/evil_egg.tres" id="16_vdpjq"]
 [ext_resource type="Resource" uid="uid://kpjm1k573bkg" path="res://Data/Items/leather.tres" id="17_quhww"]
 [ext_resource type="Resource" uid="uid://b2pa1b6wmduol" path="res://Data/Items/fried_egg.tres" id="18_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/InteractableObjects/curing_rack.tscn" id="18_quhww"]
@@ -257,9 +258,16 @@ quantity = 69
 locked = false
 metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
 
+[sub_resource type="Resource" id="Resource_mhl2v"]
+script = ExtResource("8_yhkl1")
+item_data = ExtResource("16_vdpjq")
+quantity = 10
+locked = false
+metadata/_custom_type_script = "uid://2ix4cc5ucs7j"
+
 [sub_resource type="Resource" id="Resource_6bgdf"]
 script = ExtResource("15_uwclm")
-inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_dpgyg"), SubResource("Resource_4hkp2"), SubResource("Resource_x8coi"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_dpgyg"), SubResource("Resource_4hkp2"), SubResource("Resource_x8coi"), SubResource("Resource_mhl2v"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]

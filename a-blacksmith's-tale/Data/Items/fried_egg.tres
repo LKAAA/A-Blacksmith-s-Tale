@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://b2pa1b6wmduol"]
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=5 format=3 uid="uid://b2pa1b6wmduol"]
 
+[ext_resource type="Resource" uid="uid://dm4oa85xd4lmy" path="res://Data/Items/stone.tres" id="1_adm67"]
 [ext_resource type="Script" uid="uid://dge56hs33tghy" path="res://Data/Scripts/item_data_consumable.gd" id="1_ulovj"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_ulovj"]
 
@@ -9,10 +10,11 @@ region = Rect2(0, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_ulovj")
-heal_gain_value = 25
-mana_gain_value = 0
-stamina_gain_value = 40
-item_to_give_quantity = 1
+heal_value = 20
+mana_value = 0
+stamina_value = 40
+item_to_give = ExtResource("1_adm67")
+item_to_give_quantity = 4
 name = "Fried Egg"
 id = 0
 description = "A fried egg. Delicious!"

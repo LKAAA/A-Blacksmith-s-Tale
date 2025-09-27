@@ -5,8 +5,11 @@ extends Node
 @export var player_shop_name: String = "Bricked Up Smithing"
 @export var player_gender: String = "m"
 @export var player_race: String = "Human"
+@export var tool_usage_stamina: int = 2
 @export var active_slot: SlotData
+@export var active_slot_index: int = 0
 @export var game_paused: bool
+@export var dialogue_active: bool = false
 @export var shop_active: bool = false
 signal paused
 signal unpaused

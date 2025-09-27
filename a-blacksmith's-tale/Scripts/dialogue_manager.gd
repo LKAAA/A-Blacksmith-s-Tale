@@ -26,6 +26,7 @@ func show_messages(message_list: Array, instant_dialogue: bool, char_name: Strin
 	
 	# Pause game while showing messages
 	Global.game_paused = true
+	Global.dialogue_active = true
 	
 	_is_active = true
 	
@@ -64,7 +65,7 @@ func _input(event: InputEvent) -> void:
 	if (
 		event.is_pressed() and 
 		!event.is_echo() and
-		event is InputEventKey and 
+		(event is InputEventKey or event is InputEventMouseButton) and 
 		event.is_action_pressed("ui_dialogue_interact") and
 		_is_active and
 		cur_dialogue_instance.message_is_fully_visible()  and not cur_dialogue_instance.options_section.visible
@@ -76,7 +77,7 @@ func _input(event: InputEvent) -> void:
 			_hide()
 	elif(event.is_pressed() and 
 		!event.is_echo() and
-		event is InputEventKey and 
+		(event is InputEventKey or event is InputEventMouseButton) and 
 		event.is_action_pressed("ui_dialogue_interact") and
 		_is_active and
 		not cur_dialogue_instance.message_is_fully_visible()
@@ -88,6 +89,7 @@ func _hide() -> void:
 	cur_dialogue_instance.queue_free()
 	cur_dialogue_instance = null
 	_is_active = false
+	Global.dialogue_active = false
 	finished.emit()
 
 func _on_message_completed() -> void:
