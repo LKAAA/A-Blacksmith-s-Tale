@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://bf6o54egx7foi"]
+
+[ext_resource type="Script" uid="uid://i0vj05ua015o" path="res://Scripts/LevelSystem/skill.gd" id="1_whovg"]
+
+[resource]
+script = ExtResource("1_whovg")
+name = "Cooking"
+level = 1
+cur_xp = 0
+metadata/_custom_type_script = "uid://i0vj05ua015o"

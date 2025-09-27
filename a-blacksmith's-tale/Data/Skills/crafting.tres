@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://bqk0spj6oongl"]
+
+[ext_resource type="Script" uid="uid://i0vj05ua015o" path="res://Scripts/LevelSystem/skill.gd" id="1_6dfcc"]
+
+[resource]
+script = ExtResource("1_6dfcc")
+name = "Crafting"
+level = 1
+cur_xp = 0
+metadata/_custom_type_script = "uid://i0vj05ua015o"

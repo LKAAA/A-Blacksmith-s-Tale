@@ -8,6 +8,9 @@ extends StaticBody2D
 @export_enum("Pickaxe", "Axe", "Shovel") var required_tool_type: String = ""
 @export_range(1, Global.MAX_TOOL_EFFICIENCY) var required_efficiency: int = 1
 
+@export var xp_reward: int = 0
+@export var skill_type: String = "Mining"
+
 @export var loot_table: LootTable
 
 func _ready() -> void:
@@ -41,6 +44,8 @@ func _on_hit(active_item: ItemData) -> void:
 					loot_component.create_pickup(drop, recieved_loot[drop])
 			queue_free()
 			
+			if xp_reward > 0:
+				Global.player.level_manager.gain_xp(skill_type, xp_reward)
 			
 	else:
 		print("Not a tool")

@@ -1,18 +1,30 @@
-[gd_scene load_steps=68 format=3 uid="uid://cuy4dikcyhbr2"]
+[gd_scene load_steps=80 format=3 uid="uid://cuy4dikcyhbr2"]
 
 [ext_resource type="Script" uid="uid://cfaixpdbolxqs" path="res://Player/player.gd" id="1_cx3in"]
 [ext_resource type="Resource" uid="uid://da5paxap81syu" path="res://Data/Inventories/player_inventory.tres" id="2_10i02"]
 [ext_resource type="PackedScene" uid="uid://jt1ghw5v6uqc" path="res://Scenes/Components/stats_manager.tscn" id="3_fhl08"]
+[ext_resource type="Script" uid="uid://o8uxfeudqfnp" path="res://Scripts/LevelSystem/level_manager.gd" id="3_gu6f8"]
 [ext_resource type="Texture2D" uid="uid://cokeb7saw2h3y" path="res://Assets/Sprites/CharacterSpriteSheet1.png" id="3_k53q1"]
 [ext_resource type="Texture2D" uid="uid://cvj1f4u77wcbv" path="res://TEMP/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="3_o5lx4"]
+[ext_resource type="Script" uid="uid://i0vj05ua015o" path="res://Scripts/LevelSystem/skill.gd" id="4_lfmf2"]
 [ext_resource type="Script" uid="uid://cei0o4voe378e" path="res://Scripts/StatSystem/stat.gd" id="4_od3ui"]
 [ext_resource type="Resource" uid="uid://bdpsvndtblx45" path="res://Data/Stats/health.tres" id="5_00tjw"]
+[ext_resource type="Resource" uid="uid://r310rfkm8aqo" path="res://Data/Skills/mining.tres" id="5_pisgm"]
 [ext_resource type="Resource" uid="uid://csh3t5o8a5ccq" path="res://Data/Stats/stamina.tres" id="6_p5o4e"]
+[ext_resource type="Resource" uid="uid://d4gqkfg6jo6sf" path="res://Data/Skills/foraging.tres" id="6_qemgg"]
 [ext_resource type="Resource" uid="uid://c133d4wmnlbkr" path="res://Data/Stats/walk_speed.tres" id="6_x3vf3"]
+[ext_resource type="Resource" uid="uid://b6x1wwcxgqjnm" path="res://Data/Skills/woodcutting.tres" id="7_8viyr"]
 [ext_resource type="Resource" uid="uid://bxd5vsro4mtj1" path="res://Data/Stats/run_speed.tres" id="7_apopc"]
 [ext_resource type="Texture2D" uid="uid://cg3lff22pk4nd" path="res://Assets/Sprites/FemaleSpritesheetBase.png" id="8_5htga"]
+[ext_resource type="Resource" uid="uid://bf6o54egx7foi" path="res://Data/Skills/cooking.tres" id="8_sm0op"]
+[ext_resource type="Resource" uid="uid://bqk0spj6oongl" path="res://Data/Skills/crafting.tres" id="9_76lrf"]
 [ext_resource type="Texture2D" uid="uid://bsrpxkd7lllf4" path="res://Assets/Sprites/MaleSpritesheetBase.png" id="9_apopc"]
 [ext_resource type="Texture2D" uid="uid://d1du4ohmnv6xa" path="res://TEMP/MaleWalkTest.png" id="10_apopc"]
+[ext_resource type="Resource" uid="uid://caql6y2k151ut" path="res://Data/Skills/combat.tres" id="10_efx54"]
+[ext_resource type="Resource" uid="uid://cf01mkby3ocoy" path="res://Data/Skills/etching.tres" id="11_755ss"]
+[ext_resource type="Resource" uid="uid://bciw6774u1m11" path="res://Data/Skills/assembling.tres" id="12_bbimk"]
+[ext_resource type="Resource" uid="uid://ddghh1ufwhlsx" path="res://Data/Skills/leatherworking.tres" id="13_m0h3t"]
+[ext_resource type="Resource" uid="uid://cptcnijw8dy3o" path="res://Data/Skills/metalworking.tres" id="14_i4o1l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4o1l"]
 atlas = ExtResource("8_5htga")
@@ -593,6 +605,11 @@ collision_layer = 129
 script = ExtResource("1_cx3in")
 inventory = ExtResource("2_10i02")
 
+[node name="LevelManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_gu6f8")
+skill_list = Array[ExtResource("4_lfmf2")]([ExtResource("5_pisgm"), ExtResource("6_qemgg"), ExtResource("7_8viyr"), ExtResource("8_sm0op"), ExtResource("9_76lrf"), ExtResource("10_efx54"), ExtResource("11_755ss"), ExtResource("12_bbimk"), ExtResource("13_m0h3t"), ExtResource("14_i4o1l"), ExtResource("6_qemgg")])
+
 [node name="StatsManager" parent="." instance=ExtResource("3_fhl08")]
 unique_name_in_owner = true
 stat_list = Array[ExtResource("4_od3ui")]([ExtResource("5_00tjw"), ExtResource("6_p5o4e"), ExtResource("7_apopc"), ExtResource("6_x3vf3")])
@@ -618,6 +635,9 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_gwnis")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

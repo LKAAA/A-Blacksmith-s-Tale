@@ -336,6 +336,8 @@ recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 [node name="Tree" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(312, 152)
 required_tool_type = "Pickaxe"
+xp_reward = 50
+skill_type = "Woodcutting"
 loot_table = ExtResource("20_x5qe2")
 
 [node name="Sign" parent="Objects" instance=ExtResource("23_x8coi")]
@@ -348,26 +350,32 @@ dialogue_tag = "Temp_Sign_2"
 
 [node name="HarvestableItem" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(136, 88)
+xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem2" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(152, 88)
+xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem3" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(168, 88)
+xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem4" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(88, 88)
+xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem5" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(104, 88)
+xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem6" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(120, 88)
+xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="Forge" parent="Objects" instance=ExtResource("20_x8coi")]

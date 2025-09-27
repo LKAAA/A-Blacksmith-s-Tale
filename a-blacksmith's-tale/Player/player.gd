@@ -5,9 +5,14 @@ class_name PlayerBase extends CharacterBody2D
 @onready var all_interactions = []
 @onready var all_breakables = []
 
+@onready var timer: Timer = $Timer
+var tool_cooldown: bool = false
+
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @export var inventory: InventoryData = InventoryData.new()
 @onready var stats_manager: CharacterStats = %StatsManager
+@onready var level_manager: CharacterLevels = %LevelManager
+
 var gender_suffix
 
 var speed: float
@@ -58,6 +63,9 @@ func _handle_movement() -> void:
 	velocity = velocity.limit_length(speed)
 
 func _handle_input() -> void:
+	
+	if Input.is_action_just_pressed("test_input"):
+		level_manager.gain_xp("Mining", 100)
 	
 	if Input.is_action_just_pressed("inventory"):
 		open_inventory.emit()
@@ -143,10 +151,23 @@ func execute_interaction() -> void:
 					i.get_parent()._on_interact()
 
 func execute_breakable() -> void:
-	if all_breakables:
-		for i in all_breakables:
-			if i.hovering:
-				if i.get_parent().has_method("_on_hit"):
-					request_break.emit(i.get_parent())
-					stats_manager.reduce_current("stamina", Global.tool_usage_stamina)
-					#i.get_parent()._on_hit(get_active_item())
+	if tool_cooldown:
+		print("Currently on cooldown for %f more seconds." % timer.time_left)
+		return
+	
+	if not all_breakables: 
+		return
+	
+	for i in all_breakables:
+		if i.hovering:
+			if i.get_parent().has_method("_on_hit"):
+				request_break.emit(i.get_parent())
+				stats_manager.reduce_current("stamina", Global.tool_usage_stamina)
+				
+				# Change this to when animation ends?
+				tool_cooldown = true
+				timer.start(Global.tool_cooldown)
+
+
+func _on_timer_timeout() -> void:
+	tool_cooldown = false

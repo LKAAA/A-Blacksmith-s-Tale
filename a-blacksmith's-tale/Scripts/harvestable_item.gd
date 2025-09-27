@@ -6,6 +6,9 @@ class_name HarvestableItem
 @export var rand_item: bool = false
 @export var loot_table: LootTable
 
+@export var xp_reward: int = 0
+@export var skill_type: String = "Foraging"
+
 #var loot_table: LootTable
 @export var item_drop: ItemData
 
@@ -19,7 +22,9 @@ func _on_interact() -> void:
 	else:
 		slot_data = get_item()
 	if Global.player.inventory.pick_up_slot_data(slot_data):
-			random_sound_player.playSFX(0)
+		random_sound_player.playSFX(0)
+		if xp_reward > 0:
+			Global.player.level_manager.gain_xp(skill_type, xp_reward)
 	print("Interact with ")
 
 func get_item() -> SlotData:
