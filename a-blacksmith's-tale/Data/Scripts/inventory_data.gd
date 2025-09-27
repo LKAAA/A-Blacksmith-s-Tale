@@ -135,7 +135,6 @@ func remove_items(item_data:ItemData, count: int) -> bool:
 		return false
 	
 	var remaining = count
-	var slot_data: SlotData
 	for slot in inventory_slots:
 		var index = inventory_slots.find(slot)
 		if slot:

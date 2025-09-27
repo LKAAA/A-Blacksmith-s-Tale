@@ -9,7 +9,7 @@ signal transition_entered(next_zone_path, next_zone_num)
 # Then emit the transition_entered signal with the path to the scene to transition to
 # And the number of the transition to teleport the player to. This number coresponds to the location in
 # The transition array of each zone
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	if next_zone:
 		print("Entered Transition Zone")
 		set_deferred("monitoring", false)

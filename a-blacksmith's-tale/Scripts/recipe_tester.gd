@@ -4,7 +4,7 @@ func test_inventory(recipe: RecipeData, inventory: InventoryData = null) -> bool
 	if inventory:
 		for ingredient in recipe.ingredients:
 			var amount_of_ing = recipe.ingredients.count(ingredient)
-			var held_count: int
+			var held_count: int = 0
 			print(amount_of_ing)
 			for slot in inventory.inventory_slots:
 				if slot:

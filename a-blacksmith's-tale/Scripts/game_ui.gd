@@ -11,7 +11,7 @@ var player_inventory: InventoryData
 
 var active_slot: int = 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_bars()
 	
 	if not Global.game_paused: 

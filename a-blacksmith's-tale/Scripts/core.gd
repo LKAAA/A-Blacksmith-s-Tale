@@ -35,10 +35,10 @@ func time_passed(_day: int, _hour: int, _hour_12: int, _minute: int, _cur_weekda
 
 func new_day() -> void:
 	schedule_manager._decide_todays_schedules()
-	for char in Progression.NPCS_MET:
-		if Progression.NPCS_MET[char] == true:
-			Progression.NPC_DAYS_SINCE_MET[char] += 1
-			print("Days since met " + char + " is now " + str(Progression.NPC_DAYS_SINCE_MET[char]))
+	for chari in Progression.NPCS_MET:
+		if Progression.NPCS_MET[chari] == true:
+			Progression.NPC_DAYS_SINCE_MET[chari] += 1
+			print("Days since met " + chari + " is now " + str(Progression.NPC_DAYS_SINCE_MET[chari]))
 
 #region objects
 

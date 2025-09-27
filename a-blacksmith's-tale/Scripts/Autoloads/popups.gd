@@ -13,7 +13,7 @@ var grabbed_item = false
 func _ready() -> void:
 	%ItemPopup.unfocusable = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if grabbed_item:
 		padding_x = 24
 		padding_y = 22

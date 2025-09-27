@@ -59,7 +59,7 @@ func _find_pauses(source: String) -> void:
 			if end_index != -1:
 				var tag := source.substr(index, end_index - index + 1)
 				if tag.begins_with("{p="):
-					var value := tag.substr(3, tag.length() - 4).to_float()
+					var _value := tag.substr(3, tag.length() - 4).to_float()
 					_pauses.append(Pause.new(visible_index, tag))
 				index = end_index + 1
 				continue

@@ -11,7 +11,7 @@ var external_inv_data: InventoryData = null
 var grabbed_slot_data: SlotData = null
 var external_inventory_owner
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	grabbed_slot.position = Vector2(mouse_pos.x + grabbed_slot_padding, mouse_pos.y + grabbed_slot_padding)
 

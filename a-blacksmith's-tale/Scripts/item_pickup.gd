@@ -34,9 +34,9 @@ func _on_inner_area_body_entered(body: Node2D) -> void:
 	if body:
 		inside = true
 
-func _on_outer_body_exited(body: Node2D) -> void:
+func _on_outer_body_exited(_body: Node2D) -> void:
 	overlapping = false
 
 
-func _on_inner_area_body_exited(body: Node2D) -> void:
+func _on_inner_area_body_exited(_body: Node2D) -> void:
 	inside = false

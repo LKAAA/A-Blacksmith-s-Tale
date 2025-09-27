@@ -2,7 +2,7 @@ extends TileMapLayer
 
 var mouse_pos: Vector2
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	mouse_pos = get_global_mouse_position()
 	var mouse_tile = local_to_map(mouse_pos)
 	

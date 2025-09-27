@@ -39,7 +39,7 @@ func _ready() -> void:
 	else:
 		gender_suffix = "_F"
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	match current_state:
 		PLAYER_STATES.MOVE:
 			if not Global.game_paused:
