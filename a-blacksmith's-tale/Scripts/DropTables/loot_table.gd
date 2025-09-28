@@ -9,6 +9,7 @@ enum LootMode { WEIGHTED, INDEPENDENT }
 
 func roll_loot() -> Dictionary:
 	var results: Dictionary = {}
+	print(entries)
 	
 	for entry in entries: # Auto get this item and take it out of the pool so it doesn't duplicate
 		if entry.drop_chance == 100:

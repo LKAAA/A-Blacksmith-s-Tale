@@ -6,7 +6,7 @@ extends Node
 @export var player_gender: String = "m"
 @export var player_race: String = "Human"
 @export var tool_usage_stamina: float = 1
-@export var tool_cooldown: int = 1
+@export var tool_cooldown: int = 0.1
 @export var active_slot: SlotData
 @export var active_slot_index: int = 0
 @export var game_paused: bool

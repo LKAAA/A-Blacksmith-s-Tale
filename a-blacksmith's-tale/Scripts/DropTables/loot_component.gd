@@ -6,7 +6,6 @@ const ITEM_PICKUP = preload("res://Scenes/item_pickup.tscn")
 func create_pickup(item_data, quantity) -> void:
 	var dropped_item = ITEM_PICKUP.instantiate()
 	
-	
 	get_parent().get_parent().add_child(dropped_item)
 	print(item_data.name)
 	print("Item: %s Quantity: %d" % [item_data.name, quantity])

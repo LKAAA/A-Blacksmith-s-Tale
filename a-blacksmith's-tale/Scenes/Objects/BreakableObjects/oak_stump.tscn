@@ -1,0 +1,84 @@
+[gd_scene load_steps=17 format=3 uid="uid://cr6xvkgpf4lh8"]
+
+[ext_resource type="Script" uid="uid://buj6j3glpbgjq" path="res://Scripts/breakable_object.gd" id="1_x45my"]
+[ext_resource type="Texture2D" uid="uid://c2ohfa56l38sn" path="res://Assets/Sprites/Tree.png" id="2_c3tjw"]
+[ext_resource type="Script" uid="uid://dvx6puk3bnkq0" path="res://Scripts/DropTables/loot_entry.gd" id="2_js48y"]
+[ext_resource type="Texture2D" uid="uid://d250eif3a1vpm" path="res://Assets/Sprites/TreeShadow.png" id="3_eeglh"]
+[ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="3_lnte2"]
+[ext_resource type="Script" uid="uid://wojvluuilm2u" path="res://Scripts/DropTables/loot_table.gd" id="4_6wjis"]
+[ext_resource type="PackedScene" uid="uid://csik1l3vdm67g" path="res://Scenes/Components/breakable_area.tscn" id="4_js48y"]
+[ext_resource type="PackedScene" uid="uid://dyc4diepdebv6" path="res://Scenes/Components/behind_adjustment.tscn" id="5_lnte2"]
+[ext_resource type="Script" uid="uid://c6dimnd1eafw6" path="res://Scripts/DropTables/loot_component.gd" id="6_6wjis"]
+
+[sub_resource type="Resource" id="Resource_js48y"]
+script = ExtResource("2_js48y")
+item_data = ExtResource("3_lnte2")
+weight = 1
+drop_chance = 100.0
+amount_low = 6
+amount_high = 16
+metadata/_custom_type_script = "uid://dvx6puk3bnkq0"
+
+[sub_resource type="Resource" id="Resource_o2uwt"]
+script = ExtResource("4_6wjis")
+entries = Array[ExtResource("2_js48y")]([SubResource("Resource_js48y")])
+rolls = 1
+mode = 1
+metadata/_custom_type_script = "uid://wojvluuilm2u"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8coi"]
+atlas = ExtResource("2_c3tjw")
+region = Rect2(16, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1cnt"]
+atlas = ExtResource("3_eeglh")
+region = Rect2(0, 63, 16, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm65n"]
+size = Vector2(9, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jjfm"]
+size = Vector2(11, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbs57"]
+size = Vector2(11, 9)
+
+[node name="Oak_Stump" type="StaticBody2D" groups=["breakable_object"]]
+script = ExtResource("1_x45my")
+hitpoints = 4
+required_tool_type = "Pickaxe"
+xp_reward = 50
+skill_type = "Woodcutting"
+loot_table = SubResource("Resource_o2uwt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = SubResource("AtlasTexture_x8coi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+z_as_relative = false
+position = Vector2(0, -1.5)
+texture = SubResource("AtlasTexture_b1cnt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_xm65n")
+
+[node name="breakable_area" parent="." instance=ExtResource("4_js48y")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="breakable_area"]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_7jjfm")
+
+[node name="BehindAdjustment" parent="." instance=ExtResource("5_lnte2")]
+position = Vector2(0, -21)
+collision_mask = 192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BehindAdjustment"]
+position = Vector2(0.5, 15.5)
+shape = SubResource("RectangleShape2D_dbs57")
+
+[node name="Loot_Component" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_6wjis")
