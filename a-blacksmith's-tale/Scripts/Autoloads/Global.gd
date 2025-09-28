@@ -18,7 +18,7 @@ signal unpaused
 @export var player_gold: int = 9999999999
 
 
-var cur_zone_id: int
+@export var cur_zone_id: int
 
 const MAX_TOOL_EFFICIENCY: int = 10
 
@@ -72,3 +72,6 @@ func unpause_game() -> void:
 		unpaused.emit()
 	else:
 		print("Already unpaused")
+
+func get_time() -> int:
+	return cur_minute

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dhnph3wcef2ko"]
 
-[ext_resource type="Script" uid="uid://8ivyqcoyrmkv" path="res://Scripts/npc_core.gd" id="1_coole"]
+[ext_resource type="Script" uid="uid://8ivyqcoyrmkv" path="res://Scripts/NPC-Systems/npc_core.gd" id="1_coole"]
 [ext_resource type="Texture2D" uid="uid://cokeb7saw2h3y" path="res://Assets/Sprites/CharacterSpriteSheet1.png" id="2_amo08"]
 [ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="4_k1dkh"]
 [ext_resource type="PackedScene" uid="uid://dyc4diepdebv6" path="res://Scenes/Components/behind_adjustment.tscn" id="5_g3lnf"]

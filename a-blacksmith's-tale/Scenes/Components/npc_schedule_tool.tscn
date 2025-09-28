@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://47ttluubphbw"]
 
-[ext_resource type="Script" uid="uid://bc8dn2l61tmo2" path="res://Scripts/npc_schedule_tool.gd" id="1_snyg5"]
+[ext_resource type="Script" uid="uid://bc8dn2l61tmo2" path="res://Scripts/NPC-Systems/npc_schedule_tool.gd" id="1_snyg5"]
 
 [node name="NPCScheduleTool" type="Node2D"]
 script = ExtResource("1_snyg5")

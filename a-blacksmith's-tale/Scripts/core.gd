@@ -1,6 +1,7 @@
 class_name Core extends Node2D
 
 const PLAYER = preload("res://Player/player.tscn")
+const NPC_CORE = preload("res://Scenes/Objects/npc_core.tscn")
 
 @onready var loading_screen: LoadingScreen = %LoadingScreen
 @onready var menu_ui: Menu = %Menu_UI
@@ -8,46 +9,50 @@ const PLAYER = preload("res://Player/player.tscn")
 @onready var shop_ui: ShopUI = %ShopUI
 @onready var hovering_indicator: TileMapLayer = $"Hovering Indicator"
 @onready var dialogue_manager: DialogueManager = $DialogueManager
-@onready var schedule_manager: ScheduleManager = $ScheduleManager
 @onready var time_manager: TimeManager = $TimeManager
 
-
 var external: bool = false
-
 var cur_zone: String
 var cur_transition: int
 
 var current_zone: Zone
 var next_zone: Zone
 var player: PlayerBase
+var active_npcs: Array[NPCCore] = []
+
+# ----------------------------------------------------------
+# Lifecycle
+# ----------------------------------------------------------
 
 func _ready() -> void:
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
 	time_manager.time_tick.connect(time_passed)
-	schedule_manager._interpret_schedules()
+	ScheduleManager._interpret_schedules()
 	new_day()
-	
 
 func time_passed(_day: int, _hour: int, _hour_12: int, _minute: int, _cur_weekday: String, _cur_season: String, _am_pm: String) -> void:
+	# TODO: tick-based schedule processing
 	pass
-	#schedule_manager.do_something()
 
 func new_day() -> void:
-	schedule_manager._decide_todays_schedules()
-	for chari in Progression.NPCS_MET:
-		if Progression.NPCS_MET[chari] == true:
-			Progression.NPC_DAYS_SINCE_MET[chari] += 1
-			print("Days since met " + chari + " is now " + str(Progression.NPC_DAYS_SINCE_MET[chari]))
+	ScheduleManager._decide_todays_schedules()
+	for npc in Progression.NPCS_MET:
+		if Progression.NPCS_MET[npc]:
+			Progression.NPC_DAYS_SINCE_MET[npc] += 1
+			print("Days since met %s is now %s" % [npc, str(Progression.NPC_DAYS_SINCE_MET[npc])])
 
-#region objects
+# ----------------------------------------------------------
+# Objects
+# ----------------------------------------------------------
 
 func request_break(breakable_object):
 	breakable_object._on_hit(game_ui.get_active_item())
 
-#endregion
 
-#region Dialogue System
+# ----------------------------------------------------------
+# Dialogue
+# ----------------------------------------------------------
 
 func _request_dialogue(object) -> void:
 	print("recieved signal")
@@ -61,14 +66,13 @@ func _on_dialogue_manager_message_completed() -> void:
 	#next_label.visible = false
 	pass # Replace with function body.
 
-
 func _on_dialogue_manager_message_requested() -> void:
 	#next_label.visible = false
 	pass # Replace with function body.
 
-#endregion
-
-#region Inventory
+# ----------------------------------------------------------
+# Inventory
+# ----------------------------------------------------------
 
 func escape_ui() -> void:
 	if shop_ui.visible:
@@ -104,21 +108,19 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 		external = false
 
 func load_external_inventories(zone: Zone) -> void:
-	var external_inventories: Array = zone.get_external_inventories()
-	for node in external_inventories:
+	for node in zone.get_external_inventories():
 		node.toggle_inventory.connect(toggle_inventory_interface)
 		print("Loaded " + node.name)
 
 func unload_external_inventories(zone: Zone) -> void:
-	var external_inventories: Array = zone.get_external_inventories()
-	for node in external_inventories:
+	for node in zone.get_external_inventories():
 		if node.is_connected("toggle_inventory", toggle_inventory_interface):
 			node.toggle_inventory.disconnect(toggle_inventory_interface)
 			print("Disconnected " + node.name)
 
-#endregion
-
-#region Shop UI
+# ----------------------------------------------------------
+# Shop
+# ----------------------------------------------------------
 
 func hide_shop_ui() -> void:
 	if shop_ui.visible:
@@ -142,105 +144,119 @@ func toggle_shop_ui(shop_data: ShopData) -> void:
 	shop_ui.set_shop(shop_data, player.inventory)
 
 func load_shops(zone: Zone) -> void:
-	var shops: Array = zone.get_shops()
-	for node in shops:
+	for node in zone.get_shops():
 		node.toggle_shop.connect(toggle_shop_ui)
 		print("Loaded " + node.name)
 
 func unload_shops(zone: Zone) -> void:
-	var shops: Array = zone.get_shops()
-	for node in shops:
+	for node in zone.get_shops():
 		if node.is_connected("toggle_shop", toggle_shop_ui):
 			node.toggle_shop.disconnect(toggle_shop_ui)
 			print("Disconnected " + node.name)
-#endregion
 
-#region loading zones
+# ----------------------------------------------------------
+# Zones
+# ----------------------------------------------------------
 
 # @param path is the path of the scene to transition to
 # @param transition is the number in the transitions array on each zone to teleport the player to
 func load_zone(zone: String = "", transition: int = 99) -> void:
-	# If there is no zone already (This is the first zone spawned in) - Do first time set up
-	if !current_zone: # If there is no zone already
-		print("Loading default / First zone")
-		current_zone = load("res://TEMP/TestZone1.tscn").instantiate()
-		add_child(current_zone)
-		
-		for t in current_zone.transitions:
-			t.transition_entered.connect(load_zone)
-		
-		player = PLAYER.instantiate()
-		current_zone.add_child(player)
-		player.position = Vector2(300,80)
-		player.inventory.inventory_slots.resize(36)
-		player.open_inventory.connect(toggle_inventory_interface)
-		player.escape_ui.connect(escape_ui)
-		player.use.connect(game_ui.use_slot)
-		player.request_break.connect(request_break)
-		menu_ui._set_player_inventory(player.inventory)
-		game_ui._set_hotbar_inventory(player.inventory)
-		load_external_inventories(current_zone)
-		load_shops(current_zone)
-		Global.player = player
-		
-		for child in current_zone.get_dialogue_objects():
-			if not child.request_dialogue.is_connected(_request_dialogue):
-				child.request_dialogue.connect(_request_dialogue)
-		
-		for child: NPCCore in current_zone.get_npcs():
-			print("Set each npc to the position they should be at rn")
-		
-		Global.cur_zone_id = current_zone.zone_id
-	
-	# If there is already a zone set up some variables and start the loading scren fade_in  animation
+	if !current_zone: # irst time setup
+		_setup_first_zone()
 	else:
-		print("Loading " + zone)
 		cur_zone = zone
 		cur_transition = transition
 		loading_screen.fade_in()
 
-# Once the loading screen's signal emits when the fade in animation is finished, we execute the loading in
-# Before finally playing the fade out
-# This basically fades to black, loads the next scene, then fades back into the gameplay
 func fade_in_finished() -> void:
-	# If there is a zone
-	
-	next_zone = load(cur_zone).instantiate()
-	call_deferred("add_child", next_zone)
+	_load_next_zone()
+	loading_screen.fade_out()
 
-	if player:
-		player.reparent(next_zone)
-		if cur_transition != 99:
-			player.position = next_zone.transitions[cur_transition].position
-		else:
-			player.position = Vector2(0,0)
-	
-	if current_zone:
-		unload_external_inventories(current_zone)
-		unload_shops(current_zone)
-		current_zone.queue_free()
+# ----------------------------------------------------------
+# Helpers
+# ----------------------------------------------------------
 
-	current_zone = next_zone
-	next_zone = null
+func _setup_first_zone() -> void:
+	print("Loading first zone")
+	current_zone = load("res://TEMP/TestZone1.tscn").instantiate()
+	add_child(current_zone)
 	
-	for t in current_zone.transitions:
-		t.transition_entered.connect(load_zone)
+	_connect_zone_signals(current_zone)
+	
+	player = PLAYER.instantiate()
+	current_zone.add_child(player)
+	player.position = Vector2(300,80)
+	player.inventory.inventory_slots.resize(36)
+	
+	player.open_inventory.connect(toggle_inventory_interface)
+	player.escape_ui.connect(escape_ui)
+	player.use.connect(game_ui.use_slot)
+	player.request_break.connect(request_break)
+	
+	Global.player = player
+	
+	menu_ui._set_player_inventory(player.inventory)
+	game_ui._set_hotbar_inventory(player.inventory)
 	
 	load_external_inventories(current_zone)
 	load_shops(current_zone)
+	load_npcs(current_zone.zone_id)
 	
-	for child in current_zone.get_dialogue_objects():
-		if not child.request_dialogue.is_connected(_request_dialogue):
-			child.request_dialogue.connect(_request_dialogue)
+	_connect_dialogues(current_zone)
 	
-	for child: NPCCore in current_zone.get_npcs():
-			print("Set each npc to the position they should be at rn")
+	Global.cur_zone_id = current_zone.zone_id
+
+func _load_next_zone() -> void:
+	next_zone = load(cur_zone).instantiate()
+	call_deferred("add_child", next_zone)
+	
+	if player: 
+		player.reparent(next_zone)
+		player.position = next_zone.transitions[cur_transition].position if cur_transition != 99 else Vector2.ZERO
+	
+	if current_zone: 
+		unload_external_inventories(current_zone)
+		unload_shops(current_zone)
+		current_zone.queue_free()
+	
+	current_zone = next_zone
+	next_zone = null
+	
+	_connect_zone_signals(current_zone)
+	load_external_inventories(current_zone)
+	load_shops(current_zone)
+	load_npcs(current_zone.zone_id)
+	_connect_dialogues(current_zone)
 	
 	Global.cur_zone_id = current_zone.zone_id
 	
 	cur_zone = ""
 	cur_transition = 0
-	
-	loading_screen.fade_out()
 
-#endregion
+func load_npcs(current_zone_id) -> void:
+	for npc in current_zone.get_npcs():
+		npc.queue_free()
+		
+	# Ask ScheduleManager which NPCs belong here now
+	var cur_time = Global.cur_hour * 100 # e.g., 830
+	var npcs = ScheduleManager.get_zone_npcs(current_zone.zone_id, cur_time)
+	
+	print("At load NPCS the we have %s" % npcs)
+	
+	for npc_name in npcs.keys():
+		var event = npcs[npc_name]
+		var npc: NPCCore = NPC_CORE.instantiate()
+		npc.char_name = npc_name
+		current_zone.add_child(npc)
+		npc.position = event["pos"]
+		npc.facing = event["facing"]
+		print("Spawned %s at %s" % [npc_name, str(event["pos"])])
+
+func _connect_zone_signals(zone: Zone) -> void:
+	for t in zone.transitions:
+		t.transition_entered.connect(load_zone)
+
+func _connect_dialogues(zone: Zone) -> void:
+	for child in zone.get_dialogue_objects():
+		if not child.request_dialogue.is_connected(_request_dialogue):
+			child.request_dialogue.connect(_request_dialogue)

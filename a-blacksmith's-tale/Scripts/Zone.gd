@@ -31,9 +31,8 @@ func get_dialogue_objects() -> Array:
 			for c in child.get_children():
 				if c.is_in_group("dialogue_object"):
 					dialogue_objects.append(c)
-		if child.name == "Characters":
-			for c in child.get_children():
-				dialogue_objects.append(c)
+		if child is NPCCore:
+			dialogue_objects.append(child)
 	return dialogue_objects
 
 func get_npcs() -> Array:

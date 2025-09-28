@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://chk276ad3d5n3" path="res://Scenes/Objects/InteractableObjects/harvestable_item.tscn" id="20_dpgyg"]
 [ext_resource type="Resource" uid="uid://cnclw3sbpmlac" path="res://Data/LootTables/OakTree_LT.tres" id="20_x5qe2"]
 [ext_resource type="PackedScene" uid="uid://iycggt6pykno" path="res://Scenes/Objects/InteractableObjects/forge.tscn" id="20_x8coi"]
-[ext_resource type="Script" uid="uid://bc8dn2l61tmo2" path="res://Scripts/npc_schedule_tool.gd" id="21_6bgdf"]
+[ext_resource type="Script" uid="uid://bc8dn2l61tmo2" path="res://Scripts/NPC-Systems/npc_schedule_tool.gd" id="21_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://btc44ewohabs5" path="res://Scenes/Objects/InteractableObjects/market_stall.tscn" id="21_x8coi"]
 [ext_resource type="PackedScene" uid="uid://dstxblro34alg" path="res://Scenes/Objects/BreakableObjects/tree.tscn" id="22_4hkp2"]
 [ext_resource type="Resource" uid="uid://bo73747f67xfn" path="res://Data/Shops/GeneralStore.tres" id="22_xm65n"]
@@ -300,7 +300,7 @@ shape = SubResource("RectangleShape2D_6fopl")
 [node name="EastTransition" parent="Transition Zones" instance=ExtResource("5_bo2f2")]
 position = Vector2(714, 168)
 rotation = 1.5708
-next_zone = "D:/A-Blacksmith's-Tale/a-blacksmith's-tale/TEMP/TestZone2.tscn"
+next_zone = "res://TEMP/TestZone2.tscn"
 next_zone_num = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transition Zones/EastTransition"]
