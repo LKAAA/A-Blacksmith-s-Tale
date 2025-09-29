@@ -120,7 +120,10 @@ func get_zone_npcs(cur_zone_id: int, cur_time: int) -> Dictionary:
 			continue
 
 		if event["zone"] == cur_zone_id:
-			npcs_to_load[npc] = event
-			print("Load NPC %s at %s in zone %s" % [npc, str(event["pos"]), str(cur_zone_id)])
+			if not npcs_to_load.has(npc): 
+				npcs_to_load[npc] = {}
+				npcs_to_load[npc]["event"] = event
+				npcs_to_load[npc]["schedule"] = schedule_str
+				print("Load NPC %s at %s in zone %s" % [npc, str(event["pos"]), str(cur_zone_id)])
 
 	return npcs_to_load

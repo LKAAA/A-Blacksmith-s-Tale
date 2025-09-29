@@ -1,5 +1,7 @@
 extends Node
 
+const TILE_SIZE: int = 16
+
 @export var player: PlayerBase
 @export var player_name: String = "Stevie Wonder"
 @export var player_shop_name: String = "Bricked Up Smithing"
@@ -37,6 +39,7 @@ var cur_day: String
 var cur_season: String
 var is_raining: bool = false
 var am_pm: String = "AM"
+signal time_changed(new_time: int)
 
 func load_recipes(path: String) -> Array:
 	var recipes: Array[RecipeData] = []
@@ -72,6 +75,3 @@ func unpause_game() -> void:
 		unpaused.emit()
 	else:
 		print("Already unpaused")
-
-func get_time() -> int:
-	return cur_minute

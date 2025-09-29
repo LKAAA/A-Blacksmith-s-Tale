@@ -27,11 +27,11 @@ var active_npcs: Array[NPCCore] = []
 func _ready() -> void:
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
-	time_manager.time_tick.connect(time_passed)
+	Global.time_changed.connect(time_passed)
 	ScheduleManager._interpret_schedules()
 	new_day()
 
-func time_passed(_day: int, _hour: int, _hour_12: int, _minute: int, _cur_weekday: String, _cur_season: String, _am_pm: String) -> void:
+func time_passed(time) -> void:
 	# TODO: tick-based schedule processing
 	pass
 
@@ -244,8 +244,9 @@ func load_npcs(current_zone_id) -> void:
 	print("At load NPCS the we have %s" % npcs)
 	
 	for npc_name in npcs.keys():
-		var event = npcs[npc_name]
+		var event = npcs[npc_name]["event"]
 		var npc: NPCCore = NPC_CORE.instantiate()
+		npc.set_schedule(npcs[npc_name]["schedule"])
 		npc.char_name = npc_name
 		current_zone.add_child(npc)
 		npc.position = event["pos"]

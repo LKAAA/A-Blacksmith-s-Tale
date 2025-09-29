@@ -20,6 +20,7 @@ size = Vector2(20, 22)
 
 [node name="NPCCore" type="CharacterBody2D" groups=["npc_characters"]]
 z_index = 1
+position = Vector2(0, -14.5)
 script = ExtResource("1_coole")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

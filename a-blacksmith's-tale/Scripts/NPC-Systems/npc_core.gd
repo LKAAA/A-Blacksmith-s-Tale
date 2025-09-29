@@ -5,10 +5,11 @@ class_name NPCCore
 
 @onready var interact_area: Interactable = $InteractArea
 
+
 var schedule: Array = [] # parsed schedule for today
 var schedule_index: int = 0
 
-var move_speed: float = 100.0
+var move_speed: float = 60.0
 
 var target_pos: Vector2
 var target_zone: int
@@ -19,6 +20,7 @@ signal request_dialogue(object)
 
 func _ready() -> void:
 	interact_area.interact = Callable(self, "_on_interact")
+	Global.time_changed.connect(_on_time_changed)
 
 func _on_interact() -> void:
 	request_dialogue.emit(self)
@@ -27,34 +29,35 @@ func _on_interact() -> void:
 func set_schedule(schedule_data: String):
 	schedule = ScheduleManager.parse_schedule_entry(schedule_data)
 	schedule.sort_custom(func(a, b): return a["time"] < b["time"]) # sort by time
-	schedule_index = 0
+	schedule_index = 1
 
-func _process(delta: float) -> void:
-	
+func _on_time_changed(cur_time) -> void:
 	if schedule.is_empty():
 		return
 	
-	var cur_time = Global.get_time() # Example: "830" means 8:30 AM
+	print(cur_time)
 	if schedule_index < schedule.size() and cur_time >= schedule[schedule_index]["time"]:
 		# new target unlocked
 		var target = schedule[schedule_index]
 		_move_to(target["pos"], target["zone"])
 		schedule_index += 1
 
+
 func _move_to(pos: Vector2, zone: int):
 	target_pos = pos
 	target_zone = zone
 	moving = true
 
-func _physics_process(delta: float) -> void:
-	if moving:
-		var dir = (target_pos - global_position).normalized()
-		velocity = dir * move_speed
-		move_and_slide()
-		
-		if global_position.distance_to(target_pos) < 4.0:
-			# reached target
-			global_position = target_pos
-			moving = false
-			if target_zone != Global.cur_zone_id:
-				print("In the wrong zone")
+#func _physics_process(delta: float) -> void:
+	#if not moving: return
+	#
+	#if not navigation_agent_2d.is_target_reached():
+		#var nav_point_direction = to_local(navigation_agent_2d.get_next_path_position()).normalized()
+		#velocity = nav_point_direction * move_speed
+		#move_and_slide()
+		#
+		#if target_zone != Global.cur_zone_id:
+			#print("In the wrong zone")
+	#else:
+		#moving = false
+#
