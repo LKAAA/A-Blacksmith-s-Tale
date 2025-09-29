@@ -6,6 +6,9 @@ class_name Zone extends Node2D
 @export var shops: Array
 @export var dialogue_objects: Array
 
+@export var tilemap_base: TileMapLayer = null
+@export var tilemap_obstacles: TileMapLayer = null
+
 # THIS CODE IS DISGUSTING - AVERT YOUR EYESA
 func get_external_inventories() -> Array:
 	for child in get_children():

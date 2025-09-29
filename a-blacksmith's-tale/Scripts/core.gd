@@ -10,6 +10,7 @@ const NPC_CORE = preload("res://Scenes/Objects/npc_core.tscn")
 @onready var hovering_indicator: TileMapLayer = $"Hovering Indicator"
 @onready var dialogue_manager: DialogueManager = $DialogueManager
 @onready var time_manager: TimeManager = $TimeManager
+@onready var grid: PathfindingGrid = %Grid
 
 var external: bool = false
 var cur_zone: String
@@ -25,6 +26,7 @@ var active_npcs: Array[NPCCore] = []
 # ----------------------------------------------------------
 
 func _ready() -> void:
+	Global.grid = grid
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
 	Global.time_changed.connect(time_passed)
@@ -204,6 +206,11 @@ func _setup_first_zone() -> void:
 	
 	_connect_dialogues(current_zone)
 	
+	if current_zone.tilemap_base and current_zone.tilemap_obstacles:
+		grid.update_tilemaps(current_zone.tilemap_base, current_zone.tilemap_obstacles)
+	else:
+		printerr("You forgot to add the tilemaps for the grid")
+	
 	Global.cur_zone_id = current_zone.zone_id
 
 func _load_next_zone() -> void:
@@ -230,6 +237,11 @@ func _load_next_zone() -> void:
 	
 	Global.cur_zone_id = current_zone.zone_id
 	
+	if current_zone.tilemap_base and current_zone.tilemap_obstacles:
+		grid.update_tilemaps(current_zone.tilemap_base, current_zone.tilemap_obstacles)
+	else:
+		printerr("You forgot to add the tilemaps for the grid")
+	
 	cur_zone = ""
 	cur_transition = 0
 
@@ -247,6 +259,7 @@ func load_npcs(current_zone_id) -> void:
 		var event = npcs[npc_name]["event"]
 		var npc: NPCCore = NPC_CORE.instantiate()
 		npc.set_schedule(npcs[npc_name]["schedule"])
+		npc.visual_path_line2D = Line2D.new()
 		npc.char_name = npc_name
 		current_zone.add_child(npc)
 		npc.position = event["pos"]

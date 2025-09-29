@@ -147,11 +147,13 @@ script = ExtResource("15_uwclm")
 inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_dpgyg"), SubResource("Resource_4hkp2"), SubResource("Resource_x8coi"), SubResource("Resource_mhl2v"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
-[node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions")]
+[node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions", "tilemap_base", "tilemap_obstacles")]
 position = Vector2(8, 8)
 script = ExtResource("1_x1thp")
 zone_id = 1
 transitions = [NodePath("Transition Zones/NorthTransition"), NodePath("Transition Zones/EastTransition")]
+tilemap_base = NodePath("Tilemap/Grass")
+tilemap_obstacles = NodePath("Tilemap/Hills")
 
 [node name="Tilemap" type="Node2D" parent="."]
 z_index = -2
@@ -340,3 +342,6 @@ char_name = "Seri"
 [node name="NPCScheduleTool2" type="Node2D" parent="Characters/Seri"]
 script = ExtResource("21_6bgdf")
 metadata/_custom_type_script = "uid://bc8dn2l61tmo2"
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(500, 0)

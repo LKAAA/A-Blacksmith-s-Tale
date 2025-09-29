@@ -1,6 +1,7 @@
 extends Node
 
 const TILE_SIZE: int = 16
+@export var grid: PathfindingGrid
 
 @export var player: PlayerBase
 @export var player_name: String = "Stevie Wonder"

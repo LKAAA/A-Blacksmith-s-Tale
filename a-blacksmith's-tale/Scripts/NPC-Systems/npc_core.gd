@@ -4,7 +4,9 @@ class_name NPCCore
 @export var char_name: String = ""
 
 @onready var interact_area: Interactable = $InteractArea
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
+@export var visual_path_line2D: Line2D = null
 
 var schedule: Array = [] # parsed schedule for today
 var schedule_index: int = 0
@@ -15,6 +17,8 @@ var target_pos: Vector2
 var target_zone: int
 var moving: bool = false
 var facing: int
+
+var path_to_position: Array = []
 
 signal request_dialogue(object)
 
@@ -44,6 +48,11 @@ func _on_time_changed(cur_time) -> void:
 
 
 func _move_to(pos: Vector2, zone: int):
+	visual_path_line2D.position = self.position
+	visual_path_line2D.z_index = 99
+	path_to_position = Global.grid.get_path_to_pos(self.global_position, pos)
+	print(path_to_position)
+	visual_path_line2D.points = path_to_position
 	target_pos = pos
 	target_zone = zone
 	moving = true
