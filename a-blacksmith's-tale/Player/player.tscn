@@ -617,7 +617,7 @@ stat_list = Array[ExtResource("4_od3ui")]([ExtResource("5_00tjw"), ExtResource("
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_hgb4b")
-animation = &"Idle_Down_F"
+animation = &"Walk_Left_M"
 autoplay = "Idle_Down_M"
 
 [node name="Camera2D" type="Camera2D" parent="."]

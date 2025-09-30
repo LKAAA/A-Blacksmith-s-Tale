@@ -9,13 +9,14 @@ class_name NPCScheduleTool
 @export var cur_schedule_name: String = ""
 @export var cur_schedule_time: int = 000
 @export var cur_zone_id: int = 0
+@export var cur_facing_direction: int = 1 # 1 = down, 2 = left, 3 = right, 4 = up
 @export_tool_button("Record Schedule", "Callable") var record_data = _record_data
 @export_tool_button("Delete Schedule", "Callable") var delete_data = _delete_data
 @export_tool_button("Save To Json", "Callable") var save_to_json = _save_to_json
 
 func _record_data():
 	var cur_pos: Vector2 = get_parent().position
-	var facing_direction = 0
+	var facing_direction = cur_facing_direction
 	if schedule.has(cur_schedule_name):
 		schedule[cur_schedule_name] += str(cur_schedule_time) + " " + str(cur_pos) + " " + str(facing_direction) + " " + str(cur_zone_id) + " / "
 	else:

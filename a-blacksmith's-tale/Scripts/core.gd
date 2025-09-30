@@ -259,7 +259,6 @@ func load_npcs(current_zone_id) -> void:
 		var event = npcs[npc_name]["event"]
 		var npc: NPCCore = NPC_CORE.instantiate()
 		npc.set_schedule(npcs[npc_name]["schedule"])
-		npc.visual_path_line2D = Line2D.new()
 		npc.char_name = npc_name
 		current_zone.add_child(npc)
 		npc.position = event["pos"]

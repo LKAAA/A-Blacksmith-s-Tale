@@ -148,9 +148,7 @@ inventory_slots = Array[ExtResource("8_yhkl1")]([SubResource("Resource_dpgyg"), 
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions", "tilemap_base", "tilemap_obstacles")]
-position = Vector2(8, 8)
 script = ExtResource("1_x1thp")
-zone_id = 1
 transitions = [NodePath("Transition Zones/NorthTransition"), NodePath("Transition Zones/EastTransition")]
 tilemap_base = NodePath("Tilemap/Grass")
 tilemap_obstacles = NodePath("Tilemap/Hills")
@@ -194,62 +192,62 @@ slot_data = SubResource("Resource_g0d61")
 [node name="Objects" type="Node" parent="."]
 
 [node name="Chest" parent="Objects" instance=ExtResource("14_8d832")]
-position = Vector2(520, 40)
+position = Vector2(16, 128)
 inventory_data = SubResource("Resource_r6337")
 
 [node name="Chest2" parent="Objects" instance=ExtResource("14_8d832")]
-position = Vector2(40, 120)
+position = Vector2(48, 128)
 inventory_data = SubResource("Resource_6bgdf")
 
 [node name="CuringRack" parent="Objects" instance=ExtResource("18_quhww")]
-position = Vector2(-8, 184)
+position = Vector2(-16, 176)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="CuringRack2" parent="Objects" instance=ExtResource("18_quhww")]
-position = Vector2(40, 184)
+position = Vector2(32, 176)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="CuringRack3" parent="Objects" instance=ExtResource("18_quhww")]
-position = Vector2(88, 184)
+position = Vector2(80, 176)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="Tree" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(616, 32)
+position = Vector2(368, 368)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree2" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(656, 48)
+position = Vector2(320, 384)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree3" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(624, 80)
+position = Vector2(272, 400)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree4" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(560, 24)
+position = Vector2(256, 368)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree5" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(584, 56)
+position = Vector2(304, 352)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree6" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(560, 88)
+position = Vector2(400, 384)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree7" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(680, 96)
+position = Vector2(304, 416)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree8" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(576, 272)
+position = Vector2(352, 416)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
@@ -274,45 +272,45 @@ required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Sign" parent="Objects" instance=ExtResource("23_x8coi")]
-position = Vector2(296, 248)
+position = Vector2(320, 256)
 dialogue_tag = "Temp_Sign"
 
 [node name="Sign2" parent="Objects" instance=ExtResource("23_x8coi")]
-position = Vector2(360, 248)
+position = Vector2(384, 256)
 dialogue_tag = "Temp_Sign_2"
 
 [node name="HarvestableItem" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(136, 88)
+position = Vector2(128, 96)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem2" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(152, 88)
+position = Vector2(144, 96)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem3" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(168, 88)
+position = Vector2(160, 96)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem4" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(88, 88)
+position = Vector2(80, 96)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem5" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(104, 88)
+position = Vector2(96, 96)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem6" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(120, 88)
+position = Vector2(112, 96)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="Forge" parent="Objects" instance=ExtResource("20_x8coi")]
-position = Vector2(440, 24)
+position = Vector2(-80, 176)
 
 [node name="MarketStall" parent="Objects" instance=ExtResource("21_x8coi")]
 shop_data = ExtResource("22_xm65n")
@@ -320,27 +318,18 @@ shop_data = ExtResource("22_xm65n")
 [node name="Characters" type="Node" parent="."]
 
 [node name="NPCCore2" parent="Characters" instance=ExtResource("20_4hkp2")]
-position = Vector2(198, 143)
+position = Vector2(424, 24)
 char_name = "TestNPC2"
 
 [node name="NPCScheduleTool2" type="Node2D" parent="Characters/NPCCore2"]
 script = ExtResource("21_6bgdf")
-metadata/_custom_type_script = "uid://bc8dn2l61tmo2"
-
-[node name="NPCCore" parent="Characters" instance=ExtResource("20_4hkp2")]
-position = Vector2(459, 143)
-char_name = "TestNPC"
-
-[node name="NPCScheduleTool2" type="Node2D" parent="Characters/NPCCore"]
-script = ExtResource("21_6bgdf")
-metadata/_custom_type_script = "uid://bc8dn2l61tmo2"
-
-[node name="Seri" parent="Characters" instance=ExtResource("20_4hkp2")]
-position = Vector2(440, 248)
-char_name = "Seri"
-
-[node name="NPCScheduleTool2" type="Node2D" parent="Characters/Seri"]
-script = ExtResource("21_6bgdf")
+schedule = {
+"spring": "800 (384.0, 0.0) 1 0 / 800 (704.0, 128.0) 2 0 / 1200 (128.0, 192.0) 2 0 / "
+}
+json_file_name = "Seri"
+cur_schedule_name = "spring"
+cur_schedule_time = 1200
+cur_facing_direction = 2
 metadata/_custom_type_script = "uid://bc8dn2l61tmo2"
 
 [node name="Node2D" type="Node2D" parent="."]

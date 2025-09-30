@@ -9,7 +9,7 @@ var path_to_position: Array = []
 
 func _ready() -> void:
 	pathfinding_grid.cell_size = Vector2(Global.TILE_SIZE, Global.TILE_SIZE)
-	pathfinding_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES # TEST THIS 
+	pathfinding_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER # TEST THIS 
 	pathfinding_grid.update()
 
 func update_tilemaps(tilemap_base, tilemap_obstacles) -> void:
