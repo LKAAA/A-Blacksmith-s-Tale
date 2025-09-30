@@ -86,8 +86,10 @@ func _move_to(pos: Vector2, zone: int):
 	moving = true
 
 func _physics_process(delta: float) -> void:
+	if Global.game_paused:
+		sprite_2d.stop()
 	
-	if moving: 
+	if moving and not Global.game_paused: 
 		var dir = (target_pos - global_position).normalized()
 		velocity = dir * move_speed
 		velocity = velocity.limit_length(move_speed)
@@ -109,6 +111,7 @@ func _physics_process(delta: float) -> void:
 				print("%s is going to the next point." % char_name)
 				current_path_index += 1
 				target_pos = path_to_position[current_path_index]
+	
 
 func idle_animations(dir) -> void:
 	match facing:
