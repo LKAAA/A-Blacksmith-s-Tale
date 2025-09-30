@@ -48,6 +48,8 @@ func _physics_process(_delta: float) -> void:
 			
 			if not Global.dialogue_active:
 				_handle_input()
+			else:
+				_play_idle_animation()
 		PLAYER_STATES.DODGEROLL:
 			pass
 	

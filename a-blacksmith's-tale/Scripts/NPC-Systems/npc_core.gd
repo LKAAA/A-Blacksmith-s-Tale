@@ -86,8 +86,12 @@ func _move_to(pos: Vector2, zone: int):
 	moving = true
 
 func _physics_process(delta: float) -> void:
-	if Global.game_paused:
+	if Global.dialogue_active:
+		sprite_2d.play("IdleDown")
+	elif Global.game_paused:
 		sprite_2d.stop()
+	
+	
 	
 	if moving and not Global.game_paused: 
 		var dir = (target_pos - global_position).normalized()
