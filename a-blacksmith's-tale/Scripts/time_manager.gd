@@ -5,7 +5,6 @@ class_name TimeManager
 @onready var daylight_cycle_modulator: CanvasModulate = $"../DaylightCycleModulator"
 @export var gradient: GradientTexture1D
 
-@export var INGAME_SPEED: float = 10.0 # 1 ingame second per 1 real life second
 @export var INITIAL_HOUR: int = 6:
 	set(h):
 		INITIAL_HOUR = h
@@ -25,6 +24,7 @@ var am_or_pm: String
 var hour: int
 var hour_12: int = 1
 var minute: int
+var pretty_day: String
 
 var time: float = 0.0
 var past_minute: float = -1.0
@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 	_handle_debug_inputs()
 	
 	if not Global.game_paused:
-		time += delta * INGAME_TO_REAL_MINUTE_DURATION * INGAME_SPEED
+		time += delta * INGAME_TO_REAL_MINUTE_DURATION * Global.INGAME_SPEED
 		_recalculate_time()
 		_set_canvas_color()
 		
@@ -58,10 +58,10 @@ func _process(delta: float) -> void:
 
 func _handle_debug_inputs() -> void:
 	#if Input.is_action_just_pressed("debug_slow_down_time"):
-		#INGAME_SPEED = max(1.0, INGAME_SPEED - 5.0)
+		#Global.INGAME_SPEED = max(1.0, Global.INGAME_SPEED - 5.0)
 	
 	#if Input.is_action_just_pressed("debug_speed_up_time"):
-		#INGAME_SPEED += 5
+		#Global.INGAME_SPEED += 5
 	pass
 
 func _recalculate_time() -> void:
@@ -89,6 +89,7 @@ func _calculate_time_properties() -> void:
 	if hour == 0: hour_12 = 12
 	decideWeekday()
 	decideSeason()
+	get_pretty_day()
 	Global.cur_hour = hour_12
 	Global.cur_minute = minute
 	Global.am_pm = am_or_pm
@@ -144,7 +145,45 @@ func decideSeason():
 			current_season = "Winter"
 	Global.cur_season = current_season
 
+func get_pretty_day():
+	match day:
+		1, 21, 31:
+			pretty_day = "%dst" % day
+		2, 22:
+			pretty_day = "%dnd" % day
+		3, 23:
+			pretty_day = "%drd" % day
+		_:
+			pretty_day = "%dth" % day
+
 func emit_current_time() -> void:
 	#print("%s\n %s, Day: %d\n%02d:%02d %s" % [current_season, current_weekday, day, hour_12, minute, am_or_pm])
-	#time_tick.emit(day, hour, hour_12, minute, current_weekday, current_season, am_or_pm)
+	time_tick.emit(pretty_day, hour, hour_12, minute, current_weekday, current_season, am_or_pm)
 	Global.time_changed.emit((hour * 100) + minute)
+
+func calculate_departure_time(arrival_time: int, irl_seconds: float) -> int:
+	var ingame_minutes = irl_seconds_to_ingame_minutes(irl_seconds)
+
+	# Break down arrival into hours/minutes
+	var arrival_hour = int(arrival_time / 100)
+	var arrival_minute = int(arrival_time % 100)
+
+	# Convert arrival into total minutes since midnight
+	var arrival_total_minutes = arrival_hour * MINUTES_PER_HOUR + arrival_minute
+
+	# Subtract travel minutes
+	var departure_total_minutes = arrival_total_minutes - int(round(ingame_minutes))
+
+	# Wrap around if it goes negative (previous day)
+	if departure_total_minutes < 0:
+		departure_total_minutes += MINUTES_PER_DAY
+
+	# Convert back to HHMM
+	var dep_hour = int(departure_total_minutes / MINUTES_PER_HOUR)
+	var dep_minute = int(departure_total_minutes % MINUTES_PER_HOUR)
+	
+	return dep_hour * 100 + dep_minute
+
+# Converts real-life seconds into in-game minutes
+func irl_seconds_to_ingame_minutes(irl_seconds: float) -> float:
+	return irl_seconds * Global.INGAME_SPEED

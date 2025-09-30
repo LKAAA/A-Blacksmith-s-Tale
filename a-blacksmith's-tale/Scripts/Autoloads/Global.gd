@@ -20,7 +20,6 @@ signal unpaused
 
 @export var player_gold: int = 9999999999
 
-
 @export var cur_zone_id: int
 
 const MAX_TOOL_EFFICIENCY: int = 10
@@ -31,8 +30,7 @@ enum tool_types {
 	Shovel
 	}
 
-# Time
-
+@export var INGAME_SPEED: float = 10.0 # float = amount of irl seconds per 1 ingame minute
 var cur_minute: int
 var cur_hour: int
 var hour_12: int

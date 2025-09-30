@@ -29,6 +29,4 @@ func set_grid() -> void:
 		pathfinding_grid.set_point_solid(cell, false)
 
 func get_path_to_pos(starting_position, target_position) -> PackedVector2Array:
-	print(starting_position)
-	print(target_position)
 	return pathfinding_grid.get_point_path(starting_position / Global.TILE_SIZE, target_position / Global.TILE_SIZE)

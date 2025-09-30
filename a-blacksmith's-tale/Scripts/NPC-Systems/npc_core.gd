@@ -8,6 +8,8 @@ class_name NPCCore
 
 @export var visual_path_line2D: Line2D = null
 
+var core: Core
+
 var schedule: Array = [] # parsed schedule for today
 var schedule_index: int = 0
 
@@ -32,6 +34,7 @@ func _on_interact() -> void:
 	print("Interact with " + char_name)
 
 func set_schedule(schedule_data: String):
+	print("HERE")
 	schedule = ScheduleManager.parse_schedule_entry(schedule_data)
 	schedule.sort_custom(func(a, b): return a["time"] < b["time"]) # sort by time
 	schedule_index = 1
@@ -40,18 +43,39 @@ func _on_time_changed(cur_time) -> void:
 	if schedule.is_empty():
 		return
 	
-	#print(cur_time)
-	if schedule_index < schedule.size() and cur_time >= schedule[schedule_index]["time"]:
+	if schedule[1]["departure time"] == 0: 
+		schedule = calculate_travel_times(schedule)
+	
+	if schedule_index < schedule.size() and cur_time >= schedule[schedule_index]["departure time"]:
 		# new target unlocked
 		var target = schedule[schedule_index]
 		_move_to(target["pos"], target["zone"])
 		facing = target["facing"]
 		schedule_index += 1
 
+func calculate_travel_times(sch: Array) -> Array:
+	var final_schedule = sch.duplicate()
+	print("Final schedule: ", final_schedule)
+	var prev_pos = final_schedule[0]["pos"] # initial_pos
+	for event in final_schedule:
+		var path = Global.grid.get_path_to_pos(prev_pos, event["pos"])
+		
+		var total_distance = 0.0
+		for i in range(path.size() - 1):
+			total_distance += path[i].distance_to(path[i + 1])
+		
+		var travel_time = total_distance / move_speed
+		var travel_minutes = core.time_manager.calculate_departure_time(event["time"], travel_time)
+		
+		event["departure time"] = travel_minutes
+		
+		prev_pos = event["pos"]
+	
+	return final_schedule
 
 func _move_to(pos: Vector2, zone: int):
 	path_to_position = Global.grid.get_path_to_pos(position, pos)
-	print(path_to_position[0])
+	
 	visual_path_line2D.points = path_to_position
 	
 	current_path_index = 1

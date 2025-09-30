@@ -5,6 +5,7 @@ class_name GameUI extends Control
 @onready var stamina_bar: ProgressBar = $StaminaBar
 @onready var health_bar_text: RichTextLabel = %HealthBarText
 @onready var stamina_bar_text: RichTextLabel = %StaminaBarText
+@onready var time_label: RichTextLabel = %TimeLabel
 
 
 var player_inventory: InventoryData
@@ -84,3 +85,6 @@ func update_bars() -> void:
 	
 	health_bar_text.text = "%d/%d" % [health_stat.current, health_stat.base]
 	stamina_bar_text.text = "%d/%d" % [stamina_stat.current, stamina_stat.base]
+
+func update_time_label(day, hour, hour_12, minute, current_weekday, current_season, am_or_pm) -> void:
+	time_label.text = "%s of %s\n%s\n%02d:%02d %s" % [day, current_season, current_weekday, hour_12, minute, am_or_pm]

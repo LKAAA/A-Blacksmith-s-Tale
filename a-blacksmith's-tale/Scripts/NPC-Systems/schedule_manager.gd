@@ -79,12 +79,15 @@ func parse_schedule_entry(entry: String) -> Array:
 		var facing = int(tokens[0])
 		var zone_id = int(tokens[1])
 
+
 		result.append({
 			"time": time,
 			"pos": pos,
 			"facing": facing,
-			"zone": zone_id
+			"zone": zone_id,
+			"departure time": 0000
 		})
+
 	return result
 
 func get_current_event(schedule_str: String, cur_time: int) -> Dictionary:

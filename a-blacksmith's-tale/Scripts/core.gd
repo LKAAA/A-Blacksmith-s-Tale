@@ -29,13 +29,12 @@ func _ready() -> void:
 	Global.grid = grid
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
-	Global.time_changed.connect(time_passed)
+	time_manager.time_tick.connect(time_tick_update)
 	ScheduleManager._interpret_schedules()
 	new_day()
 
-func time_passed(time) -> void:
-	# TODO: tick-based schedule processing
-	pass
+func time_tick_update(day, hour, hour_12, minute, current_weekday, current_season, am_or_pm) -> void:
+	game_ui.update_time_label(day, hour, hour_12, minute, current_weekday, current_season, am_or_pm)
 
 func new_day() -> void:
 	ScheduleManager._decide_todays_schedules()
@@ -263,6 +262,7 @@ func load_npcs(current_zone_id) -> void:
 		current_zone.add_child(npc)
 		npc.position = event["pos"]
 		npc.facing = event["facing"]
+		npc.core = self
 		print("Spawned %s at %s" % [npc_name, str(event["pos"])])
 
 func _connect_zone_signals(zone: Zone) -> void:
