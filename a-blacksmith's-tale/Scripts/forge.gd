@@ -1,6 +1,7 @@
 extends StaticBody2D
 class_name Forge
 
+@export var size: Array[int] = [4, 3]
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer

@@ -29,6 +29,10 @@ func set_grid() -> void:
 	for cell in current_tilemap_obstacles.get_used_cells():
 		pathfinding_grid.set_point_solid(cell, false)
 
+func update_dynamic_objects_into_grid() -> void:
+	for cell in walk_grid:
+		pathfinding_grid.set_point_solid(cell, true)
+
 func get_path_to_pos(starting_position, target_position) -> PackedVector2Array:
 	return pathfinding_grid.get_point_path(starting_position / Global.TILE_SIZE, target_position / Global.TILE_SIZE)
 
@@ -45,3 +49,10 @@ func get_tile_pos(pos: Vector2) -> Vector2i:
 
 func set_local_pos_walkable(pos: Vector2, walkable: bool) -> void:
 	set_walkable(get_tile_pos(pos), walkable)
+
+func set_object_walkable(origin_pos: Vector2, size: Array[int], walkable) -> void:
+	var origin_tile_pos: Vector2i = get_tile_pos(origin_pos)
+	print(origin_tile_pos)
+	for x in size[0]:
+		for y in (size[1] + 1):
+			set_walkable(origin_tile_pos + Vector2i(x, y), walkable)

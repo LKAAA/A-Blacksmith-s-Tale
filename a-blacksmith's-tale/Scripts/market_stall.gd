@@ -1,6 +1,8 @@
 extends StaticBody2D
 class_name MarketStall
 
+@export var size: Array[int] = [3, 3]
+
 @onready var interact_area: Interactable = $InteractArea
 
 signal toggle_shop(data)

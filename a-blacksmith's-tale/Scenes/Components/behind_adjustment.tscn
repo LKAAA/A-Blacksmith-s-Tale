@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dt1cbr151t3en" path="res://Scripts/behind_adjustment.gd" id="1_cnu4k"]
 
 [node name="BehindAdjustment" type="Area2D"]
-collision_layer = 128
-collision_mask = 128
+collision_layer = 160
+collision_mask = 160
 script = ExtResource("1_cnu4k")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

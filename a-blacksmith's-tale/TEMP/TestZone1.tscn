@@ -252,7 +252,7 @@ required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree9" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(248, 40)
+position = Vector2(536, 8)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
@@ -280,46 +280,46 @@ position = Vector2(392, 264)
 dialogue_tag = "Temp_Sign_2"
 
 [node name="HarvestableItem" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(136, 88)
+position = Vector2(568, -8)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem2" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(152, 88)
+position = Vector2(616, 168)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem3" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(136, 104)
+position = Vector2(616, 56)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem4" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(120, 104)
+position = Vector2(616, 72)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem5" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(104, 88)
+position = Vector2(616, 136)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem6" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(120, 88)
+position = Vector2(616, 104)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="Forge" parent="Objects" instance=ExtResource("20_x8coi")]
-position = Vector2(-72, 168)
+position = Vector2(-88, 152)
 
 [node name="MarketStall" parent="Objects" instance=ExtResource("21_x8coi")]
-position = Vector2(8, 8)
+position = Vector2(-8, -8)
 shop_data = ExtResource("22_xm65n")
 
 [node name="Characters" type="Node" parent="."]
 
 [node name="NPCCore2" parent="Characters" instance=ExtResource("20_4hkp2")]
-position = Vector2(424, 24)
+position = Vector2(40, 344)
 char_name = "TestNPC2"
 
 [node name="NPCScheduleTool2" type="Node2D" parent="Characters/NPCCore2"]

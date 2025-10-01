@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+@export var size: Array[int] = [1, 1]
+
 @onready var breakable_area: Area2D = $breakable_area
 @onready var loot_component: LootComponent = %Loot_Component
 var OAK_STUMP = load("res://Scenes/Objects/BreakableObjects/oak_stump.tscn")

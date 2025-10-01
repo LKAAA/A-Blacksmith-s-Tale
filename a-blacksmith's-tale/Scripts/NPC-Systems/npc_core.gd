@@ -26,6 +26,7 @@ signal request_dialogue(object)
 func _ready() -> void:
 	interact_area.interact = Callable(self, "_on_interact")
 	Global.time_changed.connect(_on_time_changed)
+	z_index = 3
 
 func _on_interact() -> void:
 	request_dialogue.emit(self)
@@ -72,7 +73,11 @@ func calculate_travel_times(sch: Array) -> Array:
 	return final_schedule
 
 func _move_to(pos: Vector2, zone: int):
-	path_to_position = Grid.get_path_to_pos(position, pos)
+	var raw_path = Grid.get_path_to_pos(position, pos)
+	var offset = Vector2(Global.TILE_SIZE / 2, Global.TILE_SIZE / 2)  # e.g. Vector2(8, 8) for 16x16 tiles
+
+	for p in raw_path:
+		path_to_position.append(p + offset)
 	
 	visual_path_line2D.points = path_to_position
 	
@@ -110,7 +115,7 @@ func _physics_process(delta: float) -> void:
 				if target_zone != Global.cur_zone_id:
 					print("In the wrong zone")
 			else:
-				print("%s is going to the next point." % char_name)
+				#print("%s is going to the next point." % char_name)
 				current_path_index += 1
 				target_pos = path_to_position[current_path_index]
 	

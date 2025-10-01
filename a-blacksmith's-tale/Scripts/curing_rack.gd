@@ -1,5 +1,7 @@
 class_name CuringRack extends StaticBody2D
 
+@export var size: Array[int] = [2, 2]
+
 @onready var interact_area: Interactable = $InteractArea
 @onready var recipe_tester: RecipeTester = $RecipeTester
 @onready var timer: Timer = $Timer

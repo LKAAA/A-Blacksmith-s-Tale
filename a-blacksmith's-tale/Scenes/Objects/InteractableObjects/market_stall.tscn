@@ -23,27 +23,32 @@ size = Vector2(50, 25)
 size = Vector2(38, 24)
 
 [node name="MarketStall" type="StaticBody2D" groups=["obstacle", "shop"]]
+z_index = 2
 script = ExtResource("1_wj8hn")
 
 [node name="FrontStallSprite" type="Sprite2D" parent="."]
 z_index = 1
+position = Vector2(16, 16)
 texture = SubResource("AtlasTexture_a6vpq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
 texture = SubResource("AtlasTexture_wj8hn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 5
-position = Vector2(0, 13)
+position = Vector2(16, 29)
 shape = SubResource("RectangleShape2D_3ack5")
 
 [node name="BehindAdjustment" parent="." instance=ExtResource("3_1iwsx")]
+position = Vector2(16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BehindAdjustment"]
 position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_gofu4")
 
 [node name="InteractArea" parent="." instance=ExtResource("2_a6vpq")]
+position = Vector2(16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 z_index = 5

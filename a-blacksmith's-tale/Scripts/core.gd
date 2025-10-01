@@ -273,13 +273,17 @@ func update_grid(current_zone: Zone) -> void:
 	var obstacles = current_zone.get_obstacles()
 	print("Obstacles: ", obstacles)
 	for obstacle in obstacles:
+		if "size" in obstacle:
+			Grid.set_object_walkable(obstacle.position, obstacle.size, false)
+		else:
+			Grid.set_object_walkable(obstacle.position, [1, 1], false)
+		
 		print("Obstacle was set")
-		Grid.set_local_pos_walkable(obstacle.position, false)
-		# If obstacle.has_var(obstacle_size)
-		# Set all to unwalkable
 	
 	for tile in Grid.walk_grid:
 		current_zone.tilemap_base.set_cell(tile, 1, Vector2i(13, 2))
+	
+	Grid.update_dynamic_objects_into_grid()
 
 func _connect_zone_signals(zone: Zone) -> void:
 	for t in zone.transitions:
