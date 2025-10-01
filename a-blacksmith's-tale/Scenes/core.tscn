@@ -196,8 +196,11 @@ gradient = ExtResource("11_byey5")
 unique_name_in_owner = true
 script = ExtResource("13_x0cc3")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="finished" from="DialogueManager" to="." method="_on_dialogue_manager_finished"]
 [connection signal="message_completed" from="DialogueManager" to="." method="_on_dialogue_manager_message_completed"]
 [connection signal="message_requested" from="DialogueManager" to="." method="_on_dialogue_manager_message_requested"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="UI/Game_UI/Hotbar"]

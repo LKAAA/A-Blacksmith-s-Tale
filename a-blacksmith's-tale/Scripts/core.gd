@@ -10,6 +10,7 @@ const NPC_CORE = preload("res://Scenes/Objects/npc_core.tscn")
 @onready var hovering_indicator: TileMapLayer = $"Hovering Indicator"
 @onready var dialogue_manager: DialogueManager = $DialogueManager
 @onready var time_manager: TimeManager = $TimeManager
+@onready var timer: Timer = $Timer
 
 var external: bool = false
 var cur_zone: String
@@ -19,6 +20,8 @@ var current_zone: Zone
 var next_zone: Zone
 var player: PlayerBase
 var active_npcs: Array[NPCCore] = []
+
+var dialogue_cooldown: bool = false
 
 # ----------------------------------------------------------
 # Lifecycle
@@ -56,10 +59,14 @@ func request_break(breakable_object):
 
 func _request_dialogue(object) -> void:
 	print("recieved signal")
-	dialogue_manager._choose_message(object)
+	if not dialogue_cooldown:
+		dialogue_manager._choose_message(object)
 
 func _on_dialogue_manager_finished() -> void:
+	timer.start(0.5)
+	dialogue_cooldown = true
 	Global.unpause_game()
+	
 	#next_label.visible = true
 
 func _on_dialogue_manager_message_completed() -> void:
@@ -282,3 +289,7 @@ func _connect_dialogues(zone: Zone) -> void:
 	for child in zone.get_dialogue_objects():
 		if not child.request_dialogue.is_connected(_request_dialogue):
 			child.request_dialogue.connect(_request_dialogue)
+
+
+func _on_timer_timeout() -> void:
+	dialogue_cooldown = false

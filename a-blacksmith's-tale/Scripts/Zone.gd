@@ -9,45 +9,18 @@ class_name Zone extends Node2D
 @export var tilemap_base: TileMapLayer = null
 @export var tilemap_obstacles: TileMapLayer = null
 
-# THIS CODE IS DISGUSTING - AVERT YOUR EYESA
+# THIS CODE is no longer disgusting. Please look with happiness
 func get_external_inventories() -> Array:
-	for child in get_children():
-		if child.name == "Objects":
-			for c in child.get_children():
-				if c.is_in_group("external_inventory"):
-					external_inventories.append(c)
-	
-	return external_inventories
+	return get_tree().get_nodes_in_group("external_inventory")
 
 func get_shops() -> Array:
-	for child in get_children():
-		if child.name == "Objects":
-			for c in child.get_children():
-				if c.is_in_group("shop"):
-					shops.append(c)
-	
-	return shops
+	return get_tree().get_nodes_in_group("shop")
 
 func get_dialogue_objects() -> Array:
-	for child in get_children():
-		if child.name == "Objects":
-			for c in child.get_children():
-				if c.is_in_group("dialogue_object"):
-					dialogue_objects.append(c)
-		if child is NPCCore:
-			dialogue_objects.append(child)
-	return dialogue_objects
+	return get_tree().get_nodes_in_group("dialogue_object")
 
 func get_npcs() -> Array:
-	var npc_characters: Array = []
-	for child in get_children():
-		if child.name == "Characters":
-			for c in child.get_children():
-				npc_characters.append(c)
-	if npc_characters == []:
-		print("No NPC Characters in Zone.")
-	return npc_characters
+	return get_tree().get_nodes_in_group("npc_character")
 
 func get_obstacles() -> Array:
-	# Returns all nodes that are in the "obstacle" group
 	return get_tree().get_nodes_in_group("obstacle")

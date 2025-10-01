@@ -192,127 +192,128 @@ slot_data = SubResource("Resource_g0d61")
 [node name="Objects" type="Node" parent="."]
 
 [node name="Chest" parent="Objects" instance=ExtResource("14_8d832")]
-position = Vector2(16, 128)
+position = Vector2(24, 120)
 inventory_data = SubResource("Resource_r6337")
 
 [node name="Chest2" parent="Objects" instance=ExtResource("14_8d832")]
-position = Vector2(48, 128)
+position = Vector2(56, 120)
 inventory_data = SubResource("Resource_6bgdf")
 
 [node name="CuringRack" parent="Objects" instance=ExtResource("18_quhww")]
-position = Vector2(-16, 176)
+position = Vector2(-8, 168)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="CuringRack2" parent="Objects" instance=ExtResource("18_quhww")]
-position = Vector2(32, 176)
+position = Vector2(40, 168)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="CuringRack3" parent="Objects" instance=ExtResource("18_quhww")]
-position = Vector2(80, 176)
+position = Vector2(88, 168)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="Tree" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(368, 368)
+position = Vector2(360, 360)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree2" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(320, 384)
+position = Vector2(328, 376)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree3" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(272, 400)
+position = Vector2(280, 392)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree4" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(256, 368)
+position = Vector2(264, 360)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree5" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(304, 352)
+position = Vector2(312, 344)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree6" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(400, 384)
+position = Vector2(408, 376)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree7" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(304, 416)
+position = Vector2(312, 392)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree8" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(352, 416)
+position = Vector2(360, 408)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree9" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(264, 48)
+position = Vector2(248, 40)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree10" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(216, 32)
+position = Vector2(200, 24)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree11" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(56, 16)
+position = Vector2(72, 8)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree12" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(-64, 48)
+position = Vector2(-56, 56)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Sign" parent="Objects" instance=ExtResource("23_x8coi")]
-position = Vector2(320, 256)
+position = Vector2(344, 264)
 dialogue_tag = "Temp_Sign"
 
 [node name="Sign2" parent="Objects" instance=ExtResource("23_x8coi")]
-position = Vector2(384, 256)
+position = Vector2(392, 264)
 dialogue_tag = "Temp_Sign_2"
 
 [node name="HarvestableItem" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(128, 96)
+position = Vector2(136, 88)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem2" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(144, 96)
+position = Vector2(152, 88)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem3" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(160, 96)
+position = Vector2(136, 104)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem4" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(80, 96)
+position = Vector2(120, 104)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem5" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(96, 96)
+position = Vector2(104, 88)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem6" parent="Objects" instance=ExtResource("20_dpgyg")]
-position = Vector2(112, 96)
+position = Vector2(120, 88)
 xp_reward = 5
 item_drop = ExtResource("16_qsvcl")
 
 [node name="Forge" parent="Objects" instance=ExtResource("20_x8coi")]
-position = Vector2(-80, 176)
+position = Vector2(-72, 168)
 
 [node name="MarketStall" parent="Objects" instance=ExtResource("21_x8coi")]
+position = Vector2(8, 8)
 shop_data = ExtResource("22_xm65n")
 
 [node name="Characters" type="Node" parent="."]

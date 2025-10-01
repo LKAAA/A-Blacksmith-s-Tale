@@ -278,7 +278,7 @@ size = Vector2(28, 41)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvl10"]
 size = Vector2(20, 22)
 
-[node name="NPCCore" type="CharacterBody2D" node_paths=PackedStringArray("visual_path_line2D") groups=["npc_characters"]]
+[node name="NPCCore" type="CharacterBody2D" node_paths=PackedStringArray("visual_path_line2D") groups=["dialogue_object", "npc_character"]]
 z_index = 1
 script = ExtResource("1_coole")
 visual_path_line2D = NodePath("Line2D")
