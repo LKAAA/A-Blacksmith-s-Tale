@@ -13,7 +13,7 @@ size = Vector2(16, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mo1a"]
 
-[node name="Chest" type="StaticBody2D" groups=["external_inventory"]]
+[node name="Chest" type="StaticBody2D" groups=["external_inventory", "obstacle"]]
 script = ExtResource("1_matv7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

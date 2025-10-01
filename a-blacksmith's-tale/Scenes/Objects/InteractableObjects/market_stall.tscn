@@ -22,7 +22,7 @@ size = Vector2(50, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wj8hn"]
 size = Vector2(38, 24)
 
-[node name="MarketStall" type="StaticBody2D" groups=["shop"]]
+[node name="MarketStall" type="StaticBody2D" groups=["obstacle", "shop"]]
 script = ExtResource("1_wj8hn")
 
 [node name="FrontStallSprite" type="Sprite2D" parent="."]

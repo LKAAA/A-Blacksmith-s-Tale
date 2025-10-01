@@ -25,7 +25,7 @@ size = Vector2(12, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbs57"]
 size = Vector2(48, 64)
 
-[node name="Tree" type="StaticBody2D" groups=["breakable_object"]]
+[node name="Tree" type="StaticBody2D" groups=["breakable_object", "obstacle"]]
 script = ExtResource("1_k2xnf")
 hitpoints = 4
 required_tool_type = "Axe"

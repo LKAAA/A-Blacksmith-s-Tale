@@ -8,8 +8,6 @@ class_name NPCCore
 
 @export var visual_path_line2D: Line2D = null
 
-var core: Core
-
 var schedule: Array = [] # parsed schedule for today
 var schedule_index: int = 0
 
@@ -58,14 +56,14 @@ func calculate_travel_times(sch: Array) -> Array:
 	print("Final schedule: ", final_schedule)
 	var prev_pos = final_schedule[0]["pos"] # initial_pos
 	for event in final_schedule:
-		var path = Global.grid.get_path_to_pos(prev_pos, event["pos"])
+		var path = Grid.get_path_to_pos(prev_pos, event["pos"])
 		
 		var total_distance = 0.0
 		for i in range(path.size() - 1):
 			total_distance += path[i].distance_to(path[i + 1])
 		
 		var travel_time = total_distance / move_speed
-		var travel_minutes = core.time_manager.calculate_departure_time(event["time"], travel_time)
+		var travel_minutes = Global.core.time_manager.calculate_departure_time(event["time"], travel_time)
 		
 		event["departure time"] = travel_minutes
 		
@@ -74,7 +72,7 @@ func calculate_travel_times(sch: Array) -> Array:
 	return final_schedule
 
 func _move_to(pos: Vector2, zone: int):
-	path_to_position = Global.grid.get_path_to_pos(position, pos)
+	path_to_position = Grid.get_path_to_pos(position, pos)
 	
 	visual_path_line2D.points = path_to_position
 	

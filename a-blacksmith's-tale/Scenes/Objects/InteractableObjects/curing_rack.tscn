@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be7jivnwikk0p" path="res://Scripts/curing_rack.gd" id="1_u7nyp"]
 [ext_resource type="PackedScene" uid="uid://7waftdht5yup" path="res://Scenes/Components/recipe_tester.tscn" id="2_lj5t6"]
-[ext_resource type="Texture2D" uid="uid://dhbvvpbp0h7d0" path="res://Assets/Sprites/TanningRackSpritesheet.png" id="3_bixfi"]
+[ext_resource type="Texture2D" uid="uid://dhbvvpbp0h7d0" path="res://Assets/Sprites/TanningRackSpriteSheet.png" id="3_bixfi"]
 [ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="3_lj5t6"]
 [ext_resource type="PackedScene" uid="uid://dyc4diepdebv6" path="res://Scenes/Components/behind_adjustment.tscn" id="5_nm6v6"]
 
@@ -42,7 +42,7 @@ size = Vector2(32, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d8io8"]
 size = Vector2(32, 20)
 
-[node name="CuringRack" type="StaticBody2D"]
+[node name="CuringRack" type="StaticBody2D" groups=["obstacle"]]
 script = ExtResource("1_u7nyp")
 
 [node name="RecipeTester" parent="." instance=ExtResource("2_lj5t6")]

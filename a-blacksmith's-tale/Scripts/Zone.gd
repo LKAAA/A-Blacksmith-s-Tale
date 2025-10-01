@@ -47,3 +47,7 @@ func get_npcs() -> Array:
 	if npc_characters == []:
 		print("No NPC Characters in Zone.")
 	return npc_characters
+
+func get_obstacles() -> Array:
+	# Returns all nodes that are in the "obstacle" group
+	return get_tree().get_nodes_in_group("obstacle")

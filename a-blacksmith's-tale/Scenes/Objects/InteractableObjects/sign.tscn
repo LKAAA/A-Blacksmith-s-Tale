@@ -13,7 +13,7 @@ region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdpjq"]
 
-[node name="Sign" type="StaticBody2D" groups=["dialogue_object"]]
+[node name="Sign" type="StaticBody2D" groups=["dialogue_object", "obstacle"]]
 script = ExtResource("1_6ck10")
 dialogue_file = "ExtraDialogue"
 

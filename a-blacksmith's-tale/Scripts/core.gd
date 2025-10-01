@@ -10,7 +10,6 @@ const NPC_CORE = preload("res://Scenes/Objects/npc_core.tscn")
 @onready var hovering_indicator: TileMapLayer = $"Hovering Indicator"
 @onready var dialogue_manager: DialogueManager = $DialogueManager
 @onready var time_manager: TimeManager = $TimeManager
-@onready var grid: PathfindingGrid = %Grid
 
 var external: bool = false
 var cur_zone: String
@@ -26,7 +25,7 @@ var active_npcs: Array[NPCCore] = []
 # ----------------------------------------------------------
 
 func _ready() -> void:
-	Global.grid = grid
+	Global.core = self
 	load_zone()
 	loading_screen.fade_in_finished.connect(fade_in_finished)
 	time_manager.time_tick.connect(time_tick_update)
@@ -205,10 +204,7 @@ func _setup_first_zone() -> void:
 	
 	_connect_dialogues(current_zone)
 	
-	if current_zone.tilemap_base and current_zone.tilemap_obstacles:
-		grid.update_tilemaps(current_zone.tilemap_base, current_zone.tilemap_obstacles)
-	else:
-		printerr("You forgot to add the tilemaps for the grid")
+	update_grid(current_zone)
 	
 	Global.cur_zone_id = current_zone.zone_id
 
@@ -236,10 +232,7 @@ func _load_next_zone() -> void:
 	
 	Global.cur_zone_id = current_zone.zone_id
 	
-	if current_zone.tilemap_base and current_zone.tilemap_obstacles:
-		grid.update_tilemaps(current_zone.tilemap_base, current_zone.tilemap_obstacles)
-	else:
-		printerr("You forgot to add the tilemaps for the grid")
+	update_grid(current_zone)
 	
 	cur_zone = ""
 	cur_transition = 0
@@ -262,8 +255,24 @@ func load_npcs(current_zone_id) -> void:
 		current_zone.add_child(npc)
 		npc.position = event["pos"]
 		npc.facing = event["facing"]
-		npc.core = self
 		print("Spawned %s at %s" % [npc_name, str(event["pos"])])
+
+func update_grid(current_zone: Zone) -> void:
+	if current_zone.tilemap_base and current_zone.tilemap_obstacles:
+		Grid.update_tilemaps(current_zone.tilemap_base, current_zone.tilemap_obstacles)
+	else:
+		printerr("You forgot to add the tilemaps for the grid")
+	
+	var obstacles = current_zone.get_obstacles()
+	print("Obstacles: ", obstacles)
+	for obstacle in obstacles:
+		print("Obstacle was set")
+		Grid.set_local_pos_walkable(obstacle.position, false)
+		# If obstacle.has_var(obstacle_size)
+		# Set all to unwalkable
+	
+	for tile in Grid.walk_grid:
+		current_zone.tilemap_base.set_cell(tile, 1, Vector2i(13, 2))
 
 func _connect_zone_signals(zone: Zone) -> void:
 	for t in zone.transitions:

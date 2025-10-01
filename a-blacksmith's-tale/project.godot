@@ -21,6 +21,7 @@ Popups="*res://Scenes/popups.tscn"
 Global="*res://Scripts/Autoloads/Global.gd"
 Progression="*res://Scripts/Autoloads/Progression.gd"
 ScheduleManager="*res://Scripts/NPC-Systems/schedule_manager.gd"
+Grid="*res://Scripts/grid.gd"
 
 [display]
 
@@ -35,6 +36,7 @@ window/stretch/scale_mode="integer"
 
 breakable=""
 interactable=""
+obstacle=""
 
 [input]
 

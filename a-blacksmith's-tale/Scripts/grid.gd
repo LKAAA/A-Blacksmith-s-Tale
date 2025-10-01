@@ -1,11 +1,12 @@
 extends Node
-class_name PathfindingGrid
 
 var current_tilemap_base: TileMapLayer = null
 var current_tilemap_obstacles: TileMapLayer = null
 
 var pathfinding_grid: AStarGrid2D = AStarGrid2D.new()
 var path_to_position: Array = []
+
+var walk_grid = {}
 
 func _ready() -> void:
 	pathfinding_grid.cell_size = Vector2(Global.TILE_SIZE, Global.TILE_SIZE)
@@ -30,3 +31,17 @@ func set_grid() -> void:
 
 func get_path_to_pos(starting_position, target_position) -> PackedVector2Array:
 	return pathfinding_grid.get_point_path(starting_position / Global.TILE_SIZE, target_position / Global.TILE_SIZE)
+
+func is_walkable(tile: Vector2i) -> bool:
+	if not walk_grid.has(tile):
+		return true # default to true (walkable)
+	return walk_grid[tile]
+
+func set_walkable(tile: Vector2i, walkable: bool) -> void:
+	walk_grid[tile] = walkable
+
+func get_tile_pos(pos: Vector2) -> Vector2i:
+	return current_tilemap_base.local_to_map(pos)
+
+func set_local_pos_walkable(pos: Vector2, walkable: bool) -> void:
+	set_walkable(get_tile_pos(pos), walkable)
