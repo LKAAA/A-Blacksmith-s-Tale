@@ -212,22 +212,22 @@ position = Vector2(88, 168)
 recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="Tree" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(360, 360)
+position = Vector2(360, 328)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree2" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(328, 376)
+position = Vector2(344, 376)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree3" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(280, 392)
+position = Vector2(264, 328)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree4" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(264, 360)
+position = Vector2(280, 376)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
@@ -237,7 +237,7 @@ required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree6" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(408, 376)
+position = Vector2(408, 328)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
@@ -247,7 +247,7 @@ required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree8" parent="Objects" instance=ExtResource("22_4hkp2")]
-position = Vector2(360, 408)
+position = Vector2(392, 360)
 required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
