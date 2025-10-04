@@ -14,6 +14,9 @@ class_name ItemData extends Resource
 func use(_target) -> void:
 	pass
 
+func place(_mouse_pos) -> void:
+	pass
+
 func equipped(_target) -> void:
 	pass
 

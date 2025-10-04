@@ -56,3 +56,12 @@ func set_object_walkable(origin_pos: Vector2, size: Array[int], walkable) -> voi
 	for x in size[0]:
 		for y in (size[1] + 1):
 			set_walkable(origin_tile_pos + Vector2i(x, y), walkable)
+
+func check_location_walkable(origin_pos: Vector2, size: Array[int]) -> bool:
+	var origin_tile_pos: Vector2i = get_tile_pos(origin_pos)
+	update_dynamic_objects_into_grid()
+	if walk_grid.has(origin_tile_pos): 
+		print("Not Walkable")
+		return false # Not walkable - Taken up by something
+	print("Walkable")
+	return true # Walkable - not taken up by something

@@ -67,6 +67,8 @@ func use_slot() -> void:
 				active_slot_data.item_data.use(Global.player)
 			"Tool":
 				Global.player.execute_breakable()
+			"Placeable":
+				active_slot_data.item_data.place(get_local_mouse_position())
 		print("Using " + active_slot_data.item_data.name)
 	else:
 		print("No item in slot " + str(active_slot))

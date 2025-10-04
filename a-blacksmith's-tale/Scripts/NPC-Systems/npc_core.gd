@@ -1,23 +1,35 @@
 extends CharacterBody2D
 class_name NPCCore
 
+const STUCK_THRESHOLD: float = 0.5
+
 @export var char_name: String = ""
+
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @onready var interact_area: Interactable = $InteractArea
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var timer: Timer = $Timer
 
 @export var visual_path_line2D: Line2D = null
+
+@export var time_until_phase_through_objects: float = 2
+@export var phase_duration: float = 2.5
 
 var schedule: Array = [] # parsed schedule for today
 var schedule_index: int = 0
 
 var move_speed: float = 50.0
+var base_move_speed: float = 50.0
+var previous_position: Vector2 = Vector2.ZERO
 
 var target_pos: Vector2
 var current_path_index: int = 0
 var target_zone: int
 var moving: bool = false
 var facing: int
+
+var phasing: bool = false
 
 var path_to_position: Array = []
 
@@ -94,7 +106,8 @@ func _physics_process(delta: float) -> void:
 	elif Global.game_paused:
 		sprite_2d.stop()
 	
-	
+	# capture previous world position BEFORE movement
+	var prev_pos: Vector2 = global_position
 	
 	if moving and not Global.game_paused: 
 		var dir = (target_pos - global_position).normalized()
@@ -118,6 +131,21 @@ func _physics_process(delta: float) -> void:
 				#print("%s is going to the next point." % char_name)
 				current_path_index += 1
 				target_pos = path_to_position[current_path_index]
+		
+		# ---- Stuck detection ----
+	var moved_distance = global_position.distance_to(prev_pos)
+	if moving:
+		if moved_distance <= STUCK_THRESHOLD and not phasing:
+			# just got stuck (or still stuck) — start timer if not already running
+			if timer.is_stopped():
+				timer.wait_time = time_until_phase_through_objects
+				timer.start()
+				print("%s: stopped moving, will phase in %s s" % [char_name, str(time_until_phase_through_objects)])
+		else:
+			# moved — cancel waiting timer if it was running and we are not phasing
+			if not timer.is_stopped() and not phasing:
+				timer.stop()
+				print("%s: resumed moving — cancelled phase timer" % char_name)
 	
 
 func idle_animations(dir) -> void:
@@ -140,3 +168,23 @@ func move_animations(dir) -> void:
 		sprite_2d.play("WalkUp")
 	elif roundf(dir.y) > 0:
 		sprite_2d.play("WalkDown")
+
+
+func _on_timer_timeout() -> void:
+	if not phasing:
+		# Begin phasing
+		collision_shape_2d.disabled = true
+		phasing = true
+		move_speed = base_move_speed + 20  # explicit set, avoids drift
+		timer.wait_time = phase_duration
+		timer.start()
+		print("%s: started phasing" % char_name)
+	else:
+		# End phasing
+		collision_shape_2d.disabled = false
+		phasing = false
+		move_speed = base_move_speed
+		# don't restart the waiting timer here — let physics detect if still stuck
+		timer.stop()
+		timer.wait_time = time_until_phase_through_objects
+		print("%s: stopped phasing" % char_name)

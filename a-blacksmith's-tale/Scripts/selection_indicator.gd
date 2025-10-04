@@ -4,7 +4,7 @@ var mouse_pos: Vector2
 
 func _physics_process(_delta: float) -> void:
 	mouse_pos = get_global_mouse_position()
-	mouse_pos = Vector2(mouse_pos.x - 8, mouse_pos.y - 8)
+	mouse_pos = Vector2(mouse_pos.x, mouse_pos.y)
 	var mouse_tile = local_to_map(mouse_pos)
 	
 	update_selection_tile(mouse_tile)

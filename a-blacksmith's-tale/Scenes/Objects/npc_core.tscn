@@ -318,5 +318,9 @@ collision_mask = 128
 position = Vector2(0, -14.5)
 shape = SubResource("RectangleShape2D_lvl10")
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="InteractArea" to="InteractArea" method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

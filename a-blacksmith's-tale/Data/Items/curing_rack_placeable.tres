@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemDataPlaceable" load_steps=5 format=3 uid="uid://b3ptlxemjy5k2"]
+
+[ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/InteractableObjects/curing_rack.tscn" id="1_j2f1f"]
+[ext_resource type="Script" uid="uid://uu6b1xeliph8" path="res://Data/Scripts/item_data_placeable.gd" id="2_umvyd"]
+[ext_resource type="Texture2D" uid="uid://dhbvvpbp0h7d0" path="res://Assets/Sprites/TanningRackSpritesheet.png" id="3_ricxk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kvtq"]
+atlas = ExtResource("3_ricxk")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_umvyd")
+placeable_scene = ExtResource("1_j2f1f")
+size = Array[int]([2, 2])
+name = "Tanning Rack"
+id = 14
+description = "A rack for curing leather"
+sprite = SubResource("AtlasTexture_6kvtq")
+type = "Placeable"
+sellable = true
+buy_price = 1
+sell_price = 1
+stackable = true
+metadata/_custom_type_script = "uid://uu6b1xeliph8"
