@@ -45,7 +45,8 @@ func set_walkable(tile: Vector2i, walkable: bool) -> void:
 	walk_grid[tile] = walkable
 
 func get_tile_pos(pos: Vector2) -> Vector2i:
-	return current_tilemap_base.local_to_map(pos)
+	var local_pos = current_tilemap_base.to_local(pos)
+	return current_tilemap_base.local_to_map(local_pos)
 
 func set_local_pos_walkable(pos: Vector2, walkable: bool) -> void:
 	set_walkable(get_tile_pos(pos), walkable)
@@ -60,8 +61,12 @@ func set_object_walkable(origin_pos: Vector2, size: Array[int], walkable) -> voi
 func check_location_walkable(origin_pos: Vector2, size: Array[int]) -> bool:
 	var origin_tile_pos: Vector2i = get_tile_pos(origin_pos)
 	update_dynamic_objects_into_grid()
-	if walk_grid.has(origin_tile_pos): 
-		print("Not Walkable")
-		return false # Not walkable - Taken up by something
+	
+	for x in size[0]:
+		for y in size[1]:
+			var check_pos = origin_tile_pos + Vector2i(x, y)
+			if walk_grid.has(check_pos):
+				print("Not Walkable at ", check_pos)
+				return false
 	print("Walkable")
 	return true # Walkable - not taken up by something

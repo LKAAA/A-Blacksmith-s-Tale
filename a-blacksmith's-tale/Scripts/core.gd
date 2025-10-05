@@ -297,3 +297,6 @@ func _connect_dialogues(zone: Zone) -> void:
 
 func _on_timer_timeout() -> void:
 	dialogue_cooldown = false
+
+func get_mouse_pos() -> Vector2:
+	return get_global_mouse_position()

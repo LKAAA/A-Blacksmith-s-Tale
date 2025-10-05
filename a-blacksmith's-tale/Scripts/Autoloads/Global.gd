@@ -75,3 +75,6 @@ func unpause_game() -> void:
 		unpaused.emit()
 	else:
 		print("Already unpaused")
+
+func get_mouse_pos() -> Vector2:
+	return core.get_mouse_pos()

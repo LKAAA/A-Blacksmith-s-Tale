@@ -7,6 +7,7 @@ class_name GameUI extends Control
 @onready var stamina_bar_text: RichTextLabel = %StaminaBarText
 @onready var time_label: RichTextLabel = %TimeLabel
 
+const OAK_STUMP = preload("res://Scenes/Objects/BreakableObjects/oak_stump.tscn")
 
 var player_inventory: InventoryData
 
@@ -68,7 +69,8 @@ func use_slot() -> void:
 			"Tool":
 				Global.player.execute_breakable()
 			"Placeable":
-				active_slot_data.item_data.place(get_local_mouse_position())
+				active_slot_data.item_data.place(Global.get_mouse_pos())
+				
 		print("Using " + active_slot_data.item_data.name)
 	else:
 		print("No item in slot " + str(active_slot))
