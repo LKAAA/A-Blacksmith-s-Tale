@@ -12,6 +12,8 @@ const NPC_CORE = preload("res://Scenes/Objects/npc_core.tscn")
 @onready var time_manager: TimeManager = $TimeManager
 @onready var timer: Timer = $Timer
 
+@export var debug_walkable_tiles: bool = false
+
 var external: bool = false
 var cur_zone: String
 var cur_transition: int
@@ -161,6 +163,14 @@ func unload_shops(zone: Zone) -> void:
 			node.toggle_shop.disconnect(toggle_shop_ui)
 			print("Disconnected " + node.name)
 
+
+func player_in_range(pos_to_check: Vector2) -> bool:
+	print("DISTANCE: ", pos_to_check.distance_to(Global.player.position))
+	if pos_to_check.distance_to(Global.player.position) <= Global.build_range:
+		return true
+	
+	return false
+
 # ----------------------------------------------------------
 # Zones
 # ----------------------------------------------------------
@@ -271,17 +281,18 @@ func update_grid(current_zone: Zone) -> void:
 		printerr("You forgot to add the tilemaps for the grid")
 	
 	var obstacles = current_zone.get_obstacles()
-	print("Obstacles: ", obstacles)
 	for obstacle in obstacles:
 		if "size" in obstacle:
 			Grid.set_object_walkable(obstacle.position, obstacle.size, false)
 		else:
 			Grid.set_object_walkable(obstacle.position, [1, 1], false)
 		
-		print("Obstacle was set")
 	
-	for tile in Grid.walk_grid:
-		current_zone.tilemap_base.set_cell(tile, 1, Vector2i(13, 2))
+	
+	if debug_walkable_tiles:
+		print("Debug Walkable")
+		for tile in Grid.build_grid:
+			current_zone.tilemap_base.set_cell(tile, 1, Vector2i(13, 2))
 	
 	Grid.update_dynamic_objects_into_grid()
 

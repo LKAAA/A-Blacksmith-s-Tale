@@ -24,6 +24,7 @@ sources/0 = SubResource("TileSetAtlasSource_2sxaq")
 
 [node name="Core" type="Node2D"]
 script = ExtResource("1_gb7ya")
+debug_walkable_tiles = true
 
 [node name="Hovering Indicator" type="TileMapLayer" parent="."]
 z_index = 210

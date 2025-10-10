@@ -7,6 +7,8 @@ var pathfinding_grid: AStarGrid2D = AStarGrid2D.new()
 var path_to_position: Array = []
 
 var walk_grid = {}
+var build_grid = {} # Same as walkgrid but removes the buffer tile underneath objects that prevents
+					# Npc heads from hitting 
 
 func _ready() -> void:
 	pathfinding_grid.cell_size = Vector2(Global.TILE_SIZE, Global.TILE_SIZE)
@@ -44,6 +46,9 @@ func is_walkable(tile: Vector2i) -> bool:
 func set_walkable(tile: Vector2i, walkable: bool) -> void:
 	walk_grid[tile] = walkable
 
+func set_buildable(tile: Vector2i, buildable: bool) -> void:
+	build_grid[tile] = buildable
+
 func get_tile_pos(pos: Vector2) -> Vector2i:
 	var local_pos = current_tilemap_base.to_local(pos)
 	return current_tilemap_base.local_to_map(local_pos)
@@ -53,10 +58,12 @@ func set_local_pos_walkable(pos: Vector2, walkable: bool) -> void:
 
 func set_object_walkable(origin_pos: Vector2, size: Array[int], walkable) -> void:
 	var origin_tile_pos: Vector2i = get_tile_pos(origin_pos)
-	print(origin_tile_pos)
 	for x in size[0]:
 		for y in (size[1] + 1):
 			set_walkable(origin_tile_pos + Vector2i(x, y), walkable)
+	for x in size[0]:
+		for y in size[1]:
+			set_buildable(origin_tile_pos + Vector2i(x,y), false)
 
 func check_location_walkable(origin_pos: Vector2, size: Array[int]) -> bool:
 	var origin_tile_pos: Vector2i = get_tile_pos(origin_pos)
@@ -65,7 +72,7 @@ func check_location_walkable(origin_pos: Vector2, size: Array[int]) -> bool:
 	for x in size[0]:
 		for y in size[1]:
 			var check_pos = origin_tile_pos + Vector2i(x, y)
-			if walk_grid.has(check_pos):
+			if build_grid.has(check_pos):
 				print("Not Walkable at ", check_pos)
 				return false
 	print("Walkable")

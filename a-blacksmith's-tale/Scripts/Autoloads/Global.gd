@@ -16,6 +16,7 @@ const TILE_SIZE: int = 16
 @export var game_paused: bool
 @export var dialogue_active: bool = false
 @export var shop_active: bool = false
+@export var build_range: int = 100
 signal paused
 signal unpaused
 
