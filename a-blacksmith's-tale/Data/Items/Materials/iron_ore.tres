@@ -18,3 +18,7 @@ sellable = true
 buy_price = 13
 sell_price = 1
 stackable = true
+burnable = false
+burn_time = 0
+smeltable = true
+melting_point = 1538

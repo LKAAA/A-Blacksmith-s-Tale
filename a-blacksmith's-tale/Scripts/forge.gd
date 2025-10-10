@@ -34,48 +34,51 @@ func _ready() -> void:
 # Give player completed item
 
 func _forge_interacted() -> void:
-	match current_state:
-		FORGE_STATES.INACTIVE:
-			print("Try to start forging")
-			if Global.active_slot:
-				print(Global.active_slot.item_data.name)
-				for recipe in recipes:
-					print(recipe.recipe_name)
-					if recipe_tester.test_item(recipe, Global.active_slot.item_data):
-						print("Holding an item for " + recipe.recipe_name)
-						if recipe_tester.test_inventory(recipe, Global.player.inventory):
-							print("Has all items for " + recipe.recipe_name)
-							active_recipe = recipe
-							begin_forging()
-		FORGE_STATES.ACTIVE:
-			print("Currently Forging")
-		FORGE_STATES.COMPLETE:
-			print("Try to pick up")
-			var output_count = active_recipe.output.size()
-			for output in active_recipe.output:
-				var slot_data = SlotData.new()
-				slot_data.item_data = output
-				slot_data.quantity = 1
-				if Global.player.inventory.pick_up_slot_data(slot_data):
-					print("Picked up")
-					output_count -= 1
-				else:
-					print("Inventory Full")
-			
-			if output_count <= 0:
-				active_recipe = null
-				current_state = FORGE_STATES.INACTIVE
-			else:
-				print("Couldn't pick up completed items. Probably means inventory was full.")
-		
-		#if ready_to_pickup:
-			
-		#else:
-			#print("Try to start curing")
-			
-	#else:
-		#print("Already on")
-	#animated_sprite_2d.play("On")
+	Global.core.toggle_forge_ui()
+
+#func _forge_interacted() -> void:
+	#match current_state:
+		#FORGE_STATES.INACTIVE:
+			#print("Try to start forging")
+			#if Global.active_slot:
+				#print(Global.active_slot.item_data.name)
+				#for recipe in recipes:
+					#print(recipe.recipe_name)
+					#if recipe_tester.test_item(recipe, Global.active_slot.item_data):
+						#print("Holding an item for " + recipe.recipe_name)
+						#if recipe_tester.test_inventory(recipe, Global.player.inventory):
+							#print("Has all items for " + recipe.recipe_name)
+							#active_recipe = recipe
+							#begin_forging()
+		#FORGE_STATES.ACTIVE:
+			#print("Currently Forging")
+		#FORGE_STATES.COMPLETE:
+			#print("Try to pick up")
+			#var output_count = active_recipe.output.size()
+			#for output in active_recipe.output:
+				#var slot_data = SlotData.new()
+				#slot_data.item_data = output
+				#slot_data.quantity = 1
+				#if Global.player.inventory.pick_up_slot_data(slot_data):
+					#print("Picked up")
+					#output_count -= 1
+				#else:
+					#print("Inventory Full")
+			#
+			#if output_count <= 0:
+				#active_recipe = null
+				#current_state = FORGE_STATES.INACTIVE
+			#else:
+				#print("Couldn't pick up completed items. Probably means inventory was full.")
+		#
+		##if ready_to_pickup:
+			#
+		##else:
+			##print("Try to start curing")
+			#
+	##else:
+		##print("Already on")
+	##animated_sprite_2d.play("On")
 
 func begin_forging() -> void:
 	# for each type of item in array

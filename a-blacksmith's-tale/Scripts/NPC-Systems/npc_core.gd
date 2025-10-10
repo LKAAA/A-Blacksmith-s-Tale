@@ -134,7 +134,7 @@ func _physics_process(delta: float) -> void:
 		
 		# ---- Stuck detection ----
 	var moved_distance = global_position.distance_to(prev_pos)
-	if moving:
+	if moving and not Global.game_paused:
 		if moved_distance <= STUCK_THRESHOLD and not phasing:
 			# just got stuck (or still stuck) — start timer if not already running
 			if timer.is_stopped():

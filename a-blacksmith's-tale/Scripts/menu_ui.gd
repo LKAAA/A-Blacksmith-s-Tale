@@ -5,6 +5,7 @@ class_name Menu extends Control
 
 @onready var player_inventory: PanelContainer = %PlayerInventory
 @onready var external_inventory: InventoryUI = %ExternalInventory
+@onready var forge_ui: ForgeUI = %Forge_UI
 
 var external = false
 var external_inv_data: InventoryData = null
@@ -25,6 +26,10 @@ func _set_external_inventory(_external_inventory) -> void:
 	
 	external_inv_data.inventory_interacted.connect(on_inventory_interact)
 	external_inventory.set_inventory_data(external_inv_data)
+
+func _set_forge_inventory(inventory_data: InventoryData) -> void:
+	inventory_data.inventory_interacted.connect(on_inventory_interact)
+	forge_ui.set_ui(inventory_data)
 
 func clear_external_inventory() -> void:
 	if external_inventory_owner:

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=5 format=3 uid="uid://b2pa1b6wmduol"]
 
-[ext_resource type="Resource" uid="uid://dm4oa85xd4lmy" path="res://Data/Items/stone.tres" id="1_adm67"]
+[ext_resource type="Resource" uid="uid://dm4oa85xd4lmy" path="res://Data/Items/Materials/stone.tres" id="1_adm67"]
 [ext_resource type="Script" uid="uid://dge56hs33tghy" path="res://Data/Scripts/item_data_consumable.gd" id="1_ulovj"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_ulovj"]
 
@@ -24,4 +24,9 @@ sellable = true
 buy_price = 69
 sell_price = 69
 stackable = true
+burnable = false
+burn_time = 0
+burn_temp = 0
+smeltable = false
+melting_point = 0
 metadata/_custom_type_script = "uid://dge56hs33tghy"

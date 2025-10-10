@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="RecipeData" load_steps=5 format=3 uid="uid://c2xi2unhicxyu"]
 
 [ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_53rbh"]
-[ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/animal_hide.tres" id="2_bifsp"]
+[ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/Materials/animal_hide.tres" id="2_bifsp"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="2_gpntb"]
-[ext_resource type="Resource" uid="uid://kpjm1k573bkg" path="res://Data/Items/leather.tres" id="3_oxalj"]
+[ext_resource type="Resource" uid="uid://kpjm1k573bkg" path="res://Data/Items/Materials/leather.tres" id="3_oxalj"]
 
 [resource]
 script = ExtResource("2_gpntb")

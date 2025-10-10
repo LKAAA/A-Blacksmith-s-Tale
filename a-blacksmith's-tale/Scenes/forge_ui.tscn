@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvhf0s5aqfog6"]
+
+[ext_resource type="Script" uid="uid://d2w7m5ne7rwqy" path="res://Scripts/UI/forge_ui.gd" id="1_3n4yn"]
+[ext_resource type="Script" uid="uid://bktye0hdyfyrf" path="res://Scripts/inventory_ui.gd" id="2_w0xxf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_al2hu"]
+
+[node name="Forge_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3n4yn")
+
+[node name="OuterBorder" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 30
+
+[node name="Background" type="TextureRect" parent="OuterBorder"]
+self_modulate = Color(0.65, 0.65, 0.65, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("CanvasTexture_al2hu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OuterBorder"]
+layout_mode = 2
+
+[node name="InventorySection" type="MarginContainer" parent="OuterBorder/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Inventory" type="PanelContainer" parent="OuterBorder/HBoxContainer/InventorySection"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("2_w0xxf")
+
+[node name="MarginContainer" type="MarginContainer" parent="OuterBorder/HBoxContainer/InventorySection/Inventory"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="InventoryUI" type="GridContainer" parent="OuterBorder/HBoxContainer/InventorySection/Inventory/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 6
+
+[node name="RecipeSection" type="MarginContainer" parent="OuterBorder/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ForgeSection" type="MarginContainer" parent="OuterBorder/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4

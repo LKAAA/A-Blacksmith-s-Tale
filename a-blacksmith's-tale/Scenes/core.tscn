@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://co5cc6txkeplv"]
+[gd_scene load_steps=18 format=3 uid="uid://co5cc6txkeplv"]
 
 [ext_resource type="Script" uid="uid://cyvr7g2773o5h" path="res://Scripts/core.gd" id="1_gb7ya"]
 [ext_resource type="PackedScene" uid="uid://cj3yjqmwsa42r" path="res://Scenes/loading_screen.tscn" id="2_377ls"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://65gus5cxtd12" path="res://Scenes/shop_ui.tscn" id="7_al2hu"]
 [ext_resource type="FontFile" uid="uid://df73r0oibkmtw" path="res://Assets/Fonts/Fabled_Font.ttf" id="9_al2hu"]
 [ext_resource type="Script" uid="uid://cyp4qogxd3rq" path="res://Scripts/dialogue_manager.gd" id="9_gbnb7"]
+[ext_resource type="PackedScene" uid="uid://dvhf0s5aqfog6" path="res://Scenes/forge_ui.tscn" id="10_0ouq4"]
 [ext_resource type="Script" uid="uid://csnmp3nbii0d4" path="res://Scripts/time_manager.gd" id="10_2sxaq"]
 [ext_resource type="Texture2D" uid="uid://cw5gn6ita43p3" path="res://Assets/daynightcycle-gradient-texture.tres" id="11_byey5"]
 [ext_resource type="Script" uid="uid://cd3jxpeecq4vb" path="res://Scripts/grid.gd" id="13_x0cc3"]
@@ -69,8 +70,14 @@ offset_bottom = -66.0
 [node name="GrabbedSlot" parent="UI/Menu_UI" instance=ExtResource("3_ak6bg")]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
+z_index = 99
 layout_mode = 0
 mouse_filter = 2
+
+[node name="Forge_UI" parent="UI/Menu_UI" instance=ExtResource("10_0ouq4")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
 [node name="ShopUI" parent="UI" instance=ExtResource("7_al2hu")]
 unique_name_in_owner = true

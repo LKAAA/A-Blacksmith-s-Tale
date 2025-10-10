@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2ohfa56l38sn" path="res://Assets/Sprites/Tree.png" id="2_c3tjw"]
 [ext_resource type="Script" uid="uid://dvx6puk3bnkq0" path="res://Scripts/DropTables/loot_entry.gd" id="2_js48y"]
 [ext_resource type="Texture2D" uid="uid://d250eif3a1vpm" path="res://Assets/Sprites/TreeShadow.png" id="3_eeglh"]
-[ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/oak_log.tres" id="3_lnte2"]
+[ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/Materials/oak_log.tres" id="3_lnte2"]
 [ext_resource type="Script" uid="uid://wojvluuilm2u" path="res://Scripts/DropTables/loot_table.gd" id="4_6wjis"]
 [ext_resource type="PackedScene" uid="uid://csik1l3vdm67g" path="res://Scenes/Components/breakable_area.tscn" id="4_js48y"]
 [ext_resource type="PackedScene" uid="uid://dyc4diepdebv6" path="res://Scenes/Components/behind_adjustment.tscn" id="5_lnte2"]

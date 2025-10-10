@@ -7,6 +7,7 @@ const NPC_CORE = preload("res://Scenes/Objects/npc_core.tscn")
 @onready var menu_ui: Menu = %Menu_UI
 @onready var game_ui: GameUI = %Game_UI
 @onready var shop_ui: ShopUI = %ShopUI
+@onready var forge_ui: ForgeUI = %Forge_UI
 @onready var hovering_indicator: TileMapLayer = $"Hovering Indicator"
 @onready var dialogue_manager: DialogueManager = $DialogueManager
 @onready var time_manager: TimeManager = $TimeManager
@@ -84,8 +85,9 @@ func _on_dialogue_manager_message_requested() -> void:
 # ----------------------------------------------------------
 
 func escape_ui() -> void:
-	if shop_ui.visible:
+	if shop_ui.visible or forge_ui.visible:
 		hide_shop_ui()
+		hide_forge_ui()
 	else:
 		toggle_inventory_interface()
 
@@ -163,6 +165,36 @@ func unload_shops(zone: Zone) -> void:
 			node.toggle_shop.disconnect(toggle_shop_ui)
 			print("Disconnected " + node.name)
 
+# ----------------------------------------------------------
+# Forge UI
+# ----------------------------------------------------------
+
+func hide_forge_ui() -> void:
+	if forge_ui.visible:
+		forge_ui.hide()
+		menu_ui.hide()
+		game_ui.show()
+		Global.unpause_game()
+		Global.forge_ui_active = false
+
+func toggle_forge_ui() -> void:
+	forge_ui.visible = !forge_ui.visible
+	
+	if forge_ui.visible:
+		menu_ui.show()
+		menu_ui.player_inventory.hide()
+		menu_ui.external_inventory.hide()
+		game_ui.hide()
+		Global.pause_game()
+		Global.forge_ui_active = true
+	else:
+		game_ui.show()
+		Global.unpause_game()
+		Global.forge_ui_active = false
+		menu_ui.player_inventory.show()
+		menu_ui.external_inventory.show()
+	
+	forge_ui.set_ui(player.inventory)
 
 func player_in_range(pos_to_check: Vector2) -> bool:
 	print("DISTANCE: ", pos_to_check.distance_to(Global.player.position))
@@ -176,7 +208,8 @@ func player_in_range(pos_to_check: Vector2) -> bool:
 # ----------------------------------------------------------
 
 # @param path is the path of the scene to transition to
-# @param transition is the number in the transitions array on each zone to teleport the player to
+# @param transition is the number in the transitions array
+# on each zone to teleport the player to
 func load_zone(zone: String = "", transition: int = 99) -> void:
 	if !current_zone: # irst time setup
 		_setup_first_zone()

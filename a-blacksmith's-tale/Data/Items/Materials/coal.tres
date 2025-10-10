@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bxp57xm62hnjx"]
+
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_30lxr"]
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="2_rwbyq"]
+
+[resource]
+script = ExtResource("1_30lxr")
+name = "Coal"
+id = 13
+description = "A chunk of raw coal"
+sprite = ExtResource("2_rwbyq")
+type = "Material"
+sellable = true
+buy_price = 100
+sell_price = 80
+stackable = true
+burnable = true
+burn_time = 120
+burn_temp = 1800
+smeltable = false
+melting_point = 0
+metadata/_custom_type_script = "uid://1sj1rrsd7jss"
