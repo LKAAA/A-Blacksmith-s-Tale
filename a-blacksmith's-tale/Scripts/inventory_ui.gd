@@ -7,8 +7,9 @@ const SLOT = preload("res://Scenes/slot.tscn")
 var inventory_slots: Array[Slot]
 
 func set_inventory_data(inventory_data: InventoryData, slots_to_update: int = 36, locked_slots: bool = false, interactable: bool = true) -> void:
-	inventory_data.inventory_updated.connect(update_slot)
-	populate_grid(inventory_data, slots_to_update, locked_slots, interactable)
+	if not inventory_data.inventory_updated.is_connected(update_slot):
+		inventory_data.inventory_updated.connect(update_slot)
+		populate_grid(inventory_data, slots_to_update, locked_slots, interactable)
 
 func clear_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_updated.disconnect(update_slot)

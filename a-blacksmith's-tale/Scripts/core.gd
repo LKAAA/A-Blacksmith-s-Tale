@@ -95,6 +95,8 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 	if shop_ui.visible:
 		return
 	
+	forge_ui.visible = false
+	
 	menu_ui.visible = !menu_ui.visible
 	
 	if menu_ui.visible:
@@ -177,7 +179,7 @@ func hide_forge_ui() -> void:
 		Global.unpause_game()
 		Global.forge_ui_active = false
 
-func toggle_forge_ui() -> void:
+func toggle_forge_ui(cur_forge: Forge) -> void:
 	forge_ui.visible = !forge_ui.visible
 	
 	if forge_ui.visible:
@@ -194,7 +196,7 @@ func toggle_forge_ui() -> void:
 		menu_ui.player_inventory.show()
 		menu_ui.external_inventory.show()
 	
-	forge_ui.set_ui(player.inventory)
+	menu_ui._set_forge_inventory(player.inventory, cur_forge)
 
 func player_in_range(pos_to_check: Vector2) -> bool:
 	print("DISTANCE: ", pos_to_check.distance_to(Global.player.position))

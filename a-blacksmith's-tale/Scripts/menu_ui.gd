@@ -27,9 +27,11 @@ func _set_external_inventory(_external_inventory) -> void:
 	external_inv_data.inventory_interacted.connect(on_inventory_interact)
 	external_inventory.set_inventory_data(external_inv_data)
 
-func _set_forge_inventory(inventory_data: InventoryData) -> void:
-	inventory_data.inventory_interacted.connect(on_inventory_interact)
-	forge_ui.set_ui(inventory_data)
+func _set_forge_inventory(inventory_data: InventoryData, cur_forge: Forge) -> void:
+	forge_ui.set_ui(inventory_data, cur_forge)
+	if not forge_ui.cur_forge.fuel_inventory.inventory_interacted.is_connected(on_inventory_interact):
+		forge_ui.cur_forge.fuel_inventory.inventory_interacted.connect(on_inventory_interact)
+		forge_ui.cur_forge.smeltable_inventory.inventory_interacted.connect(on_inventory_interact)
 
 func clear_external_inventory() -> void:
 	if external_inventory_owner:
@@ -45,6 +47,7 @@ func _update_player_inventory(inventory_data: InventoryData) -> void:
 	player_inventory.populate_grid(inventory_data, 36, true)
 
 func on_inventory_interact(inventory_data: InventoryData, index: int, button: int) -> void:
+	print("Inventory Interacted")
 	if external == true:
 		if Input.is_key_pressed(KEY_SHIFT) && button == MOUSE_BUTTON_LEFT:
 			print("SHIFT CLICK THAT MO FO")

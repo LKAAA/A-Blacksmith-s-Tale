@@ -13,6 +13,9 @@ class_name Forge
 
 @export var active_recipe: RecipeData
 
+@export var fuel_inventory: InventoryData
+@export var smeltable_inventory: InventoryData
+
 enum FORGE_STATES { INACTIVE, ACTIVE, COMPLETE }
 var current_state: FORGE_STATES 
 
@@ -34,7 +37,7 @@ func _ready() -> void:
 # Give player completed item
 
 func _forge_interacted() -> void:
-	Global.core.toggle_forge_ui()
+	Global.core.toggle_forge_ui(self)
 
 #func _forge_interacted() -> void:
 	#match current_state:
