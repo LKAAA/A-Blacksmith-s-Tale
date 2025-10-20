@@ -8,6 +8,6 @@
 script = ExtResource("2_a1uwr")
 recipe_name = "Stone Duplication"
 ingredients = Array[ExtResource("1_cjs3u")]([ExtResource("2_cwh7d")])
-output = Array[ExtResource("1_cjs3u")]([ExtResource("2_cwh7d"), ExtResource("2_cwh7d")])
+output = Array[ExtResource("1_cjs3u")]([ExtResource("2_cwh7d")])
 time_to_make = 1
 metadata/_custom_type_script = "uid://c53g5l4c0tu8s"

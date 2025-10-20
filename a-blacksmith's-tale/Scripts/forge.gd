@@ -1,6 +1,13 @@
 extends StaticBody2D
 class_name Forge
 
+# --- SIGNALS ---
+
+signal temperature_changed(new_temp : int)
+signal heated_item_ready(slot_index : int) # fired when an item finishes smelting and becomes "heated"
+
+# --- Editable / Exports
+
 @export var size: Array[int] = [4, 3]
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -16,105 +23,371 @@ class_name Forge
 @export var fuel_inventory: InventoryData
 @export var smeltable_inventory: InventoryData
 
-enum FORGE_STATES { INACTIVE, ACTIVE, COMPLETE }
-var current_state: FORGE_STATES 
+# --- Forge State
 
+enum FORGE_STATES { OFF, HEATING, SMELTING, COOLING }
+var current_state: FORGE_STATES = FORGE_STATES.OFF
+
+@export var base_heating_rate: float = 10 #0.5    # how quickly temp rises per second normally (deg/sec)
+@export var base_cooling_rate: float = 0.2    # how quickly temp falls per second when no fuel (deg/sec)
+@export var bellows_boost: float = 1.0        # extra deg/sec when bellows pumped
+@export var bellows_buffer_decay_rate: float = 0.5 # how quickly bellows buffer decays (deg/sec)
+@export var bellows_buffer_max: float = 8.0   # maximum temporary boost from bellows
+
+var current_temp: float = 0.0
+var current_max_temp: int = 0                # target temp from current fuel(s)
+var current_fuel: SlotData = null
+var next_fuel: SlotData = null
+var all_fuel: Array[SlotData] = []
+
+# smelting bookkeeping
+# Each entry: { slot_index:int, remaining_time:float, melting_point:int, source_slot:SlotData, heated_result_item_data:ItemData (optional) }
+var smelt_jobs: Array = []
+
+# bellows state
+var bellows_buffer: float = 0.0              # temporary heat maintain boost (decays over time)
+
+# internal
+var fuel_slot_index_in_use: int = -1         # index in fuel_inventory currently consuming
+var fuel_burn_time_remaining: float = 0.0    # time remaining on current fuel piece (seconds)
+
+# constants / tuning
+const SMELT_TICKS_PER_SECOND := 1.0
+
+# --- Ready ---
 func _ready() -> void:
 	bellows_manager.bellows_interacted.connect(_bellows_interacted)
 	forge_manager.forge_interacted.connect(_forge_interacted)
 	
-	Global.unpaused.connect(unpaused_game)
-	Global.paused.connect(paused_game)
-	
 	recipes = Global.load_recipes("res://Data/Recipes/ForgeRecipes/")
+	
+	fuel_inventory.inventory_updated.connect(fuel_inventory_interacted)
+	smeltable_inventory.inventory_updated.connect(smeltable_inventory_interacted)
 
-# When you interact with the forge section
-# Check held item
-# If held item is the required ingredients for any of the recipies
-# Start forge timer and take items from your inventory
-# After timer is complete
-# If player clicks on forge
-# Give player completed item
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("test_input"):
+		debug_status()
+	
+	if Global.game_paused:
+		return
+	
+	# heating/cooling behavior every frame
+	match current_state:
+		FORGE_STATES.OFF:
+			_passive_cool(delta)
+		FORGE_STATES.HEATING:
+			_heating_process(delta)
+			_process_smelt_jobs(delta)
+		FORGE_STATES.SMELTING:
+			_heating_process(delta)
+			_process_smelt_jobs(delta)
+		FORGE_STATES.COOLING:
+			_passive_cool(delta)
+
+	# bellows buffer decay
+	if bellows_buffer > 0.0:
+		bellows_buffer = max(0.0, bellows_buffer - bellows_buffer_decay_rate * delta)
+
+	# Emit temperature change to any listeners on significant change
+	emit_signal("temperature_changed", int(round(current_temp)))
+
+# --- Heating process specifics ---
+func _heating_process(delta: float) -> void:
+	var effective_heating_rate = base_heating_rate * (1.0 + (bellows_buffer / bellows_buffer_max))
+	var target = current_max_temp
+	if target <= 0:
+		# no fuel to aim for - switch to cooling state
+		print("No fuel to aim for")
+		out_of_fuel()
+		return
+
+	if current_temp < target:
+		current_temp += effective_heating_rate * 10.0 * delta
+		if current_temp >= target:
+			current_temp = target
+			# If we reached the current fuel's max, check for higher tier fuels in other fuel slots
+			var higher = higher_temp_fuel()
+			if higher:
+				current_max_temp = higher.item_data.burn_temp
+				next_fuel = higher
+			else:
+				pass
+	
+	elif current_temp > target:
+		current_temp = max(target, current_temp - base_cooling_rate * delta * 5.0)
+		if current_temp <= target:
+			current_temp = target
+	
+	if current_fuel:
+		var consumption_rate = delta / current_fuel.item_data.burn_time # fraction per secon
+		fuel_burn_time_remaining = max(0.0, fuel_burn_time_remaining - (delta * (1.0 / current_fuel.item_data.burn_time) * 1.0))
+		fuel_burn_time_remaining -= delta
+		if fuel_burn_time_remaining <= 0.0:
+			if has_fuel():
+				_prepare_next_fuel()
+			else:
+				print("After consumption, out of fuel")
+				out_of_fuel()
+
+# --- Passive cooling (no active fuel) ---
+func _passive_cool(delta: float) -> void:
+	# If bellows_buffer exists, it will slow down cooling
+	var effective_cooling = base_cooling_rate * (1.0 - min(0.9, bellows_buffer / bellows_buffer_max))
+	current_temp = max(0.0, current_temp - effective_cooling * delta * 10.0)
+	if current_temp <= 0.0:
+		current_temp = 0.0
+		current_state = FORGE_STATES.OFF
+
+# --- Fuel handling utilities ---
+func has_fuel() -> bool:
+	for slot in fuel_inventory.inventory_slots:
+		if not slot:
+			continue
+		if not slot.item_data:
+			continue
+		if slot.item_data.burnable and slot.quantity > 0:
+			return true
+	return false
+
+func get_fuel() -> Array[SlotData]:
+	var fuel: Array[SlotData] = []
+	for slot in fuel_inventory.inventory_slots:
+		if not slot:
+			continue
+		if not slot.item_data:
+			continue
+		if slot.item_data.burnable and slot.quantity > 0:
+			fuel.append(slot)
+	return fuel
+
+func _prepare_next_fuel() -> void:
+	debug_status()
+	print("Preparing fuel")
+	if next_fuel:
+		current_fuel = next_fuel
+		print("Next fuel already queued. Using it.")
+	else:
+		print("No fuel queued. Getting a new one.")
+		all_fuel = get_fuel()
+		print(get_fuel())
+		if all_fuel.size() == 0:
+			print("Prepared size = 0")
+			out_of_fuel()
+			return
+		current_fuel = all_fuel[0]
+	current_max_temp = current_fuel.item_data.burn_temp
+	fuel_burn_time_remaining = current_fuel.item_data.burn_time
+	fuel_slot_index_in_use = fuel_inventory.inventory_slots.find(current_fuel)
+	if fuel_slot_index_in_use < 0:
+		fuel_slot_index_in_use = -1
+	_consume_current_fuel_unit()
+
+func _consume_current_fuel_unit() -> void:
+	# remove one unit of current_fuel from inventory. Then if there is more in all_fuel, continue; else check overall fuel.
+	if not current_fuel:
+		return
+	var index = fuel_inventory.inventory_slots.find(current_fuel)
+	if index >= 0:
+		fuel_inventory.remove_single_item(current_fuel.item_data, index)
+	else:
+		# fallback: try to find item by identity in all_fuel and remove
+		for i in fuel_inventory.inventory_slots.size():
+			var s = fuel_inventory.inventory_slots[i]
+			if s == current_fuel:
+				fuel_inventory.remove_single_item(current_fuel.item_data, i)
+				break
+
+func higher_temp_fuel() -> SlotData:
+	# check queued fuel in inventory (other than current_fuel) to see if any has higher burn_temp than current_max_temp
+	for slot in get_fuel():
+		if slot == null:
+			continue
+		if slot == current_fuel:
+			continue
+		if slot.item_data.burnable:
+			if slot.item_data.burn_temp > current_max_temp:
+				return slot
+	return null
+
+func out_of_fuel() -> void:
+	current_state = FORGE_STATES.COOLING
+	current_fuel = null
+	current_max_temp = 0
+	fuel_burn_time_remaining = 0.0
+	print("Out of fuel; forge cooling")
+
+# --- Smeltables Systems ---
+func _process_smelt_jobs(delta: float) -> void:
+	if current_temp <= 0: 
+		return
+	
+	# Cleanup invalid jobs (items removed)
+	smelt_jobs = smelt_jobs.filter(func(job):
+		for slot_index in job["slot_indexes"]:
+			var slot = smeltable_inventory.inventory_slots[slot_index]
+			if not slot or not slot.item_data:
+				return false
+		return true
+	)
+	
+	var smeltables = get_smeltables()
+	if smeltables.is_empty():
+		smelt_jobs.clear()
+		current_state = FORGE_STATES.HEATING
+		return
+	
+	for i in range(smeltable_inventory.inventory_slots.size()):
+		var slot = smeltable_inventory.inventory_slots[i]
+		if not slot or not slot.item_data:
+			continue
+
+		# Skip if this slot is already in a job
+		var already_in_job := false
+		for j in smelt_jobs:
+			if i in j["slot_indexes"]:
+				already_in_job = true
+				break
+		if already_in_job:
+			continue
+
+		# --- Try combination recipe (multi-slot)
+		var combo_recipe := recipe_tester._find_combination_recipe(smeltable_inventory, recipes)
+		if combo_recipe:
+			var required_indexes: Array[int] = []
+			for ing in combo_recipe.ingredients:
+				for idx in range(smeltable_inventory.inventory_slots.size()):
+					var s = smeltable_inventory.inventory_slots[idx]
+					if s and s.item_data == ing and idx not in required_indexes:
+						required_indexes.append(idx)
+						break
+
+			if required_indexes.size() == combo_recipe.ingredients.size():
+				_start_smelt_job(required_indexes, combo_recipe)
+				continue
+
+		# --- Try single-item recipe
+		var single_recipe := recipe_tester._find_single_recipe(slot.item_data, recipes)
+		if single_recipe:
+			_start_smelt_job([i], single_recipe)
+			continue
+
+	# --- Process active jobs
+	for job in smelt_jobs:
+		var melt_point: int = job["melting_point"]
+		if current_temp >= melt_point:
+			job["remaining_time"] -= delta
+			if job["remaining_time"] <= 0.0:
+				_complete_smelting_job(job)
+
+	# Remove finished jobs
+	smelt_jobs = smelt_jobs.filter(func(job): return job["remaining_time"] > 0.0)
+
+func _start_smelt_job(slot_indexes: Array[int], recipe: RecipeData) -> void:
+	print("Starting smelt job for slots:", slot_indexes, "recipe:", recipe.recipe_name)
+	var melt_point := 0
+	for ing in recipe.ingredients:
+		if ing.melting_point > melt_point:
+			melt_point = ing.melting_point
+
+	var new_job := {
+		"slot_indexes": slot_indexes,
+		"remaining_time": float(recipe.time_to_make),
+		"melting_point": melt_point,
+		"recipe": recipe
+	}
+	smelt_jobs.append(new_job)
+	current_state = FORGE_STATES.SMELTING
+
+func _complete_smelting_job(job: Dictionary) -> void:
+	var slot_indexes: Array[int] = job["slot_indexes"]
+	var recipe: RecipeData = job["recipe"]
+
+	print("Completing smelt job for slots", slot_indexes, " → ", recipe.output[0].name)
+
+	# Consume input items
+	for idx in slot_indexes:
+		var slot = smeltable_inventory.inventory_slots[idx]
+		if slot:
+			smeltable_inventory.remove_single_item(slot.item_data, idx)
+
+	# Place result in the first slot (or next available)
+	var output_item: ItemData = recipe.output[0]
+	var first_index := slot_indexes[0]
+	var first_slot := smeltable_inventory.inventory_slots[first_index]
+	
+	if first_slot and (not first_slot.item_data or first_slot.item_data == output_item):
+		first_slot.item_data = output_item
+		first_slot.quantity = 1
+	else:
+		# find an empty slot to place result
+		for s in smeltable_inventory.inventory_slots:
+			if s == null or not s.item_data:
+				s.item_data = output_item
+				s.quantity = 1
+				break
+
+	emit_signal("heated_item_ready", first_index)
+
+	# If no smeltables left, go back to heating or cooling
+	if not has_smeltable():
+		current_state = FORGE_STATES.HEATING
+
+# --- Inventory Interactions ---
+func fuel_inventory_interacted(inventory_data: InventoryData, index: int) -> void:
+	print("Fuel inventory interacted")
+	if not has_fuel():
+		out_of_fuel()
+
+func smeltable_inventory_interacted(inventory_data: InventoryData, index: int) -> void:
+	print("Smeltable inventory interacted")
+	if has_smeltable():
+		print(get_smeltables())
 
 func _forge_interacted() -> void:
 	Global.core.toggle_forge_ui(self)
 
-#func _forge_interacted() -> void:
-	#match current_state:
-		#FORGE_STATES.INACTIVE:
-			#print("Try to start forging")
-			#if Global.active_slot:
-				#print(Global.active_slot.item_data.name)
-				#for recipe in recipes:
-					#print(recipe.recipe_name)
-					#if recipe_tester.test_item(recipe, Global.active_slot.item_data):
-						#print("Holding an item for " + recipe.recipe_name)
-						#if recipe_tester.test_inventory(recipe, Global.player.inventory):
-							#print("Has all items for " + recipe.recipe_name)
-							#active_recipe = recipe
-							#begin_forging()
-		#FORGE_STATES.ACTIVE:
-			#print("Currently Forging")
-		#FORGE_STATES.COMPLETE:
-			#print("Try to pick up")
-			#var output_count = active_recipe.output.size()
-			#for output in active_recipe.output:
-				#var slot_data = SlotData.new()
-				#slot_data.item_data = output
-				#slot_data.quantity = 1
-				#if Global.player.inventory.pick_up_slot_data(slot_data):
-					#print("Picked up")
-					#output_count -= 1
-				#else:
-					#print("Inventory Full")
-			#
-			#if output_count <= 0:
-				#active_recipe = null
-				#current_state = FORGE_STATES.INACTIVE
-			#else:
-				#print("Couldn't pick up completed items. Probably means inventory was full.")
-		#
-		##if ready_to_pickup:
-			#
-		##else:
-			##print("Try to start curing")
-			#
-	##else:
-		##print("Already on")
-	##animated_sprite_2d.play("On")
+func light_forge() -> void:
+	if has_fuel() and not current_state == FORGE_STATES.HEATING or not current_state == FORGE_STATES.SMELTING:
+		_prepare_next_fuel()
+		current_state = FORGE_STATES.HEATING
+		print("Light Forge")
+	else:
+		print("No fuel available")
 
-func begin_forging() -> void:
-	# for each type of item in array
-	# Remove the amount of that item from the inventory
-	var item_count = {}
-	
-	for item in active_recipe.ingredients:
-		if item_count.has(item):
-			item_count[item] += 1
-		else:
-			item_count[item] = 1
-	
-	var ingredient_list = active_recipe.ingredients
-	Global.player.inventory.remove_items(ingredient_list[0], ingredient_list.size())
-	# This should only support items of the same type which 
-	
-	timer.start(active_recipe.time_to_make)
-	current_state = FORGE_STATES.ACTIVE
-	animated_sprite_2d.play("On")
-	print("Start Forging")
+# --- Smelting System ---
+func has_smeltable() -> bool:
+	for slot in smeltable_inventory.inventory_slots:
+		if not slot:
+			continue
+		if not slot.item_data:
+			continue
+		if slot.item_data.smeltable and slot.quantity > 0:
+			return true
+	return false
+
+func get_smeltables() -> Array[SlotData]:
+	var smeltables: Array[SlotData] = []
+	for slot in smeltable_inventory.inventory_slots:
+		if not slot:
+			continue
+		if not slot.item_data:
+			continue
+		if slot.item_data.smeltable and slot.quantity > 0:
+			smeltables.append(slot)
+	return smeltables
+
+# --- Bellows Interaction
 
 func _bellows_interacted() -> void:
-	print("Bellows interacted with")
+	print("Bellows used")
+	if not current_state == FORGE_STATES.OFF:
+		bellows_buffer = min(bellows_buffer_max, bellows_buffer + bellows_boost)
+		debug_status()
 
-func paused_game() -> void:
-	if current_state == FORGE_STATES.ACTIVE: 
-		timer.paused = true
-
-func unpaused_game() -> void:
-	if current_state == FORGE_STATES.ACTIVE: 
-		timer.paused = false
-
-func _on_timer_timeout() -> void:
-	print("Forge done")
-	animated_sprite_2d.play("Idle")
-	current_state = FORGE_STATES.COMPLETE
+# --- Helper debug method to print current status ---
+func debug_status() -> void:
+	print("\n---- Forge Debug ----")
+	print("Forge status: state=", current_state, " temp=", current_temp, " max_target=", current_max_temp, " burn_time=", fuel_burn_time_remaining)
+	print("Current fuel:", current_fuel)
+	print("Bellows buffer:", bellows_buffer)
+	print("Smelt jobs:", smelt_jobs.size())

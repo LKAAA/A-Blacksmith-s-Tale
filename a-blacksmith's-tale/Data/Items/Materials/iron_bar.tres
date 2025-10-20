@@ -21,5 +21,5 @@ stackable = true
 burnable = false
 burn_time = 0
 burn_temp = 0
-smeltable = false
-melting_point = 0
+smeltable = true
+melting_point = 800

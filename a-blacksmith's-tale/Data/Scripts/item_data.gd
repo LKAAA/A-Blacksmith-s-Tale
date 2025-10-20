@@ -1,7 +1,7 @@
 class_name ItemData extends Resource
 
 @export var name: String
-@export var id: int                            # Currently at 14
+@export var id: int                            # Currently at 15
 @export var description: String
 @export var sprite: Texture2D = preload("res://Assets/debug_texture.png")
 @export var type: String = "Material"

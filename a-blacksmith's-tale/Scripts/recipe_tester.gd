@@ -21,3 +21,29 @@ func test_item(recipe: RecipeData, item: ItemData) -> bool:
 			return true
 	
 	return false
+
+func _find_single_recipe(item: ItemData, recipes: Array[RecipeData]) -> RecipeData:
+	for recipe in recipes:
+		if recipe.ingredients.size() == 1 and recipe.ingredients[0] == item:
+			return recipe
+	return null
+
+func _find_combination_recipe(inventory: InventoryData, recipes: Array[RecipeData]) -> RecipeData:
+	for recipe in recipes:
+		if recipe.ingredients.size() == 2:
+			var first = recipe.ingredients[0]
+			var second = recipe.ingredients[1]
+			var has_first = false
+			var has_second = false
+
+			for slot in inventory.inventory_slots:
+				if not slot or not slot.item_data:
+					continue
+				if slot.item_data == first:
+					has_first = true
+				elif slot.item_data == second:
+					has_second = true
+
+			if has_first and has_second:
+				return recipe
+	return null

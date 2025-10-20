@@ -22,4 +22,4 @@ burnable = false
 burn_time = 0
 burn_temp = 0
 smeltable = true
-melting_point = 1538
+melting_point = 800

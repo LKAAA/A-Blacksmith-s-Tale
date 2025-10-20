@@ -33,7 +33,7 @@ enum tool_types {
 	Shovel
 	}
 
-@export var INGAME_SPEED: float = 10.0 # float = amount of irl seconds per 1 ingame minute
+@export var INGAME_SPEED: float = 1.0 # float = in game minutes to irl seconds (INGAME_SPEED = 10, every 1 second = 10 minutes)
 var cur_minute: int
 var cur_hour: int
 var hour_12: int

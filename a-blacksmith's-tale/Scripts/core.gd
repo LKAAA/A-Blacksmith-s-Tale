@@ -187,11 +187,11 @@ func toggle_forge_ui(cur_forge: Forge) -> void:
 		menu_ui.player_inventory.hide()
 		menu_ui.external_inventory.hide()
 		game_ui.hide()
-		Global.pause_game()
+		#Global.pause_game()
 		Global.forge_ui_active = true
 	else:
 		game_ui.show()
-		Global.unpause_game()
+		#Global.unpause_game()
 		Global.forge_ui_active = false
 		menu_ui.player_inventory.show()
 		menu_ui.external_inventory.show()

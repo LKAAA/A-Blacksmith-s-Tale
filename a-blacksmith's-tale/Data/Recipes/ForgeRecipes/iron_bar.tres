@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_epv2t"]
 [ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/Materials/iron_ore.tres" id="2_7gni3"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="2_n1mfc"]
-[ext_resource type="Resource" uid="uid://dyo1byeq58lh2" path="res://Data/Items/Materials/iron_bar.tres" id="3_xgdex"]
+[ext_resource type="Resource" uid="uid://twjaitsqagqq" path="res://Data/Items/HeatedMaterials/heated_iron.tres" id="3_oxm3k"]
 
 [resource]
 script = ExtResource("2_n1mfc")
-recipe_name = "Iron Bar"
-ingredients = Array[ExtResource("1_epv2t")]([ExtResource("2_7gni3"), ExtResource("2_7gni3"), ExtResource("2_7gni3")])
-output = Array[ExtResource("1_epv2t")]([ExtResource("3_xgdex")])
+recipe_name = "Iron Ore"
+ingredients = Array[ExtResource("1_epv2t")]([ExtResource("2_7gni3")])
+output = Array[ExtResource("1_epv2t")]([ExtResource("3_oxm3k")])
 time_to_make = 10
 metadata/_custom_type_script = "uid://c53g5l4c0tu8s"

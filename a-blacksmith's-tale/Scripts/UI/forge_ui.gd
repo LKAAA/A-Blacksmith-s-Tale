@@ -18,4 +18,15 @@ func set_ui(inventory_data: InventoryData, forge: Forge) -> void:
 	fuel_inventory.set_inventory_data(forge.fuel_inventory, 3, true, true)
 	smeltable_inventory.set_inventory_data(forge.smeltable_inventory, 2, true, true)
 	
+	temp_label.text = "0 Celsius"
+	
 	cur_forge = forge
+	if not cur_forge.temperature_changed.is_connected(temp_updated):
+		cur_forge.temperature_changed.connect(temp_updated)
+
+func temp_updated(new_temp: int) -> void:
+	temp_label.text = "%d Celsius" % new_temp
+
+func _on_light_forge_button_pressed() -> void:
+	if cur_forge:
+		cur_forge.light_forge()

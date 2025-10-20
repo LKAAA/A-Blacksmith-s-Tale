@@ -132,4 +132,19 @@ custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 
+[node name="MarginContainer" type="MarginContainer" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_right = 60
+
+[node name="LightForgeButton" type="Button" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_e56hr")
+theme_override_font_sizes/font_size = 10
+text = "Light Forge
+"
+
+[connection signal="pressed" from="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer/MarginContainer/LightForgeButton" to="." method="_on_light_forge_button_pressed"]
+
 [editable path="OuterBorder/HBoxContainer/InventorySection/Inventory"]
