@@ -74,6 +74,9 @@ z_index = 99
 layout_mode = 0
 mouse_filter = 2
 
+[node name="Background" parent="UI/Menu_UI/GrabbedSlot" index="0"]
+visible = false
+
 [node name="Forge_UI" parent="UI/Menu_UI" instance=ExtResource("10_0ouq4")]
 unique_name_in_owner = true
 visible = false
@@ -210,4 +213,5 @@ script = ExtResource("13_x0cc3")
 [connection signal="message_requested" from="DialogueManager" to="." method="_on_dialogue_manager_message_requested"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
+[editable path="UI/Menu_UI/GrabbedSlot"]
 [editable path="UI/Game_UI/Hotbar"]

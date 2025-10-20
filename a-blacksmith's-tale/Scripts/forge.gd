@@ -22,7 +22,8 @@ signal heated_item_ready(slot_index : int) # fired when an item finishes smeltin
 
 @export var fuel_inventory: InventoryData
 @export var smeltable_inventory: InventoryData
-
+const TONGS_IN_USE = preload("res://Data/Items/Tools/tongs_in_use.tres")
+const TONGS = preload("res://Data/Items/Tools/tongs.tres")
 # --- Forge State
 
 enum FORGE_STATES { OFF, HEATING, SMELTING, COOLING }
@@ -39,6 +40,8 @@ var current_max_temp: int = 0                # target temp from current fuel(s)
 var current_fuel: SlotData = null
 var next_fuel: SlotData = null
 var all_fuel: Array[SlotData] = []
+
+var output_queue: Array[SlotData] = []
 
 # smelting bookkeeping
 # Each entry: { slot_index:int, remaining_time:float, melting_point:int, source_slot:SlotData, heated_result_item_data:ItemData (optional) }
@@ -312,21 +315,18 @@ func _complete_smelting_job(job: Dictionary) -> void:
 
 	# Place result in the first slot (or next available)
 	var output_item: ItemData = recipe.output[0]
-	var first_index := slot_indexes[0]
-	var first_slot := smeltable_inventory.inventory_slots[first_index]
+	var slot_data: SlotData = SlotData.new()
+	slot_data.item_data = output_item
+	slot_data.quantity = recipe.output.size()
 	
-	if first_slot and (not first_slot.item_data or first_slot.item_data == output_item):
-		first_slot.item_data = output_item
-		first_slot.quantity = 1
-	else:
-		# find an empty slot to place result
-		for s in smeltable_inventory.inventory_slots:
-			if s == null or not s.item_data:
-				s.item_data = output_item
-				s.quantity = 1
-				break
-
-	emit_signal("heated_item_ready", first_index)
+	output_queue.append(slot_data)
+	emit_signal("heated_item_ready", 0)
+	
+	#if smeltable_inventory.pick_up_slot_data(slot_data):
+		#print("Successful")
+		#
+	#else:
+		#print("No room")
 
 	# If no smeltables left, go back to heating or cooling
 	if not has_smeltable():
@@ -335,8 +335,8 @@ func _complete_smelting_job(job: Dictionary) -> void:
 # --- Inventory Interactions ---
 func fuel_inventory_interacted(inventory_data: InventoryData, index: int) -> void:
 	print("Fuel inventory interacted")
-	if not has_fuel():
-		out_of_fuel()
+	#if not has_fuel():
+		#out_of_fuel()
 
 func smeltable_inventory_interacted(inventory_data: InventoryData, index: int) -> void:
 	print("Smeltable inventory interacted")
@@ -344,7 +344,18 @@ func smeltable_inventory_interacted(inventory_data: InventoryData, index: int) -
 		print(get_smeltables())
 
 func _forge_interacted() -> void:
-	Global.core.toggle_forge_ui(self)
+	var player_held_slot = Global.active_slot
+	if player_held_slot and player_held_slot.item_data is ItemDataTool:
+		if output_queue.size() > 0:
+			if player_held_slot.item_data.tool_type == "Tongs" and player_held_slot.item_data.held_slot == null: 
+				print("Pick up item with tongs")
+				player_held_slot.item_data = TONGS_IN_USE.duplicate()
+				player_held_slot.item_data.held_slot = output_queue[0]
+				
+				output_queue.remove_at(0)
+				Global.player.inventory.inventory_updated.emit(Global.player.inventory, Global.active_slot_index)
+	else:
+		Global.core.toggle_forge_ui(self)
 
 func light_forge() -> void:
 	if has_fuel() and not current_state == FORGE_STATES.HEATING or not current_state == FORGE_STATES.SMELTING:
@@ -353,6 +364,7 @@ func light_forge() -> void:
 		print("Light Forge")
 	else:
 		print("No fuel available")
+		return
 
 # --- Smelting System ---
 func has_smeltable() -> bool:

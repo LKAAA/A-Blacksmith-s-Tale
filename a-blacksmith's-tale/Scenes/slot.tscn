@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpnq7hvfew8e7"]
+[gd_scene load_steps=4 format=3 uid="uid://bpnq7hvfew8e7"]
 
 [ext_resource type="FontFile" uid="uid://d1hqkgwbu8f1p" path="res://Assets/Fonts/TeenyTinyPixls-o2zo.ttf" id="1_1xt00"]
 [ext_resource type="Script" uid="uid://7xiqqsoboyot" path="res://Scripts/slot.gd" id="1_da45j"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_12ej0"]
 
 [node name="Slot" type="Panel"]
 custom_minimum_size = Vector2(24, 24)
 offset_right = 24.0
 offset_bottom = 24.0
 script = ExtResource("1_da45j")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("CanvasTexture_12ej0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 unique_name_in_owner = true
