@@ -24,6 +24,9 @@ signal heated_item_ready(slot_index : int) # fired when an item finishes smeltin
 @export var smeltable_inventory: InventoryData
 const TONGS_IN_USE = preload("res://Data/Items/Tools/tongs_in_use.tres")
 const TONGS = preload("res://Data/Items/Tools/tongs.tres")
+const ITEM_NOTIFICATION = preload("res://Scenes/item_notification.tscn")
+@onready var item_noti_location: Node2D = $ItemNotiLocation
+
 # --- Forge State
 
 enum FORGE_STATES { OFF, HEATING, SMELTING, COOLING }
@@ -42,6 +45,7 @@ var next_fuel: SlotData = null
 var all_fuel: Array[SlotData] = []
 
 var output_queue: Array[SlotData] = []
+var current_noti: ItemNotification = null
 
 # smelting bookkeeping
 # Each entry: { slot_index:int, remaining_time:float, melting_point:int, source_slot:SlotData, heated_result_item_data:ItemData (optional) }
@@ -320,6 +324,8 @@ func _complete_smelting_job(job: Dictionary) -> void:
 	slot_data.quantity = recipe.output.size()
 	
 	output_queue.append(slot_data)
+	if not current_noti:
+		spawn_item_notif(output_item)
 	emit_signal("heated_item_ready", 0)
 	
 	#if smeltable_inventory.pick_up_slot_data(slot_data):
@@ -331,6 +337,13 @@ func _complete_smelting_job(job: Dictionary) -> void:
 	# If no smeltables left, go back to heating or cooling
 	if not has_smeltable():
 		current_state = FORGE_STATES.HEATING
+
+func spawn_item_notif(item_data: ItemData) -> void:
+	var noti = ITEM_NOTIFICATION.instantiate()
+	add_child(noti)
+	noti.position = item_noti_location.position
+	noti.update_noti(item_data)
+	current_noti = noti
 
 # --- Inventory Interactions ---
 func fuel_inventory_interacted(inventory_data: InventoryData, index: int) -> void:
@@ -353,6 +366,10 @@ func _forge_interacted() -> void:
 				player_held_slot.item_data.held_slot = output_queue[0]
 				
 				output_queue.remove_at(0)
+				if output_queue.size() <= 0:
+					current_noti.queue_free()
+				else:
+					current_noti.update_noti(output_queue[0].item_data)
 				Global.player.inventory.inventory_updated.emit(Global.player.inventory, Global.active_slot_index)
 	else:
 		Global.core.toggle_forge_ui(self)

@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://d10twax1viih5"]
+
+[ext_resource type="Script" uid="uid://dykqw31taujn4" path="res://Scripts/barrel.gd" id="1_06hcc"]
+[ext_resource type="Texture2D" uid="uid://dw5uv70f88ll5" path="res://Assets/Sprites/PlaceableBuildings_SPSH.png" id="1_6ru7q"]
+[ext_resource type="Script" uid="uid://dt1cbr151t3en" path="res://Scripts/behind_adjustment.gd" id="2_2ukip"]
+[ext_resource type="PackedScene" uid="uid://bfrelumv1gm28" path="res://Scenes/Components/interact_area.tscn" id="4_06hcc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06hcc"]
+atlas = ExtResource("1_6ru7q")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgraf"]
+atlas = ExtResource("1_6ru7q")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5dswr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06hcc")
+}],
+"loop": true,
+"name": &"Empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgraf")
+}],
+"loop": true,
+"name": &"Filled",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06hcc"]
+size = Vector2(12, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uicwj"]
+size = Vector2(20, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgraf"]
+size = Vector2(20, 23)
+
+[node name="Barrel" type="StaticBody2D" groups=["obstacle"]]
+script = ExtResource("1_06hcc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_5dswr")
+animation = &"Filled"
+autoplay = "Empty"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_06hcc")
+
+[node name="BehindAdjustment" type="Area2D" parent="."]
+position = Vector2(0, -8)
+script = ExtResource("2_2ukip")
+metadata/_custom_type_script = "uid://dt1cbr151t3en"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BehindAdjustment"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_uicwj")
+
+[node name="InteractArea" parent="." instance=ExtResource("4_06hcc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_mgraf")
+
+[connection signal="body_entered" from="BehindAdjustment" to="BehindAdjustment" method="_on_body_entered"]
+[connection signal="body_exited" from="BehindAdjustment" to="BehindAdjustment" method="_on_body_exited"]
+[connection signal="mouse_entered" from="InteractArea" to="InteractArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea" to="InteractArea" method="_on_mouse_exited"]

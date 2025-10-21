@@ -42,7 +42,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	match current_state:
 		PLAYER_STATES.MOVE:
-			if not Global.game_paused:
+			if not Global.game_paused and not Global.forge_ui_active:
 				_handle_movement()
 				_handle_movement_anims()
 			
@@ -77,7 +77,7 @@ func _handle_input() -> void:
 	if Input.is_action_just_pressed("ui_leave"):
 		escape_ui.emit()
 	
-	if not Global.game_paused:
+	if not Global.game_paused and not Global.forge_ui_active:
 		if Input.is_action_just_pressed("use"):
 			use.emit()
 		

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dljv8k7jfsfia"]
+
+[ext_resource type="Texture2D" uid="uid://c77nnkdx1ll77" path="res://Assets/UI/ItemNotification_SPSH.png" id="1_dqo1s"]
+[ext_resource type="Script" uid="uid://b311t4pdx8jww" path="res://Scripts/item_notification.gd" id="1_kdcav"]
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="3_kdcav"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdcav"]
+atlas = ExtResource("1_dqo1s")
+region = Rect2(0, 0, 24, 24)
+
+[node name="ItemNotification" type="Node2D"]
+script = ExtResource("1_kdcav")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_kdcav")
+
+[node name="Item" type="Sprite2D" parent="."]
+texture = ExtResource("3_kdcav")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

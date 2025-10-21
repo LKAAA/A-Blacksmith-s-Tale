@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbvvpbp0h7d0"
-path="res://.godot/imported/TanningRackSpritesheet.png-aa63feb2653b9b4c398b0bfd0b008c84.ctex"
+uid="uid://c77nnkdx1ll77"
+path="res://.godot/imported/ItemNotification_SPSH.png-72a231c31d536ac1c69c809d0714c9b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/TanningRackSpritesheet.png"
-dest_files=["res://.godot/imported/TanningRackSpritesheet.png-aa63feb2653b9b4c398b0bfd0b008c84.ctex"]
+source_file="res://Assets/UI/ItemNotification_SPSH.png"
+dest_files=["res://.godot/imported/ItemNotification_SPSH.png-72a231c31d536ac1c69c809d0714c9b5.ctex"]
 
 [params]
 
