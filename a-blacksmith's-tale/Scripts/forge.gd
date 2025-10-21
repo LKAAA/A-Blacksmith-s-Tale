@@ -32,8 +32,7 @@ const ITEM_NOTIFICATION = preload("res://Scenes/item_notification.tscn")
 enum FORGE_STATES { OFF, HEATING, SMELTING, COOLING }
 var current_state: FORGE_STATES = FORGE_STATES.OFF
 
-@export var base_heating_rate: float = 10 #0.5    # how quickly temp rises per second normally (deg/sec)
-@export var base_cooling_rate: float = 0.2    # how quickly temp falls per second when no fuel (deg/sec)
+
 @export var bellows_boost: float = 1.0        # extra deg/sec when bellows pumped
 @export var bellows_buffer_decay_rate: float = 0.5 # how quickly bellows buffer decays (deg/sec)
 @export var bellows_buffer_max: float = 8.0   # maximum temporary boost from bellows
@@ -100,7 +99,7 @@ func _physics_process(delta: float) -> void:
 
 # --- Heating process specifics ---
 func _heating_process(delta: float) -> void:
-	var effective_heating_rate = base_heating_rate * (1.0 + (bellows_buffer / bellows_buffer_max))
+	var effective_heating_rate = Global.base_heating_rate * (1.0 + (bellows_buffer / bellows_buffer_max))
 	var target = current_max_temp
 	if target <= 0:
 		# no fuel to aim for - switch to cooling state
@@ -121,7 +120,7 @@ func _heating_process(delta: float) -> void:
 				pass
 	
 	elif current_temp > target:
-		current_temp = max(target, current_temp - base_cooling_rate * delta * 5.0)
+		current_temp = max(target, current_temp - Global.base_cooling_rate * delta * 5.0)
 		if current_temp <= target:
 			current_temp = target
 	
@@ -139,7 +138,7 @@ func _heating_process(delta: float) -> void:
 # --- Passive cooling (no active fuel) ---
 func _passive_cool(delta: float) -> void:
 	# If bellows_buffer exists, it will slow down cooling
-	var effective_cooling = base_cooling_rate * (1.0 - min(0.9, bellows_buffer / bellows_buffer_max))
+	var effective_cooling = Global.base_cooling_rate * (1.0 - min(0.9, bellows_buffer / bellows_buffer_max))
 	current_temp = max(0.0, current_temp - effective_cooling * delta * 10.0)
 	if current_temp <= 0.0:
 		current_temp = 0.0
@@ -364,7 +363,7 @@ func _forge_interacted() -> void:
 				print("Pick up item with tongs")
 				player_held_slot.item_data = TONGS_IN_USE.duplicate()
 				player_held_slot.item_data.held_slot = output_queue[0]
-				
+				ItemManager._start_item_job(output_queue[0].item_data, current_temp, Global.player.inventory)
 				output_queue.remove_at(0)
 				if output_queue.size() <= 0:
 					current_noti.queue_free()

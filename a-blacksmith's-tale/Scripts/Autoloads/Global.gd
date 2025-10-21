@@ -21,6 +21,10 @@ const TILE_SIZE: int = 16
 signal paused
 signal unpaused
 
+@export var base_heating_rate: float = 10 #0.5    # how quickly temp rises per second normally (deg/sec)
+@export var base_cooling_rate: float = 0.2    # how quickly temp falls per second when no fuel (deg/sec)
+
+
 @export var player_gold: int = 9999999999
 
 @export var cur_zone_id: int
