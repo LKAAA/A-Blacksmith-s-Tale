@@ -320,6 +320,7 @@ func _complete_smelting_job(job: Dictionary) -> void:
 	var output_item: ItemData = recipe.output[0]
 	var slot_data: SlotData = SlotData.new()
 	slot_data.item_data = output_item
+	slot_data.item_data.cur_temp = current_temp
 	slot_data.quantity = recipe.output.size()
 	
 	output_queue.append(slot_data)
@@ -363,7 +364,7 @@ func _forge_interacted() -> void:
 				print("Pick up item with tongs")
 				player_held_slot.item_data = TONGS_IN_USE.duplicate()
 				player_held_slot.item_data.held_slot = output_queue[0]
-				ItemManager._start_item_job(output_queue[0].item_data, current_temp, Global.player.inventory)
+				ItemManager._start_cooling_job(output_queue[0].item_data, player_held_slot.item_data, Global.player.inventory)
 				output_queue.remove_at(0)
 				if output_queue.size() <= 0:
 					current_noti.queue_free()

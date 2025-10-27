@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://twjaitsqagqq"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://twjaitsqagqq"]
 
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="1_v7s54"]
 [ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_xphrr"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_xphrr"]
 
@@ -23,4 +24,6 @@ burn_time = 0
 burn_temp = 0
 smeltable = true
 melting_point = 800
+cur_temp = 0
+heated_sprite = ExtResource("1_v7s54")
 metadata/_custom_type_script = "uid://1sj1rrsd7jss"

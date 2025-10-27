@@ -196,3 +196,10 @@ func quick_move_data(index: int, other_inventory: InventoryData) -> bool:
 
 func  on_slot_clicked(index: int, button: int) -> void:
 	inventory_interacted.emit(self, index, button)
+
+func get_index_of_item(item_data: ItemData) -> int:
+	for slot in inventory_slots:
+		if slot.item_data == item_data:
+			return inventory_slots.find(slot)
+	
+	return -1

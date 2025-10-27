@@ -43,6 +43,8 @@ size = Vector2(20, 23)
 
 [node name="Barrel" type="StaticBody2D" groups=["obstacle"]]
 script = ExtResource("1_06hcc")
+filled = null
+uses = null
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)

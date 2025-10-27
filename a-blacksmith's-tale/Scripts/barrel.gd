@@ -25,3 +25,5 @@ func _on_interact() -> void:
 	filled = !filled
 	update_barrel()
 	
+	ItemManager.quick_cool_item(Global.active_slot)
+	

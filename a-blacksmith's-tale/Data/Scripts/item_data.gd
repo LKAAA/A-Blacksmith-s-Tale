@@ -20,6 +20,9 @@ class_name ItemData extends Resource
 @export var smeltable: bool = false
 @export var melting_point: int = 0000 # CELSIUS
 
+@export var cur_temp: int = 0
+@export var heated_sprite: Texture2D = preload("res://Assets/debug_texture.png")
+
 func use(_target) -> void:
 	pass
 
