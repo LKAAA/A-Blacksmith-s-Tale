@@ -27,5 +27,5 @@ burn_time = 0
 burn_temp = 0
 smeltable = false
 melting_point = 0
-current_temperature = 0
+cur_temp = 0
 heated_sprite = ExtResource("1_sn4xb")

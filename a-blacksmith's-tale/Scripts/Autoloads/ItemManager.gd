@@ -37,7 +37,7 @@ func cooled_item(cooling_job) -> void:
 					h_slot.item_data = TONGS.duplicate()
 					h_slot.quantity = 1
 					var index = inv.get_index_of_item(item_holder)
-					
+				
 					if not index == -1: 
 						inv.remove_single_item(item_holder, index)
 						inv.drop_slot_data(h_slot, index)

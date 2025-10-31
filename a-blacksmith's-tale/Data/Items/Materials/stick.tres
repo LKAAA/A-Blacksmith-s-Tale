@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://coq5qymhysbfs"]
+
+[ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="1_vnww1"]
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="2_qja58"]
+
+[resource]
+script = ExtResource("2_qja58")
+name = ""
+id = 0
+description = ""
+sprite = ExtResource("1_vnww1")
+type = "Material"
+sellable = true
+buy_price = 1
+sell_price = 1
+stackable = true
+burnable = false
+burn_time = 0
+burn_temp = 0
+smeltable = false
+melting_point = 0
+cur_temp = 0
+heated_sprite = ExtResource("1_vnww1")
+metadata/_custom_type_script = "uid://1sj1rrsd7jss"

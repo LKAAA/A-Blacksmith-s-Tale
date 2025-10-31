@@ -24,5 +24,5 @@ burn_time = 40
 burn_temp = 1200
 smeltable = false
 melting_point = 0
-current_temperature = 0
+cur_temp = 0
 heated_sprite = ExtResource("1_uxipu")

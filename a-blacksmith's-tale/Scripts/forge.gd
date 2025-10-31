@@ -406,7 +406,6 @@ func get_smeltables() -> Array[SlotData]:
 	return smeltables
 
 # --- Bellows Interaction
-
 func _bellows_interacted() -> void:
 	print("Bellows used")
 	if not current_state == FORGE_STATES.OFF:

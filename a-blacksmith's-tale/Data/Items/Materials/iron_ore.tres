@@ -24,5 +24,5 @@ burn_time = 0
 burn_temp = 0
 smeltable = true
 melting_point = 800
-current_temperature = 0
+cur_temp = 0
 heated_sprite = ExtResource("1_gcecs")

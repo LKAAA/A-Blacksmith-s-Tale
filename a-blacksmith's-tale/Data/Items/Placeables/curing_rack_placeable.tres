@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d34te4fn8cswx" path="res://Assets/debug_texture.png" id="1_5laa3"]
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/InteractableObjects/curing_rack.tscn" id="1_j2f1f"]
 [ext_resource type="Script" uid="uid://uu6b1xeliph8" path="res://Data/Scripts/item_data_placeable.gd" id="2_umvyd"]
-[ext_resource type="Texture2D" uid="uid://dhbvvpbp0h7d0" path="res://Assets/Sprites/TanningRackSpriteSheet.png" id="3_ricxk"]
+[ext_resource type="Texture2D" uid="uid://dhbvvpbp0h7d0" path="res://Assets/Sprites/TanningRackSpritesheet.png" id="3_ricxk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6kvtq"]
 atlas = ExtResource("3_ricxk")
@@ -27,6 +27,6 @@ burn_time = 0
 burn_temp = 0
 smeltable = false
 melting_point = 0
-current_temperature = 0
+cur_temp = 0
 heated_sprite = ExtResource("1_5laa3")
 metadata/_custom_type_script = "uid://uu6b1xeliph8"
