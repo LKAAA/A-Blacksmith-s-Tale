@@ -68,6 +68,8 @@ func _handle_input() -> void:
 	
 	if Input.is_action_just_pressed("test_input"):
 		#level_manager.gain_xp("Mining", 100)
+		var item: ItemData = ItemManager.get_item_by_id(8)
+		print("Got ", item.name)
 		pass
 	
 	if Input.is_action_just_pressed("inventory"):

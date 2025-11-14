@@ -5,7 +5,7 @@ class_name ItemDataConsumable
 @export var mana_value: int
 @export var stamina_value: int
 
-@export var item_to_give: ItemData
+@export var item_to_give_id: int = -1
 @export var item_to_give_quantity: int = 1
 
 func use(target: PlayerBase) -> void:
@@ -23,10 +23,10 @@ func use(target: PlayerBase) -> void:
 		else:
 			target.stats_manager.raise_current("stamina", stamina_value)
 	
-	if item_to_give:
+	if item_to_give_id != -1:
 		print("Give item")
 		var slot_data: SlotData = SlotData.new()
-		slot_data.item_data = item_to_give
+		slot_data.item_data = ItemManager.get_item_by_id(item_to_give_id)
 		slot_data.set_quantity(item_to_give_quantity)
 		target.inventory.pick_up_slot_data(slot_data)
 	

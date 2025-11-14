@@ -5,20 +5,7 @@
 
 [resource]
 script = ExtResource("2_qja58")
-name = ""
-id = 0
-description = ""
-sprite = ExtResource("1_vnww1")
-type = "Material"
-sellable = true
-buy_price = 1
-sell_price = 1
-stackable = true
-burnable = false
-burn_time = 0
-burn_temp = 0
-smeltable = false
-melting_point = 0
-cur_temp = 0
-heated_sprite = ExtResource("1_vnww1")
+name = "Stick"
+id = 18
+description = "stick"
 metadata/_custom_type_script = "uid://1sj1rrsd7jss"

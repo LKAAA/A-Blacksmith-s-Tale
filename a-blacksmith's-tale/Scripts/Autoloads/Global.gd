@@ -30,6 +30,7 @@ signal unpaused
 @export var cur_zone_id: int
 
 const MAX_TOOL_EFFICIENCY: int = 10
+const MAX_STACK_SIZE: int = 999
 
 enum tool_types {
 	Pickaxe, 

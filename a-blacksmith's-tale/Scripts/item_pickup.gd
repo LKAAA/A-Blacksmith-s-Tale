@@ -12,10 +12,10 @@ var player: PlayerBase
 
 func _ready() -> void:
 	if slot_data:
-		sprite_2d.texture = slot_data.item_data.sprite
+		sprite_2d.texture = slot_data.item_stack.item_data.sprite
 
 func update_texture() -> void:
-	sprite_2d.texture = slot_data.item_data.sprite
+	sprite_2d.texture = slot_data.item_stack.item_data.sprite
 
 func _physics_process(delta: float) -> void:
 	if overlapping: 
