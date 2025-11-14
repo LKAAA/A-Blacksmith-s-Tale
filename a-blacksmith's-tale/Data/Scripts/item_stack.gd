@@ -1,58 +1,58 @@
 class_name ItemStack extends Resource
 
-var _item_data: ItemData:
+var item_data: ItemData:
 	set(data):
-		_item_data = data
+		item_data = data
 	get:
-		return _item_data
+		return item_data
 
-var _quantity: int = 1:
+var quantity: int = 1:
 	set = set_quantity, get = get_quantity
 
-var _cur_temp: int = 0:
+var cur_temp: int = 0:
 	set(new_temp):
-		_cur_temp = new_temp
+		cur_temp = new_temp
 	get:
-		return _cur_temp
-var _quality: int = 0:
-	set(new_quality):
-		_quality = new_quality
+		return cur_temp
+var quality: int = 0:
+	set(newquality):
+		quality = newquality
 	get:
-		return _quality
-var _durability: int = 100:
+		return quality
+var durability: int = 100:
 	set(new_dura):
-		_durability = new_dura
+		durability = new_dura
 	get:
-		return _durability
-var _custom_name: String = "":
+		return durability
+var custom_name: String = "":
 	set(new_name):
-		_custom_name = new_name
+		custom_name = new_name
 	get:
-		return _custom_name
+		return custom_name
 
 func new_from_data(data: ItemData, quantity: int = 1) -> ItemStack:
 	var stack = ItemStack.new()
 	
-	stack._item_data = data
-	stack._quantity = quantity
+	stack.item_data = data
+	stack.quantity = quantity
 	
 	return stack
 
 func modify_quantity(amount: int) -> ItemStack:
-	_quantity += amount
+	quantity += amount
 	return self
 
 # @param value - number to set this slots quantity to 
 func set_quantity(value: int) ->  void:
-	_quantity = value
-	if _item_data:
-		if _quantity > 1 and not _item_data.stackable:
-			_quantity = 1
-			push_error("%s is not stackable, setting quantity to one" % _item_data.name)
+	quantity = value
+	if item_data:
+		if quantity > 1 and not item_data.stackable:
+			quantity = 1
+			push_error("%s is not stackable, setting quantity to one" % item_data.name)
 
 func get_quantity() -> int:
-	return _quantity
+	return quantity
 
 func modify_cur_temp(amount: int) -> ItemStack:
-	_cur_temp += amount
+	cur_temp += amount
 	return self

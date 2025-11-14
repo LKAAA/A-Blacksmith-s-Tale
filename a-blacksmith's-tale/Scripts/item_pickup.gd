@@ -11,7 +11,7 @@ var inside: bool
 var player: PlayerBase
 
 func _ready() -> void:
-	if slot_data:
+	if slot_data.item_stack:
 		sprite_2d.texture = slot_data.item_stack.item_data.sprite
 
 func update_texture() -> void:

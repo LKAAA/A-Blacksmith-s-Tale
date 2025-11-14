@@ -17,7 +17,7 @@ func clear_inventory_data(inventory_data: InventoryData) -> void:
 func update_slot(inv: InventoryData, index: int) -> void:
 	if index < inventory_slots.size():
 		print(self.name)
-		self.inventory_slots[index].set_slot_data(inv.inventory_slots[index])
+		self.inventory_slots[index].set_slot_data(inv.inventory_slots[index].item_stack)
 	else:
 		print(self.name)
 		printerr("Inventory does not have the correct size. The size is: " + str(inventory_slots.size()) + " , while the index to access is " + str(index))
@@ -41,7 +41,7 @@ func populate_grid(inv: InventoryData, slots_to_update: int = 36, locked_slots: 
 		var slot = SLOT.instantiate()
 		
 		if remaining_unlocked_slots <= 0:
-			slot.locked = true
+			slot.set_locked(true)
 		
 		grid.add_child(slot)
 		inventory_slots.append(slot)
@@ -50,9 +50,9 @@ func populate_grid(inv: InventoryData, slots_to_update: int = 36, locked_slots: 
 			slot.slot_clicked.connect(inv.on_slot_clicked)
 		
 		if inv.inventory_slots[index]:
-			slot.set_slot_data(inv.inventory_slots[index])
-			if slot.locked:
-				slot.slot_data.locked = true
+			slot.set_slot_data(inv.inventory_slots[index].item_stack)
+			if slot.is_locked():
+				slot.set_locked(true)
 		
 		remaining_unlocked_slots -= 1
 	

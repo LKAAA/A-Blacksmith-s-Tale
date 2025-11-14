@@ -76,7 +76,7 @@ func on_inventory_interact(inventory_data: InventoryData, index: int, button: in
 	update_grabbed_slot(grabbed_slot_data)
 
 func update_grabbed_slot(slot_data: SlotData):
-	grabbed_slot.set_slot_data(slot_data)
+	grabbed_slot.set_slot_data(slot_data.item_stack)
 	if grabbed_slot.slot_data:
 		Popups.grabbed_item = true
 	else:
