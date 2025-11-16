@@ -5,27 +5,33 @@ signal slot_clicked(index: int, button: int)
 @onready var texture_rect: TextureRect = %TextureRect
 @onready var label: Label = %Label
 
-@export var slot_data: SlotData
+@export var item_stack: ItemStack: 
+	set = set_item_stack, get = get_item_stack
+	
+@export var locked: bool = false:
+	set = set_locked, get = get_locked
+@export var allowed_item_types: Array[String] = ["All"]
 
 func _ready() -> void:
 	label.text = ""
-	slot_data = SlotData.new()
-	if slot_data.item_stack:
-		set_slot_data(slot_data.item_stack)
-	if slot_data.locked:
+	update_slot(item_stack)
+	if locked:
 		self.self_modulate = Color.RED
 
-func set_slot_data(item_stack: ItemStack) -> void:
-	if not item_stack or not item_stack.item_data:
+func update_slot(_item_stack: ItemStack) -> void:
+	print("Updating slot")
+	if not _item_stack:
 		texture_rect.texture = null
 		label.hide()
 		return
 	
-	if slot_data.item_data.sprite:
-		texture_rect.texture = slot_data.item_data.sprite
+	var item_data = _item_stack.item_data
 	
-	if slot_data.item_stack.quantity > 1:
-		label.text = str(slot_data.item_stack.quantity)
+	if item_data.sprite:
+		texture_rect.texture = item_data.sprite
+	
+	if _item_stack.quantity > 1:
+		label.text = str(_item_stack.quantity)
 		label.show()
 	else:
 		label.hide()
@@ -33,23 +39,20 @@ func set_slot_data(item_stack: ItemStack) -> void:
 func update_popup() -> void:
 	Popups.ItemPopup(get_item_data())
 
-func is_locked() -> bool:
-	return slot_data.locked
+func get_locked() -> bool:
+	return locked
 
 func set_locked(value: bool) -> void:
-	if not slot_data: 
-		return
-	
-	slot_data.locked = value
+	locked = value
 
 func get_item_data() -> ItemData:
-	if not slot_data.item_stack or not slot_data.item_stack.item_data:
+	if not item_stack:
 		return null
-	return slot_data.item_stack.item_data
+	return item_stack.item_data
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and (event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT) and event.is_pressed():
-		if not slot_data.locked:
+		if not locked:
 			print("Slot clicked: " + str(get_index()))
 			slot_clicked.emit(get_index(), event.button_index)
 		else:
@@ -60,3 +63,15 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	Popups.HideItemPopup()
+
+func set_item_stack(new_stack) -> void:
+	item_stack = new_stack
+	update_slot(item_stack)
+
+func get_item_stack() -> ItemStack:
+	if item_stack:
+		#print("This slot does have an item stack attached: ", item_stack.item_data.name)
+		return item_stack
+	else:
+		#print("This slot does not currently have an item stack attached")
+		return null

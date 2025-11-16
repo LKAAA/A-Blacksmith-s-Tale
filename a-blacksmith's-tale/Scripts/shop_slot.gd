@@ -1,7 +1,7 @@
 extends Panel
 class_name ShopSlot
 
-signal slot_clicked(item_data: SlotData, button: int)
+signal slot_clicked(item_data: ItemStack, button: int)
 @onready var item_sprite: TextureRect = $MarginContainer/HBoxContainer/ItemSprite
 @onready var item_name_label: RichTextLabel = $MarginContainer/HBoxContainer/ItemNameText
 @onready var cost_label: RichTextLabel = $MarginContainer/HBoxContainer/CostText

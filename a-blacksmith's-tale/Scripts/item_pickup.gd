@@ -4,25 +4,25 @@ extends Area2D
 @onready var sprite_2d: Sprite2D = %Sprite2D
 
 @export var speed: float = 50
-@export var slot_data: SlotData
+@export var item_stack: ItemStack
 
 var overlapping: bool
 var inside: bool
 var player: PlayerBase
 
 func _ready() -> void:
-	if slot_data.item_stack:
-		sprite_2d.texture = slot_data.item_stack.item_data.sprite
+	if item_stack:
+		sprite_2d.texture = item_stack.item_data.sprite
 
 func update_texture() -> void:
-	sprite_2d.texture = slot_data.item_stack.item_data.sprite
+	sprite_2d.texture = item_stack.item_data.sprite
 
 func _physics_process(delta: float) -> void:
 	if overlapping: 
 		position = position.move_toward(player.position, speed*delta)
 	
 	if inside: 
-		if player.inventory.pick_up_slot_data(slot_data):
+		if player.inventory.pick_up_item_stack(item_stack):
 			queue_free()
 
 func _on_outer_body_entered(body: Node2D) -> void:

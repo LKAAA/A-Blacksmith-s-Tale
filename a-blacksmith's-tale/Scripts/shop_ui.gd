@@ -102,8 +102,8 @@ func stop_slow_ramp():
 	slow_ramp_item = null
 	print("Stopped slow ramp buying.")
 
-func get_item(item_data: ItemData) -> SlotData:
-	var slot_data = SlotData.new()
+func get_item(item_data: ItemData) -> ItemStack:
+	var slot_data = ItemStack.new()
 	slot_data.item_data = item_data
 	slot_data.set_quantity(1)
 	return slot_data

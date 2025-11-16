@@ -44,11 +44,11 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		print(active_slot)
 
 func set_active_slot() -> void:
-	var active_slot_data = Global.player.inventory.inventory_slots[active_slot]
-	Global.active_slot = active_slot_data
+	var active_item_stack = Global.player.inventory.inventory_slots_stacks[active_slot]
+	Global.active_slot = active_item_stack
 	Global.active_slot_index = active_slot
-	if active_slot_data:
-		print(active_slot_data.item_data.name)
+	if active_item_stack:
+		print(active_item_stack.item_data.name)
 
 func _set_hotbar_inventory(inventory_data: InventoryData) -> void:
 	hotbar.set_inventory_data(inventory_data, 12, false)
@@ -56,22 +56,22 @@ func _set_hotbar_inventory(inventory_data: InventoryData) -> void:
 	hotbar.size = hotbar.get_minimum_size()
 
 func get_active_item() -> ItemData:
-	if player_inventory.inventory_slots[active_slot]:
-		return player_inventory.inventory_slots[active_slot].item_data
+	if player_inventory.inventory_slots_stacks[active_slot]:
+		return player_inventory.inventory_slots_stacks[active_slot].item_data
 	return null
 
 func use_slot() -> void:
-	var active_slot_data = player_inventory.inventory_slots[active_slot]
-	if active_slot_data:
-		match active_slot_data.item_data.type:
+	var active_item_stack = player_inventory.inventory_slots_stacks[active_slot]
+	if active_item_stack:
+		match active_item_stack.item_data.type:
 			"Consumable":
-				active_slot_data.item_data.use(Global.player)
+				active_item_stack.item_data.use(Global.player)
 			"Tool":
 				Global.player.execute_breakable()
 			"Placeable":
-				active_slot_data.item_data.place(Global.get_mouse_pos())
+				active_item_stack.item_data.place(Global.get_mouse_pos())
 				
-		print("Using " + active_slot_data.item_data.name)
+		print("Using " + active_item_stack.item_data.name)
 	else:
 		print("No item in slot " + str(active_slot))
 
@@ -90,5 +90,5 @@ func update_bars() -> void:
 	health_bar_text.text = "%d/%d" % [health_stat.current, health_stat.base]
 	stamina_bar_text.text = "%d/%d" % [stamina_stat.current, stamina_stat.base]
 
-func update_time_label(day, hour, hour_12, minute, current_weekday, current_season, am_or_pm) -> void:
+func update_time_label(day, _hour, hour_12, minute, current_weekday, current_season, am_or_pm) -> void:
 	time_label.text = "%s of %s\n%s\n%02d:%02d %s" % [day, current_season, current_weekday, hour_12, minute, am_or_pm]

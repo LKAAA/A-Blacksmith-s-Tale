@@ -4,7 +4,7 @@ const SLOT = preload("res://Scenes/slot.tscn")
 
 @onready var grid: GridContainer = %InventoryUI
 
-var inventory_slots: Array[Slot]
+var inventory_slots_ui: Array[Slot]
 
 func set_inventory_data(inventory_data: InventoryData, slots_to_update: int = 36, locked_slots: bool = false, interactable: bool = true) -> void:
 	if not inventory_data.inventory_updated.is_connected(update_slot):
@@ -15,13 +15,14 @@ func clear_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_updated.disconnect(update_slot)
 
 func update_slot(inv: InventoryData, index: int) -> void:
-	if index < inventory_slots.size():
-		print(self.name)
-		self.inventory_slots[index].set_slot_data(inv.inventory_slots[index].item_stack)
+	print("update slot ", index)
+	if index < inventory_slots_ui.size():
+		if inv.inventory_slots_stacks[index]:
+			self.inventory_slots_ui[index].set_item_stack(inv.inventory_slots_stacks[index])
+		else:
+			self.inventory_slots_ui[index].set_item_stack(null)
 	else:
-		print(self.name)
-		printerr("Inventory does not have the correct size. The size is: " + str(inventory_slots.size()) + " , while the index to access is " + str(index))
-		print("swear to god if this is you hotbar inventory i will fuck you up")
+		printerr("Inventory does not have the correct size. The size is: " + str(inventory_slots_ui.size()) + " , while the index to access is " + str(index))
 
 func populate_grid(inv: InventoryData, slots_to_update: int = 36, locked_slots: bool = false, interactable: bool = true) -> void:
 	for child in grid.get_children():
@@ -34,30 +35,26 @@ func populate_grid(inv: InventoryData, slots_to_update: int = 36, locked_slots: 
 	else:
 		remaining_unlocked_slots = slots_to_update
 	
-	inventory_slots.clear()   
+	inventory_slots_ui.clear()   
 	
-	print("Slots to update: " + str(slots_to_update))
 	for index in range(slots_to_update):
-		var slot = SLOT.instantiate()
+		var slot: Slot = SLOT.instantiate()
 		
 		if remaining_unlocked_slots <= 0:
 			slot.set_locked(true)
 		
 		grid.add_child(slot)
-		inventory_slots.append(slot)
+		inventory_slots_ui.append(slot)
 		
 		if interactable: 
 			slot.slot_clicked.connect(inv.on_slot_clicked)
 		
-		if inv.inventory_slots[index]:
-			slot.set_slot_data(inv.inventory_slots[index].item_stack)
-			if slot.is_locked():
-				slot.set_locked(true)
+		if inv.inventory_slots_stacks[index]:
+			slot.update_slot(inv.inventory_slots_stacks[index])
+			if slot.locked:
+				slot.locked = true
 		
 		remaining_unlocked_slots -= 1
 	
-	if not inv.inventory_slots.size() == inventory_slots.size():
-		printerr("Something went wrong, there aren't enough slots")
-		print(self.name)
-	else:
-		print("We chill af")
+	if not inv.inventory_slots_stacks.size() == inventory_slots_ui.size():
+		printerr("Something went wrong in ", self.name, ", There aren't enough slots")

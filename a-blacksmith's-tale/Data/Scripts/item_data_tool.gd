@@ -4,7 +4,7 @@ class_name ItemDataTool
 @export_enum("Pickaxe", "Axe", "Shovel", "Tongs") var tool_type: String
 @export var tool_efficiency: int = 1
 @export var tool_damage: int = 1
-@export var held_slot: SlotData = null
+@export var held_slot: ItemStack = null
 
 func use(target) -> void:
 	if Global.can_harvest:

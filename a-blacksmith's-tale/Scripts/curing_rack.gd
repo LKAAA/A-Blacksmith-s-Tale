@@ -25,10 +25,10 @@ func _on_interact() -> void:
 		if ready_to_pickup:
 			print("Pick up")
 			for output in active_recipe.output:
-				var slot_data = SlotData.new()
-				slot_data.item_data = output
-				slot_data.quantity = 1
-				if Global.player.inventory.pick_up_slot_data(slot_data):
+				var item_stack = ItemStack.new()
+				item_stack.item_data = output
+				item_stack.quantity = 1
+				if Global.player.inventory.pick_up_item_stack(item_stack):
 					ready_to_pickup = false
 					active_recipe = null
 					sprite_2d.play("Idle")
@@ -37,9 +37,9 @@ func _on_interact() -> void:
 					print("Inventory Full")
 		else:
 			print("Try to start curing")
-			if Global.active_slot:
+			if Global.active_slot_stack:
 				for recipe in recipes:
-					if recipe_tester.test_item(recipe, Global.active_slot.item_data):
+					if recipe_tester.test_item(recipe, Global.active_slot_stack.item_data):
 						active_recipe = recipe
 						begin_curing()
 						break
@@ -49,7 +49,7 @@ func _on_interact() -> void:
 func begin_curing() -> void:
 	# Remove ingredient from inventory
 	# Start timer equivalent to recipe's time
-	for slot in Global.player.inventory.inventory_slots:
+	for slot in Global.player.inventory.inventory_slots_stacks:
 		if slot:
 			if slot.item_data == active_recipe.ingredients[0]:
 				Global.player.inventory.remove_single_item(active_recipe.ingredients[0])

@@ -27,15 +27,15 @@ func _on_interact() -> void:
 			Global.player.level_manager.gain_xp(skill_type, xp_reward)
 	print("Interact with ")
 
-func get_item() -> SlotData:
-	var slot_data = SlotData.new()
+func get_item() -> ItemStack:
+	var slot_data = ItemStack.new()
 	slot_data.item_data = item_drop
 	slot_data.set_quantity(5)
 	return slot_data
 
-func get_random_item() -> SlotData:
+func get_random_item() -> ItemStack:
 	var recieved_loot = loot_table.roll_loot()
-	var slot_data = SlotData.new()
+	var slot_data = ItemStack.new()
 	slot_data.item_data = recieved_loot.get(0)
 	slot_data.set_quantity(recieved_loot[0])
 	return slot_data

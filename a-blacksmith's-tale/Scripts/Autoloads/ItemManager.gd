@@ -53,10 +53,6 @@ func get_item_by_name(name_key: String) -> ItemData:
 	push_warning("Item with name '%s' not found." % name_key)
 	return null
 
-
-
-
-
 func _start_cooling_job(item: ItemData, item_holder: ItemData, inventory: InventoryData) -> void:
 	print("Starting item job for item:", item.name)
 
@@ -77,28 +73,28 @@ func _physics_process(delta: float) -> void:
 func cooled_item(cooling_job) -> void:
 	if cooling_job["item"].cur_temp <= 0:
 			print("The item cooled from a heated state.")
-			var slot: SlotData = SlotData.new()
-			slot.item_data = cooling_job["item"]
-			slot.quantity = 1
-			if cooling_job["inventory"].pick_up_slot_data(slot):
+			var stack: ItemStack = ItemStack.new()
+			stack.item_data = cooling_job["item"]
+			stack.quantity = 1
+			if cooling_job["inventory"].pick_up_item_stack(stack):
 				print("Picked up item")
 				if cooling_job["item_holder"].id == 17: # If in use tongs
 					var item_holder: ItemDataTool = cooling_job["item_holder"]
 					var inv: InventoryData = cooling_job["inventory"]
 					item_holder.held_slot = null
-					var h_slot: SlotData = SlotData.new()
+					var h_slot: ItemStack = ItemStack.new()
 					#h_slot.item_data = TONGS.duplicate()
 					h_slot.quantity = 1
 					var index = inv.get_index_of_item(item_holder)
 				
 					if not index == -1: 
 						inv.remove_single_item(item_holder, index)
-						inv.drop_slot_data(h_slot, index)
+						inv.drop_item_stack(h_slot, index)
 				cooling_jobs.remove_at(cooling_jobs.find(cooling_job))
 			else:
 				print("No room")
 
-func quick_cool_item(item_slot: SlotData): 
+func quick_cool_item(item_stack: ItemStack): 
 	print("Quick cool")
 	# If item slot has a cooling job
 	# set temp to 0

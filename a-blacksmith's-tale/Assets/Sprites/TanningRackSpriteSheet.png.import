@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhbvvpbp0h7d0"
-path="res://.godot/imported/TanningRackSpriteSheet.png-95a4ba26fe874652c7f20102079a6fc3.ctex"
+path="res://.godot/imported/TanningRackSpritesheet.png-aa63feb2653b9b4c398b0bfd0b008c84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/TanningRackSpriteSheet.png"
-dest_files=["res://.godot/imported/TanningRackSpriteSheet.png-95a4ba26fe874652c7f20102079a6fc3.ctex"]
+source_file="res://Assets/Sprites/TanningRackSpritesheet.png"
+dest_files=["res://.godot/imported/TanningRackSpritesheet.png-aa63feb2653b9b4c398b0bfd0b008c84.ctex"]
 
 [params]
 

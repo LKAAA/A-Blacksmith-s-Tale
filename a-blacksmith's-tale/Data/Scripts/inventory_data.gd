@@ -3,101 +3,96 @@ class_name InventoryData extends Resource
 signal inventory_updated(inventory_data: InventoryData, index: int)
 signal inventory_interacted(inventory_data: InventoryData, index: int, button: int)
 
-@export var inventory_slots: Array[SlotData] = []
+@export var inventory_slots_stacks: Array[ItemStack] = []
 
-func pick_up_slot_data(slot_data: SlotData) -> bool:
-	if not slot_data:
+func pick_up_item_stack(item_stack: ItemStack) -> bool:
+	if not item_stack:
 		return false
 	
-	if not can_place_slot_data(slot_data):
+	if not can_place_item_stack(item_stack):
 		return false
 	
-	for index in inventory_slots.size():
-		if inventory_slots[index] and inventory_slots[index].can_fully_merge_with(slot_data):
-			inventory_slots[index].fully_merge_with(slot_data)
+	for index in inventory_slots_stacks.size():
+		if inventory_slots_stacks[index] and inventory_slots_stacks[index].can_fully_merge_with(item_stack):
+			inventory_slots_stacks[index].fully_merge_with(item_stack)
 			inventory_updated.emit(self, index)
 			return true
 	
-	for index in inventory_slots.size():
-		if inventory_slots[index] and inventory_slots[index].can_partially_merge_with(slot_data, self):
-			var new_slot = inventory_slots[index].partially_merge_with(slot_data)
-			for i in inventory_slots.size():
-				if not inventory_slots[i]:
-					inventory_slots[i] = new_slot
+	for index in inventory_slots_stacks.size():
+		if inventory_slots_stacks[index] and inventory_slots_stacks[index].can_partially_merge_with(item_stack, self):
+			var new_stack = inventory_slots_stacks[index].partially_merge_with(item_stack)
+			for i in inventory_slots_stacks.size():
+				if not inventory_slots_stacks[i]:
+					inventory_slots_stacks[i] = new_stack
 					inventory_updated.emit(self, i)
 					inventory_updated.emit(self, index)
 					return true
 
-	for index in inventory_slots.size():
-		if not inventory_slots[index]:
-			inventory_slots[index] = slot_data
+	for index in inventory_slots_stacks.size():
+		if not inventory_slots_stacks[index]:
+			inventory_slots_stacks[index] = item_stack
 			inventory_updated.emit(self, index)
 			return true
 	
 	return false
 
-func can_place_slot_data(slot_data: SlotData) -> bool:
-	if not slot_data:
+func can_place_item_stack(item_stack: ItemStack) -> bool:
+	if not item_stack:
 		return false
 	
-	for slot in inventory_slots:
-		if slot and not slot.locked:
-			if slot.can_fully_merge_with(slot_data):
+	for stack in inventory_slots_stacks:
+		if stack: 
+			if stack.can_fully_merge_with(item_stack):
 				return true
 	
-	# 2. Can partially merge (and leftover can fit into an empty unlocked slot)?
-	for slot in inventory_slots:
-		if slot and not slot.locked:
-			if slot.can_partially_merge_with(slot_data, self):
+	# 2. Can partially merge (and leftover can fit into an empty unlocked stack)?
+	for stack in inventory_slots_stacks:
+		if stack:
+			if stack.can_partially_merge_with(item_stack, self):
 				# simulate leftover creation
-				var leftover = slot.partially_merge_with(slot_data)
+				var leftover = stack.partially_merge_with(item_stack)
 				if leftover:
-					for other_slot in inventory_slots:
-						if not other_slot and not leftover.locked: # empty + not locked
+					for other_stack in inventory_slots_stacks:
+						if not other_stack: 
 							return true
 	
-	for slot in inventory_slots:
-		if not slot:
-			if inventory_slots.find(slot) >= Progression.unlocked_inventory_slots:
-				print("Slot is locked")
-			else:
-				return true
-	
-	# 3. Only locked slots available
 	return false
 
-func grab_slot_data(index: int) -> SlotData:
-	var slot_data = inventory_slots[index]
-	if slot_data:
-		inventory_slots[index] = null
+func grab_item_stack(index: int) -> ItemStack:
+	var item_stack = inventory_slots_stacks[index]
+	if item_stack:
+		inventory_slots_stacks[index] = null
+		print("Returning Emitting")
 		inventory_updated.emit(self, index)
-		return slot_data
+		return item_stack
 	else:
+		print("Returning Null")
 		return null
 
-func drop_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
-	var slot_data = inventory_slots[index]
+func drop_item_stack(grabbed_item_stack: ItemStack, index: int) -> ItemStack:
+	var item_stack = inventory_slots_stacks[index]
 	
-	var return_slot_data: SlotData
-	if slot_data and slot_data.can_fully_merge_with(grabbed_slot_data):
-		slot_data.fully_merge_with(grabbed_slot_data)
+	var return_item_stack: ItemStack
+	if item_stack and item_stack.can_fully_merge_with(grabbed_item_stack):
+		item_stack.fully_merge_with(grabbed_item_stack)
 	else:
-		inventory_slots[index] = grabbed_slot_data
-		return_slot_data = slot_data
-		Popups.ItemPopup(inventory_slots[index].item_data)
+		inventory_slots_stacks[index] = grabbed_item_stack
+		return_item_stack = item_stack
+		Popups.ItemPopup(inventory_slots_stacks[index].item_data)
 	
 	inventory_updated.emit(self, index)
-	return return_slot_data
+	return return_item_stack
 
-func grab_new_single_slot_data(index: int) -> SlotData:
-	var slot_data = inventory_slots[index]
-	var return_slot_data: SlotData
-	if slot_data:
-		return_slot_data = slot_data.create_single_slot_data()
-		if inventory_slots[index].quantity < 1:
-			inventory_slots[index] = null
+func grab_new_single_item_stack(index: int) -> ItemStack:
+	var item_stack = inventory_slots_stacks[index]
+	var return_item_stack: ItemStack
+	if item_stack:
+		return_item_stack = item_stack.create_single_item_stack()
+		item_stack.quantity -= 1
+		if inventory_slots_stacks[index].quantity < 1:
+			inventory_slots_stacks[index] = null
 		inventory_updated.emit(self, index)
-		return return_slot_data
+		return return_item_stack
 	else:
 		return null
 
@@ -107,26 +102,24 @@ func remove_single_item(item_data:ItemData, index: int = -1) -> bool:
 		return false
 	
 	if index == -1: 
-		for slot in inventory_slots:
-			var i = inventory_slots.find(slot)
-			if slot:
-				if slot.item_data == item_data:
-					slot.quantity -= 1
-					print(slot.quantity)
-					if slot.quantity < 1:
-						inventory_slots[i] = null
+		for stack in inventory_slots_stacks:
+			var i = inventory_slots_stacks.find(stack)
+			if stack:
+				if stack.item_data == item_data:
+					stack.quantity -= 1
+					if stack.quantity < 1:
+						inventory_slots_stacks[i] = null
 					inventory_updated.emit(self, i) 
 					return true
 	else:
-		var slot = inventory_slots[index]
-		slot.quantity -= 1
-		print(slot.quantity)
-		if slot.quantity < 1:
-			inventory_slots[index] = null
+		var stack = inventory_slots_stacks[index]
+		stack.quantity -= 1
+		if stack.quantity < 1:
+			inventory_slots_stacks[index] = null
 		inventory_updated.emit(self, index) 
 		return true
 	
-	print("Item not here ")
+	printerr("Item not here ")
 	return false
 
 func remove_items(item_data:ItemData, count: int) -> bool:
@@ -135,71 +128,70 @@ func remove_items(item_data:ItemData, count: int) -> bool:
 		return false
 	
 	var remaining = count
-	for slot in inventory_slots:
-		var index = inventory_slots.find(slot)
-		if slot:
-			if slot.item_data == item_data:
-				if slot.quantity >= remaining:
-					slot.quantity -= remaining
-					if slot.quantity < 1:
-						inventory_slots[index] = null
+	for stack in inventory_slots_stacks:
+		var index = inventory_slots_stacks.find(stack)
+		if stack:
+			if stack.item_data == item_data:
+				if stack.quantity >= remaining:
+					stack.quantity -= remaining
+					if stack.quantity < 1:
+						inventory_slots_stacks[index] = null
 					inventory_updated.emit(self.index)
 					return true
 				else:
-					slot.quantity -= remaining
-					if slot.quantity < 1:
-						inventory_slots[index] = null
+					stack.quantity -= remaining
+					if stack.quantity < 1:
+						inventory_slots_stacks[index] = null
 	
 	return false
 
-func grab_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
-	var slot_data = inventory_slots[index]
-	if slot_data and grabbed_slot_data.quantity + 1 <= 999 and slot_data.item_data == grabbed_slot_data.item_data:
-		grabbed_slot_data.quantity += 1
-		slot_data.quantity -= 1
-		if inventory_slots[index].quantity < 1:
-			inventory_slots[index] = null
+func grab_single_item_stack(grabbed_item_stack: ItemStack, index: int) -> ItemStack:
+	var item_stack = inventory_slots_stacks[index]
+	if item_stack and grabbed_item_stack.quantity + 1 <= 999 and item_stack.item_data == grabbed_item_stack.item_data:
+		grabbed_item_stack.quantity += 1
+		item_stack.quantity -= 1
+		if inventory_slots_stacks[index].quantity < 1:
+			inventory_slots_stacks[index] = null
 			Popups.HideItemPopup()
 		inventory_updated.emit(self, index)
-		return grabbed_slot_data
-	else:
-		return grabbed_slot_data
+	
+	return grabbed_item_stack
 
 # CURRENTLY UNUSED
-func drop_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
-	var slot_data = inventory_slots[index]
+func drop_single_item_stack(grabbed_item_stack: ItemStack, index: int) -> ItemStack:
+	var item_stack = inventory_slots_stacks[index]
 	
-	if not slot_data:
-		inventory_slots[index] = grabbed_slot_data.create_single_slot_data()
-	elif slot_data.can_merge_with(grabbed_slot_data):
-		slot_data.fully_merge_with(grabbed_slot_data.create_single_slot_data())
+	if not item_stack:
+		inventory_slots_stacks[index] = grabbed_item_stack.create_single_item_stack()
+	elif item_stack.can_merge_with(grabbed_item_stack):
+		item_stack.fully_merge_with(grabbed_item_stack.create_single_item_stack())
 	
 	inventory_updated.emit(self, index)
 	
-	
-	if grabbed_slot_data.quantity > 0:
-		return grabbed_slot_data
+	if grabbed_item_stack.quantity > 0:
+		return grabbed_item_stack
 	else:
 		return null
 
-func quick_move_data(index: int, other_inventory: InventoryData) -> bool:
-	var slot_data = inventory_slots[index]
-	if not slot_data:
+func quick_move_stack(index: int, other_inventory: InventoryData) -> bool:
+	var item_stack = inventory_slots_stacks[index]
+	if not item_stack:
 		return false
 	
-	if other_inventory.pick_up_slot_data(slot_data):
-		inventory_slots[index] = null
+	if other_inventory.pick_up_item_stack(item_stack):
+		inventory_slots_stacks[index] = null
 		inventory_updated.emit(self, index)
 		return true
 	
 	return false
 
 func  on_slot_clicked(index: int, button: int) -> void:
+	print("index ", index)
 	inventory_interacted.emit(self, index, button)
 
 func get_index_of_item(item_data: ItemData) -> int:
-	for slot in inventory_slots:
-		if slot.item_data == item_data:
-			return inventory_slots.find(slot)
+	for stack in inventory_slots_stacks:
+		if stack.item_data == item_data:
+			return inventory_slots_stacks.find(stack)
 	
 	return -1

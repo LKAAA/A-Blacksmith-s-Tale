@@ -10,8 +10,8 @@ const TILE_SIZE: int = 16
 @export var player_gender: String = "m"
 @export var player_race: String = "Human"
 @export var tool_usage_stamina: float = 1
-@export var tool_cooldown: int = 0.1
-@export var active_slot: SlotData
+@export var tool_cooldown: float = 0.1
+@export var active_slot_stack: ItemStack
 @export var active_slot_index: int = 0
 @export var game_paused: bool
 @export var dialogue_active: bool = false
@@ -55,10 +55,8 @@ func load_recipes(path: String) -> Array:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
-				print("Found file: " + file_name)
+			if not dir.current_is_dir():
+				#print("Found file: " + file_name)
 				var loaded_recipe = load(path + file_name)
 				recipes.append(loaded_recipe)
 			file_name = dir.get_next()

@@ -119,15 +119,13 @@ func _replacement_commands(dialogue_string: String) -> String:
 						
 						var item_id = i.substr(0, x_index)
 						var count = i.substr(x_index + 1, i.length())
-						print(item_id)
-						print(count)
-						item_id = int(item_id)
 						count = int(count)
 						
-						var slot_data = get_item(item_id, count)
-						Global.player.inventory.pick_up_slot_data(slot_data)
-					
-					print("{Item[9x5,10x10]}")
+						var item_data: ItemData = ItemManager.get_item_by_id(int(item_id))
+						var item_stack = ItemStack.new()
+						item_stack.item_data = item_data
+						item_stack.quantity = count
+						Global.player.inventory.pick_up_item_stack(item_stack)
 				
 				if tag.begins_with("{var"):
 					var var_index := tag.find('(') + 1
@@ -177,28 +175,3 @@ func _replacement_commands(dialogue_string: String) -> String:
 		index += 1
 	
 	return final_string
-
-func get_item(item_id: int, count: int) -> SlotData:
-	var slot_data = SlotData.new()
-	
-	slot_data.set_quantity(count)
-	
-	var dir = DirAccess.open("res://Data/Items/")
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if dir.current_is_dir():
-				print("Found directory: " + file_name)
-			else:
-				print("Found file: " + file_name)
-				var item_path = "res://Data/Items/" + file_name
-				var item_resource = load(item_path)
-				if item_resource.id == item_id:
-					slot_data.item_data = item_resource
-					return slot_data
-			file_name = dir.get_next()
-		return null
-	else:
-		printerr("An error occured when trying to access the path.")
-		return null

@@ -20,7 +20,7 @@ func get_skill(skill_name: String) -> Skill:
 		printerr("Skill does not exist on this object")
 		return null
 
-func gain_xp(skill_name: String, amount: float) -> void:
+func gain_xp(skill_name: String, amount: int) -> void:
 	var skill_n = skill_name.to_lower()
 	if not skills.get(skill_n):
 		print("Error: '%s' not found in skills." % skill_n)

@@ -39,11 +39,11 @@ var current_state: FORGE_STATES = FORGE_STATES.OFF
 
 var current_temp: float = 0.0
 var current_max_temp: int = 0                # target temp from current fuel(s)
-var current_fuel: SlotData = null
-var next_fuel: SlotData = null
-var all_fuel: Array[SlotData] = []
+var current_fuel: ItemStack = null
+var next_fuel: ItemStack = null
+var all_fuel: Array[ItemStack] = []
 
-var output_queue: Array[SlotData] = []
+var output_queue: Array[ItemStack] = []
 var current_noti: ItemNotification = null
 
 # smelting bookkeeping
@@ -125,7 +125,7 @@ func _heating_process(delta: float) -> void:
 			current_temp = target
 	
 	if current_fuel:
-		var consumption_rate = delta / current_fuel.item_data.burn_time # fraction per secon
+		#var consumption_rate = delta / current_fuel.item_data.burn_time # fraction per secon
 		fuel_burn_time_remaining = max(0.0, fuel_burn_time_remaining - (delta * (1.0 / current_fuel.item_data.burn_time) * 1.0))
 		fuel_burn_time_remaining -= delta
 		if fuel_burn_time_remaining <= 0.0:
@@ -155,8 +155,8 @@ func has_fuel() -> bool:
 			return true
 	return false
 
-func get_fuel() -> Array[SlotData]:
-	var fuel: Array[SlotData] = []
+func get_fuel() -> Array[ItemStack]:
+	var fuel: Array[ItemStack] = []
 	for slot in fuel_inventory.inventory_slots:
 		if not slot:
 			continue
@@ -203,7 +203,7 @@ func _consume_current_fuel_unit() -> void:
 				fuel_inventory.remove_single_item(current_fuel.item_data, i)
 				break
 
-func higher_temp_fuel() -> SlotData:
+func higher_temp_fuel() -> ItemStack:
 	# check queued fuel in inventory (other than current_fuel) to see if any has higher burn_temp than current_max_temp
 	for slot in get_fuel():
 		if slot == null:
@@ -318,7 +318,7 @@ func _complete_smelting_job(job: Dictionary) -> void:
 
 	# Place result in the first slot (or next available)
 	var output_item: ItemData = recipe.output[0]
-	var slot_data: SlotData = SlotData.new()
+	var slot_data: ItemStack = ItemStack.new()
 	slot_data.item_data = output_item
 	slot_data.item_data.cur_temp = current_temp
 	slot_data.quantity = recipe.output.size()
@@ -346,12 +346,12 @@ func spawn_item_notif(item_data: ItemData) -> void:
 	current_noti = noti
 
 # --- Inventory Interactions ---
-func fuel_inventory_interacted(inventory_data: InventoryData, index: int) -> void:
+func fuel_inventory_interacted(_inventory_data: InventoryData, _index: int) -> void:
 	print("Fuel inventory interacted")
 	#if not has_fuel():
 		#out_of_fuel()
 
-func smeltable_inventory_interacted(inventory_data: InventoryData, index: int) -> void:
+func smeltable_inventory_interacted(_inventory_data: InventoryData, _index: int) -> void:
 	print("Smeltable inventory interacted")
 	if has_smeltable():
 		print(get_smeltables())
@@ -394,8 +394,8 @@ func has_smeltable() -> bool:
 			return true
 	return false
 
-func get_smeltables() -> Array[SlotData]:
-	var smeltables: Array[SlotData] = []
+func get_smeltables() -> Array[ItemStack]:
+	var smeltables: Array[ItemStack] = []
 	for slot in smeltable_inventory.inventory_slots:
 		if not slot:
 			continue

@@ -238,7 +238,7 @@ func _setup_first_zone() -> void:
 	player = PLAYER.instantiate()
 	current_zone.add_child(player)
 	player.position = Vector2(300,80)
-	player.inventory.inventory_slots.resize(36)
+	player.inventory.inventory_slots_stacks.resize(36)
 	
 	player.open_inventory.connect(toggle_inventory_interface)
 	player.escape_ui.connect(escape_ui)
@@ -289,7 +289,7 @@ func _load_next_zone() -> void:
 	cur_zone = ""
 	cur_transition = 0
 
-func load_npcs(current_zone_id) -> void:
+func load_npcs(_current_zone_id) -> void:
 	for npc in current_zone.get_npcs():
 		npc.queue_free()
 		
@@ -309,7 +309,7 @@ func load_npcs(current_zone_id) -> void:
 		npc.facing = event["facing"]
 		print("Spawned %s at %s" % [npc_name, str(event["pos"])])
 
-func update_grid(current_zone: Zone) -> void:
+func update_grid(_current_zone: Zone) -> void:
 	if current_zone.tilemap_base and current_zone.tilemap_obstacles:
 		Grid.update_tilemaps(current_zone.tilemap_base, current_zone.tilemap_obstacles)
 	else:

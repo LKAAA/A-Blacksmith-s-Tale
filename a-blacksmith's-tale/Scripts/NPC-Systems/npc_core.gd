@@ -100,7 +100,7 @@ func _move_to(pos: Vector2, zone: int):
 	print("%s started moving." % char_name)
 	moving = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Global.dialogue_active:
 		sprite_2d.play("IdleDown")
 	elif Global.game_paused:
@@ -121,7 +121,7 @@ func _physics_process(delta: float) -> void:
 			# reached target
 			
 			if (current_path_index + 1) == path_to_position.size(): # Final Position
-				idle_animations(facing)
+				idle_animations()
 				visual_path_line2D.clear_points()
 				moving = false
 				print("%s has arrived." % char_name)
@@ -148,7 +148,7 @@ func _physics_process(delta: float) -> void:
 				print("%s: resumed moving — cancelled phase timer" % char_name)
 	
 
-func idle_animations(dir) -> void:
+func idle_animations() -> void:
 	match facing:
 		1: # down
 			sprite_2d.play("IdleDown")

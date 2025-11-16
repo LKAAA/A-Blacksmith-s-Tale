@@ -9,7 +9,7 @@ class_name Menu extends Control
 
 var external = false
 var external_inv_data: InventoryData = null
-var grabbed_slot_data: SlotData = null
+var grabbed_item_stack: ItemStack = null
 var external_inventory_owner
 
 func _physics_process(_delta: float) -> void:
@@ -52,32 +52,37 @@ func on_inventory_interact(inventory_data: InventoryData, index: int, button: in
 		if Input.is_key_pressed(KEY_SHIFT) && button == MOUSE_BUTTON_LEFT:
 			print("SHIFT CLICK THAT MO FO")
 			if inventory_data == external_inv_data:
-				inventory_data.quick_move_data(index, Global.player.inventory)
+				inventory_data.quick_move_stack(index, Global.player.inventory)
 			else:
-				inventory_data.quick_move_data(index, external_inv_data)
+				inventory_data.quick_move_stack(index, external_inv_data)
 			
 			return
 	
-	match [grabbed_slot_data, button]:
+	match [grabbed_item_stack, button]:
 		[null, MOUSE_BUTTON_LEFT]:
-			#print("Has nothing, grab all slot data")
-			grabbed_slot_data = inventory_data.grab_slot_data(index)
+			print("Has nothing, grab all slot data")
+			grabbed_item_stack = inventory_data.grab_item_stack(index)
 			Popups.HideItemPopup()
 		[_, MOUSE_BUTTON_LEFT]: # _ means it can be anything
-			#print("Has something, drop all of slot data")
-			grabbed_slot_data = inventory_data.drop_slot_data(grabbed_slot_data, index)
+			print("Has something, drop all of slot data")
+			grabbed_item_stack = inventory_data.drop_item_stack(grabbed_item_stack, index)
 		[null, MOUSE_BUTTON_RIGHT]:
-			#print("Has nothing, grab single slot data")
-			grabbed_slot_data = inventory_data.grab_new_single_slot_data(index)
+			print("Has nothing, grab single slot data")
+			grabbed_item_stack = inventory_data.grab_new_single_item_stack(index)
 		[_, MOUSE_BUTTON_RIGHT]: # _ means it can be anything
-			#print("Has something, grab another single slot data")
-			grabbed_slot_data = inventory_data.grab_single_slot_data(grabbed_slot_data, index)
+			print("Has something, grab another single slot data")
+			grabbed_item_stack = inventory_data.grab_single_item_stack(grabbed_item_stack, index)
 	
-	update_grabbed_slot(grabbed_slot_data)
+	update_grabbed_slot(grabbed_item_stack)
 
-func update_grabbed_slot(slot_data: SlotData):
-	grabbed_slot.set_slot_data(slot_data.item_stack)
-	if grabbed_slot.slot_data:
+func update_grabbed_slot(item_stack: ItemStack):
+	if item_stack:
+		print("Yes")
+		grabbed_slot.set_item_stack(item_stack)
+	else:
+		print("nooo")
+		grabbed_slot.set_item_stack(null)
+	if grabbed_slot.item_stack:
 		Popups.grabbed_item = true
 	else:
 		Popups.grabbed_item = false
