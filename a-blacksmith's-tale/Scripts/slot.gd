@@ -37,6 +37,8 @@ func update_slot(_item_stack: ItemStack) -> void:
 		label.hide()
 
 func update_popup() -> void:
+	print("Yuh")
+	print(get_item_data())
 	Popups.ItemPopup(get_item_data())
 
 func get_locked() -> bool:

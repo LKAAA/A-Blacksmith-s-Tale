@@ -5,7 +5,6 @@ extends Node
 enum ITEM_TYPES { MATERIAL, TOOL, CONSUMABLE, PLACEABLE }
 # Maps item_id -> ItemResource
 var items_by_id: Dictionary = {}
-
 # Maps item_file_name (like "oak_log") -> ItemResource
 var items_by_name: Dictionary = {}
 

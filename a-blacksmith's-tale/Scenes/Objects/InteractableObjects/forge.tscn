@@ -12,10 +12,12 @@
 
 [sub_resource type="Resource" id="Resource_y8bqg"]
 script = ExtResource("3_6ykbx")
+inventory_slots_stacks = Array[ExtResource("3_y8bqg")]([null, null, null])
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
 [sub_resource type="Resource" id="Resource_djn3t"]
 script = ExtResource("3_6ykbx")
+inventory_slots_stacks = Array[ExtResource("3_y8bqg")]([null, null])
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xm65n"]

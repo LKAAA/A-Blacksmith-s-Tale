@@ -49,10 +49,11 @@ func populate_grid(inv: InventoryData, slots_to_update: int = 36, locked_slots: 
 		if interactable: 
 			slot.slot_clicked.connect(inv.on_slot_clicked)
 		
-		if inv.inventory_slots_stacks[index]:
-			slot.update_slot(inv.inventory_slots_stacks[index])
-			if slot.locked:
-				slot.locked = true
+		if index >= 0 and index < inv.inventory_slots_stacks.size():
+			if inv.inventory_slots_stacks[index]:
+				slot.update_slot(inv.inventory_slots_stacks[index])
+				if slot.locked:
+					slot.locked = true
 		
 		remaining_unlocked_slots -= 1
 	

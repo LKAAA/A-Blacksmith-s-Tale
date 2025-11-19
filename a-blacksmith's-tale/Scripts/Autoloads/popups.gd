@@ -26,14 +26,16 @@ func _physics_process(_delta: float) -> void:
 	%ItemPopup.position = Vector2(mouse_pos.x + padding_x, clamped_y)
 
 func ItemPopup(item: ItemData):
-	if not item:
+	if item != null:
 		%ItemPopup.size = Vector2i.ZERO
+	else:
+		print("Returning")
 		return
 	
 	name_label.text = item.name
 	type_label.text = item.type
 	description_label.text = item.description
-		
+	
 	%ItemPopup.popup()
 
 func HideItemPopup():

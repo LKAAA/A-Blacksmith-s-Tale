@@ -22,8 +22,6 @@ signal heated_item_ready(slot_index : int) # fired when an item finishes smeltin
 
 @export var fuel_inventory: InventoryData
 @export var smeltable_inventory: InventoryData
-const TONGS_IN_USE = preload("res://Data/Items/Tools/tongs_in_use.tres")
-const TONGS = preload("res://Data/Items/Tools/tongs.tres")
 const ITEM_NOTIFICATION = preload("res://Scenes/item_notification.tscn")
 @onready var item_noti_location: Node2D = $ItemNotiLocation
 
@@ -31,7 +29,6 @@ const ITEM_NOTIFICATION = preload("res://Scenes/item_notification.tscn")
 
 enum FORGE_STATES { OFF, HEATING, SMELTING, COOLING }
 var current_state: FORGE_STATES = FORGE_STATES.OFF
-
 
 @export var bellows_boost: float = 1.0        # extra deg/sec when bellows pumped
 @export var bellows_buffer_decay_rate: float = 0.5 # how quickly bellows buffer decays (deg/sec)
@@ -146,24 +143,24 @@ func _passive_cool(delta: float) -> void:
 
 # --- Fuel handling utilities ---
 func has_fuel() -> bool:
-	for slot in fuel_inventory.inventory_slots:
-		if not slot:
+	for stack in fuel_inventory.inventory_slots_stacks:
+		if not stack:
 			continue
-		if not slot.item_data:
+		if not stack.item_data:
 			continue
-		if slot.item_data.burnable and slot.quantity > 0:
+		if stack.item_data.burnable and stack.quantity > 0:
 			return true
 	return false
 
 func get_fuel() -> Array[ItemStack]:
 	var fuel: Array[ItemStack] = []
-	for slot in fuel_inventory.inventory_slots:
-		if not slot:
+	for stack in fuel_inventory.inventory_slots_stack:
+		if not stack:
 			continue
-		if not slot.item_data:
+		if not stack.item_data:
 			continue
-		if slot.item_data.burnable and slot.quantity > 0:
-			fuel.append(slot)
+		if stack.item_data.burnable and stack.quantity > 0:
+			fuel.append(stack)
 	return fuel
 
 func _prepare_next_fuel() -> void:
@@ -183,7 +180,7 @@ func _prepare_next_fuel() -> void:
 		current_fuel = all_fuel[0]
 	current_max_temp = current_fuel.item_data.burn_temp
 	fuel_burn_time_remaining = current_fuel.item_data.burn_time
-	fuel_slot_index_in_use = fuel_inventory.inventory_slots.find(current_fuel)
+	fuel_slot_index_in_use = fuel_inventory.inventory_slots_stacks.find(current_fuel)
 	if fuel_slot_index_in_use < 0:
 		fuel_slot_index_in_use = -1
 	_consume_current_fuel_unit()
@@ -192,27 +189,27 @@ func _consume_current_fuel_unit() -> void:
 	# remove one unit of current_fuel from inventory. Then if there is more in all_fuel, continue; else check overall fuel.
 	if not current_fuel:
 		return
-	var index = fuel_inventory.inventory_slots.find(current_fuel)
+	var index = fuel_inventory.inventory_slots_stacks.find(current_fuel)
 	if index >= 0:
 		fuel_inventory.remove_single_item(current_fuel.item_data, index)
 	else:
 		# fallback: try to find item by identity in all_fuel and remove
-		for i in fuel_inventory.inventory_slots.size():
-			var s = fuel_inventory.inventory_slots[i]
+		for i in fuel_inventory.inventory_slots_stacks.size():
+			var s = fuel_inventory.inventory_slots_stacks[i]
 			if s == current_fuel:
 				fuel_inventory.remove_single_item(current_fuel.item_data, i)
 				break
 
 func higher_temp_fuel() -> ItemStack:
 	# check queued fuel in inventory (other than current_fuel) to see if any has higher burn_temp than current_max_temp
-	for slot in get_fuel():
-		if slot == null:
+	for stack in get_fuel():
+		if stack == null:
 			continue
-		if slot == current_fuel:
+		if stack == current_fuel:
 			continue
-		if slot.item_data.burnable:
-			if slot.item_data.burn_temp > current_max_temp:
-				return slot
+		if stack.item_data.burnable:
+			if stack.item_data.burn_temp > current_max_temp:
+				return stack
 	return null
 
 func out_of_fuel() -> void:
@@ -230,8 +227,8 @@ func _process_smelt_jobs(delta: float) -> void:
 	# Cleanup invalid jobs (items removed)
 	smelt_jobs = smelt_jobs.filter(func(job):
 		for slot_index in job["slot_indexes"]:
-			var slot = smeltable_inventory.inventory_slots[slot_index]
-			if not slot or not slot.item_data:
+			var stack = smeltable_inventory.inventory_slots_stacks[slot_index]
+			if not stack or not stack.item_data:
 				return false
 		return true
 	)
@@ -242,12 +239,12 @@ func _process_smelt_jobs(delta: float) -> void:
 		current_state = FORGE_STATES.HEATING
 		return
 	
-	for i in range(smeltable_inventory.inventory_slots.size()):
-		var slot = smeltable_inventory.inventory_slots[i]
-		if not slot or not slot.item_data:
+	for i in range(smeltable_inventory.inventory_slots_stacks.size()):
+		var stack = smeltable_inventory.inventory_slots_stacks[i]
+		if not stack or not stack.item_data:
 			continue
 
-		# Skip if this slot is already in a job
+		# Skip if this stack is already in a job
 		var already_in_job := false
 		for j in smelt_jobs:
 			if i in j["slot_indexes"]:
@@ -261,8 +258,8 @@ func _process_smelt_jobs(delta: float) -> void:
 		if combo_recipe:
 			var required_indexes: Array[int] = []
 			for ing in combo_recipe.ingredients:
-				for idx in range(smeltable_inventory.inventory_slots.size()):
-					var s = smeltable_inventory.inventory_slots[idx]
+				for idx in range(smeltable_inventory.inventory_slots_stacks.size()):
+					var s = smeltable_inventory.inventory_slots_stacks[idx]
 					if s and s.item_data == ing and idx not in required_indexes:
 						required_indexes.append(idx)
 						break
@@ -272,7 +269,7 @@ func _process_smelt_jobs(delta: float) -> void:
 				continue
 
 		# --- Try single-item recipe
-		var single_recipe := recipe_tester._find_single_recipe(slot.item_data, recipes)
+		var single_recipe := recipe_tester._find_single_recipe(stack.item_data, recipes)
 		if single_recipe:
 			_start_smelt_job([i], single_recipe)
 			continue
@@ -312,18 +309,18 @@ func _complete_smelting_job(job: Dictionary) -> void:
 
 	# Consume input items
 	for idx in slot_indexes:
-		var slot = smeltable_inventory.inventory_slots[idx]
-		if slot:
-			smeltable_inventory.remove_single_item(slot.item_data, idx)
+		var stack = smeltable_inventory.inventory_slots_stacks[idx]
+		if stack:
+			smeltable_inventory.remove_single_item(stack.item_data, idx)
 
 	# Place result in the first slot (or next available)
 	var output_item: ItemData = recipe.output[0]
-	var slot_data: ItemStack = ItemStack.new()
-	slot_data.item_data = output_item
-	slot_data.item_data.cur_temp = current_temp
-	slot_data.quantity = recipe.output.size()
+	var item_stack: ItemStack = ItemStack.new()
+	item_stack.item_data = output_item
+	item_stack.cur_temp = current_temp
+	item_stack.quantity = recipe.output.size()
 	
-	output_queue.append(slot_data)
+	output_queue.append(item_stack)
 	if not current_noti:
 		spawn_item_notif(output_item)
 	emit_signal("heated_item_ready", 0)
@@ -357,14 +354,14 @@ func smeltable_inventory_interacted(_inventory_data: InventoryData, _index: int)
 		print(get_smeltables())
 
 func _forge_interacted() -> void:
-	var player_held_slot = Global.active_slot
-	if player_held_slot and player_held_slot.item_data is ItemDataTool:
+	var player_held_stack = Global.active_slot_stack
+	if player_held_stack and player_held_stack.item_data is ItemDataTool:
 		if output_queue.size() > 0:
-			if player_held_slot.item_data.tool_type == "Tongs" and player_held_slot.item_data.held_slot == null: 
+			if player_held_stack.item_data.tool_type == "Tongs" and player_held_stack.item_data.held_slot == null: 
 				print("Pick up item with tongs")
-				player_held_slot.item_data = TONGS_IN_USE.duplicate()
-				player_held_slot.item_data.held_slot = output_queue[0]
-				ItemManager._start_cooling_job(output_queue[0].item_data, player_held_slot.item_data, Global.player.inventory)
+				player_held_stack.item_data = ItemManager.get_item_by_name("tongs")
+				player_held_stack.item_data.held_slot = output_queue[0]
+				ItemManager._start_cooling_job(output_queue[0].item_data, player_held_stack.item_data, Global.player.inventory)
 				output_queue.remove_at(0)
 				if output_queue.size() <= 0:
 					current_noti.queue_free()
@@ -385,24 +382,24 @@ func light_forge() -> void:
 
 # --- Smelting System ---
 func has_smeltable() -> bool:
-	for slot in smeltable_inventory.inventory_slots:
-		if not slot:
+	for stack in smeltable_inventory.inventory_slots_stacks:
+		if not stack:
 			continue
-		if not slot.item_data:
+		if not stack.item_data:
 			continue
-		if slot.item_data.smeltable and slot.quantity > 0:
+		if stack.item_data.smeltable and stack.quantity > 0:
 			return true
 	return false
 
 func get_smeltables() -> Array[ItemStack]:
 	var smeltables: Array[ItemStack] = []
-	for slot in smeltable_inventory.inventory_slots:
-		if not slot:
+	for stack in smeltable_inventory.inventory_slots_stacks:
+		if not stack:
 			continue
-		if not slot.item_data:
+		if not stack.item_data:
 			continue
-		if slot.item_data.smeltable and slot.quantity > 0:
-			smeltables.append(slot)
+		if stack.item_data.smeltable and stack.quantity > 0:
+			smeltables.append(stack)
 	return smeltables
 
 # --- Bellows Interaction
