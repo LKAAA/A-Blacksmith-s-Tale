@@ -68,7 +68,6 @@ offset_bottom = -66.0
 
 [node name="GrabbedSlot" parent="UI/Menu_UI" instance=ExtResource("3_ak6bg")]
 unique_name_in_owner = true
-self_modulate = Color(1, 1, 1, 0)
 z_index = 99
 layout_mode = 0
 mouse_filter = 2

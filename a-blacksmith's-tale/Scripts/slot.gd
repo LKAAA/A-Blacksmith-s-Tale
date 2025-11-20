@@ -14,9 +14,6 @@ signal slot_clicked(index: int, button: int)
 
 func _ready() -> void:
 	label.text = ""
-	update_slot(item_stack)
-	if locked:
-		self.self_modulate = Color.RED
 
 func update_slot(_item_stack: ItemStack) -> void:
 	print("Updating slot")

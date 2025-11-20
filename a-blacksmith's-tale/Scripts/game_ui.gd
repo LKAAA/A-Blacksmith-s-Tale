@@ -45,7 +45,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func set_active_slot() -> void:
 	var active_item_stack = Global.player.inventory.inventory_slots_stacks[active_slot]
-	Global.active_slot = active_item_stack
+	Global.active_slot_stack = active_item_stack
 	Global.active_slot_index = active_slot
 	if active_item_stack:
 		print(active_item_stack.item_data.name)

@@ -6,6 +6,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_12ej0"]
 
 [node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(24, 24)
 offset_right = 24.0
 offset_bottom = 24.0
@@ -51,6 +52,8 @@ offset_left = -12.0
 offset_top = -6.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("1_1xt00")
 theme_override_font_sizes/font_size = 5
 text = "000"
