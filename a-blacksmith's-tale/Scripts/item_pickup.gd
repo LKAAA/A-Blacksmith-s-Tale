@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 		position = position.move_toward(player.position, speed*delta)
 	
 	if inside: 
+		print(item_stack)
 		if player.inventory.pick_up_item_stack(item_stack):
 			queue_free()
 

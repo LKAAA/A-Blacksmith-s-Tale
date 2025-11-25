@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=47 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="TileSet" uid="uid://b1mcovimiglxi" path="res://Assets/Tilesets/Grass_base_ts.tres" id="2_vdpjq"]
@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://dstxblro34alg" path="res://Scenes/Objects/BreakableObjects/tree.tscn" id="22_4hkp2"]
 [ext_resource type="Resource" uid="uid://bo73747f67xfn" path="res://Data/Shops/GeneralStore.tres" id="22_xm65n"]
 [ext_resource type="PackedScene" uid="uid://duxvb6kudsmba" path="res://Scenes/Objects/InteractableObjects/sign.tscn" id="23_x8coi"]
+[ext_resource type="Texture2D" uid="uid://dw5uv70f88ll5" path="res://Assets/Sprites/PlaceableBuildings_SPSH.png" id="28_hadkk"]
+[ext_resource type="Script" uid="uid://dt1cbr151t3en" path="res://Scripts/behind_adjustment.gd" id="29_2005q"]
 [ext_resource type="PackedScene" uid="uid://d10twax1viih5" path="res://Scenes/Objects/InteractableObjects/barrel.tscn" id="30_wbxtn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vdpjq"]
@@ -118,6 +120,16 @@ script = ExtResource("15_uwclm")
 inventory_slots_stacks = Array[ExtResource("8_x8coi")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2005q"]
+atlas = ExtResource("28_hadkk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbxtn"]
+size = Vector2(14, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2oeqr"]
+size = Vector2(21, 10)
+
 [node name="TestZone1" type="Node2D" node_paths=PackedStringArray("transitions", "tilemap_base", "tilemap_obstacles")]
 script = ExtResource("1_x1thp")
 transitions = [NodePath("Transition Zones/NorthTransition"), NodePath("Transition Zones/EastTransition")]
@@ -183,62 +195,50 @@ recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="Tree" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(360, 328)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree2" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(344, 376)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree3" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(264, 328)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree4" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(280, 376)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree5" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(312, 344)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree6" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(408, 328)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree7" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(312, 392)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree8" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(392, 360)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree9" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(536, 8)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree10" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(200, 24)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree11" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(72, 8)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree12" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(-56, 56)
-required_tool_type = "Pickaxe"
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Sign" parent="Objects" instance=ExtResource("23_x8coi")]
@@ -292,6 +292,24 @@ position = Vector2(-120, 184)
 filled = true
 uses = 999
 
+[node name="Anvil" type="StaticBody2D" parent="Objects"]
+position = Vector2(-40, 232)
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects/Anvil"]
+texture = SubResource("AtlasTexture_2005q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Anvil"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_wbxtn")
+
+[node name="BehindAdjustment" type="Area2D" parent="Objects/Anvil"]
+script = ExtResource("29_2005q")
+metadata/_custom_type_script = "uid://dt1cbr151t3en"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Anvil/BehindAdjustment"]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_2oeqr")
+
 [node name="Characters" type="Node" parent="."]
 
 [node name="NPCCore2" parent="Characters" instance=ExtResource("20_4hkp2")]
@@ -308,3 +326,6 @@ cur_schedule_name = "spring"
 cur_schedule_time = 1200
 cur_facing_direction = 2
 metadata/_custom_type_script = "uid://bc8dn2l61tmo2"
+
+[connection signal="body_entered" from="Objects/Anvil/BehindAdjustment" to="Objects/Anvil/BehindAdjustment" method="_on_body_entered"]
+[connection signal="body_exited" from="Objects/Anvil/BehindAdjustment" to="Objects/Anvil/BehindAdjustment" method="_on_body_exited"]

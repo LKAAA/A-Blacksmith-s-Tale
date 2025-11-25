@@ -13,7 +13,6 @@
 [sub_resource type="Resource" id="Resource_js48y"]
 script = ExtResource("2_js48y")
 item_data = ExtResource("3_lnte2")
-weight = 1
 drop_chance = 100.0
 amount_low = 6
 amount_high = 16
@@ -22,13 +21,11 @@ metadata/_custom_type_script = "uid://dvx6puk3bnkq0"
 [sub_resource type="Resource" id="Resource_o2uwt"]
 script = ExtResource("4_6wjis")
 entries = Array[ExtResource("2_js48y")]([SubResource("Resource_js48y")])
-rolls = 1
-mode = 1
 metadata/_custom_type_script = "uid://wojvluuilm2u"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8coi"]
 atlas = ExtResource("2_c3tjw")
-region = Rect2(16, 80, 16, 16)
+region = Rect2(48, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1cnt"]
 atlas = ExtResource("3_eeglh")
@@ -46,7 +43,7 @@ size = Vector2(11, 9)
 [node name="Oak_Stump" type="StaticBody2D" groups=["breakable_object"]]
 script = ExtResource("1_x45my")
 hitpoints = 4
-required_tool_type = "Pickaxe"
+required_tool_type = "Axe"
 xp_reward = 50
 skill_type = "Woodcutting"
 loot_table = SubResource("Resource_o2uwt")

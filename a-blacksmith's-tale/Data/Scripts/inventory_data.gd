@@ -7,6 +7,7 @@ signal inventory_interacted(inventory_data: InventoryData, index: int, button: i
 
 func pick_up_item_stack(item_stack: ItemStack) -> bool:
 	if not item_stack:
+		print("Not item stack")
 		return false
 	
 	if not can_place_item_stack(item_stack):

@@ -20,7 +20,7 @@ region = Rect2(0, 0, 48, 63)
 size = Vector2(10, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jjfm"]
-size = Vector2(12, 29)
+size = Vector2(11.052752, 27.026379)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbs57"]
 size = Vector2(48, 64)
@@ -54,7 +54,7 @@ shape = SubResource("RectangleShape2D_xm65n")
 position = Vector2(-0.947248, 9.47362)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="breakable_area"]
-position = Vector2(0, -16)
+position = Vector2(0.47362375, -0.9868107)
 shape = SubResource("RectangleShape2D_7jjfm")
 
 [node name="BehindAdjustment" parent="." instance=ExtResource("5_dbs57")]
