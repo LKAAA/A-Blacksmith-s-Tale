@@ -25,9 +25,6 @@ func use(target: PlayerBase) -> void:
 	
 	if item_to_give_id != -1:
 		print("Give item")
-		var item_stack: ItemStack = ItemStack.new()
-		item_stack.item_data = ItemManager.get_item_by_id(item_to_give_id)
-		item_stack.set_quantity(item_to_give_quantity)
-		target.inventory.pick_up_item_stack(item_stack)
+		target.inventory_system.add_item_data(ItemManager.get_item_by_id(item_to_give_id), item_to_give_quantity)
 	
-	target.inventory.remove_single_item(self, Global.active_slot_index)
+	target.inventory_system.remove_single_item(self, Global.active_slot_index)

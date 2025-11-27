@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://b2pa1b6wmduol"]
 
-[ext_resource type="Script" uid="uid://dge56hs33tghy" path="res://Data/Scripts/item_data_consumable.gd" id="1_ulovj"]
+[ext_resource type="Script" uid="uid://dge56hs33tghy" path="res://Inventory/item_data_consumable.gd" id="1_ulovj"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_ulovj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_adm67"]
@@ -12,10 +12,9 @@ script = ExtResource("1_ulovj")
 heal_value = 20
 stamina_value = 40
 item_to_give_quantity = 4
-name = "Fried Egg"
+pretty_name = "Fried Egg"
 description = "A fried egg. Delicious!"
 sprite = SubResource("AtlasTexture_adm67")
-type = "Consumable"
 buy_price = 69
 sell_price = 69
 metadata/_custom_type_script = "uid://dge56hs33tghy"

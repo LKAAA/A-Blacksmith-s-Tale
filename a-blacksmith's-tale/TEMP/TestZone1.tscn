@@ -1,21 +1,12 @@
-[gd_scene load_steps=47 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=29 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="TileSet" uid="uid://b1mcovimiglxi" path="res://Assets/Tilesets/Grass_base_ts.tres" id="2_vdpjq"]
 [ext_resource type="Texture2D" uid="uid://2n611u1wf6pu" path="res://Assets/Sprites/CliffTilesheetPass2.png" id="3_x5qe2"]
 [ext_resource type="PackedScene" uid="uid://xbr07uqgqq1r" path="res://Scenes/transition_zone.tscn" id="5_bo2f2"]
 [ext_resource type="PackedScene" uid="uid://uid2qlo1vyf5" path="res://Scenes/item_pickup.tscn" id="6_vjrfg"]
-[ext_resource type="Script" uid="uid://cvh3brayo56q5" path="res://Data/Scripts/item_stack.gd" id="8_x8coi"]
-[ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/Materials/iron_ore.tres" id="10_lvl10"]
-[ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/Materials/oak_log.tres" id="11_vdpjq"]
-[ext_resource type="Resource" uid="uid://b28a8c0aq5y08" path="res://Data/Items/Tools/iron_pickaxe.tres" id="11_x5qe2"]
-[ext_resource type="Resource" uid="uid://mydrqgv5t416" path="res://Data/Items/Tools/tongs.tres" id="12_mhl2v"]
-[ext_resource type="Resource" uid="uid://chnmxveu56yux" path="res://Data/Items/Tools/iron_axe.tres" id="12_vdpjq"]
 [ext_resource type="PackedScene" uid="uid://cxn142l8tsc8v" path="res://Scenes/Objects/InteractableObjects/chest.tscn" id="14_8d832"]
-[ext_resource type="Script" uid="uid://dfsikqcptkoj0" path="res://Data/Scripts/inventory_data.gd" id="15_uwclm"]
 [ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/Materials/animal_hide.tres" id="16_qsvcl"]
-[ext_resource type="Resource" uid="uid://jmtmk20jo3jl" path="res://Data/Items/Consumables/evil_egg.tres" id="16_vdpjq"]
-[ext_resource type="Resource" uid="uid://b2pa1b6wmduol" path="res://Data/Items/Consumables/fried_egg.tres" id="18_6bgdf"]
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/InteractableObjects/curing_rack.tscn" id="18_quhww"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="19_dpgyg"]
 [ext_resource type="PackedScene" uid="uid://dhnph3wcef2ko" path="res://Scenes/Objects/npc_core.tscn" id="20_4hkp2"]
@@ -70,55 +61,6 @@ sources/2 = SubResource("TileSetAtlasSource_vdpjq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fopl"]
 size = Vector2(50, 32)
-
-[sub_resource type="Resource" id="Resource_mhl2v"]
-script = ExtResource("8_x8coi")
-item_data = ExtResource("10_lvl10")
-quantity = 13
-metadata/_custom_type_script = "uid://cvh3brayo56q5"
-
-[sub_resource type="Resource" id="Resource_hadkk"]
-script = ExtResource("8_x8coi")
-item_data = ExtResource("16_vdpjq")
-quantity = 5
-metadata/_custom_type_script = "uid://cvh3brayo56q5"
-
-[sub_resource type="Resource" id="Resource_2005q"]
-script = ExtResource("8_x8coi")
-item_data = ExtResource("18_6bgdf")
-quantity = 5
-metadata/_custom_type_script = "uid://cvh3brayo56q5"
-
-[sub_resource type="Resource" id="Resource_uicwj"]
-script = ExtResource("8_x8coi")
-item_data = ExtResource("11_vdpjq")
-quantity = 40
-metadata/_custom_type_script = "uid://cvh3brayo56q5"
-
-[sub_resource type="Resource" id="Resource_pwc2c"]
-script = ExtResource("8_x8coi")
-item_data = ExtResource("12_mhl2v")
-metadata/_custom_type_script = "uid://cvh3brayo56q5"
-
-[sub_resource type="Resource" id="Resource_wbxtn"]
-script = ExtResource("8_x8coi")
-item_data = ExtResource("11_x5qe2")
-metadata/_custom_type_script = "uid://cvh3brayo56q5"
-
-[sub_resource type="Resource" id="Resource_2oeqr"]
-script = ExtResource("8_x8coi")
-item_data = ExtResource("12_vdpjq")
-metadata/_custom_type_script = "uid://cvh3brayo56q5"
-
-[sub_resource type="Resource" id="Resource_r6337"]
-script = ExtResource("15_uwclm")
-inventory_slots_stacks = Array[ExtResource("8_x8coi")]([SubResource("Resource_mhl2v"), SubResource("Resource_hadkk"), SubResource("Resource_2005q"), SubResource("Resource_uicwj"), SubResource("Resource_pwc2c"), null, null, null, null, null, null, SubResource("Resource_wbxtn"), SubResource("Resource_2oeqr"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
-metadata/_custom_type_script = "uid://dfsikqcptkoj0"
-
-[sub_resource type="Resource" id="Resource_6bgdf"]
-script = ExtResource("15_uwclm")
-inventory_slots_stacks = Array[ExtResource("8_x8coi")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
-metadata/_custom_type_script = "uid://dfsikqcptkoj0"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2005q"]
 atlas = ExtResource("28_hadkk")
@@ -175,11 +117,9 @@ position = Vector2(364, 146)
 
 [node name="Chest" parent="Objects" instance=ExtResource("14_8d832")]
 position = Vector2(24, 120)
-inventory_data = SubResource("Resource_r6337")
 
 [node name="Chest2" parent="Objects" instance=ExtResource("14_8d832")]
 position = Vector2(56, 120)
-inventory_data = SubResource("Resource_6bgdf")
 
 [node name="CuringRack" parent="Objects" instance=ExtResource("18_quhww")]
 position = Vector2(-8, 168)
@@ -195,50 +135,62 @@ recipes = Array[ExtResource("19_dpgyg")]([ExtResource("20_6bgdf")])
 
 [node name="Tree" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(360, 328)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree2" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(344, 376)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree3" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(264, 328)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree4" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(280, 376)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree5" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(312, 344)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree6" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(408, 328)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree7" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(312, 392)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree8" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(392, 360)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree9" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(536, 8)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree10" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(200, 24)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree11" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(72, 8)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Tree12" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(-56, 56)
+required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
 [node name="Sign" parent="Objects" instance=ExtResource("23_x8coi")]

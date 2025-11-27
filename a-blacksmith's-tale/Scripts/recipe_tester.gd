@@ -1,12 +1,12 @@
 class_name RecipeTester extends Node2D
 
-func test_inventory(recipe: RecipeData, inventory: InventoryData = null) -> bool:
+func test_inventory(recipe: RecipeData, inventory: InventorySystem = null) -> bool:
 	if inventory:
 		for ingredient in recipe.ingredients:
 			var amount_of_ing = recipe.ingredients.count(ingredient)
 			var held_count: int = 0
 			print(amount_of_ing)
-			for slot in inventory.inventory_slots:
+			for slot in inventory.inventory:
 				if slot:
 					if slot.item_data == ingredient:
 						held_count += slot.quantity
@@ -28,7 +28,7 @@ func _find_single_recipe(item: ItemData, recipes: Array[RecipeData]) -> RecipeDa
 			return recipe
 	return null
 
-func _find_combination_recipe(inventory: InventoryData, recipes: Array[RecipeData]) -> RecipeData:
+func _find_combination_recipe(inventory: InventorySystem, recipes: Array[RecipeData]) -> RecipeData:
 	for recipe in recipes:
 		if recipe.ingredients.size() == 2:
 			var first = recipe.ingredients[0]
@@ -36,7 +36,7 @@ func _find_combination_recipe(inventory: InventoryData, recipes: Array[RecipeDat
 			var has_first = false
 			var has_second = false
 
-			for slot in inventory.inventory_slots:
+			for slot in inventory.inventory:
 				if not slot or not slot.item_data:
 					continue
 				if slot.item_data == first:

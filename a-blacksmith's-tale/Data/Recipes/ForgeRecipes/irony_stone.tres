@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="RecipeData" load_steps=6 format=3 uid="uid://dplusuhn6wen1"]
 
-[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_dxbe0"]
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Inventory/item_data.gd" id="1_dxbe0"]
 [ext_resource type="Resource" uid="uid://dm4oa85xd4lmy" path="res://Data/Items/Materials/stone.tres" id="2_4s3gb"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="2_xj6gg"]
 [ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/Materials/iron_ore.tres" id="3_t6kav"]

@@ -25,10 +25,7 @@ func _on_interact() -> void:
 		if ready_to_pickup:
 			print("Pick up")
 			for output in active_recipe.output:
-				var item_stack = ItemStack.new()
-				item_stack.item_data = output
-				item_stack.quantity = 1
-				if Global.player.inventory.pick_up_item_stack(item_stack):
+				if Global.player.inventory_system.add_item_data(output, 1):
 					ready_to_pickup = false
 					active_recipe = null
 					sprite_2d.play("Idle")
@@ -49,17 +46,14 @@ func _on_interact() -> void:
 func begin_curing() -> void:
 	# Remove ingredient from inventory
 	# Start timer equivalent to recipe's time
-	for slot in Global.player.inventory.inventory_slots_stacks:
+	for slot in Global.player.inventory_system.inventory:
 		if slot:
 			if slot.item_data == active_recipe.ingredients[0]:
-				Global.player.inventory.remove_single_item(active_recipe.ingredients[0])
+				Global.player.inventory_system.remove_single_item(active_recipe.ingredients[0])
 				timer.start(active_recipe.time_to_make)
 				active = true
 				sprite_2d.play("Active")
 				print("Start Curing")
-
-# Change this to check active item vs inventory
-# Add ya know actually turning the item into something different
 
 func paused_game() -> void:
 	if active:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=80 format=3 uid="uid://cuy4dikcyhbr2"]
 
 [ext_resource type="Script" uid="uid://cfaixpdbolxqs" path="res://Player/player.gd" id="1_cx3in"]
-[ext_resource type="Resource" uid="uid://da5paxap81syu" path="res://Data/Inventories/player_inventory.tres" id="2_10i02"]
+[ext_resource type="Script" uid="uid://cc4tlg4ud56s5" path="res://Inventory/inventory_system.gd" id="2_qemgg"]
 [ext_resource type="PackedScene" uid="uid://jt1ghw5v6uqc" path="res://Scenes/Components/stats_manager.tscn" id="3_fhl08"]
 [ext_resource type="Script" uid="uid://o8uxfeudqfnp" path="res://Scripts/LevelSystem/level_manager.gd" id="3_gu6f8"]
 [ext_resource type="Texture2D" uid="uid://cokeb7saw2h3y" path="res://Assets/Sprites/CharacterSpriteSheet1.png" id="3_k53q1"]
@@ -603,7 +603,12 @@ z_index = 2
 z_as_relative = false
 collision_layer = 129
 script = ExtResource("1_cx3in")
-inventory = ExtResource("2_10i02")
+
+[node name="InventorySystem" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_qemgg")
+locked_slots = 24
+metadata/_custom_type_script = "uid://cc4tlg4ud56s5"
 
 [node name="LevelManager" type="Node" parent="."]
 unique_name_in_owner = true

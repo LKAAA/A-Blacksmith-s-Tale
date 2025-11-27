@@ -1,0 +1,185 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvu5sk5k4y05u"]
+
+[ext_resource type="Script" uid="uid://c6vhi0bkhmglh" path="res://Inventory/Scripts/popups.gd" id="1_62nyy"]
+[ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_j6djd"]
+[ext_resource type="FontFile" uid="uid://df73r0oibkmtw" path="res://Assets/Fonts/Fabled_Font.ttf" id="3_43nt0"]
+[ext_resource type="FontFile" uid="uid://d1hqkgwbu8f1p" path="res://Assets/Fonts/TeenyTinyPixls-o2zo.ttf" id="4_av6fn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8lnna"]
+modulate_color = Color(1, 1, 1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lnna"]
+atlas = ExtResource("2_j6djd")
+region = Rect2(48, 0, 16, 16)
+
+[node name="Popups" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_62nyy")
+
+[node name="ItemPopup" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+title = "DetailedItemTooltip"
+size = Vector2i(96, 144)
+visible = true
+content_scale_mode = 2
+content_scale_aspect = 1
+content_scale_stretch = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_8lnna")
+
+[node name="OuterBackground" type="ColorRect" parent="ItemPopup"]
+offset_right = 96.0
+offset_bottom = 144.0
+color = Color(0.18, 0.18, 0.18, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemPopup/OuterBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="ColorBorder" type="ColorRect" parent="ItemPopup/OuterBackground/MarginContainer"]
+layout_mode = 2
+color = Color(0.52520776, 0.12325985, 0.18062285, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="ItemPopup/OuterBackground/MarginContainer/ColorBorder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="InnerBackground" type="ColorRect" parent="ItemPopup/OuterBackground/MarginContainer/ColorBorder/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="stupidfucker" type="MarginContainer" parent="ItemPopup"]
+unique_name_in_owner = true
+offset_right = 96.0
+offset_bottom = 144.0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemPopup/stupidfucker"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ItemPopup/stupidfucker/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+
+[node name="TopSection" type="HBoxContainer" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer2/TopSection"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="ItemSprite" type="TextureRect" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer2/TopSection/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = SubResource("AtlasTexture_8lnna")
+stretch_mode = 2
+
+[node name="ItemInfoSection" type="VBoxContainer" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer2/TopSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="ItemNameLabel" type="RichTextLabel" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer2/TopSection/ItemInfoSection"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_43nt0")
+theme_override_font_sizes/normal_font_size = 10
+text = "{ItemName}"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ItemTypeLabel" type="RichTextLabel" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer2/TopSection/ItemInfoSection"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("4_av6fn")
+theme_override_font_sizes/normal_font_size = 5
+text = "{ItemType}"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ColorBorder2" type="ColorRect" parent="ItemPopup/stupidfucker/VBoxContainer"]
+custom_minimum_size = Vector2(20.75, 1)
+layout_mode = 2
+color = Color(0.52520776, 0.12325985, 0.18062285, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemPopup/stupidfucker/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 0
+
+[node name="BottomSection" type="VBoxContainer" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ItemDescriptionLabel" type="RichTextLabel" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer/BottomSection"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.646029, 0.646029, 0.646029, 1)
+theme_override_fonts/normal_font = ExtResource("4_av6fn")
+theme_override_font_sizes/normal_font_size = 5
+text = "{ItemDescription}"
+fit_content = true
+scroll_active = false
+
+[node name="ItemRarityLabel" type="RichTextLabel" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer/BottomSection"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("4_av6fn")
+theme_override_font_sizes/normal_font_size = 5
+text = "{ItemRarity}"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="StatSection" type="VBoxContainer" parent="ItemPopup/stupidfucker/VBoxContainer/MarginContainer/BottomSection"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 1

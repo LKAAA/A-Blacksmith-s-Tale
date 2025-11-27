@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dyo1byeq58lh2"]
 
-[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_o8yqx"]
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Inventory/item_data.gd" id="1_o8yqx"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_7dtp1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otvwb"]
@@ -9,17 +9,9 @@ region = Rect2(32, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_o8yqx")
-name = "Iron Bar"
+pretty_name = "Iron Bar"
 id = 6
 description = "A smelted bar of iron."
 sprite = SubResource("AtlasTexture_otvwb")
-type = "Material"
-sellable = true
-buy_price = 1
-sell_price = 1
-stackable = true
-burnable = false
-burn_time = 0
-burn_temp = 0
 smeltable = true
 melting_point = 800

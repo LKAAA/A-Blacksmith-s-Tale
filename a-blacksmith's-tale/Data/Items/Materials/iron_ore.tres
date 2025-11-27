@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bprsgavhksnhf"]
 
-[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_7kfmq"]
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Inventory/item_data.gd" id="1_7kfmq"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_f2rgf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0v1b"]
@@ -9,7 +9,7 @@ region = Rect2(48, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_7kfmq")
-name = "Iron Ore"
+pretty_name = "Iron Ore"
 id = 5
 description = "A raw chunk of iron ore."
 sprite = SubResource("AtlasTexture_o0v1b")

@@ -5,7 +5,7 @@ const SHOP_SLOT = preload("res://Scenes/ShopSlot.tscn")
 @onready var grid: GridContainer = $ShopSection/MarginContainer/ScrollContainer/GridContainer
 
 @onready var shop_section: PanelContainer = $ShopSection
-@onready var inventory: InventoryUI = $Inventory
+@onready var inventory: InventoryGrid = %Inventory_Grid
 
 var slow_ramp_active: bool = false
 var slow_ramp_item: ItemData = null
@@ -35,10 +35,10 @@ func _process(delta: float) -> void:
 			slow_ramp_delay = max(min_ramp_delay, slow_ramp_delay - ramp_accel)
 			slow_ramp_timer = slow_ramp_delay
 
-func set_shop(shop_data: ShopData, inventory_data: InventoryData) -> void:
+func set_shop(shop_data: ShopData) -> void:
 	cur_shop_data = shop_data
 	populate_shop(cur_shop_data)
-	inventory.populate_grid(inventory_data, 36, true, false)
+	inventory.set_inventory(Global.player.inventory_system)
 
 func populate_shop(shop_data: ShopData) -> void:
 	print("Populate Shop")
@@ -56,9 +56,9 @@ func populate_shop(shop_data: ShopData) -> void:
 		
 		slot.set_item_data(shop_data.items_sold[index])
 
-func _set_shop_inventories(inventory_data: InventoryData) -> void:
-	inventory_data.inventory_interacted.connect(on_inventory_shop_interact)
-	inventory.set_inventory_data(inventory_data)
+func _set_shop_inventories(inventory_system: InventorySystem) -> void:
+	inventory_system.inventory_interacted.connect(on_inventory_shop_interact)
+	inventory.set_inventory(inventory_system)
 
 func on_inventory_shop_interact(item_data: ItemData, button: int) -> void:
 	match [button]:
@@ -76,11 +76,9 @@ func buy_item(item_data: ItemData) -> bool:
 	if not _can_afford(item_data):
 		print("Not enough gold (Brokie LOL)")
 		return false
-
-	var slot_data = get_item(item_data)
-	if not Global.player.inventory.pick_up_slot_data(slot_data):
+	
+	if not Global.player.inventory_system.add_item_data(ItemManager.get_item_by_id(item_data.id), 1): 
 		return false
-	inventory.populate_grid(Global.player.inventory, 36, true, false)
 
 	# subtract player gold
 	Global.player_gold -= item_data.buy_price

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgwgmgovm884e"]
+
+[ext_resource type="Script" uid="uid://d1eucb7yrlxp3" path="res://Inventory/inventory_grid.gd" id="1_gu1f6"]
+
+[node name="Inventory_Grid" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_constants/h_separation = -1
+theme_override_constants/v_separation = -1
+columns = 12
+script = ExtResource("1_gu1f6")

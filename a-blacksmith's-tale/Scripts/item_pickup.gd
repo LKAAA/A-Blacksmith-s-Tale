@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	
 	if inside: 
 		print(item_stack)
-		if player.inventory.pick_up_item_stack(item_stack):
+		if player.inventory_system.add_item_stack(item_stack):
 			queue_free()
 
 func _on_outer_body_entered(body: Node2D) -> void:

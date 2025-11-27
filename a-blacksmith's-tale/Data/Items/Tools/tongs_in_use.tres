@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemDataTool" load_steps=4 format=3 uid="uid://31dc3ct8apng"]
 
-[ext_resource type="Script" uid="uid://bygdluhg5efcj" path="res://Data/Scripts/item_data_tool.gd" id="1_eca2l"]
+[ext_resource type="Script" uid="uid://bygdluhg5efcj" path="res://Inventory/item_data_tool.gd" id="1_eca2l"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_eca2l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hu5i1"]
@@ -9,12 +9,10 @@ region = Rect2(48, 48, 16, 16)
 
 [resource]
 script = ExtResource("1_eca2l")
-tool_type = "Tongs"
-name = "Tongs (In Use)"
+tool_type = 3
+pretty_name = "Tongs (Holding)"
 id = 17
 description = "A large pair of tongs currently carrying a hot thing."
 sprite = SubResource("AtlasTexture_hu5i1")
-type = "Tool"
 sellable = false
-stackable = false
 metadata/_custom_type_script = "uid://bygdluhg5efcj"

@@ -120,12 +120,8 @@ func _replacement_commands(dialogue_string: String) -> String:
 						var item_id = i.substr(0, x_index)
 						var count = i.substr(x_index + 1, i.length())
 						count = int(count)
-						
-						var item_data: ItemData = ItemManager.get_item_by_id(int(item_id))
-						var item_stack = ItemStack.new()
-						item_stack.item_data = item_data
-						item_stack.quantity = count
-						Global.player.inventory.pick_up_item_stack(item_stack)
+			
+						Global.player.inventory_system.add_item_data(ItemManager.get_item_by_id(int(item_id)), count)
 				
 				if tag.begins_with("{var"):
 					var var_index := tag.find('(') + 1

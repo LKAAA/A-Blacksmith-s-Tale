@@ -9,7 +9,7 @@ class_name PlayerBase extends CharacterBody2D
 var tool_cooldown: bool = false
 
 @onready var sprite: AnimatedSprite2D = $Sprite2D
-@export var inventory: InventoryData = InventoryData.new()
+@onready var inventory_system: InventorySystem = %InventorySystem
 @onready var stats_manager: CharacterStats = %StatsManager
 @onready var level_manager: CharacterLevels = %LevelManager
 
@@ -27,7 +27,7 @@ var prev_direction: int
 enum PLAYER_STATES { MOVE, DODGEROLL, ATTACK, INTERACTING }
 var current_state: PLAYER_STATES 
 
-signal open_inventory(inventory: InventoryData)
+signal open_inventory(inventory: InventorySystem)
 signal escape_ui
 signal use
 signal request_break
@@ -68,8 +68,8 @@ func _handle_input() -> void:
 	
 	if Input.is_action_just_pressed("test_input"):
 		#level_manager.gain_xp("Mining", 100)
-		var item: ItemData = ItemManager.get_item_by_id(8)
-		print("Got ", item.name)
+		inventory_system.add_item_data(ItemManager.get_item_by_id(8), 1)
+		print("Got ", ItemManager.get_item_by_id(8).pretty_name)
 		pass
 	
 	if Input.is_action_just_pressed("inventory"):

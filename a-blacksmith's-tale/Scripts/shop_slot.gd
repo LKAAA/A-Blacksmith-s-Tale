@@ -21,7 +21,7 @@ func set_item_data(item: ItemData) -> void:
 		item_data = item
 		
 		item_sprite.texture = item_data.sprite
-		item_name_label.text = item_data.name
+		item_name_label.text = item_data.pretty_name
 		cost_label.text = str(item_data.buy_price) + " Gold"
 		
 	else:

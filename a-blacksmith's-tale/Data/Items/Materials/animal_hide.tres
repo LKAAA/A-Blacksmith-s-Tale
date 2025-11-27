@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cjiq8puq2y5kp"]
 
-[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_nam6c"]
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Inventory/item_data.gd" id="1_nam6c"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_k44yp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iixlw"]
@@ -9,7 +9,7 @@ region = Rect2(16, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_nam6c")
-name = "Animal Hide"
+pretty_name = "Animal Hide"
 id = 1
 description = "A small pelt of animal hide."
 sprite = SubResource("AtlasTexture_iixlw")

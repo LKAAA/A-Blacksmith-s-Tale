@@ -106,7 +106,7 @@ func toggle_inventory_interface(external_inventory_owner = null) -> void:
 		game_ui.show()
 		Global.unpause_game()
 	
-	menu_ui._update_player_inventory(player.inventory)
+	menu_ui._update_player_inventory(player.inventory_system)
 	menu_ui.player_inventory.visible = true
 	
 	if external_inventory_owner and menu_ui.visible:
@@ -154,7 +154,7 @@ func toggle_shop_ui(shop_data: ShopData) -> void:
 		Global.unpause_game()
 		Global.shop_active = false
 	
-	shop_ui.set_shop(shop_data, player.inventory)
+	shop_ui.set_shop(shop_data)
 
 func load_shops(zone: Zone) -> void:
 	for node in zone.get_shops():
@@ -238,7 +238,6 @@ func _setup_first_zone() -> void:
 	player = PLAYER.instantiate()
 	current_zone.add_child(player)
 	player.position = Vector2(300,80)
-	player.inventory.inventory_slots_stacks.resize(36)
 	
 	player.open_inventory.connect(toggle_inventory_interface)
 	player.escape_ui.connect(escape_ui)
@@ -247,8 +246,8 @@ func _setup_first_zone() -> void:
 	
 	Global.player = player
 	
-	menu_ui._set_player_inventory(player.inventory)
-	game_ui._set_hotbar_inventory(player.inventory)
+	menu_ui._set_player_inventory(player.inventory_system)
+	#game_ui._set_hotbar_inventory(player.inventory)
 	
 	load_external_inventories(current_zone)
 	load_shops(current_zone)

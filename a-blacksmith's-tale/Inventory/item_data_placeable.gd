@@ -15,6 +15,6 @@ func place(mouse_pos: Vector2) -> void:
 		# Seems to work fine
 		object.position = Grid.current_tilemap_base.map_to_local(Grid.get_tile_pos(mouse_pos)) 
 		Global.core.update_grid(Global.core.current_zone)
-		Global.player.inventory.remove_single_item(self, Global.active_slot_index)
+		Global.player.inventory_system.remove_single_item(self, Global.active_slot_index)
 	print(placeable)
 	print("We placing now")

@@ -20,8 +20,9 @@ signal heated_item_ready(slot_index : int) # fired when an item finishes smeltin
 
 @export var active_recipe: RecipeData
 
-@export var fuel_inventory: InventoryData
-@export var smeltable_inventory: InventoryData
+@onready var fuel_inventory: InventorySystem = %fuel_inventory
+@onready var smeltable_inventory: InventorySystem = %smeltable_inventory
+
 const ITEM_NOTIFICATION = preload("res://Scenes/item_notification.tscn")
 @onready var item_noti_location: Node2D = $ItemNotiLocation
 
@@ -343,12 +344,12 @@ func spawn_item_notif(item_data: ItemData) -> void:
 	current_noti = noti
 
 # --- Inventory Interactions ---
-func fuel_inventory_interacted(_inventory_data: InventoryData, _index: int) -> void:
+func fuel_inventory_interacted(_inventory_system: InventorySystem, _index: int) -> void:
 	print("Fuel inventory interacted")
 	#if not has_fuel():
 		#out_of_fuel()
 
-func smeltable_inventory_interacted(_inventory_data: InventoryData, _index: int) -> void:
+func smeltable_inventory_interacted(_inventory_system: InventorySystem, _index: int) -> void:
 	print("Smeltable inventory interacted")
 	if has_smeltable():
 		print(get_smeltables())

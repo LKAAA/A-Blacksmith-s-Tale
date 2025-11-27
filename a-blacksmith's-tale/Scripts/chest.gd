@@ -4,8 +4,6 @@ class_name Chest extends StaticBody2D
 
 signal toggle_inventory(external_inventory_owner)
 
-@export var inventory_data: InventoryData
-
 func _ready() -> void:
 	interact_area.interact = Callable(self, "_on_interact")
 

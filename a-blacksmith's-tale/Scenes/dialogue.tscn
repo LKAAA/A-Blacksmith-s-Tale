@@ -26,18 +26,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1.0
-offset_bottom = 1.0
+offset_left = 52.5
+offset_top = 41.0
+offset_right = -64.785736
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CharacterPortraitDialogue" type="TextureRect" parent="Dialogue_Section"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -21.5
-offset_top = -218.0
-offset_right = 170.5
-offset_bottom = 38.0
+offset_left = -21.0
+offset_top = -191.0
+offset_right = 171.0
+offset_bottom = 65.0
 texture = ExtResource("2_5mcti")
 
 [node name="BackgroundOutline2" type="ColorRect" parent="Dialogue_Section"]
@@ -67,7 +69,7 @@ grow_vertical = 2
 color = Color(0.479408, 0.173565, 0.163196, 1)
 
 [node name="Background2" type="ColorRect" parent="Dialogue_Section/CharNameSection/BackgroundOutline3"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
 offset_right = 114.0
@@ -77,7 +79,7 @@ color = Color(0.695439, 0.524172, 0.402162, 1)
 [node name="CharacterNameLabel" type="RichTextLabel" parent="Dialogue_Section/CharNameSection"]
 unique_name_in_owner = true
 clip_contents = false
-layout_mode = 2
+layout_mode = 0
 offset_left = 5.0
 offset_top = -12.0
 offset_right = 113.0
@@ -126,11 +128,14 @@ bbcode_enabled = true
 fit_content = true
 
 [node name="Options_Section" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 52.5
+offset_top = 41.0
+offset_right = -62.25
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -138,9 +143,9 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -21.5
-offset_top = -218.0
+offset_top = -191.0
 offset_right = 170.5
-offset_bottom = 38.0
+offset_bottom = 65.0
 texture = ExtResource("2_5mcti")
 
 [node name="BackgroundOutline3" type="ColorRect" parent="Options_Section"]

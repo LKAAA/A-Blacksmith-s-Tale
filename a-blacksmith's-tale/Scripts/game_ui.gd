@@ -1,6 +1,5 @@
 class_name GameUI extends Control
 
-@onready var hotbar: InventoryUI = %Hotbar
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var stamina_bar: ProgressBar = $StaminaBar
 @onready var health_bar_text: RichTextLabel = %HealthBarText
@@ -8,8 +7,6 @@ class_name GameUI extends Control
 @onready var time_label: RichTextLabel = %TimeLabel
 
 const OAK_STUMP = preload("res://Scenes/Objects/BreakableObjects/oak_stump.tscn")
-
-var player_inventory: InventoryData
 
 var active_slot: int = 0
 
@@ -50,25 +47,20 @@ func set_active_slot() -> void:
 	if active_item_stack:
 		print(active_item_stack.item_data.name)
 
-func _set_hotbar_inventory(inventory_data: InventoryData) -> void:
-	hotbar.set_inventory_data(inventory_data, 12, false)
-	player_inventory = inventory_data
-	hotbar.size = hotbar.get_minimum_size()
-
 func get_active_item() -> ItemData:
-	if player_inventory.inventory_slots_stacks[active_slot]:
-		return player_inventory.inventory_slots_stacks[active_slot].item_data
+	if Global.player.inventory_system.inventory[active_slot]:
+		return Global.player.inventory_system.inventory[active_slot].item_data
 	return null
 
 func use_slot() -> void:
-	var active_item_stack = player_inventory.inventory_slots_stacks[active_slot]
+	var active_item_stack = Global.player.inventory_system.inventory[active_slot]
 	if active_item_stack:
 		match active_item_stack.item_data.type:
-			"Consumable":
+			ItemManager.ITEM_TYPES.CONSUMABLE:
 				active_item_stack.item_data.use(Global.player)
-			"Tool":
+			ItemManager.ITEM_TYPES.TOOL:
 				Global.player.execute_breakable()
-			"Placeable":
+			ItemManager.ITEM_TYPES.PLACEABLE:
 				active_item_stack.item_data.place(Global.get_mouse_pos())
 				
 		print("Using " + active_item_stack.item_data.name)

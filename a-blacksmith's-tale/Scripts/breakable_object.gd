@@ -7,7 +7,7 @@ extends StaticBody2D
 var OAK_STUMP = load("res://Scenes/Objects/BreakableObjects/oak_stump.tscn")
 
 @export var hitpoints: int = 1
-@export_enum("Pickaxe", "Axe", "Shovel") var required_tool_type: String = ""
+@export var required_tool_type: ItemManager.TOOL_TYPES = ItemManager.TOOL_TYPES.PICKAXE
 @export_range(1, Global.MAX_TOOL_EFFICIENCY) var required_efficiency: int = 1
 
 @export var xp_reward: int = 0
@@ -24,7 +24,7 @@ func _on_hit(active_item: ItemData) -> void:
 	if not active_item:
 		return
 	
-	if active_item.type == "Tool":
+	if active_item.type == ItemManager.ITEM_TYPES.TOOL:
 		var tool: ItemDataTool = active_item
 		if not tool.tool_type == required_tool_type:
 			print("Not right tool type")

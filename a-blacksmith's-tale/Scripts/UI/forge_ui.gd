@@ -1,22 +1,22 @@
 extends Control
 class_name ForgeUI
 
-@onready var inventory: InventoryUI = %Inventory
-@onready var smeltable_inventory: InventoryUI = %SmeltableInventory
-@onready var fuel_inventory: InventoryUI = %FuelInventory
+@onready var player_inventory: InventoryGrid = %PlayerInventory
+@onready var fuel_inventory: InventoryGrid = %FuelInventory
+@onready var smeltable_inventory: InventoryGrid = %SmeltableInventory
 
-@export var smeltable_slots: Array[Slot] = []
-@export var fuel_slots: Array[Slot] = []
+@export var smeltable_slots: Array[InventorySlot] = []
+@export var fuel_slots: Array[InventorySlot] = []
 
 @onready var temp_label: RichTextLabel = %TempLabel
 
 var cur_forge: Forge = null
 	
 
-func set_ui(inventory_data: InventoryData, forge: Forge) -> void:
-	inventory.set_inventory_data(inventory_data, 36, true, true)
-	fuel_inventory.set_inventory_data(forge.fuel_inventory, 3, true, true)
-	smeltable_inventory.set_inventory_data(forge.smeltable_inventory, 2, true, true)
+func set_ui(inventory_system: InventorySystem, forge: Forge) -> void:
+	player_inventory.set_inventory(inventory_system)
+	fuel_inventory.set_inventory(forge.fuel_inventory)
+	smeltable_inventory.set_inventory(forge.smeltable_inventory)
 	
 	temp_label.text = "0 Celsius"
 	

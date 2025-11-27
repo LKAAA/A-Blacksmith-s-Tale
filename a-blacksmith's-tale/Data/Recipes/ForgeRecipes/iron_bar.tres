@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="RecipeData" load_steps=5 format=3 uid="uid://diy48vhr1fkn5"]
 
-[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_epv2t"]
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Inventory/item_data.gd" id="1_epv2t"]
 [ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/Materials/iron_ore.tres" id="2_7gni3"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="2_n1mfc"]
 [ext_resource type="Resource" uid="uid://twjaitsqagqq" path="res://Data/Items/HeatedMaterials/heated_iron.tres" id="3_oxm3k"]

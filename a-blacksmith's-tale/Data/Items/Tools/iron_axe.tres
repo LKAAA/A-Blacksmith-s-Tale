@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemDataTool" load_steps=4 format=3 uid="uid://chnmxveu56yux"]
 
-[ext_resource type="Script" uid="uid://bygdluhg5efcj" path="res://Data/Scripts/item_data_tool.gd" id="1_52vtj"]
+[ext_resource type="Script" uid="uid://bygdluhg5efcj" path="res://Inventory/item_data_tool.gd" id="1_52vtj"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_52vtj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u0cry"]
@@ -9,11 +9,9 @@ region = Rect2(80, 48, 16, 16)
 
 [resource]
 script = ExtResource("1_52vtj")
-tool_type = "Axe"
-name = "Iron Axe"
+tool_type = 0
+pretty_name = "Iron Axe"
 id = 3
 description = "An axe made of iron."
 sprite = SubResource("AtlasTexture_u0cry")
-type = "Tool"
-stackable = false
 metadata/_custom_type_script = "uid://bygdluhg5efcj"

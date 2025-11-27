@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cfe48xar3dp0q"]
 
-[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Data/Scripts/item_data.gd" id="1_fseug"]
+[ext_resource type="Script" uid="uid://1sj1rrsd7jss" path="res://Inventory/item_data.gd" id="1_fseug"]
 [ext_resource type="Texture2D" uid="uid://x2g6advisrfp" path="res://Assets/Sprites/ItemSpriteSheet16x16.png" id="2_03hd7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2c35"]
@@ -9,11 +9,11 @@ region = Rect2(64, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_fseug")
-name = "Long Oak Handle"
+pretty_name = "Oak Long Tool Handle"
 id = 8
 description = "A long handle of oak wood, commonly used for tools."
 sprite = SubResource("AtlasTexture_g2c35")
-stackable = false
+stack_size = 1
 burnable = true
 burn_time = 40
 burn_temp = 1200

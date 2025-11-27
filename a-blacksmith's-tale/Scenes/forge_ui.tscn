@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvhf0s5aqfog6"]
 
 [ext_resource type="Script" uid="uid://d2w7m5ne7rwqy" path="res://Scripts/UI/forge_ui.gd" id="1_3n4yn"]
-[ext_resource type="PackedScene" uid="uid://lb776xffqplh" path="res://Scenes/inventory.tscn" id="2_w0xxf"]
+[ext_resource type="PackedScene" uid="uid://cgwgmgovm884e" path="res://Inventory/inventory_grid.tscn" id="2_w0xxf"]
 [ext_resource type="FontFile" uid="uid://df73r0oibkmtw" path="res://Assets/Fonts/Fabled_Font.ttf" id="4_e56hr"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_al2hu"]
@@ -48,14 +48,9 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Inventory" parent="OuterBorder/HBoxContainer/InventorySection" instance=ExtResource("2_w0xxf")]
+[node name="PlayerInventory" parent="OuterBorder/HBoxContainer/InventorySection" instance=ExtResource("2_w0xxf")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="InventoryUI" parent="OuterBorder/HBoxContainer/InventorySection/Inventory/MarginContainer" index="0"]
-columns = 4
 
 [node name="RecipeSection" type="MarginContainer" parent="OuterBorder/HBoxContainer"]
 layout_mode = 2
@@ -86,12 +81,8 @@ texture = SubResource("CanvasTexture_etv1u")
 
 [node name="SmeltableInventory" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer/SmeltableSection/Background" instance=ExtResource("2_w0xxf")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 0)
-layout_mode = 1
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+layout_mode = 0
+anchors_preset = 0
 
 [node name="FuelSection" type="MarginContainer" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer"]
 layout_mode = 2
@@ -128,9 +119,7 @@ horizontal_alignment = 1
 
 [node name="FuelInventory" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer/FuelSection/Background/VBoxContainer" instance=ExtResource("2_w0xxf")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
-size_flags_horizontal = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer"]
 layout_mode = 2
@@ -146,5 +135,3 @@ text = "Light Forge
 "
 
 [connection signal="pressed" from="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer/MarginContainer/LightForgeButton" to="." method="_on_light_forge_button_pressed"]
-
-[editable path="OuterBorder/HBoxContainer/InventorySection/Inventory"]

@@ -17,19 +17,19 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Popups="*res://Scenes/popups.tscn"
 Global="*res://Scripts/Autoloads/Global.gd"
 Progression="*res://Scripts/Autoloads/Progression.gd"
 ScheduleManager="*res://Scripts/NPC-Systems/schedule_manager.gd"
 Grid="*res://Scripts/grid.gd"
 ItemManager="*res://Scripts/Autoloads/ItemManager.gd"
+Popups="*res://Inventory/popups.tscn"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=270
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 

@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccmyhhc71d7ao"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_slot.gd" id="1_ded5v"]
+[ext_resource type="FontFile" uid="uid://d1hqkgwbu8f1p" path="res://Assets/Fonts/TeenyTinyPixls-o2zo.ttf" id="3_37qhk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gpqwp"]
+
+[node name="InventorySlot" type="MarginContainer"]
+offset_right = 19.0
+offset_bottom = 19.0
+mouse_filter = 0
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+script = ExtResource("1_ded5v")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(0, 0, 0, 0.2627451)
+clip_contents = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = SubResource("CanvasTexture_gpqwp")
+
+[node name="Sprite" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+stretch_mode = 2
+
+[node name="Quantity_Label" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("3_37qhk")
+theme_override_font_sizes/normal_font_size = 5
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
