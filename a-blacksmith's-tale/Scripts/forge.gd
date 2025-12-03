@@ -383,7 +383,7 @@ func light_forge() -> void:
 
 # --- Smelting System ---
 func has_smeltable() -> bool:
-	for stack in smeltable_inventory.inventory_slots_stacks:
+	for stack in smeltable_inventory.inventory:
 		if not stack:
 			continue
 		if not stack.item_data:
@@ -394,7 +394,7 @@ func has_smeltable() -> bool:
 
 func get_smeltables() -> Array[ItemStack]:
 	var smeltables: Array[ItemStack] = []
-	for stack in smeltable_inventory.inventory_slots_stacks:
+	for stack in smeltable_inventory.inventory:
 		if not stack:
 			continue
 		if not stack.item_data:

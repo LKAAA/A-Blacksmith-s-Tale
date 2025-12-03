@@ -81,8 +81,12 @@ texture = SubResource("CanvasTexture_etv1u")
 
 [node name="SmeltableInventory" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer/SmeltableSection/Background" instance=ExtResource("2_w0xxf")]
 unique_name_in_owner = true
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="FuelSection" type="MarginContainer" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer"]
 layout_mode = 2
@@ -120,6 +124,8 @@ horizontal_alignment = 1
 [node name="FuelInventory" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer/FuelSection/Background/VBoxContainer" instance=ExtResource("2_w0xxf")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="OuterBorder/HBoxContainer/ForgeSection/VBoxContainer"]
 layout_mode = 2

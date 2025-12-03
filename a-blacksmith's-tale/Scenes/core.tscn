@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://co5cc6txkeplv"]
+[gd_scene load_steps=20 format=3 uid="uid://co5cc6txkeplv"]
 
 [ext_resource type="Script" uid="uid://cyvr7g2773o5h" path="res://Scripts/core.gd" id="1_gb7ya"]
 [ext_resource type="PackedScene" uid="uid://cj3yjqmwsa42r" path="res://Scenes/loading_screen.tscn" id="2_377ls"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://csnmp3nbii0d4" path="res://Scripts/time_manager.gd" id="10_2sxaq"]
 [ext_resource type="FontFile" uid="uid://d1hqkgwbu8f1p" path="res://Assets/Fonts/TeenyTinyPixls-o2zo.ttf" id="10_5cc8j"]
 [ext_resource type="Texture2D" uid="uid://cw5gn6ita43p3" path="res://Assets/daynightcycle-gradient-texture.tres" id="11_byey5"]
+[ext_resource type="PackedScene" uid="uid://dvq1tnre3i0hj" path="res://Inventory/hotbar_grid.tscn" id="12_fryo0"]
 [ext_resource type="Script" uid="uid://cd3jxpeecq4vb" path="res://Scripts/grid.gd" id="13_x0cc3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sxaq"]
@@ -177,13 +178,26 @@ Spring
 fit_content = true
 horizontal_alignment = 2
 
+[node name="hotbar_grid" parent="UI/Game_UI" instance=ExtResource("12_fryo0")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 137.0
+offset_top = 246.0
+offset_right = 342.0
+offset_bottom = 264.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="LoadingScreen" parent="UI" instance=ExtResource("2_377ls")]
 unique_name_in_owner = true
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="DialoguePosition" type="Marker2D" parent="UI"]
-position = Vector2(244, 262)
+position = Vector2(240, 264)
 
 [node name="DialogueManager" type="Node" parent="."]
 script = ExtResource("9_gbnb7")

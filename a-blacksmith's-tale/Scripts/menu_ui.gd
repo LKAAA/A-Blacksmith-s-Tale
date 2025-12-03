@@ -87,8 +87,8 @@ func update_grabbed_slot(item_stack: ItemStack):
 	else:
 		Popups.grabbed_slot = false
 
-#func _set_forge_inventory(inventory_data: InventoryData, cur_forge: Forge) -> void:
-	#forge_ui.set_ui(inventory_data, cur_forge)
-	#if not forge_ui.cur_forge.fuel_inventory.inventory_interacted.is_connected(on_inventory_interact):
-		#forge_ui.cur_forge.fuel_inventory.inventory_interacted.connect(on_inventory_interact)
-		#forge_ui.cur_forge.smeltable_inventory.inventory_interacted.connect(on_inventory_interact)
+func _set_forge_inventory(inventory_system: InventorySystem, cur_forge: Forge) -> void:
+	forge_ui.set_ui(inventory_system, cur_forge)
+	if not forge_ui.cur_forge.fuel_inventory.inventory_interacted.is_connected(on_inventory_interact):
+		forge_ui.cur_forge.fuel_inventory.inventory_interacted.connect(on_inventory_interact)
+		forge_ui.cur_forge.smeltable_inventory.inventory_interacted.connect(on_inventory_interact)

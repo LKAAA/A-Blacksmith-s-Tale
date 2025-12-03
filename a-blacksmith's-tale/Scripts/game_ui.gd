@@ -5,6 +5,7 @@ class_name GameUI extends Control
 @onready var health_bar_text: RichTextLabel = %HealthBarText
 @onready var stamina_bar_text: RichTextLabel = %StaminaBarText
 @onready var time_label: RichTextLabel = %TimeLabel
+@onready var hotbar_grid: HotbarGrid = %hotbar_grid
 
 const OAK_STUMP = preload("res://Scenes/Objects/BreakableObjects/oak_stump.tscn")
 
@@ -40,12 +41,16 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		set_active_slot()
 		print(active_slot)
 
+func _set_hotbar_inventory() -> void:
+	hotbar_grid.set_inventory(Global.player.inventory_system)
+	#hotbar.size = hotbar.get_minimum_size()
+
 func set_active_slot() -> void:
-	var active_item_stack = Global.player.inventory.inventory_slots_stacks[active_slot]
+	var active_item_stack = Global.player.inventory_system.inventory[active_slot]
 	Global.active_slot_stack = active_item_stack
 	Global.active_slot_index = active_slot
 	if active_item_stack:
-		print(active_item_stack.item_data.name)
+		print(active_item_stack.item_data.pretty_name)
 
 func get_active_item() -> ItemData:
 	if Global.player.inventory_system.inventory[active_slot]:
@@ -63,7 +68,7 @@ func use_slot() -> void:
 			ItemManager.ITEM_TYPES.PLACEABLE:
 				active_item_stack.item_data.place(Global.get_mouse_pos())
 				
-		print("Using " + active_item_stack.item_data.name)
+		print("Using " + active_item_stack.item_data.pretty_name)
 	else:
 		print("No item in slot " + str(active_slot))
 

@@ -196,7 +196,7 @@ func toggle_forge_ui(cur_forge: Forge) -> void:
 		menu_ui.player_inventory.show()
 		menu_ui.external_inventory.show()
 	
-	menu_ui._set_forge_inventory(player.inventory, cur_forge)
+	menu_ui._set_forge_inventory(player.inventory_system, cur_forge)
 
 func player_in_range(pos_to_check: Vector2) -> bool:
 	print("DISTANCE: ", pos_to_check.distance_to(Global.player.position))
@@ -247,7 +247,7 @@ func _setup_first_zone() -> void:
 	Global.player = player
 	
 	menu_ui._set_player_inventory(player.inventory_system)
-	#game_ui._set_hotbar_inventory(player.inventory)
+	game_ui._set_hotbar_inventory()
 	
 	load_external_inventories(current_zone)
 	load_shops(current_zone)
