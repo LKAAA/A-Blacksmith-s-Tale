@@ -281,14 +281,3 @@ The project includes separate documentation covering the game's:
 
 This documentation is maintained separately from the executable game project to keep design information organized and make larger systems easier to plan before implementation.
 
----
-
-## Why this project?
-
-A Blacksmith's Tale is ultimately an experiment in answering a question:
-
-> **How can a game be designed so that adding more content doesn't require rebuilding the systems underneath it?**
-
-The project uses a relatively small blacksmithing RPG as a way to explore that problem through real gameplay systems, architecture, iteration, and development.
-
-**Built to be played. Built to be learned from. Built to grow.**
