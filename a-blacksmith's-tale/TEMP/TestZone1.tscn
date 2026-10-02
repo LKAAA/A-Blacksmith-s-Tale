@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://ddcc4q5kxebq5"]
+[gd_scene load_steps=33 format=4 uid="uid://ddcc4q5kxebq5"]
 
 [ext_resource type="Script" uid="uid://buew10owcushp" path="res://Scripts/Zone.gd" id="1_x1thp"]
 [ext_resource type="TileSet" uid="uid://b1mcovimiglxi" path="res://Assets/Tilesets/Grass_base_ts.tres" id="2_vdpjq"]
@@ -9,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://cbvoovm6aopc4" path="res://Data/Items/Materials/oak_log.tres" id="8_lvl10"]
 [ext_resource type="Resource" uid="uid://bprsgavhksnhf" path="res://Data/Items/Materials/iron_ore.tres" id="9_x5qe2"]
 [ext_resource type="PackedScene" uid="uid://cxn142l8tsc8v" path="res://Scenes/Objects/InteractableObjects/chest.tscn" id="14_8d832"]
-[ext_resource type="Resource" uid="uid://cjiq8puq2y5kp" path="res://Data/Items/Materials/animal_hide.tres" id="16_qsvcl"]
 [ext_resource type="PackedScene" uid="uid://caaqdiklusn6s" path="res://Scenes/Objects/InteractableObjects/curing_rack.tscn" id="18_quhww"]
 [ext_resource type="Script" uid="uid://c53g5l4c0tu8s" path="res://Data/Scripts/recipe_data.gd" id="19_dpgyg"]
 [ext_resource type="PackedScene" uid="uid://dhnph3wcef2ko" path="res://Scenes/Objects/npc_core.tscn" id="20_4hkp2"]
@@ -22,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://dstxblro34alg" path="res://Scenes/Objects/BreakableObjects/tree.tscn" id="22_4hkp2"]
 [ext_resource type="Resource" uid="uid://bo73747f67xfn" path="res://Data/Shops/GeneralStore.tres" id="22_xm65n"]
 [ext_resource type="PackedScene" uid="uid://duxvb6kudsmba" path="res://Scenes/Objects/InteractableObjects/sign.tscn" id="23_x8coi"]
-[ext_resource type="Texture2D" uid="uid://c0pkq0vnk2p24" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="26_lvl10"]
 [ext_resource type="Texture2D" uid="uid://dw5uv70f88ll5" path="res://Assets/Sprites/PlaceableBuildings_SPSH.png" id="28_hadkk"]
 [ext_resource type="Script" uid="uid://dt1cbr151t3en" path="res://Scripts/behind_adjustment.gd" id="29_2005q"]
 [ext_resource type="PackedScene" uid="uid://d10twax1viih5" path="res://Scenes/Objects/InteractableObjects/barrel.tscn" id="30_wbxtn"]
@@ -77,9 +75,6 @@ script = ExtResource("7_7jjfm")
 item_data = ExtResource("9_x5qe2")
 quantity = 40
 metadata/_custom_type_script = "uid://cvh3brayo56q5"
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lvl10"]
-polygon = PackedVector2Array(-4, 19, 4, 19, 3, -3, 17, -20, 16, -36, 2, -46, -5, -47, -19, -35, -15, -28, -17, -20, -22, -20, -21, -14, -12, -7, -4, -6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2005q"]
 atlas = ExtResource("28_hadkk")
@@ -205,9 +200,6 @@ position = Vector2(200, 24)
 required_tool_type = 1
 loot_table = ExtResource("21_vdpjq")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Objects/Tree10"]
-occluder = SubResource("OccluderPolygon2D_lvl10")
-
 [node name="Tree11" parent="Objects" instance=ExtResource("22_4hkp2")]
 position = Vector2(72, 8)
 required_tool_type = 1
@@ -229,32 +221,26 @@ dialogue_tag = "Temp_Sign_2"
 [node name="HarvestableItem" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(568, -8)
 xp_reward = 5
-item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem2" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(616, 168)
 xp_reward = 5
-item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem3" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(616, 56)
 xp_reward = 5
-item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem4" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(616, 72)
 xp_reward = 5
-item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem5" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(616, 136)
 xp_reward = 5
-item_drop = ExtResource("16_qsvcl")
 
 [node name="HarvestableItem6" parent="Objects" instance=ExtResource("20_dpgyg")]
 position = Vector2(616, 104)
 xp_reward = 5
-item_drop = ExtResource("16_qsvcl")
 
 [node name="Forge" parent="Objects" instance=ExtResource("20_x8coi")]
 position = Vector2(-88, 152)
@@ -307,11 +293,6 @@ cur_schedule_name = "spring"
 cur_schedule_time = 1200
 cur_facing_direction = 2
 metadata/_custom_type_script = "uid://bc8dn2l61tmo2"
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(168, 56)
-shadow_enabled = true
-texture = ExtResource("26_lvl10")
 
 [connection signal="body_entered" from="Objects/Anvil/BehindAdjustment" to="Objects/Anvil/BehindAdjustment" method="_on_body_entered"]
 [connection signal="body_exited" from="Objects/Anvil/BehindAdjustment" to="Objects/Anvil/BehindAdjustment" method="_on_body_exited"]

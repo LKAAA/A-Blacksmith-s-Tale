@@ -5,6 +5,7 @@ class_name HarvestableItem
 @onready var random_sound_player: RandomSoundPlayer = $RandomSoundPlayer
 @export var rand_item: bool = false
 @export var loot_table: LootTable
+@export var quantity: int = 1
 
 @export var xp_reward: int = 0
 @export var skill_type: String = "Foraging"
@@ -30,7 +31,7 @@ func _on_interact() -> void:
 func get_item() -> ItemStack:
 	var slot_data = ItemStack.new()
 	slot_data.item_data = item_drop
-	slot_data.set_quantity(5)
+	slot_data.set_quantity(quantity)
 	return slot_data
 
 func get_random_item() -> ItemStack:

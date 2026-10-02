@@ -11,16 +11,28 @@ class_name Zone extends Node2D
 
 # THIS CODE is no longer disgusting. Please look with happiness
 func get_external_inventories() -> Array:
-	return get_tree().get_nodes_in_group("external_inventory")
+	if get_tree():
+		return get_tree().get_nodes_in_group("external_inventory")
+	
+	return []
 
 func get_shops() -> Array:
-	return get_tree().get_nodes_in_group("shop")
+	if get_tree():
+		return get_tree().get_nodes_in_group("shop")
+	return []
+	
 
 func get_dialogue_objects() -> Array:
-	return get_tree().get_nodes_in_group("dialogue_object")
+	if get_tree():
+		return get_tree().get_nodes_in_group("dialogue_object")
+	return []
 
 func get_npcs() -> Array:
-	return get_tree().get_nodes_in_group("npc_character")
+	if get_tree():
+		return get_tree().get_nodes_in_group("npc_character")
+	return []
 
 func get_obstacles() -> Array:
-	return get_tree().get_nodes_in_group("obstacle")
+	if get_tree():
+		return get_tree().get_nodes_in_group("obstacle")
+	return []
