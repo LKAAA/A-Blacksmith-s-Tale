@@ -38,7 +38,7 @@ The project combines **gameplay programming, systems architecture, game design, 
 
 <img width="426" height="240" alt="Video3" src="https://github.com/user-attachments/assets/10dfd903-691e-4637-9eea-ede77ba9afe3" />
 
-*Preview of the expansive dialogue system*
+*Preview of the expansive dialogue system; Including giving the player items, updating variables, and player choices*
 
 ---
 
