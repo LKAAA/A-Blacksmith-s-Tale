@@ -32,7 +32,7 @@ The project combines **gameplay programming, systems architecture, game design, 
 * Item and inventory systems
 * Modular crafting and equipment systems
 
-<img width="426" height="240" alt="Video 4" src="https://github.com/user-attachments/assets/66a56a14-b38b-4e93-ab39-8c959c8ba5fa" />
+<img width="426" height="240" alt="Video 4 (1)" src="https://github.com/user-attachments/assets/ec88756e-cc58-4ba9-b788-4a7ef111c13d" />
 
 ---
 
