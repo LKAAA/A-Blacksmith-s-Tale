@@ -14,6 +14,8 @@ The project combines **gameplay programming, systems architecture, game design, 
 
 **A Blacksmith's Tale** is a medieval fantasy blacksmithing RPG where the player inherits a small blacksmith shop and builds a life around crafting, exploration, relationships, and eventually competing with or working alongside the established blacksmithing guild.
 
+<img width="426" height="240" alt="Video 4 (1)" src="https://github.com/user-attachments/assets/ec88756e-cc58-4ba9-b788-4a7ef111c13d" />
+
 ### Core Gameplay
 
 * Blacksmithing and metalworking
@@ -31,8 +33,6 @@ The project combines **gameplay programming, systems architecture, game design, 
 * Shop management
 * Item and inventory systems
 * Modular crafting and equipment systems
-
-<img width="426" height="240" alt="Video 4 (1)" src="https://github.com/user-attachments/assets/ec88756e-cc58-4ba9-b788-4a7ef111c13d" />
 
 ---
 
