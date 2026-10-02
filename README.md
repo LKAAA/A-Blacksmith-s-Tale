@@ -18,6 +18,7 @@ The project combines **gameplay programming, systems architecture, game design, 
 
 * Blacksmithing and metalworking
 * Resource gathering and mining
+
 * Woodworking and foraging
 * Leather-working
 * Rune etching and magic
@@ -30,6 +31,14 @@ The project combines **gameplay programming, systems architecture, game design, 
 * Shop management
 * Item and inventory systems
 * Modular crafting and equipment systems
+
+<img width="426" height="240" alt="Video2" src="https://github.com/user-attachments/assets/c1b50653-f074-499a-8598-196bc7efa613" />
+
+*Small preview of the inventory and item systems*
+
+<img width="426" height="240" alt="Video3" src="https://github.com/user-attachments/assets/10dfd903-691e-4637-9eea-ede77ba9afe3" />
+
+*Preview of the expansive dialogue system*
 
 ---
 
