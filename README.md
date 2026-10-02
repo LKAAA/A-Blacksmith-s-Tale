@@ -32,13 +32,7 @@ The project combines **gameplay programming, systems architecture, game design, 
 * Item and inventory systems
 * Modular crafting and equipment systems
 
-<img width="426" height="240" alt="Video2" src="https://github.com/user-attachments/assets/c1b50653-f074-499a-8598-196bc7efa613" />
-
-*Small preview of the inventory and item systems*
-
-<img width="426" height="240" alt="Video3" src="https://github.com/user-attachments/assets/10dfd903-691e-4637-9eea-ede77ba9afe3" />
-
-*Preview of the expansive dialogue system; Including giving the player items, updating variables, and player choices*
+<img width="426" height="240" alt="Video 4" src="https://github.com/user-attachments/assets/66a56a14-b38b-4e93-ab39-8c959c8ba5fa" />
 
 ---
 
@@ -94,6 +88,10 @@ The same philosophy is being applied to:
 * World events
 
 The goal is to make adding new content primarily a **data/content problem rather than a programming problem**.
+
+<img width="426" height="240" alt="Video2" src="https://github.com/user-attachments/assets/c1b50653-f074-499a-8598-196bc7efa613" />
+
+*Small preview of the inventory and item systems*
 
 ---
 
@@ -167,6 +165,10 @@ The system is designed so that new skills can be added without requiring the ent
 
 # NPC & Dialogue Systems
 
+<img width="426" height="240" alt="Video3" src="https://github.com/user-attachments/assets/10dfd903-691e-4637-9eea-ede77ba9afe3" />
+
+*Preview of the expansive dialogue system; Including giving the player items, updating variables, and player choices*
+
 NPCs are being designed around data-driven schedules and conditional dialogue.
 
 Dialogue can respond to factors such as:
@@ -234,71 +236,6 @@ Other planned locations include:
 * Component-based gameplay
 * Version control
 * Debugging and profiling
-
----
-
-# Repository Structure
-
-```text
-A-Blacksmith-s-Tale/
-│
-├── a-blacksmith's-tale/    # Godot game project
-│
-├── Aseprite/               # Pixel art and game assets
-│
-├── Leonardo/               # Worldbuilding / development documentation
-│
-└── README.md
-```
-
-The repository intentionally contains both the **game project** and supporting development material so the project can demonstrate more than the final game itself.
-
----
-
-# Portfolio & Internship Project
-
-A Blacksmith's Tale is being developed as a long-term **game-development project** alongside my university studies.
-
-The project is intended to demonstrate my ability to:
-
-* Design and implement gameplay systems
-* Work with a modern game engine
-* Structure larger codebases
-* Build reusable systems
-* Debug complex interactions between systems
-* Design data-driven content
-* Work with version control
-* Create and integrate 2D game assets
-* Design gameplay alongside programming
-* Take a game from an initial idea toward a playable product
-
-Rather than presenting the project as a finished commercial game, this repository documents the process of **building a game and learning how its systems should be structured as the project grows**.
-
----
-
-# 📈 Development Philosophy
-
-The project is intentionally being built incrementally.
-
-Instead of attempting to create the entire game at once, individual systems are prototyped, tested, and refactored as the project grows.
-
-Some examples include:
-
-```text
-Prototype
-   ↓
-Test
-   ↓
-Identify problems
-   ↓
-Refactor
-   ↓
-Convert into reusable system
-   ↓
-Integrate with the rest of the game
-```
-
-This approach allows the project to serve both as a game and as an ongoing exploration of game-engine architecture and gameplay programming.
 
 ---
 
