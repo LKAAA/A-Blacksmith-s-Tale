@@ -279,5 +279,12 @@ The project includes separate documentation covering the game's:
 * Game systems
 * Development plans
 
-This documentation is maintained separately from the executable game project to keep design information organized and make larger systems easier to plan before implementation.
+This documentation is maintained separately from the executable game project to keep design information organized and make larger systems easier to plan before implementation. 
+*Available upon request*
+
+# Repo Format
+
+- Aseprite - Contains pixel art files used in the program Aseprite
+- Leonardo - Contains planning documents and files drawn in the program Leonardo
+- a-blacksmith's-tale - Contains all of Godot Project files including code, assets, etc
 
