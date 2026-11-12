@@ -18,7 +18,13 @@ The project combines **gameplay programming, systems architecture, game design, 
 
 *Small preview of the inventory and item systems*
 
+<img width="426" height="240" alt="Video3" src="https://github.com/user-attachments/assets/10dfd903-691e-4637-9eea-ede77ba9afe3" />
+
+*Preview of the expansive dialogue system; Including giving the player items, updating variables, and player choices*
+
 <img width="426" height="240" alt="Video 4 (1)" src="https://github.com/user-attachments/assets/ec88756e-cc58-4ba9-b788-4a7ef111c13d" />
+
+*Preview of the day/night cycle and npc systems*
 
 ### Core Gameplay
 
@@ -164,10 +170,6 @@ The system is designed so that new skills can be added without requiring the ent
 ---
 
 # NPC & Dialogue Systems
-
-<img width="426" height="240" alt="Video3" src="https://github.com/user-attachments/assets/10dfd903-691e-4637-9eea-ede77ba9afe3" />
-
-*Preview of the expansive dialogue system; Including giving the player items, updating variables, and player choices*
 
 NPCs are being designed around data-driven schedules and conditional dialogue.
 
