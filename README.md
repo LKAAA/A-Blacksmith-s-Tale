@@ -6,7 +6,7 @@
 
 The project combines **gameplay programming, systems architecture, game design, pixel art, worldbuilding, and technical problem solving** into a single long-term project.
 
-**Built with:** Godot 4 · GDScript · Aseprite · Git
+**Built with:** Godot 4 · GDScript · Git
 
 ---
 
