@@ -1,6 +1,8 @@
 # A Blacksmith's Tale
 **Built with:** Godot 4 · GDScript · Aseprite · Git
 
+[Game Design Document](https://docs.google.com/document/d/18OwW4vAFyJ17F60p2HXdpYzGm3l00GWUh6i5hAP_SC0/edit?usp=sharing)
+
 *A Blacksmith's Tale* is a fantasy blacksmithing RPG and life simulator built from the ground up in Godot 4. You inherit a small forge outside the walled city of Koran and build a life around gathering materials, crafting custom weapons, running your storefront, and navigating relationships with the local guild.
 
 ## Gameplay previews
